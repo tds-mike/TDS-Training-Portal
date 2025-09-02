@@ -6,6 +6,7 @@
     <title>TDS - Sales Techniques</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
@@ -17,26 +18,7 @@
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header & Navigation -->
-    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
-            <nav class="hidden md:flex space-x-6" id="desktop-nav">
-                <a href="sales_tint.html" class="nav-link">Window Tint</a>
-                <a href="sales_ppf.html" class="nav-link">PPF</a>
-                <a href="sales_coatings.html" class="nav-link">Coatings</a>
-                <a href="sales_techniques.html" class="nav-link active">Sales Techniques</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
-             <a href="sales_tint.html" class="block py-2 nav-link">Window Tint</a>
-             <a href="sales_ppf.html" class="block py-2 nav-link">PPF</a>
-             <a href="sales_coatings.html" class="block py-2 nav-link">Coatings</a>
-             <a href="sales_techniques.html" class="block py-2 nav-link active">Sales Techniques</a>
-        </div>
-    </header>
+    <main-header data-type="sales"></main-header>
 
     <main class="container mx-auto px-6 py-12">
         <section id="techniques-content">
@@ -126,14 +108,5 @@
         <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // --- Mobile menu toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
-
