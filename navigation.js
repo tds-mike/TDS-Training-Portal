@@ -2,81 +2,132 @@
  * TDS Training Portal Navigation Module
  *
  * This script defines a custom HTML element <main-header> that dynamically
- * generates the site's navigation bar. It reduces code duplication and
- * simplifies maintenance.
+ * generates the site's header and a single, unified slide-out navigation menu.
+ * It reduces code duplication and simplifies maintenance.
  *
  * Usage:
  * 1. Include this script in your HTML page: <script src="navigation.js" defer></script>
- * 2. Place the custom element where you want the header: <main-header data-type="shop"></main-header>
+ * 2. Place the custom element where you want the header: <main-header></main-header>
  *
- * The `data-type` attribute can be "shop" or "sales" to load the correct set of links.
  * The script automatically highlights the active page link.
  */
 class MainHeader extends HTMLElement {
     connectedCallback() {
-        const navType = this.getAttribute('data-type');
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-        const shopLinks = [
-            { href: 'safety.html', text: 'Safety' },
-            { href: 'chemicals.html', text: 'Chemicals' },
-            { href: 'exterior.html', text: 'Exterior' },
-            { href: 'interior.html', text: 'Interior' },
-            { href: 'tint.html', text: 'Tint' },
-            { href: 'ppf.html', text: 'PPF' }
-        ];
-
-        const salesLinks = [
-            { href: 'sales_tint.html', text: 'Window Tint' },
-            { href: 'sales_ppf.html', text: 'PPF' },
-            { href: 'sales_coatings.html', text: 'Coatings' },
-            { href: 'sales_techniques.html', text: 'Sales Techniques' }
-        ];
-
-        let linksToUse = [];
-        if (navType === 'shop') {
-            linksToUse = shopLinks;
-        } else if (navType === 'sales') {
-            linksToUse = salesLinks;
-        }
-
-        const createNavLinks = (isMobile) => {
-            return linksToUse.map(link =>
-                `<a href="${link.href}" class="${isMobile ? 'block py-2' : ''} nav-link ${currentPage === link.href ? 'active' : ''}">${link.text}</a>`
-            ).join('');
+        const allLinks = {
+            "Main Portal": [
+                { href: 'index.html', text: 'Portal Home' }
+            ],
+            "Technician Training": [
+                { href: 'shop_index.html', text: 'Technician Home' },
+                { href: 'training-pathway.html', text: 'New Technician Pathway' },
+                { href: 'safety.html', text: 'Safety Guide' },
+                { href: 'chemicals.html', text: 'Chemicals Guide' },
+                { href: 'exterior.html', text: 'Exterior Mastery' },
+                { href: 'interior.html', text: 'Interior Restoration' },
+                { href: 'tint.html', text: 'Window Tinting Guide' },
+                { href: 'ppf.html', text: 'PPF Installation Guide' },
+                { href: 'checklists.html', text: 'Printable Checklists' }
+            ],
+            "Sales Training": [
+                { href: 'sales_index.html', text: 'Sales Home' },
+                { href: 'sales_techniques.html', text: 'The TDS Sales Process' },
+                { href: 'sales_nepq_framework.html', text: 'The NEPQ Framework' },
+                { href: 'sales_scripts.html', text: 'Sales Scripts' },
+                { href: 'sales_sop.html', text: 'SOPs & Checklists' },
+                { href: 'sales_objection_handling.html', text: 'Diffusing Objections' },
+                { href: 'sales_tint.html', text: 'Selling Window Tint' },
+                { href: 'sales_ppf.html', text: 'Selling PPF' },
+                { href: 'sales_coatings.html', text: 'Selling Ceramic Coatings' },
+            ]
         };
 
+        const createNavLinks = () => {
+            let html = '';
+            for (const category in allLinks) {
+                html += `<div class="mb-6">`;
+                html += `<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">${category}</h3>`;
+                html += '<div class="mt-2 space-y-1">';
+                allLinks[category].forEach(link => {
+                    const isActive = currentPage === link.href;
+                    html += `<a href="${link.href}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
+                });
+                html += `</div></div>`;
+            }
+            return html;
+        };
+        
+        const isShopPage = ['shop_index.html', 'training-pathway.html', 'safety.html', 'chemicals.html', 'exterior.html', 'interior.html', 'tint.html', 'ppf.html', 'checklists.html'].includes(currentPage);
+        const isSalesPage = currentPage.startsWith('sales_');
+
         this.innerHTML = `
+            <style>
+                .slide-out-menu {
+                    transition: transform 0.3s ease-in-out;
+                }
+                .menu-overlay {
+                    transition: opacity 0.3s ease-in-out;
+                }
+            </style>
             <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                     <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
-                    <nav class="hidden md:flex space-x-6" id="desktop-nav">
-                        ${createNavLinks(false)}
-                    </nav>
-                    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <button id="mobile-menu-button" class="md:hidden focus:outline-none z-50">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
                     </button>
-                </div>
-                <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
-                    ${createNavLinks(true)}
+                     <nav class="hidden md:flex space-x-6">
+                        <a href="index.html" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
+                        <a href="shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
+                        <a href="sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
+                    </nav>
                 </div>
             </header>
+            
+            <!-- Slide-out Menu -->
+            <div id="menu-overlay" class="menu-overlay fixed inset-0 bg-black bg-opacity-50 z-40 hidden opacity-0"></div>
+            <div id="slide-out-menu" class="slide-out-menu fixed top-0 left-0 h-full w-80 bg-gray-800 shadow-xl z-50 transform -translate-x-full p-6 overflow-y-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-white">Training Menu</h2>
+                    <button id="close-menu-button" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                ${createNavLinks()}
+            </div>
         `;
 
         this.addEventListeners();
     }
 
     addEventListeners() {
-        // Use `this.querySelector` to scope the search within the custom element
-        const mobileMenuButton = this.querySelector('#mobile-menu-button');
-        const mobileMenu = this.querySelector('#mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+        const menuButton = this.querySelector('#mobile-menu-button');
+        const closeMenuButton = this.querySelector('#close-menu-button');
+        const slideOutMenu = this.querySelector('#slide-out-menu');
+        const menuOverlay = this.querySelector('#menu-overlay');
+
+        const toggleMenu = () => {
+            const isHidden = slideOutMenu.classList.contains('-translate-x-full');
+            if (isHidden) {
+                slideOutMenu.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+                setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                slideOutMenu.classList.add('-translate-x-full');
+                menuOverlay.classList.add('opacity-0');
+                setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+            }
+        };
+
+        if (menuButton && slideOutMenu && menuOverlay && closeMenuButton) {
+            menuButton.addEventListener('click', toggleMenu);
+            closeMenuButton.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
         }
     }
 }
 
-// Define the new custom element so the browser recognizes <main-header>
 customElements.define('main-header', MainHeader);
+

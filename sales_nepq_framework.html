@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - The NEPQ Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .question-box { background-color: #f3f4f6; border-left: 4px solid #4f46e5; padding: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main-header data-type="sales"></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="nepq-content">
+            <h2 class="text-5xl font-bold mb-8 text-indigo-600 section-title border-indigo-600">Mastering the NEPQ Framework</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">NEPQ, or Neuro-Emotional Persuasion Questioning, is the engine of our sales process. It's a structured way of asking questions that helps potential clients discover their own problems, understand the consequences of inaction, and ultimately persuade themselves that our solution is the right one. This moves you from a "product pusher" to a "problem solver."</p>
+
+            <div class="space-y-12">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">The Dialogue Framework Questions</h3>
+                    <p class="mb-6">The NEPQ framework is a sequence of questions designed to guide the conversation naturally from introduction to close. Here are the key stages:</p>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">1. Connecting Questions</h4>
+                            <p>These questions put the focus on the client and their world, building initial rapport.</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"What was it about our [service] that attracted your attention?"</li>
+                                    <li>"Have you found what you're looking for, or are you still exploring options?"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">2. Situation Questions</h4>
+                            <p>These questions help you understand the client's current situation. (Use 3-4 max).</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"What are you doing now to protect your vehicle's paint?"</li>
+                                    <li>"How long have you owned the vehicle?"</li>
+                                     <li>"Can you tell me more about your vehicle and what you're looking for?"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">3. Problem Awareness Questions</h4>
+                            <p>These questions help the client identify and articulate their problems and dissatisfaction with their current situation.</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"What do you like or dislike about your current way of maintaining your car?"</li>
+                                    <li>"What challenges have you faced in keeping your car looking the way you want?"</li>
+                                    <li>"How much time do you think this problem is costing you?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">4. Solution Awareness Questions</h4>
+                            <p>These questions get the client to think about what an ideal solution would look like, involving their own ideas.</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"What have you done about changing this, if anything?"</li>
+                                    <li>"What would you do about it if you could?"</li>
+                                    <li>"How do you see your life being different if this problem were solved?"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">5. Consequence Questions</h4>
+                            <p>These questions help the client understand the negative consequences of not taking action.</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"What if you don't do anything about this, and the rock chips get worse?"</li>
+                                    <li>"Have you considered the possible ramifications of not protecting your new car's paint?"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                         <div>
+                            <h4 class="text-2xl font-semibold mb-2">6. Qualifying Questions</h4>
+                            <p>These questions determine how important it is for the client to solve the problem now.</p>
+                            <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"How important is it for you to solve this problem?"</li>
+                                    <li>"Why is that important to you now, though?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">7. Transition Questions</h4>
+                            <p>These bridge the gap from diagnosis to recommendation, summarizing their problem and teeing up your solution.</p>
+                             <div class="question-box mt-4">
+                                <p class="font-semibold">Example:</p>
+                                <p class="mt-2">"Based on what you've told me about [their logical problem], which is making you feel [their emotional problem], what we do might actually work for you... Does that feel like it might be what you're looking for?"</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2">8. Committing Questions</h4>
+                            <p>These questions secure commitment for the next step.</p>
+                             <div class="question-box mt-4">
+                                <p class="font-semibold">Examples:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>"Do you feel like this could be the answer for you? Why though?"</li>
+                                    <li>"It looks like we've covered what you're looking for. The next step is to [schedule an appointment/take a deposit]. Would that be appropriate?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>

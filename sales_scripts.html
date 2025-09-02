@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales Scripts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .script-section { background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; }
+        .script-section h4 { font-weight: 600; color: #111827; }
+        .script-section p { color: #4b5563; }
+        .script-section ul { margin-top: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main-header data-type="sales"></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="scripts-content">
+            <h2 class="text-5xl font-bold mb-8 text-purple-600 section-title border-purple-600">Sales Scripts & Dialogues</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">These scripts are your guide, not a rigid set of lines to memorize. Use them to structure your conversations, ensuring you follow the NEPQ framework to uncover needs, build value, and close sales effectively. The goal is a natural, consultative conversation.</p>
+
+            <div class="space-y-12">
+                
+                <!-- Tint Script -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Incoming Call: Window Tint</h3>
+                    <div class="space-y-6">
+                        <div class="script-section">
+                            <h4>Initial Connection</h4>
+                            <p>"Thank you for calling TDS, we specialize in ceramic tint, paint protection film, and ceramic coatings. This is [Your Name], how can I help you today?"</p>
+                             <p class="mt-2">"Great! I'm happy to provide you with a quote for window tinting. To get started, can I get your name and the year, make, and model of your vehicle?"</p>
+                        </div>
+                         <div class="script-section">
+                            <h4>Situation & Problem Awareness</h4>
+                             <p>"Okay, and have you had window tint before, or are you familiar with the different types of film available?"</p>
+                             <ul class="list-disc list-inside">
+                                 <li><strong>If NO:</strong> "Let me quickly explain the options. We primarily use two types of premium film: ceramic and carbon... [Explain benefits of each]."</li>
+                                 <li><strong>If YES:</strong> "Great! Just to make sure we're on the same page, we offer premium ceramic and carbon films..."</li>
+                             </ul>
+                             <p class="mt-2">"Which of these options are you most interested in?"</p>
+                        </div>
+                        <div class="script-section">
+                            <h4>Recommendation & Close</h4>
+                            <p>"Okay, for [Windows] on your [Vehicle] with our [Film Type] film, the price is [Price]. This includes a lifetime warranty against fading."</p>
+                            <p class="mt-2">"Our installations typically take around 4 hours. We operate by appointment, so let's find a time that works best for you. What day were you thinking?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PPF Script -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Incoming Call: Paint Protection Film (PPF)</h3>
+                     <div class="space-y-6">
+                        <div class="script-section">
+                            <h4>Initial Connection</h4>
+                            <p>"Thank you for calling TDS... This is [Your Name], how can I help you today?"</p>
+                             <p class="mt-2">"I can certainly help with information on paint protection film. First, what prompted you to consider PPF for your vehicle?"</p>
+                        </div>
+                         <div class="script-section">
+                            <h4>Situation & Problem Awareness</h4>
+                             <p>"Can you describe the current condition of your vehicle's paint? Are there any specific areas you're concerned about protecting?"</p>
+                             <p class="mt-2">"What are your primary concerns about potential damage to your vehicle's paint? Rock chips, scratches...?"</p>
+                        </div>
+                        <div class="script-section">
+                            <h4>Recommendation & Close</h4>
+                             <p>"Based on what you've described, our Full Front End package would be the ideal solution to protect against those rock chips. For your [Vehicle], that would be [Price]."</p>
+                             <p class="mt-2">"If our paint protection film service aligns with your needs, are you ready to take the next step and schedule an appointment?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ceramic Coating Script -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Incoming Call: Ceramic Coating</h3>
+                     <div class="space-y-6">
+                        <div class="script-section">
+                            <h4>Initial Connection</h4>
+                             <p>"Thank you for calling TDS... This is [Your Name], how can I help you today?"</p>
+                            <p class="mt-2">"Excellent, I can help with that. What about ceramic coatings interested you enough to call us today?"</p>
+                        </div>
+                         <div class="script-section">
+                            <h4>Situation & Problem Awareness</h4>
+                            <p>"Tell me more about your vehicle. What challenges have you faced in maintaining its exterior in the past?"</p>
+                            <p class="mt-2">"How frequently do you find yourself washing and waxing your vehicle to keep it looking its best?"</p>
+                        </div>
+                        <div class="script-section">
+                            <h4>Recommendation & Close</h4>
+                             <p>"It sounds like maintaining your car's exterior can be time-consuming. Based on our discussion, our [Package Name] ceramic coating would be a great solution. For your [Vehicle], the price is [Price]."</p>
+                            <p class="mt-2">"Are you ready to take the next step toward protecting your vehicle and making it easier to maintain?"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Objection Handling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .objection-box { border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
+        .objection-header { background-color: #f9fafb; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .objection-body { padding: 1.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main-header data-type="sales"></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="objections-content">
+            <h2 class="text-5xl font-bold mb-8 text-red-600 section-title border-red-600">Diffusing Objections with NEPQ</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">In the NEPQ framework, an "objection" is not a rejection—it's a concern. It's a request for more information or reassurance. Our job is not to "handle" objections, but to diffuse them by understanding the real issue behind the words.</p>
+
+            <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                <h3 class="text-3xl font-semibold mb-4">The 3-Step Formula for Diffusing Concerns</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">1</div>
+                        <h4 class="font-semibold text-xl">Clarify</h4>
+                        <p class="text-sm text-gray-600">Understand what their concern really is, and why they have it. Don't assume.</p>
+                    </div>
+                    <div>
+                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">2</div>
+                        <h4 class="font-semibold text-xl">Discuss</h4>
+                        <p class="text-sm text-gray-600">Talk about the concern conversationally, as two people on the same team trying to find a solution.</p>
+                    </div>
+                    <div>
+                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">3</div>
+                        <h4 class="font-semibold text-xl">Diffuse</h4>
+                        <p class="text-sm text-gray-600">Ask questions that help them overcome their own concern in their own mind.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold text-center mb-10">Common Concerns & How to Diffuse Them</h3>
+            <div class="space-y-8">
+                <div class="objection-box">
+                    <div class="objection-header">
+                        <h4 class="text-xl font-bold">Concern: "It's too expensive."</h4>
+                    </div>
+                    <div class="objection-body">
+                        <p class="font-semibold">Step 1: Clarify</p>
+                        <p>"When you say it's too expensive, how do you mean exactly?"</p>
+                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
+                        <p>"I understand it's a significant investment. Let's look at it this way: the cost to repaint a bumper from rock chip damage is often over $1,000. This PPF package protects that investment for years. How do you think you can resolve that where you can find the money so that you can protect your new car?"</p>
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">
+                        <h4 class="text-xl font-bold">Concern: "I need to think about it."</h4>
+                    </div>
+                    <div class="objection-body">
+                        <p class="font-semibold">Step 1: Clarify</p>
+                        <p>"Absolutely, it's an important decision. To help you think it over, what's the biggest question or concern on your mind right now? Is it about the process, the price, or something else?"</p>
+                         <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
+                        <p>Once you understand the specific concern (e.g., price), you can address it directly using the appropriate diffusing questions.</p>
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">
+                        <h4 class="text-xl font-bold">Concern: "Can you just send me a quote/information?"</h4>
+                    </div>
+                    <div class="objection-body">
+                        <p class="font-semibold">Step 1: Clarify</p>
+                        <p>"Yes, that's not a problem. Just so I can put together the best information for you, what exactly are you looking for?"</p>
+                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
+                        <p>"It might make sense before I send a quote if I understood a little bit more about your situation, just to see if I could even help you in the first place. For example, what type of challenges have you had with your paint...?" <em class="text-gray-500">(Transition into your NEPQ questions)</em></p>
+                        <p class="mt-2"><strong>Later in the conversation:</strong> "Now let's assume for a minute we get you the quote and we were able to meet your needs that you mentioned to me. What do you see as the next step?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>

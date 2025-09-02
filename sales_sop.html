@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales SOPs & Checklists</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .phase-box { background-color: #f9fafb; border-left: 4px solid #3b82f6; padding: 1.5rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main-header data-type="sales"></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="sop-content">
+            <h2 class="text-5xl font-bold mb-8 text-sky-600 section-title border-sky-600">Sales SOPs & Checklists</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">Standard Operating Procedures (SOPs) are essential for delivering a consistent, high-quality customer experience. This framework outlines the process for in-person consultations, combining our NEPQ principles with practical, actionable steps.</p>
+
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold mb-6">SOP: In-Person Consultation Framework</h3>
+                
+                <div class="phase-box">
+                    <h4 class="text-2xl font-bold text-gray-800">Phase 1: The Warm Welcome & Discovery</h4>
+                    <p class="mt-2 text-gray-600">The goal is to build rapport and uncover the client's needs before you even get to the vehicle. This is where you connect with the client on a personal level.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li><strong>Welcome:</strong> Start with a warm greeting and thank them for coming in.</li>
+                        <li><strong>Qualify:</strong> Ask a broad, open-ended question to understand their motivation. <em class="text-gray-500">"What brought you in today?"</em></li>
+                        <li><strong>Identify the "Why":</strong> Use NEPQ questions to get to the heart of their needs. <em class="text-gray-500">"Is your primary goal to protect the paint, enhance the look, or make the car easier to clean?"</em></li>
+                        <li><strong>Listen Actively:</strong> Pay close attention to their answers. These details are your key selling points for the rest of the conversation.</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h4 class="text-2xl font-bold text-gray-800">Phase 2: The On-Site Vehicle Assessment (The Walk-Around)</h4>
+                    <p class="mt-2 text-gray-600">This is where you transition from conversation to a hands-on, educational experience. The walk-around should be about educating and building value, not just selling.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li><strong>Assess "As-Is" Condition:</strong> Begin the walk-around by politely pointing out any existing scratches, rock chips, or swirls. This builds a case for the need for your services.</li>
+                        <li><strong>Educate with the Vehicle:</strong> Use the physical car as a teaching tool. Explain how a ceramic coating would protect against future water spots or how PPF would prevent rock chips.</li>
+                        <li><strong>Use Physical Samples:</strong> Bring out samples of your ceramic coating, PPF, or window tint film. Let the customer feel the product's quality.</li>
+                        <li><strong>Offer a Tailored Solution:</strong> Based on your conversation, recommend a specific package that addresses their needs.</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h4 class="text-2xl font-bold text-gray-800">Phase 3: The Proposal & Close</h4>
+                    <p class="mt-2 text-gray-600">Bring the conversation back to the office to present the final quote and secure the booking.</p>
+                     <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li><strong>Review the Proposal:</strong> Walk the client through the itemized quote, explaining the value of each service.</li>
+                        <li><strong>Address Objections:</strong> Be prepared to handle common objections like price or timing.</li>
+                        <li><strong>Encourage Commitment:</strong> Use your committing questions to gently guide the client toward a decision. <em class="text-gray-500">"Based on what we've discussed, does this feel like the right solution for you and your vehicle?"</em></li>
+                        <li><strong>Confirm Next Steps:</strong> Once they agree, take the deposit, schedule the appointment, and discuss your referral program.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>
