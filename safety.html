@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Safety Procedures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="safety.html" class="nav-link active">Safety</a>
+                <a href="chemicals.html" class="nav-link">Chemicals</a>
+                <a href="exterior.html" class="nav-link">Exterior</a>
+                <a href="interior.html" class="nav-link">Interior</a>
+                <a href="tint.html" class="nav-link">Tint</a>
+                <a href="ppf.html" class="nav-link">PPF</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="safety.html" class="block py-2 nav-link active">Safety</a>
+            <a href="chemicals.html" class="block py-2 nav-link">Chemicals</a>
+            <a href="exterior.html" class="block py-2 nav-link">Exterior</a>
+            <a href="interior.html" class="block py-2 nav-link">Interior</a>
+            <a href="tint.html" class="block py-2 nav-link">Tint</a>
+            <a href="ppf.html" class="block py-2 nav-link">PPF</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="safety-content">
+            <h2 class="text-5xl font-bold mb-8 text-red-600 section-title border-red-600">Safety: The Foundation of Professionalism</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 1: Mindset & General Shop Environment</h3>
+                    <div class="education-box">
+                        <h4 class="font-bold">A Culture of Safety</h4>
+                        <p>Safety is not a checklist; it's a mindset. A true professional is a safe professional. Every shortcut taken is a risk to yourself, your team, the client's vehicle, and the business. A clean, organized, and aware workspace is the hallmark of a high-level technician. Take pride in maintaining it.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Situational Awareness</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Trip Hazards:</strong> Hoses and cords are the #1 hazard. Always keep them coiled and out of primary walkways. Never leave tools on the floor.</li>
+                                <li><strong>Wet Floors:</strong> Immediately clean up any spills, no matter how small. A wet floor is a major slip risk.</li>
+                                <li><strong>Vehicle Movements:</strong> Be aware of vehicles entering or leaving the bays. Never assume a driver sees you.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Emergency Equipment Locations</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Fire Extinguishers:</strong> Located at [Specify Main Exit 1] and [Specify Bay 2].</li>
+                                <li><strong>First-Aid Kit:</strong> Located in [Specify Office/Break Room]. Report any use for immediate restocking.</li>
+                                <li><strong>Eyewash Station:</strong> Located at [Specify Wash Bay Sink].</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 2: Chemical Safety - The Core Hazard</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Reading the Safety Data Sheet (SDS)</h4>
+                        <p>Every chemical in this shop is required by law (OSHA) to have an SDS. This is your most important resource. If you have a question or an emergency, the SDS has the answer. The binder is located [Specify Location of SDS Binder].</p>
+                        <p class="mt-2"><strong>Key Sections to Know:</strong><br>
+                        - <strong>Section 2:</strong> Hazard Identification (e.g., Flammable, Corrosive)<br>
+                        - <strong>Section 4:</strong> First-Aid Measures (What to do for eye contact, ingestion, etc.)<br>
+                        - <strong>Section 8:</strong> Exposure Controls / Personal Protection (Specifies the exact PPE needed)</p>
+                    </div>
+                     <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">Personal Protective Equipment (PPE) Matrix</h4>
+                     <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="p-3 font-semibold">Chemical Category</th><th class="p-3 font-semibold text-center">Nitrile Gloves</th><th class="p-3 font-semibold text-center">Safety Glasses</th><th class="p-3 font-semibold text-center">Respirator</th><th class="p-3 font-semibold">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b"><td>Acidic/Alkaline Soaps</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center text-orange-500">Rec.</td><td>Prevent chemical burns and eye splashes.</td></tr>
+                                <tr class="border-b"><td>Solvents (Eraser, TarX)</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-red-600">✔</td><td>Organic vapor respirator is mandatory. Ensure good ventilation.</td></tr>
+                                <tr class="border-b"><td>Compounds/Polishes</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center text-orange-500">Rec.</td><td>Protects from airborne silica dust.</td></tr>
+                                <tr><td>Ceramic Coatings</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-green-600">✔</td><td class="text-center font-bold text-red-600">✔</td><td>Mandatory. Coating fumes are a serious respiratory hazard.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">Chemical Handling & Storage</h4>
+                     <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Label Everything:</strong> Any chemical transferred from its original container into a secondary container (like a spray bottle) MUST be labeled with the chemical name and its dilution.</li>
+                        <li><strong>One Chemical, One Towel:</strong> Never use the same towel for different chemicals without washing it first. Cross-contamination can cause damage or create hazardous reactions.</li>
+                        <li><strong>Storage:</strong> Store all chemicals in their designated cabinets. Flammable liquids must be kept in the fire-rated safety cabinet. Always keep containers sealed.</li>
+                     </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 3: Equipment & Tool Safety</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Electrical Tools</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Inspect Cords:</strong> Before plugging anything in, inspect the entire cord for frays or damage. Report damaged equipment immediately.</li>
+                                <li><strong>Cord Management:</strong> When polishing, always drape the cord over your shoulder to keep it away from the spinning pad.</li>
+                                <li><strong>GFCI Outlets:</strong> Only use outlets protected by a Ground Fault Circuit Interrupter (GFCI), especially in the wash bay.</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="text-xl font-semibold mb-2">High-Pressure Equipment</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Pressure Washers:</strong> Never point the nozzle at a person. High-pressure injection injuries are severe medical emergencies. Use appropriate nozzles for paint (40-degree white tip).</li>
+                                <li><strong>Steamers:</strong> High-temperature steam can cause severe burns instantly. Use insulated gloves and be aware of where you are directing the steam nozzle at all times.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="pro-tip mt-6">
+                        <h4 class="font-bold">Ozone Generator Protocol: CRITICAL DANGER</h4>
+                        <p>Ozone is highly effective for odor removal but is TOXIC to humans and pets. It can cause severe respiratory damage.</p>
+                        <ol class="list-decimal list-inside ml-4 mt-2">
+                           <li>The machine must only be run in a completely sealed, unoccupied vehicle.</li>
+                           <li>Place a clear warning sign on the driver's side window.</li>
+                           <li>After treatment is complete, open all doors and allow the vehicle to air out for a MINIMUM of 30-60 minutes before anyone is allowed to enter.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 4: Personal & Vehicle Safety</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Ergonomics & Physical Health</h4>
+                            <p>This is a marathon, not a sprint. Protect your body to ensure a long career.</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Lifting:</strong> Lift with your legs, not your back.</li>
+                                <li><strong>Repetitive Motion:</strong> Vary your tasks. Use a rolling stool or knee pads for low work to reduce strain on your back and knees.</li>
+                                <li><strong>Hearing Protection:</strong> The combined noise of polishers, vacuums, and air compressors can cause permanent hearing loss over time. Wear hearing protection during prolonged use.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Vehicle Handling Safety</h4>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Jacks & Stands:</strong> If a vehicle must be lifted, always use jack stands. Never work on a vehicle supported only by a jack.</li>
+                                <li><strong>Battery Terminals:</strong> Be cautious when working in engine bays. Avoid creating a circuit across battery terminals with metal tools.</li>
+                                <li><strong>Modern Vehicles:</strong> Be aware of keyless entry and auto-locking features. Always keep the client's keys in a designated safe spot to avoid being locked out.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

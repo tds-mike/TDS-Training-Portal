@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales Techniques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="sales_tint.html" class="nav-link">Window Tint</a>
+                <a href="sales_ppf.html" class="nav-link">PPF</a>
+                <a href="sales_coatings.html" class="nav-link">Coatings</a>
+                <a href="sales_techniques.html" class="nav-link active">Sales Techniques</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="sales_tint.html" class="block py-2 nav-link">Window Tint</a>
+             <a href="sales_ppf.html" class="block py-2 nav-link">PPF</a>
+             <a href="sales_coatings.html" class="block py-2 nav-link">Coatings</a>
+             <a href="sales_techniques.html" class="block py-2 nav-link active">Sales Techniques</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="techniques-content">
+            <h2 class="text-5xl font-bold mb-8 text-amber-500 section-title border-amber-500">Mastering the Sales Process</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">4.1 The Consultative Approach: Understanding Customer Needs</h3>
+                    <p class="mb-4 text-lg">Our goal is not to "sell" but to "solve." We are expert consultants. The first and most important step is to understand the customer's "why."</p>
+                    <h4 class="text-xl font-semibold mb-2">Key Discovery Questions:</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>"What's your primary goal for your vehicle today? Are you looking more for protection, appearance, or comfort?"</li>
+                        <li>"How do you typically use your vehicle? Is it a daily driver, a weekend car, or for the track?"</li>
+                        <li>"What are your biggest frustrations with maintaining your car's appearance?" (This helps identify pain points like rock chips, difficult washing, etc.)</li>
+                        <li>"What's your budget for this project? This helps me recommend the best value package for you."</li>
+                    </ul>
+                    <p class="mt-4 font-semibold">Remember the mantra: "Listen first, speak second."</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">4.2 Making the Perfect Recommendation</h3>
+                    <p class="mb-4">Once you understand their needs, you can prescribe the perfect solution. Tailor your recommendation based on their priorities.</p>
+                     <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Example Scenarios:</h4>
+                             <ul class="list-disc list-inside space-y-3">
+                                <li><strong>Client A:</strong> Has a brand new black SUV, daily drives on the highway, hates rock chips, and wants washing to be easier.
+                                <br><strong>Recommendation:</strong> "Based on your highway driving, a Full Front End PPF package is the best defense against rock chips. To make washing easier and keep that black paint looking incredibly glossy, we'll top it with a 3-Year Ceramic Coating."</li>
+                                <li><strong>Client B:</strong> Has a weekend sports car, is most concerned with keeping it cool in the summer, and wants a sleek look.
+                                <br><strong>Recommendation:</strong> "For maximum heat rejection, our Ceramic Window Tint is the perfect solution. It will give you that sleek look you're after while making the cabin much more comfortable."</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">The Power of Packages</h4>
+                            <p>Bundling services provides comprehensive solutions and better value. Always look for opportunities to create a complete package.</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>The "New Car" Package:</strong> Full Front PPF + Ceramic Coating over the entire vehicle + Ceramic Window Tint.</li>
+                                <li><strong>The "Appearance" Package:</strong> One-Step Paint Correction + 3-Year Ceramic Coating.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">4.3 Overcoming Objections</h3>
+                    <p class="mb-4">An objection is not a "no." It's a request for more information or reassurance. Address them with empathy and value.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-3 text-left font-semibold">Objection</th>
+                                    <th class="p-3 text-left font-semibold">Effective Response</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-bold">"It's too expensive."</td>
+                                    <td class="p-3">"I understand it's a significant investment. Let's look at it this way: the cost to repaint a bumper from rock chip damage is often over $1,000. This PPF package protects that investment for years. We also offer financing options to make it more manageable."</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-bold">"I need to think about it."</td>
+                                    <td class="p-3">"Absolutely, it's an important decision. To help you think it over, what's the biggest question or concern on your mind right now? Is it about the process, the price, or something else? I want to make sure you have all the information you need."</td>
+                                </tr>
+                                 <tr class="border-b">
+                                    <td class="p-3 font-bold">"Can I get this cheaper somewhere else?"</td>
+                                    <td class="p-3">"That's a fair question. While you might find lower prices, it's crucial to compare the quality of the film being used and the skill of the installers. We use premium films and our technicians are factory-certified, which ensures a flawless installation that will last. We stand behind our work with a comprehensive warranty."</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">4.4 Closing the Sale</h3>
+                    <p class="mb-4">Closing should be a natural end to the consultation. Guide the customer to a decision.</p>
+                    <h4 class="text-xl font-semibold mb-2">Effective Closing Techniques:</h4>
+                     <ul class="list-disc list-inside space-y-2">
+                        <li><strong>The Assumptive Close:</strong> "So, it sounds like the Full Front PPF and Ceramic Coating package is the perfect fit for your needs. Did you want to schedule that for this week or next?"</li>
+                        <li><strong>The Alternative Close:</strong> "Based on our conversation, both the 3-year and 6-year coating would be great options. Which one works better for your long-term plans for the vehicle?"</li>
+                        <li><strong>The Summary Close:</strong> "Okay, so we're set with the Carbon tint at 35% on the fronts to stay legal, and the Ceramic tint on the rears for maximum heat rejection for the kids. Does that sound right to you?"</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

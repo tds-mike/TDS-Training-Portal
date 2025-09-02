@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Interior Detailing Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="safety.html" class="nav-link">Safety</a>
+                <a href="chemicals.html" class="nav-link">Chemicals</a>
+                <a href="exterior.html" class="nav-link">Exterior</a>
+                <a href="interior.html" class="nav-link active">Interior</a>
+                <a href="tint.html" class="nav-link">Tint</a>
+                <a href="ppf.html" class="nav-link">PPF</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="safety.html" class="block py-2 nav-link">Safety</a>
+            <a href="chemicals.html" class="block py-2 nav-link">Chemicals</a>
+            <a href="exterior.html" class="block py-2 nav-link">Exterior</a>
+            <a href="interior.html" class="block py-2 nav-link active">Interior</a>
+            <a href="tint.html" class="block py-2 nav-link">Tint</a>
+            <a href="ppf.html" class="block py-2 nav-link">PPF</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="interior-content">
+            <h2 class="text-5xl font-bold mb-8 text-green-600 section-title border-green-600">The Art of Interior Restoration</h2>
+             <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Advanced Diagnostics & Strategy</h3>
+                    <div class="education-box">
+                        <h4 class="font-bold">The Goal: Factory Fresh, Not Just Clean</h4>
+                        <p>Our objective is to safely restore a vehicle's interior to its best possible condition, aiming for a "factory fresh" look and feel. This means addressing every crack, crevice, and surface. A thorough initial assessment is crucial to identify problem areas, set realistic customer expectations, and formulate an efficient plan of attack.</p>
+                    </div>
+                    <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">The Assessment Protocol:</h4>
+                    <ul class="list-disc list-inside space-y-3">
+                        <li><strong>Odor Analysis:</strong> What is the first thing you smell? Smoke, pets, mildew, or sour food? This determines if advanced odor remediation (Ozone/Enzymes) is necessary.</li>
+                        <li><strong>Material Identification:</strong> This is a critical safety step. You must correctly identify the materials before applying chemicals.
+                            <ul class="list-disc list-inside ml-6 mt-2 space-y-2">
+                                <li><strong>Coated Leather vs. Aniline/Nappa:</strong> Most modern car leather is coated with a clear urethane layer. A drop of water will bead up on it. Uncoated leather (found in high-end luxury cars) will absorb water quickly and darken. Uncoated leather requires specialized, gentle pH-neutral cleaners and conditioners.</li>
+                                <li><strong>Alcantara/Suede:</strong> This is a delicate microfiber fabric, not leather. It must be cleaned with a dedicated Alcantara cleaner, never a degreaser or harsh APC.</li>
+                                <li><strong>Plastics:</strong> Note the difference between hard, durable plastics on door sills and soft-touch, easily scratched plastics on dashboards or center consoles.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Problem Area Triage:</strong> Locate and identify the worst areas. Are there specific spills? Heavy staining on the driver's seat bolster? This is where you will focus your most intensive efforts.</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">The TDS Method: A Step-by-Step Guide</h3>
+                    
+                    <!-- Step 1 -->
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-semibold mb-2">Step 1: De-Clutter & Air Purge (15-30 mins)</h4>
+                        <p>The goal is to remove all loose items and blast embedded debris out of tight areas, working systematically to avoid re-contaminating clean areas.</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2 pl-4">
+                            <li>Remove all floor mats and set aside for later cleaning.</li>
+                            <li>Carefully remove and bag all personal belongings for the customer.</li>
+                            <li>Using a Tornador air tool, work in a disciplined pattern: Start at the driver's side, blowing everything from high to low (headliner, vents, pillars, dash, doors) towards the vehicle's center and rear. Move to the passenger side and do the same. Finish with the rear seats, always directing debris to the floor.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-semibold mb-2">Step 2: The Dry Detail - Meticulous Vacuuming (30-60 mins)</h4>
+                        <p>With all loose debris now on the floor, perform a thorough vacuum of every single surface before introducing any liquids.</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2 pl-4">
+                            <li>Using crevice and brush attachments, vacuum in the same systematic pattern: headliner, pillars, seats (including seams), carpets, and all compartments.</li>
+                            <li>For stubborn pet hair, use a rubber pet hair brush or pumice stone to rake it into piles before vacuuming. This is far more effective than vacuuming alone.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-semibold mb-2">Step 3: The Wet Detail - Deep Cleaning & Restoration (1-3 hours)</h4>
+                        <div class="pro-tip">
+                            <h4 class="font-bold">Tool Tiers: Choosing Your Weapon</h4>
+                             <ul class="list-disc list-inside ml-4 mt-2">
+                                 <li><strong>Tornador (Air):</strong> Best for blasting debris from tight crevices, vents, and seat rails *before* wet cleaning.</li>
+                                 <li><strong>Steamer (Vapor):</strong> Best for sanitizing and breaking down sticky, greasy contamination (cupholders, consoles, door panels) without using harsh chemicals. It's a precision tool.</li>
+                                 <li><strong>Extractor (Water):</strong> Best for deep cleaning porous surfaces like carpets and cloth seats. It flushes dirt and cleaning solution out from deep within the fibers. It is the final step after agitating a cleaner.</li>
+                             </ul>
+                        </div>
+                        <ul class="list-disc list-inside space-y-4 mt-4 pl-4">
+                             <li><strong>Headliner:</strong> The most delicate surface. NEVER spray cleaner directly onto it. Spray CARPRO Inside onto a microfiber towel, gently wipe the soiled area, and follow with a clean, damp towel. Never oversaturate.</li>
+                            <li><strong>Plastics, Vinyl & Trim:</strong> Spray CARPRO MultiX (1:20) or Inside (1:2) onto a detail brush (not the surface, to avoid overspray). Agitate the surface to lift dirt from the grain. Use a steamer on stubborn grime in cupholders, vents, and door pockets. Wipe residue with a clean microfiber towel.</li>
+                            <li><strong>Carpets & Upholstery:</strong> Pre-spray heavily soiled areas with MultiX. Agitate with a drill brush to lift dirt from the fibers. Use a hot water extractor to flush the dirt and cleaning solution out.</li>
+                            <li><strong>Leather Cleaning:</strong> Spray CARPRO Inside onto a soft leather brush. Gently scrub the leather in a circular motion to create a foam that lifts dirt from the grain. Immediately wipe away the dirty foam with a clean microfiber towel. Do not let cleaner dry on the surface.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-semibold mb-2">Step 4: The Protection Phase - Locking in the Results (30-90 mins)</h4>
+                        <p>After deep cleaning, surfaces are bare. Applying protection is crucial for longevity, UV resistance, and making future cleaning easier.</p>
+                         <ul class="list-disc list-inside space-y-6 mt-4 pl-4">
+                            <li><strong>Plastics & Vinyl Dressing:</strong> Apply a small amount of CARPRO PERL (1:5) to a foam applicator. Wipe a thin, even layer onto all plastic and vinyl surfaces. Follow immediately with a clean microfiber towel to buff off any excess, leaving a dry, satin finish.</li>
+                            <li>
+                                <strong>Fabric Protection (CQUARTZ Fabric 2.0):</strong>
+                                <ol class="list-decimal list-inside space-y-2 mt-2 pl-4">
+                                    <li>Ensure fabric is 100% clean and completely dry.</li>
+                                    <li>Mist a light, even coat of Fabric 2.0 directly onto the surface from 8-12 inches away. Do not oversaturate.</li>
+                                    <li>Gently work the coating into the fibers with a gloved hand or foam applicator.</li>
+                                    <li>Allow to cure for at least 4-6 hours before exposure to moisture.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <strong>Leather Protection (CQUARTZ Leather 2.0):</strong>
+                                <ol class="list-decimal list-inside space-y-2 mt-2 pl-4">
+                                    <li>Surface must be perfectly clean and free of oils. After cleaning with Inside, perform a final wipe with CARPRO Eraser to ensure a pure surface for bonding.</li>
+                                    <li>Apply a few drops of Leather 2.0 to the included suede applicator.</li>
+                                    <li>Wipe a thin, even layer onto a small section of leather (e.g., one seat bolster).</li>
+                                    <li>Immediately, but gently, wipe away all excess residue with a clean microfiber towel. The goal is to leave no visible product behind, just protection.</li>
+                                    <li>Allow to cure for at least 2 hours before use.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Advanced Problem Solving</h3>
+                    <div class="education-box">
+                        <h4 class="font-bold">The Science of Stain Removal</h4>
+                         <p>Stains are not all created equal. Understanding the *type* of stain dictates the correct chemical solution.</p>
+                         <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><strong>Organic/Tannin Stains (Coffee, Soda, Food):</strong> These are best treated with an alkaline cleaner (MultiX). The high pH breaks down the organic compounds.</li>
+                            <li><strong>Oil-Based Stains (Grease, Ink, Makeup):</strong> These require a solvent-based cleaner. The solvent dissolves the oil, allowing it to be lifted. Apply cleaner to a towel, not the stain, and blot from the outside-in to prevent spreading.</li>
+                             <li><strong>Dye Stains (Kool-Aid, Clothing Dye Transfer):</strong> These are the most difficult and often permanent. Specific dye removers are needed, and success is not guaranteed.</li>
+                         </ul>
+                    </div>
+                    <div class="pro-tip mt-6">
+                        <h4 class="font-bold">Mastering Odor Remediation</h4>
+                        <p>Odors are caused by bacteria. You must kill the source, not just mask the smell.</p>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                           <li><strong>CARPRO SO2Pure:</strong> This is an air purifier that uses light to break down organic odor molecules. It's great for general freshening.</li>
+                           <li><strong>Ozone Generator (The "Nuclear" Option):</strong> Ozone (O3) is a powerful oxidizing agent that kills bacteria, mold, and mildew. It is highly effective for smoke and persistent odors. <strong>CRITICAL:</strong> Ozone is toxic to breathe. The machine must only be run in a sealed, unoccupied vehicle, which must be thoroughly aired out (at least 30-60 minutes) before anyone enters.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <!-- Quality Control Section -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Final Inspection & Customer Handoff</h3>
+                    <div class="mt-4 pt-4 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">The Interior Final Inspection Checklist</h4>
+                        <p>Before delivery, perform a final check with an inspection light.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Surface Check:</strong> Are all plastic/vinyl surfaces free of streaky dressing? Is there any leather coating residue?</li>
+                            <li><strong>Crevice Check:</strong> Shine a light deep into seat tracks, vents, and seams to ensure no dust or debris remains.</li>
+                            <li><strong>Glass Check:</strong> View the interior glass from the outside of the vehicle to spot any remaining streaks or haze.</li>
+                            <li><strong>Sensory Check:</strong> Does the car smell clean and neutral? Are all floor mats and personal items back in their proper place?</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">The Customer Handoff Script</h4>
+                        <p>Educate the client on aftercare to ensure the results last.</p>
+                        <div class="education-box">
+                            <p><strong>If Coated:</strong> "We've applied a durable ceramic coating to your leather/fabric. It will resist stains and UV rays, but it does need a day or two to fully cure. We recommend blotting up any spills quickly and avoiding harsh cleaning chemicals."</p>
+                            <p class="mt-4"><strong>General Upkeep:</strong> "We've restored your interior to a 'factory fresh' state. To maintain it, regular vacuuming and wiping surfaces with a quality quick detailer like CARPRO InnerQD will make a big difference."</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

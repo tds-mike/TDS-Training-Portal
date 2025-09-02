@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales Training: PPF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="sales_tint.html" class="nav-link">Window Tint</a>
+                <a href="sales_ppf.html" class="nav-link active">PPF</a>
+                <a href="sales_coatings.html" class="nav-link">Coatings</a>
+                <a href="sales_techniques.html" class="nav-link">Sales Techniques</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="sales_tint.html" class="block py-2 nav-link">Window Tint</a>
+             <a href="sales_ppf.html" class="block py-2 nav-link active">PPF</a>
+             <a href="sales_coatings.html" class="block py-2 nav-link">Coatings</a>
+             <a href="sales_techniques.html" class="block py-2 nav-link">Sales Techniques</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="ppf-content">
+            <h2 class="text-5xl font-bold mb-8 text-indigo-600 section-title border-indigo-600">Selling Paint Protection Film (PPF)</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">2.1 What is PPF? The Invisible Armor</h3>
+                    <p class="mb-4">Paint Protection Film (PPF) is a transparent, thermoplastic urethane (TPU) material applied to a vehicle's painted surfaces. It serves as an invisible shield, protecting the paint from damage and wear.</p>
+                     <h4 class="text-xl font-semibold mb-2">Key Selling Points:</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Impact & Scratch Protection:</strong> The #1 reason customers buy PPF. It provides a robust defense against rock chips, road debris, scratches, and minor dings.</li>
+                        <li><strong>Self-Healing Properties:</strong> Our premium films have a self-healing topcoat. Minor scratches and swirls disappear when exposed to heat (sunlight, warm water).</li>
+                        <li><strong>UV & Chemical Resistance:</strong> Protects against fading from UV rays and etching from bird droppings, bug splatter, and road salt.</li>
+                        <li><strong>Preserve Resale Value:</strong> By keeping the original factory paint in pristine condition, PPF significantly enhances a vehicle's resale value.</li>
+                        <li><strong>Nearly Invisible:</strong> High-quality film is optically clear and does not alter the vehicle's appearance.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">2.2 Protection Packages</h3>
+                    <p class="mb-4">We offer several packages to meet different customer needs and budgets. The goal is to protect the highest-impact areas.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Standard Coverage</h4>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Partial Front End:</strong> Covers the first 18-24" of the hood and fenders, plus the full front bumper and mirrors. A great entry-level option.</li>
+                                <li><strong>Full Front End:</strong> Our most popular package. Covers the full hood, full fenders, full front bumper, and mirrors. Offers comprehensive protection for the entire front of the vehicle.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Premium Coverage</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Track Pack:</strong> For the enthusiast. Includes the Full Front End, plus A-pillars, roofline, and rocker panels.</li>
+                                <li><strong>Entire Vehicle:</strong> The ultimate peace of mind. Every painted panel is protected.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">2.3 Care, Maintenance & Installation Insight</h3>
+                    <p class="mb-4">Educating the customer on proper care ensures the longevity of the film and their satisfaction.</p>
+                    <h4 class="text-xl font-semibold mb-2">Customer Care Instructions:</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>No Washing for One Week:</strong> The film needs time for the adhesive to fully cure.</li>
+                        <li><strong>Gentle Hand Washing:</strong> Regular, gentle hand washing is recommended. Avoid high-pressure jets directly on the film's edges.</li>
+                        <li><strong>No Abrasive Waxes:</strong> Non-abrasive, synthetic waxes or sealants are safe to use over PPF.</li>
+                    </ul>
+                     <h4 class="text-xl font-semibold mt-6 mb-2">The Importance of Professional Installation:</h4>
+                     <p>Emphasize that our technicians are factory-trained. Professional installation is critical to ensure a flawless, bubble-free finish with perfectly wrapped edges. Our use of plotter-cut patterns provides a level of precision that cannot be matched by hand-cutting, ensuring a perfect fit for their specific vehicle.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

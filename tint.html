@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Window Tinting Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="safety.html" class="nav-link">Safety</a>
+                <a href="chemicals.html" class="nav-link">Chemicals</a>
+                <a href="exterior.html" class="nav-link">Exterior</a>
+                <a href="interior.html" class="nav-link">Interior</a>
+                <a href="tint.html" class="nav-link active">Tint</a>
+                <a href="ppf.html" class="nav-link">PPF</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="safety.html" class="block py-2 nav-link">Safety</a>
+            <a href="chemicals.html" class="block py-2 nav-link">Chemicals</a>
+            <a href="exterior.html" class="block py-2 nav-link">Exterior</a>
+            <a href="interior.html" class="block py-2 nav-link">Interior</a>
+            <a href="tint.html" class="block py-2 nav-link active">Tint</a>
+            <a href="ppf.html" class="block py-2 nav-link">PPF</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="tint-content">
+            <h2 class="text-5xl font-bold mb-8 text-purple-600 section-title border-purple-600">The Art of Window Tinting</h2>
+             <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 1: The Science & Strategy of Tinting</h3>
+                    <div class="education-box">
+                        <h4 class="font-bold">Why We Tint: More Than Just Looks</h4>
+                        <p>Window tinting is a high-skill service that provides tangible benefits beyond aesthetics. We must understand these benefits to educate our customers. Our films provide UV Protection (blocking 99%+ of harmful rays that damage skin and fade interiors), Heat Rejection (keeping the cabin cooler), Glare Reduction (for safer driving), and Privacy.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Understanding Film Types</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Dyed Film:</strong> Least expensive, provides privacy but offers minimal heat rejection and can fade to purple over time.</li>
+                                <li><strong>Carbon Film:</strong> A mid-tier option that won't fade like dyed film and offers moderate heat rejection.</li>
+                                <li><strong>Ceramic/IR Film:</strong> The premium choice. Contains ceramic nanoparticles that block infrared radiation (heat) without needing to be dark. Offers the highest heat rejection, won't fade, and doesn't interfere with electronic signals.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">VLT & Connecticut Tint Law</h4>
+                             <p>VLT (Visible Light Transmittance) is the percentage of light the film allows to pass through. Lower numbers are darker.</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Sedans:</strong> Front Sides must be 35% or lighter. Rear Sides & Rear Glass can be any darkness.</li>
+                                <li><strong>SUVs/Trucks:</strong> Front Sides must be 35% or lighter. Rear Sides & Rear Glass can be any darkness from the factory; if aftermarket tint is applied, it must also be 35% or lighter.</li>
+                                <li><strong>Windshield:</strong> No film is permitted on the entire windshield. A visor strip (AS-1 line) is allowed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 2: The Clean Room - Environment & Prep</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Contamination is the Enemy</h4>
+                        <p>Window tinting is a "clean room" operation. A single speck of dust, a stray hair, or a fiber from a shirt can ruin an entire piece of film. Success is determined before the film even touches the glass. Minimize air movement (turn off fans), work in a clean, well-lit bay, and wear clean, low-lint clothing. Always be mindful of contamination.</p>
+                    </div>
+                     <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">Pre-Installation Vehicle Inspection</h4>
+                     <p>Before starting, inspect the vehicle for pre-existing issues:</p>
+                     <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Old Film:</strong> Check for old, failing tint that requires a full removal service.</li>
+                        <li><strong>Glass Condition:</strong> Note any chips or cracks. Applying pressure or heat to damaged glass can cause it to spread.</li>
+                        <li><strong>Electronics:</strong> Identify any sensitive electronics near the windows that may need to be protected from water.</li>
+                        <li><strong>Seals & Panels:</strong> Check for worn or tight window seals ("felt") that can make installation difficult or scratch the film.</li>
+                     </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 3: The Core Procedures</h3>
+                    <!-- Shrinking -->
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-semibold mb-2">Mastering the Shrink: The Most Critical Skill</h4>
+                        <p>Film is a flat sheet; glass is curved. Shrinking is the process of using a heat gun to mold the film to the glass curvature on the *outside* before installing it on the *inside*.</p>
+                        <div class="education-box">
+                            <h4 class="font-bold">Wet Shrink vs. Dry Shrink</h4>
+                            <p><strong>Dry Shrink (Soap Method):</strong> Preferred for rear windows. A bar of soap is wiped on the glass to help the film stick while shrinking. It provides more control for large, complex curves.<br><strong>Wet Shrink:</strong> Using slip solution to stick the film. Typically faster and cleaner for side windows.</p>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4 pl-4">
+                            <li><strong>Side Windows:</strong> Tack the film down with a horizontal squeegee stroke in the middle. This will create "fingers" (bunched-up film) at the top and bottom. Gently heat each finger until it "wiggles" or lays down, then immediately smooth it out with a hard card.</li>
+                            <li><strong>Rear Windshields:</strong> Create a "H" pattern tack (one vertical line down the middle, one horizontal). This divides the glass into four quadrants. Work one quadrant at a time, shrinking from the center tack line outwards, using the defroster lines as a visual guide.</li>
+                        </ul>
+                    </div>
+                    <!-- Glass Prep -->
+                    <div class="mb-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-2">Glass Prep: The "Surgically Clean" Standard</h4>
+                        <p>The mantra is: "Spray it, Scrub it, Squeegee it, and Don't Touch It." Any missed debris will be trapped permanently.</p>
+                        <ol class="list-decimal list-inside space-y-3 mt-2 pl-4">
+                            <li>Protect the interior. Place a "soak rope" at the base of the windshield and cover door panels with towels.</li>
+                            <li>Lower the side window 1-2 inches. Spray the top edge with cleaning solution, scrub with a white pad, and squeegee clean. Wipe the very top edge of the glass with a lint-free towel until it comes away clean.</li>
+                            <li>Raise the window. Meticulously clean the entire interior surface. On older vehicles, a sharp, flat razor blade can be used to remove bonded contaminants.</li>
+                            <li>Squeegee the entire window, overlapping strokes. Use a corner card squeegee to force water and debris out from the side and bottom seals. This step, "flushing the seals," is critical.</li>
+                            <li>Perform a final spray and squeegee right before application.</li>
+                        </ol>
+                    </div>
+                    <!-- Application -->
+                    <div class="pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-2">Application: The Final Install</h4>
+                        <ol class="list-decimal list-inside space-y-3 mt-2 pl-4">
+                            <li>Generously spray the clean interior glass with slip solution.</li>
+                            <li>Carefully peel the protective liner from the film, spraying the exposed adhesive side as you go. This is a high-risk moment for contamination.</li>
+                            <li>Float the film onto the glass. Position it carefully, leaving a micro-edge (1/16") at the top and ensuring no gaps on the sides.</li>
+                            <li>"Lock" the film in place with a gentle squeegee stroke in the center.</li>
+                            <li>Spray the top of the film to lubricate your squeegee. Squeegee from the center outwards, using firm, overlapping strokes to force out all water and air bubbles.</li>
+                            <li>Use specialized hard cards (e.g., Little Foot, Shank) to push water out from the tight edges and corners.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 4: Advanced Problem Solving & Quality Control</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Mastering the Dot Matrix</h4>
+                        <p>The black dotted edge on many rear windows is a challenge. The standard method is to squeegee firmly and let it dry, which often results in a silvery, uneven appearance. For a perfect, high-end finish, more advanced techniques can be used, such as gently scuffing the dots with fine steel wool before application, or applying a thin bead of specialized adhesive to the border after installation to ensure a solid black look.</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t">
+                         <h4 class="text-2xl font-semibold mb-3">The Final Inspection Checklist</h4>
+                        <p>Before delivery, inspect the work from both inside and outside the vehicle with a strong light source.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Contamination Check:</strong> Look for any specs of dust, hair, or fibers trapped under the film. A few tiny specs may be acceptable, but large or clustered debris requires a redo.</li>
+                            <li><strong>Edge Gaps:</strong> Are the gaps around the perimeter of the film even and consistent?</li>
+                            <li><strong>Bubbles & Lift Lines:</strong> Identify any remaining air/water bubbles and ensure all edges are lying flat against the glass with no "lift lines."</li>
+                            <li><strong>Creases:</strong> Check for hard creases in the film, which are permanent and require replacement.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">The Customer Handoff Script</h4>
+                        <p>Educate the client on the critical curing process to prevent comebacks.</p>
+                        <div class="education-box">
+                            <p><strong>The Curing Process:</strong> "Your new tint looks great, but it's still in a curing phase. We use a lot of water during installation, and it can take several days for all of that moisture to evaporate through the film. You may notice some small water pockets or a slightly hazy appearance—this is completely normal and will disappear on its own as the film fully cures."</p>
+                            <p class="mt-4"><strong>CRITICAL Aftercare Instructions:</strong> "The most important thing is to <strong class='text-red-600'>please do not roll down the windows for at least 3 to 5 days.</strong> This gives the adhesive time to fully bond to the glass. For cleaning, please use an ammonia-free glass cleaner and a soft microfiber towel to avoid scratching the film."</p>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - PPF Installation Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="safety.html" class="nav-link">Safety</a>
+                <a href="chemicals.html" class="nav-link">Chemicals</a>
+                <a href="exterior.html" class="nav-link">Exterior</a>
+                <a href="interior.html" class="nav-link">Interior</a>
+                <a href="tint.html" class="nav-link">Tint</a>
+                <a href="ppf.html" class="nav-link active">PPF</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="safety.html" class="block py-2 nav-link">Safety</a>
+            <a href="chemicals.html" class="block py-2 nav-link">Chemicals</a>
+            <a href="exterior.html" class="block py-2 nav-link">Exterior</a>
+            <a href="interior.html" class="block py-2 nav-link">Interior</a>
+            <a href="tint.html" class="block py-2 nav-link">Tint</a>
+            <a href="ppf.html" class="block py-2 nav-link active">PPF</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="ppf-content">
+            <h2 class="text-5xl font-bold mb-8 text-purple-600 section-title border-purple-600">The Art of Paint Protection Film</h2>
+            <div class="space-y-12">
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 1: The Science & Strategy of PPF</h3>
+                    <div class="education-box">
+                        <h4 class="font-bold">What is PPF? The Invisible Armor</h4>
+                        <p>Paint Protection Film is a multi-layered Thermoplastic Urethane (TPU) film that provides a sacrificial barrier between a vehicle's paint and the hazards of the road. Its primary function is impact resistance against rock chips, but it also protects against scratches, chemical etching, and UV damage. The top layer is a "self-healing" clear coat that can re-form when heated, making light scratches disappear.</p>
+                    </div>
+                     <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Coverage Packages Explained</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Full Front End:</strong> The most popular choice. Covers the entire bumper, full hood, full fenders, and side mirrors—the highest impact areas.</li>
+                                <li><strong>Track Pack:</strong> Extends the Full Front package to include the A-pillars, roofline, and rocker panels for vehicles that see heavy track use.</li>
+                                <li><strong>Entire Vehicle:</strong> Provides complete peace of mind, protecting every painted panel from damage.</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h4 class="text-xl font-semibold mb-2">The Power of Plotters & Software</h4>
+                             <p>Using a plotter with software like CORE allows us to cut patterns that are digitally designed for a specific vehicle. This provides extreme accuracy, minimizes blade-to-paint contact, and ensures clean, repeatable installations with perfectly wrapped edges.</p>
+                        </div>
+                     </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 2: The Surgical Bay - Prep is Paramount</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Beyond a "Clean Room" - The Surgical Standard</h4>
+                        <p>If tinting requires a clean room, PPF requires a surgical suite. The large, wet adhesive surface of PPF is a magnet for dust, hair, and any airborne particles. A single piece of contamination trapped under the film is a permanent flaw that requires a costly replacement. Meticulous cleaning of the vehicle AND the work environment is the foundation of a quality installation.</p>
+                    </div>
+                     <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">The Non-Negotiable Prep Protocol</h4>
+                     <ol class="list-decimal list-inside space-y-3">
+                        <li><strong>Mandatory Paint Correction:</strong> The paint surface beneath the film must be FLAWLESS. Any swirl, scratch, or defect left on the paint will be magnified under the film and permanently sealed in. A minimum of a one-step polish is required on all panels receiving PPF.</li>
+                        <li><strong>The Surgical Wash:</strong> After correction, the vehicle must be washed again to remove all polishing oils and dust. Pay special attention to panel gaps, blowing them out with compressed air to remove any hidden debris that could dislodge during installation.</li>
+                        <li><strong>The Final Wipe-Down:</strong> The last step before film touches paint is a meticulous wipe-down with CARPRO Eraser. Use multiple clean, lint-free towels. Perform the "nail test": slide the back of your fingernail on the surface. If it grips, it's clean. If it's slippery, there is still residue that must be removed.</li>
+                     </ol>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 3: The Art of the Install</h3>
+                     <div class="education-box">
+                        <h4 class="font-bold">The Two Essential Solutions: Slip vs. Tack</h4>
+                        <p>Mastering PPF is about mastering your solutions. They are two sides of the same coin.<br><strong>Slip Solution (ImmoGel):</strong> A high-viscosity soap solution. Its job is to create a thick, slippery layer that allows you to float the film, position it perfectly, and squeegee without premature sticking.<br><strong>Tack Solution (Alcohol/Water):</strong> Its job is the opposite. The alcohol breaks down the slip solution, allowing the adhesive to "bite" into the surface. It is used for locking down anchor points and, most importantly, for setting edges.</p>
+                    </div>
+                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Installation Technique: The Glass-Out Method</h4>
+                     <ol class="list-decimal list-inside space-y-4">
+                        <li><strong>The Float:</strong> Liberally spray both the panel and the film's adhesive side with slip solution. Gently float the film onto the panel. You should be able to move it around freely.</li>
+                        <li><strong>The Anchor:</strong> Position the film correctly. Pick a relatively flat area near the center of the panel. Spray the top of the film with slip solution and perform a firm squeegee stroke outwards from the center. This creates an "anchor" point that holds the film in place.</li>
+                        <li><strong>The Squeegee:</strong> Working from your anchor point, squeegee outwards towards the edges. Use firm, overlapping strokes (50% overlap). Your goal is to evacuate all the slip solution from under the film, creating a "glass-out" look with no bubbles.</li>
+                        <li><strong>Conforming & Stretching:</strong> For complex curves (like bumpers or mirrors), you need to stretch the film. Gently pull the film in the direction needed to conform to the curve. A steamer can be used to make the film more pliable. Read the film; it will tell you how much tension it can take before distorting.</li>
+                        <li><strong>Setting the Edges:</strong> This is the final, most critical skill. Lift the edge of the film slightly. Spray the underside of the film and the edge of the panel with TACK solution. This neutralizes the slip and activates the adhesive. Wrap the edge and use a squeegee with firm pressure to lock it down.</li>
+                     </ol>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 4: Final Inspection & Aftercare</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Understanding and Fixing Common Issues</h4>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><strong>"Silvering":</strong> Tiny pockets of air or moisture. Can often be pushed out with a squeegee if addressed quickly.</li>
+                            <li><strong>"Lift Lines":</strong> An edge that isn't fully adhered. Caused by improper edge setting. Re-lift the edge, clean, re-apply tack solution, and squeegee firmly.</li>
+                            <li><strong>Contamination:</strong> A speck of dirt or hair under the film. This is a permanent flaw. The only fix is to replace the piece. This is why prep is paramount.</li>
+                            <li><strong>Stretch Marks:</strong> Distorted "crows feet" or lines in the film, caused by aggressive overstretching. Requires replacement.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-6 border-t">
+                         <h4 class="text-2xl font-semibold mb-3">The Final Inspection Checklist</h4>
+                        <p>Inspect every panel in multiple lighting conditions.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Edge Alignment:</strong> Are all edges perfectly aligned with body lines? Are all wrapped edges fully sealed?</li>
+                            <li><strong>Clarity:</strong> Is the finish perfectly clear and free of any silvering, bubbles, or lift lines?</li>
+                            <li><strong>Contamination:</strong> Scan the entire surface for any trapped debris.</li>
+                            <li><strong>Overall Finish:</strong> The film should be virtually invisible.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">The Customer Handoff & Education</h4>
+                        <div class="education-box">
+                            <p><strong>The Curing Process & Self-Healing:</strong> "Your new Paint Protection Film is self-healing, meaning light scratches will disappear with heat from the sun or a warm water rinse. The film is still curing and bonding to the paint. You may notice some small water pockets; these are normal and will evaporate through the film over the next few days."</p>
+                            <p class="mt-4"><strong>CRITICAL Aftercare Instructions:</strong> "To ensure a long-lasting installation, please <strong class='text-red-600'>do not wash the vehicle for one week.</strong> After that, regular hand washing is best. When using a pressure washer, stay at least 3-4 feet away from the film and especially avoid spraying directly at the edges."</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

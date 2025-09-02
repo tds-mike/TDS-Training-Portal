@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Chemicals Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="safety.html" class="nav-link">Safety</a>
+                <a href="chemicals.html" class="nav-link active">Chemicals</a>
+                <a href="exterior.html" class="nav-link">Exterior</a>
+                <a href="interior.html" class="nav-link">Interior</a>
+                <a href="tint.html" class="nav-link">Tint</a>
+                <a href="ppf.html" class="nav-link">PPF</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="safety.html" class="block py-2 nav-link">Safety</a>
+            <a href="chemicals.html" class="block py-2 nav-link active">Chemicals</a>
+            <a href="exterior.html" class="block py-2 nav-link">Exterior</a>
+            <a href="interior.html" class="block py-2 nav-link">Interior</a>
+            <a href="tint.html" class="block py-2 nav-link">Tint</a>
+            <a href="ppf.html" class="block py-2 nav-link">PPF</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="chemicals-content">
+            <h2 class="text-5xl font-bold mb-8 text-red-600 section-title border-red-600">Chemicals Guide</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">Understanding the pH Scale</h3>
+                    <p>The pH scale (0-14) is crucial for choosing the right chemical. 7 is neutral (water). Below 7 is acidic (removes minerals). Above 7 is alkaline/basic (removes grease/organics). Using the wrong pH can damage surfaces.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">Comprehensive Chemical Arsenal</h3>
+                    <div class="space-y-10">
+                        <!-- Exterior Wash & Decon -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Exterior Wash & Decontamination</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Lift:</strong> Alkaline pre-wash foam. High pH to dissolve heavy road film before contact. Dilute 1:10.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Descale:</strong> Acidic soap. Removes stubborn mineral deposits and water spots. Strips old waxes/sealants. Use for coating prep. Dilute 1:10.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reset:</strong> pH-Neutral soap. Our primary soap for maintenance washes. Safely cleans without stripping protection. Dilute 1:1500.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Hydro2 Foam:</strong> Wash and seal soap. Cleans and leaves behind a layer of SiO2 protection. Dilute 1:10.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>IronX:</strong> pH-Neutral iron remover. Dissolves embedded ferrous particles (industrial fallout) from paint/wheels. Turns purple on contact. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tar X:</strong> Solvent-based tar & adhesive remover. Quickly dissolves tar, sap, and adhesive residues. Apply with a microfiber. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>TriX:</strong> Iron & Tar remover combo. A time-saver for heavily contaminated vehicles. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>BugOut:</strong> Intensive bug remover. Enzymatic formula breaks down bug remains to prevent paint etching. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Spotless 2.0:</strong> Water spot remover. Strong acid blend to dissolve heavy mineral deposits. Use with extreme caution. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Ech2o Concentrate:</strong> Highly versatile. Dilutions: 1:200 (Rinseless Wash), 1:40 (Clay Lube), 1:25 (Quick Detailer).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Optimum No Rinse:</strong> Alternative for rinseless washes. Dilute 1:256.</div>
+                            </div>
+                        </div>
+                        <!-- Paint Correction -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-amber-600 border-b-2 border-amber-200 pb-2 mb-4">Paint Correction Compounds & Polishes</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>UltraCut:</strong> Most aggressive compound. For removing deep scratches and severe defects, including sanding marks.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ClearCut:</strong> Fast-acting compound. Excellent for heavy defect removal with less dusting.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Fixer:</strong> One-step polish/compound. Removes moderate swirls and scratches while leaving a high-gloss finish.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reflect:</strong> Finishing polish. Ultra-fine abrasives create a deep, jeweled, swirl-free finish. The final step before protection.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Essence:</strong> All-in-One primer polish. Provides minor correction, extreme gloss, and leaves a layer of SiO2 primer to prepare for CQUARTZ coatings.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>3D Speed:</strong> All-in-One alternative. A cleaner wax that provides light correction and leaves a layer of protection.</div>
+                            </div>
+                        </div>
+                        <!-- Protection & Coatings -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-sky-600 border-b-2 border-sky-200 pb-2 mb-4">Exterior Protection, Coatings & Finishing</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Eraser:</strong> Oil & polish remover. The essential final step before applying any coating, sealant, or PPF to ensure a pure, clean surface for bonding. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reload:</strong> SiO2 spray sealant. Our standard for 3-6 month protection. Provides immense gloss and hydrophobicity. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>EliXir:</strong> Quick detailer. A blend of Reload and Ech2o for insane gloss and slickness. Perfect final wipe-down product. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Lite:</strong> User-friendly ceramic coating. Provides ~1 year of protection.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ UK 3.0:</strong> Our primary professional coating. Excellent durability (3+ years) and chemical resistance.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>DQUARTZ:</strong> Premium, high-density coating. Offers the highest level of protection and durability (10+ years).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Leather 2.0:</strong> Durable coating for leather surfaces. Provides UV protection and prevents dye transfer.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Fabric 2.0:</strong> Super-hydrophobic coating for all fabric surfaces. Repels water and stains.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify PHOBIC:</strong> Glass cleaner & sealant. Cleans glass streak-free while applying a hydrophobic coating to repel water. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Release:</strong> Wax-based spray. Used for safe delivery of freshly coated vehicles to protect from elements during the initial cure window. Use RTU.</div>
+                            </div>
+                        </div>
+                        <!-- Interior -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Interior Cleaning & Protection</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>MultiX:</strong> All-purpose cleaner. A powerful degreaser for heavy interior cleaning on plastics, carpets, and fabrics. Dilute 1:20.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Inside:</strong> Leather & vinyl cleaner. Foaming action lifts dirt from leather grain and plastics without drying them out. Dilute 1:2.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>InnerQD:</strong> Interior quick detailer. Cleans light dust and fingerprints while adding anti-static properties and a clean, matte finish. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>SO2Pure 2.0:</strong> Odor eliminator. Reacts with light to break down organic odors, not just mask them. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify:</strong> Glass cleaner. Ammonia-free and safe for all tinted windows. Streak-free results. Use RTU.</div>
+                            </div>
+                        </div>
+                        <!-- Wheels, Tires, & Dressing -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-gray-700 border-b-2 border-gray-300 pb-2 mb-4">Wheels, Tires, & Dressing</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>WheelX:</strong> Dedicated wheel cleaner. Safe for most wheel finishes. Breaks down brake dust and road grime. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ReTyre:</strong> Tire & rubber cleaner. High-foaming cleaner that pulls out old dressing and browning from tire pores. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>DarkSide:</strong> High gloss tire sealant. A durable, non-slinging tire sealant for a deep, rich shine that lasts weeks. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>PERL:</strong> Plastic, Engine, Rubber, Leather dressing. A water-based, versatile dressing. Dilutions: 1:1 (Tires), 1:3 (Engine/Exterior Plastic), 1:5 (Interior).</div>
+                            </div>
+                        </div>
+                         <!-- Film Installation -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Film Installation Solutions</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ImmoGel:</strong> PPF slip solution concentrate. High viscosity allows easy positioning and squeegeeing. Dilute 1:100 with water.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tint Slip Solution:</strong> Baby shampoo or Tint Slime. Provides lubrication for tint application. Mix 1oz per gallon of water.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tack Solution:</strong> For setting PPF edges. Neutralizes slip solution to promote adhesion. Mix 20% Isopropyl Alcohol with 80% water.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

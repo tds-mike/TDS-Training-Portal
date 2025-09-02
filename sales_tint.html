@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales Training: Window Tint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="sales_tint.html" class="nav-link active">Window Tint</a>
+                <a href="sales_ppf.html" class="nav-link">PPF</a>
+                <a href="sales_coatings.html" class="nav-link">Coatings</a>
+                <a href="sales_techniques.html" class="nav-link">Sales Techniques</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 text-center">
+             <a href="sales_tint.html" class="block py-2 nav-link active">Window Tint</a>
+             <a href="sales_ppf.html" class="block py-2 nav-link">PPF</a>
+             <a href="sales_coatings.html" class="block py-2 nav-link">Coatings</a>
+             <a href="sales_techniques.html" class="block py-2 nav-link">Sales Techniques</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="tint-content">
+            <h2 class="text-5xl font-bold mb-8 text-purple-600 section-title border-purple-600">Selling Window Tint</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">1.1 What is Window Tint?</h3>
+                    <p class="mb-4">Window tint is a multi-layered polyester film applied to the interior of a vehicle's windows. Its primary purpose is to reduce the amount of visible light, heat, and UV radiation that passes through the glass.</p>
+                    <h4 class="text-xl font-semibold mb-2">Core Benefits for the Customer:</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Glare Reduction:</strong> Improves driving safety and comfort by reducing glare from the sun and headlights.</li>
+                        <li><strong>Heat Rejection:</strong> Keeps the cabin significantly cooler, reducing the reliance on air conditioning.</li>
+                        <li><strong>UV Protection:</strong> Blocks over 99% of harmful UV rays, protecting occupants and preventing interior fading and cracking.</li>
+                        <li><strong>Privacy & Security:</strong> Enhances privacy and conceals valuables from view.</li>
+                        <li><strong>Aesthetic Enhancement:</strong> Gives any vehicle a sleek, premium appearance.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">1.2 Types of Window Tint We Offer</h3>
+                     <p class="mb-4 text-gray-600">To simplify the sales process and avoid confusion, we focus on educating clients about the two high-quality options we install versus the low-quality option we do not.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-3 text-left font-semibold">Film Type</th>
+                                    <th class="p-3 text-left font-semibold">Key Features</th>
+                                    <th class="p-3 text-left font-semibold">Why We Don't Use It</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b bg-red-50 text-red-800">
+                                    <td class="p-3 font-bold">Dyed Window Tint</td>
+                                    <td class="p-3">Basic privacy, low cost.</td>
+                                    <td class="p-3">Fades to purple over time, offers minimal heat/UV rejection, short lifespan (3 years).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                         <table class="w-full text-sm mt-6">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-3 text-left font-semibold">Film Type</th>
+                                    <th class="p-3 text-left font-semibold">Key Selling Points</th>
+                                    <th class="p-3 text-left font-semibold">Ideal Customer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr class="border-b">
+                                    <td class="p-3 font-bold">Carbon Window Tint</td>
+                                    <td class="p-3">Sleek, deep black color that never fades. Great heat rejection (up to 50% IR) and 99% UV protection.</td>
+                                    <td class="p-3">The customer who wants a stylish look, significant heat reduction, and long-term durability without the premium price of ceramic.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-bold">Ceramic Window Tint</td>
+                                    <td class="p-3">Highest heat rejection (up to 95% IR) through advanced ceramic nanoparticles. Maximum performance with exceptional clarity.</td>
+                                    <td class="p-3">The customer who demands the absolute best performance, especially for keeping their car cool and comfortable. The ultimate investment.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">1.3 Connecticut Tint Law & Medical Exemptions</h3>
+                    <p class="mb-4">It is our responsibility to inform customers of the legal regulations to ensure compliance.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Windshield:</strong> Non-reflective tint allowed only above the manufacturer's AS-1 line.</li>
+                        <li><strong>Front Side Windows (All Vehicles):</strong> Must allow more than 35% of light in (35% VLT).</li>
+                        <li><strong>Rear Windows (Sedans):</strong> Must also be 35% VLT or lighter.</li>
+                        <li><strong>Rear Windows (SUVs/Vans/Trucks):</strong> Any darkness can be used.</li>
+                        <li><strong>Medical Exemptions:</strong> A valid medical exemption allows for tint as dark as 20% VLT.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
