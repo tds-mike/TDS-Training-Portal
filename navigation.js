@@ -34,6 +34,9 @@ class MainHeader extends HTMLElement {
                 ],
                 "Resources": [
                     { href: 'checklists.html', text: 'Printable Checklists' }
+                ],
+                "Testing": [
+                    { href: 'shop_quiz.html', text: 'Shop Quiz' },
                 ]
             },
             "Sales Portal": {
@@ -53,6 +56,9 @@ class MainHeader extends HTMLElement {
                     { href: 'sales_coatings.html', text: 'Selling Ceramic Coatings' },
                     { href: 'sales_paint_correction.html', text: 'Selling Paint Correction' },
                     { href: 'sales_detailing.html', text: 'Selling Detailing' },        
+                ],
+                "Testing": [
+                    { href: 'sales_quiz.html', text: 'Sales Quiz' },
                 ]
             }
         };

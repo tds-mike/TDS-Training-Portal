@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Sales Knowledge Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .quiz-question { border: 1px solid #e5e7eb; border-radius: 0.5rem; margin-bottom: 2rem; }
+        .question-header { background-color: #f9fafb; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .question-body { padding: 1.5rem; }
+        .answer-option { display: block; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s ease; }
+        .answer-option:hover:not(:disabled) { background-color: #f3f4f6; }
+        .answer-option.selected { border-color: #2563eb; background-color: #dbeafe; }
+        .answer-option.correct { border-color: #16a34a; background-color: #dcfce7; }
+        .answer-option.incorrect { border-color: #dc2626; background-color: #fee2e2; }
+        .feedback-summary { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; display: none; }
+        .feedback-summary.correct { background-color: #dcfce7; color: #166534; }
+        .feedback-summary.incorrect { background-color: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="quiz-content">
+            <h2 class="text-5xl font-bold mb-8 text-center text-amber-500">Sales Knowledge Quiz</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12 mx-auto text-center">Test your knowledge of our sales process and product value propositions. This quiz covers key information from all modules in the Sales Portal.</p>
+            
+            <div id="quiz-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+
+            <button id="submit-answers" class="hidden w-full bg-amber-500 text-gray-900 font-bold py-3 px-4 rounded hover:bg-amber-600">Submit Answers</button>
+
+            <div id="results-container" class="hidden text-center bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-3xl font-bold">Quiz Complete!</h3>
+                <p class="text-xl mt-4">You scored <span id="score" class="font-bold"></span> out of <span id="total-questions" class="font-bold"></span>.</p>
+                <div id="results-details" class="mt-6 text-left max-w-2xl mx-auto"></div>
+                <button id="retake-quiz" class="mt-8 bg-amber-500 text-gray-900 font-bold py-2 px-4 rounded hover:bg-amber-600">Retake Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+     <script>
+        const salesQuizData = [
+            // Sales Process & SOP
+            { module: "SOP", question: "According to the Sales SOP, what are the first two actions in the follow-up cadence for a new lead?", options: ["Send an email, then call", "Send a text, then an email", "Call, leave a voicemail, then immediately send a text", "Wait for them to call back"], answer: "Call, leave a voicemail, then immediately send a text" },
+            { module: "SOP", question: "During a vehicle handoff, what is the final step to encourage future business?", options: ["Taking the final payment", "Handing over the keys", "Asking them to schedule their next appointment", "Handing them 3 referral cards and asking for a review"], answer: "Handing them 3 referral cards and asking for a review" },
+            { module: "SOP", question: "What is the minimum deposit required to secure an appointment?", options: ["10%", "25%", "50%", "100%"], answer: "50%" },
+            { module: "SOP", question: "What is the required first step when a customer drops off their vehicle for service?", options: ["Take the keys and park the car", "Create a new invoice in Urable while with the customer", "Ask them to wait inside", "Immediately start the work"], answer: "Create a new invoice in Urable while with the customer" },
+            { module: "SOP", question: "How long should a salesperson continue to follow up with a lead that has not responded?", options: ["For one week", "For one month", "For three months", "Indefinitely"], answer: "Indefinitely" },
+            // NEPQ & Techniques
+            { module: "NEPQ", question: "What is the primary goal of the NEPQ framework?", options: ["To give the customer a price quickly", "To help the customer persuade themselves our service is the solution", "To list all product features", "To close the sale as fast as possible"], answer: "To help the customer persuade themselves our service is the solution" },
+            { module: "NEPQ", question: "A customer says 'I'm frustrated with how quickly my new black car gets dirty.' This statement is a direct result of which type of NEPQ question?", options: ["Situation Question", "Problem Awareness Question", "Solution Awareness Question", "Connecting Question"], answer: "Problem Awareness Question" },
+            { module: "NEPQ", question: "The 'Bodyguard and the Raincoat' is an analogy used to explain the difference between which two services?", options: ["Tint and PPF", "PPF and Ceramic Coatings", "Waxes and Sealants", "Interior and Exterior Detailing"], answer: "PPF and Ceramic Coatings" },
+            { module: "NEPQ", question: "What is the most powerful and relatable analogy for explaining Paint Protection Film (PPF)?", options: ["A permanent wax", "An extra layer of clear coat", "A screen protector for your car's paint", "A new paint job"], answer: "A screen protector for your car's paint" },
+            { module: "NEPQ", question: "What is the purpose of a 'Consequence Question' in the NEPQ framework?", options: ["To list the benefits of our service", "To help the client understand the negative results of inaction", "To ask for the sale", "To find out their budget"], answer: "To help the client understand the negative results of inaction" },
+            // Objection Handling
+            { module: "Objections", question: "When a customer says, 'I'll call you back,' what is the most likely hidden objection?", options: ["They are too busy", "They lost interest", "Price or need to speak with a spouse", "They don't like the service"], answer: "Price or need to speak with a spouse" },
+            { module: "Objections", question: "A customer objects to the price of a ceramic coating. What is the most effective response?", options: ["Immediately offer a discount", "Explain that the cost is high due to the product", "Agree that it's expensive", "Re-frame the value by comparing it to the cost of neglect and mention financing"], answer: "Re-frame the value by comparing it to the cost of neglect and mention financing" },
+            { module: "Objections", question: "What is the first step in the 3-step formula for diffusing concerns?", options: ["Discuss", "Diffuse", "Clarify", "Close"], answer: "Clarify" },
+            { module: "Objections", question: "A customer says, 'I found it cheaper at another shop.' How should you respond?", options: ["Match the price", "Say the other shop uses bad products", "Question the quality of the film and skill of the installers at the other shop", "Tell them to go there instead"], answer: "Question the quality of the film and skill of the installers at the other shop" },
+            { module: "Objections", question: "What is the core 'mindset' for handling objections?", options: ["An objection is a rejection", "An objection is a sign of engagement and a request for more information", "An objection is an insult", "An objection means the sale is lost"], answer: "An objection is a sign of engagement and a request for more information" },
+            // Product Knowledge
+            { module: "Products", question: "A customer's main priority for window tint is maximum heat rejection. Which film tier do you recommend?", options: ["Economy", "Premium Carbon", "Supreme Ceramic or CARPRO UVX", "The darkest film possible"], answer: "Supreme Ceramic or CARPRO UVX" },
+            { module: "Products", question: "What is the primary, #1 selling point of Paint Protection Film?", options: ["UV Protection", "Gloss Enhancement", "Impact Protection from rock chips", "Hydrophobic properties"], answer: "Impact Protection from rock chips" },
+            { module: "Products", question: "What is the most logical and beneficial service to upsell to a customer who has just purchased a full PPF front end?", options: ["An interior detail", "A ceramic coating over the entire vehicle", "A basic maintenance wash", "Windshield tint"], answer: "A ceramic coating over the entire vehicle" },
+            { module: "Products", question: "A customer asks for paint correction but thinks it will fix rock chips. What is the first and most important thing to do?", options: ["Agree and give them a quote", "Politely clarify that paint correction removes swirls, while PPF protects against chips", "Tell them we can't help", "Recommend a full repaint"], answer: "Politely clarify that paint correction removes swirls, while PPF protects against chips" },
+            { module: "Products", question: "What is the primary emotional problem that a Full Interior Restoration solves for a customer?", options: ["It makes the car easier to sell", "It removes some dust", "It restores the 'new car feeling' of pride and comfort", "It's required for a trade-in"], answer: "It restores the 'new car feeling' of pride and comfort" },
+            { module: "Products", question: "Which type of window tint has the highest TSER and outperforms competitors like Xpel XR+?", options: ["Economy", "Premium Carbon", "Supreme Ceramic", "CARPRO UVX"], answer: "CARPRO UVX" },
+            { module: "Products", question: "What is the essential service that must be performed before any ceramic coating application?", options: ["A basic car wash", "A clay bar treatment", "A minimum of a Level 1 Paint Enhancement", "Applying a wax"], answer: "A minimum of a Level 1 Paint Enhancement" },
+            { module: "Products", question: "The 'lock it in' upsell refers to selling what service after a paint correction?", options: ["Window Tint", "Paint Protection Film", "A Ceramic Coating", "An interior detail"], answer: "A Ceramic Coating" },
+            { module: "Products", question: "What is the key difference between Standard and Premium PPF?", options: ["Color", "Thickness", "Warranty length and instant vs. heat-activated self-healing", "Price only"], answer: "Warranty length and instant vs. heat-activated self-healing" },
+            { module: "Products", question: "What is the key benefit of the 'Decontamination Wash' over a standard car wash?", options: ["It's faster", "It uses less water", "It removes bonded contaminants like iron and tar", "It adds a layer of wax"], answer: "It removes bonded contaminants like iron and tar" },
+        ];
+        
+        // --- Generic Quiz Logic ---
+        const quizContainer = document.getElementById('quiz-container');
+        const submitButton = document.getElementById('submit-answers');
+        const resultsContainer = document.getElementById('results-container');
+        const scoreElement = document.getElementById('score');
+        const totalQuestionsElement = document.getElementById('total-questions');
+        const retakeQuizButton = document.getElementById('retake-quiz');
+        const resultsDetails = document.getElementById('results-details');
+
+        let userAnswers = {};
+
+        function loadQuiz() {
+            quizContainer.innerHTML = '';
+            userAnswers = {};
+            salesQuizData.sort(() => Math.random() - 0.5); // Randomize questions
+            
+            salesQuizData.forEach((q, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('quiz-question');
+                
+                let optionsHTML = '';
+                q.options.forEach(option => {
+                    optionsHTML += `<button class="answer-option w-full text-left" data-question-index="${index}">${option}</button>`;
+                });
+
+                questionElement.innerHTML = `
+                    <div class="question-header">
+                        <h4 class="text-xl font-bold">Question ${index + 1}</h4>
+                    </div>
+                    <div class="question-body">
+                        <p class="text-lg mb-4">${q.question}</p>
+                        <div class="options-container">${optionsHTML}</div>
+                    </div>
+                `;
+                quizContainer.appendChild(questionElement);
+            });
+
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    const questionIndex = option.dataset.questionIndex;
+                    userAnswers[questionIndex] = option.textContent;
+                    
+                    document.querySelectorAll(`button[data-question-index="${questionIndex}"]`).forEach(btn => btn.classList.remove('selected'));
+                    option.classList.add('selected');
+                });
+            });
+
+            submitButton.classList.remove('hidden');
+            resultsContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+        }
+
+        submitButton.addEventListener('click', () => {
+            let score = 0;
+            resultsDetails.innerHTML = '';
+
+            salesQuizData.forEach((q, index) => {
+                const userAnswer = userAnswers[index];
+                const isCorrect = userAnswer === q.answer;
+                if (isCorrect) {
+                    score++;
+                }
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('mb-4', 'p-4', 'rounded-lg', isCorrect ? 'bg-green-50' : 'bg-red-50');
+                resultItem.innerHTML = `
+                    <p class="font-bold">${index + 1}. ${q.question}</p>
+                    <p class="text-sm mt-2">Your answer: <span class="${isCorrect ? 'text-green-700' : 'text-red-700'}">${userAnswer || 'Not answered'}</span></p>
+                    ${!isCorrect ? `<p class="text-sm mt-1">Correct answer: <span class="text-green-700">${q.answer}</span></p>` : ''}
+                `;
+                resultsDetails.appendChild(resultItem);
+            });
+            
+            scoreElement.textContent = score;
+            totalQuestionsElement.textContent = salesQuizData.length;
+            
+            quizContainer.classList.add('hidden');
+            submitButton.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+        });
+        
+        retakeQuizButton.addEventListener('click', loadQuiz);
+
+        loadQuiz();
+    </script>
+</body>
+</html>
+
