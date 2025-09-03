@@ -20,7 +20,8 @@ class MainHeader extends HTMLElement {
             "Technician Portal": {
                 "Getting Started": [
                     { href: 'shop_index.html', text: 'Technician Home' },
-                    { href: 'training-pathway.html', text: 'New Technician Pathway' }
+                    { href: 'training-pathway.html', text: 'New Technician Pathway' },
+                    { href: 'technician_sop.html', text: 'Technician SOP & Workflow' }
                 ],
                 "Core Principles": [
                     { href: 'safety.html', text: 'Safety Guide' },
@@ -70,7 +71,6 @@ class MainHeader extends HTMLElement {
 
             for (const portal in allLinks) {
                 const portalData = allLinks[portal];
-                // Check if the current page belongs to this portal to decide if it should be open by default
                 const isCurrentPortal = Object.values(portalData).flat().some(link => link.href === currentPage);
 
                 html += `<div class="mb-2">`;
@@ -157,6 +157,7 @@ class MainHeader extends HTMLElement {
     }
 
     addEventListeners() {
+        // ... (rest of the event listener code remains the same)
         const menuButton = this.querySelector('#mobile-menu-button');
         const closeMenuButton = this.querySelector('#close-menu-button');
         const slideOutMenu = this.querySelector('#slide-out-menu');
@@ -181,7 +182,6 @@ class MainHeader extends HTMLElement {
             menuOverlay.addEventListener('click', toggleMenu);
         }
         
-        // Accordion functionality
         this.querySelectorAll('.accordion-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -200,3 +200,4 @@ class MainHeader extends HTMLElement {
 }
 
 customElements.define('main-header', MainHeader);
+

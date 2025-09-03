@@ -8,29 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define the module structure for both portals
     const portals = {
         technician: [
-            { url: 'shop_index.html', title: 'Technician Home', time: 5 },
-            { url: 'safety.html', title: 'Safety Guide', time: 15 },
-            { url: 'chemicals.html', title: 'Chemicals Guide', time: 20 },
-            { url: 'exterior.html', title: 'Exterior Mastery', time: 30 },
-            { url: 'interior.html', title: 'Interior Restoration', time: 25 },
-            { url: 'tint.html', title: 'Window Tinting Guide', time: 20 },
-            { url: 'ppf.html', title: 'PPF Installation Guide', time: 25 },
-            { url: 'checklists.html', title: 'Printable Checklists', time: 10 },
-            { url: 'shop_quiz.html', title: 'Technician Knowledge Quiz', time: 15 }
+            { url: 'shop_index.html', title: 'Technician Home' },
+            { url: 'training-pathway.html', title: 'New Tech Pathway' },
+            { url: 'technician_sop.html', title: 'Technician SOP' },
+            { url: 'safety.html', title: 'Safety Guide' },
+            { url: 'chemicals.html', title: 'Chemicals Guide' },
+            { url: 'exterior.html', title: 'Exterior Mastery' },
+            { url: 'interior.html', title: 'Interior Restoration' },
+            { url: 'tint.html', title: 'Window Tinting Guide' },
+            { url: 'ppf.html', title: 'PPF Installation Guide' },
+            { url: 'checklists.html', title: 'Printable Checklists' },
+            { url: 'shop_quiz.html', title: 'Technician Knowledge Quiz' }
         ],
         sales: [
-            { url: 'sales_index.html', title: 'Sales Home', time: 5 },
-            { url: 'sales_techniques.html', title: 'The TDS Sales Process', time: 20 },
-            { url: 'sales_nepq_framework.html', title: 'The NEPQ Framework', time: 25 },
-            { url: 'sales_scripts.html', title: 'Sales Scripts', time: 15 },
-            { url: 'sales_sop.html', title: 'SOPs & Checklists', time: 15 },
-            { url: 'sales_objection_handling.html', title: 'Diffusing Objections', time: 20 },
-            { url: 'sales_tint.html', title: 'Selling Window Tint', time: 15 },
-            { url: 'sales_ppf.html', title: 'Selling PPF', time: 15 },
-            { url: 'sales_coatings.html', title: 'Selling Ceramic Coatings', time: 15 },
-            { url: 'sales_paint_correction.html', title: 'Selling Paint Correction', time: 10 },
-            { url: 'sales_detailing.html', title: 'Selling Detailing', time: 10 },
-            { url: 'sales_quiz.html', title: 'Sales Quiz', time: 15 }
+            { url: 'sales_index.html', title: 'Sales Home' },
+            { url: 'sales_techniques.html', title: 'The TDS Sales Process' },
+            { url: 'sales_nepq_framework.html', title: 'The NEPQ Framework' },
+            { url: 'sales_scripts.html', title: 'Sales Scripts' },
+            { url: 'sales_sop.html', title: 'SOPs & Checklists' },
+            { url: 'sales_objection_handling.html', title: 'Diffusing Objections' },
+            { url: 'sales_tint.html', title: 'Selling Window Tint' },
+            { url: 'sales_ppf.html', title: 'Selling PPF' },
+            { url: 'sales_coatings.html', title: 'Selling Ceramic Coatings' },
+            { url: 'sales_paint_correction.html', title: 'Selling Paint Correction' },
+            { url: 'sales_detailing.html', title: 'Selling Detailing' },
+            { url: 'sales_quiz.html', title: 'Sales Quiz' }
         ]
     };
 
@@ -53,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextModule = currentIndex < currentPortalModules.length - 1 ? currentPortalModules[currentIndex + 1] : null;
     const progressPercentage = ((currentIndex + 1) / currentPortalModules.length) * 100;
 
-    // Create the navigation bar element
     const navBar = document.createElement('div');
     navBar.className = 'fixed bottom-0 left-0 w-full bg-gray-900 text-white p-3 shadow-lg z-50';
     navBar.innerHTML = `
@@ -77,30 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.appendChild(navBar);
 
-    // TWEAK: This function now applies padding to the body and the slide-out menu.
     const setPadding = () => {
         const slideOutMenu = document.getElementById('slide-out-menu');
         const navBarHeight = navBar.offsetHeight;
-
-        // Pad the main body content
         document.body.style.paddingBottom = `${navBarHeight}px`;
-
-        // If the slide-out menu exists, pad it as well.
         if (slideOutMenu) {
-            slideOutMenu.style.paddingBottom = `${navBarHeight + 20}px`; // Added extra space
+            slideOutMenu.style.paddingBottom = `${navBarHeight + 20}px`;
         }
     };
 
-    // TWEAK: Use a reliable interval to wait for the slide-out menu to be created.
-    // This resolves the race condition between the two navigation scripts.
     const paddingInterval = setInterval(() => {
         const slideOutMenu = document.getElementById('slide-out-menu');
         if (slideOutMenu) {
             setPadding();
-            clearInterval(paddingInterval); // Stop checking once the menu is found and padded.
+            clearInterval(paddingInterval);
         }
     }, 100);
 
-    // Also apply padding on window resize to handle orientation changes.
     window.addEventListener('resize', setPadding);
 });
+

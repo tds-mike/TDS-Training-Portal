@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Technician SOP & Workflow</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="module-navigation.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .phase-box { background-color: #f9fafb; border-left: 4px solid #1D4ED8; padding: 1.5rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .danger-box { background-color: #FEE2E2; border-left: 4px solid #EF4444; padding: 1.5rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="sop-content">
+            <h2 class="text-5xl font-bold mb-8 text-blue-700 section-title border-blue-700">Technician SOP & Workflow</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">This is the master guide for the entire service process from a technician's perspective. Following this Standard Operating Procedure (SOP) ensures consistency, safety, and the highest quality result for every vehicle that enters our bays.</p>
+
+            <div class="space-y-12">
+
+                <!-- Phase 1: Job Start -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 1: Job Start & Vehicle Intake</h3>
+                    <p class="text-gray-600">This phase ensures you are fully aligned with the work order and have identified any potential issues before work begins.</p>
+                    <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Vehicle Intake Checklist</h4>
+                        <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li><strong>Review the Work Order (Urable):</strong> Read the entire work order. Understand the exact services sold, the customer's specific concerns, and the promised completion time.</li>
+                            <li><strong>Personal Vehicle Inspection:</strong> Perform your own walk-around. Look for any damage or pre-existing conditions not noted in the Urable inspection (e.g., failing clear coat, deep scratches, trim damage).</li>
+                            <li><strong>Communicate with Management:</strong> Immediately report any discrepancies or potential issues to the Shop Manager *before* you begin. This protects both you and the shop, and allows us to manage customer expectations proactively.</li>
+                            <li><strong>Prepare Your Bay:</strong> Gather all necessary tools, chemicals, and pads for the job. A prepared bay is an efficient bay.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2: During Service -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 2: During The Service</h3>
+                     <p class="text-gray-600">Maintain the TDS Standard of Excellence throughout the entire service process.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">In-Progress Best Practices</h4>
+                         <ul class="list-disc list-inside mt-4 space-y-3">
+                            <li><strong>Work Clean:</strong> Keep your tools organized and your work area tidy. A clean workspace is a safe and professional workspace.</li>
+                            <li><strong>Document with Photos:</strong> Take compelling before/after and 50/50 photos of your work (especially during paint correction and interior details). Upload them to the "Technician Photos" section in Urable. These are vital for our marketing and for showing value to the customer.</li>
+                            <li><strong>Mid-Job Problem Solving:</strong> If you uncover a new issue (e.g., you discover a panel is a repaint, or a stain is permanent), stop and report it to the Shop Manager immediately. Do not proceed without approval.</li>
+                            <li><strong>Quality Check As You Go:</strong> Constantly inspect your own work with proper lighting. Don't wait until the end to find a mistake.</li>
+                         </ul>
+                         <div class="pro-tip">
+                             <h4 class="font-bold">The Golden Rule: "When in doubt, ask."</h4>
+                             <p>Never assume. If you are unsure about a chemical, a procedure, or the condition of a vehicle, ask a senior technician or the Shop Manager. A question takes seconds; fixing a mistake can take hours.</p>
+                         </div>
+                    </div>
+                </div>
+
+                 <!-- Phase 3: Job Completion -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 3: Job Completion & Final Finishing</h3>
+                     <p class="text-gray-600">The final 5% of the job is what separates a good detailer from a great one. This is where we deliver the "wow" factor.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Universal Finishing Steps (All Jobs)</h4>
+                         <p class="text-sm text-gray-500 mt-2">This is the baseline TDS Signature Finish applied to every vehicle, regardless of the service.</p>
+                         <ul class="list-disc list-inside mt-4 space-y-2">
+                             <li>Perform a final, meticulous wipe-down of the entire vehicle. No streaks, dust, or residue.</li>
+                             <li>Clean all exterior glass and mirrors to a streak-free finish.</li>
+                             <li>Wipe down all door jambs and trunk jambs.</li>
+                             <li>Apply a branded TDS service sticker to the upper corner of the driver's side door jamb.</li>
+                             <li>Place a branded TDS paper floor mat on the driver's side.</li>
+                             <li>Hang one TDS air freshener from the rearview mirror.</li>
+                             <li>Place a personally signed "Thank You" card on the passenger seat.</li>
+                         </ul>
+
+                         <h4 class="text-2xl font-bold text-gray-800 mt-8 pt-6 border-t">Service-Specific Finishing Touches</h4>
+                         <p class="text-sm text-gray-500 mt-2">In addition to the universal steps, add the following items based on the primary service completed.</p>
+                         <ul class="list-disc list-inside mt-4 space-y-3">
+                            <li><strong>If Window Tint:</strong>
+                                <ul class="list-disc list-inside ml-6">
+                                    <li>Apply "Do Not Roll Down Windows" stickers to window switches.</li>
+                                    <li>Place a tint aftercare rearview mirror hanger.</li>
+                                </ul>
+                            </li>
+                            <li><strong>If Ceramic Coating:</strong>
+                                <ul class="list-disc list-inside ml-6">
+                                     <li>Place the official coating manufacturer's warranty booklet and CARPRO aftercare guide in the glove box.</li>
+                                     <li>Apply the small, corresponding coating sticker to the door jamb.</li>
+                                </ul>
+                            </li>
+                             <li><strong>If PPF (Paint Protection Film):</strong>
+                                <ul class="list-disc list-inside ml-6">
+                                     <li>Place the official PPF manufacturer's warranty booklet and aftercare guide in the glove box.</li>
+                                </ul>
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Handoff -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 4: Handoff to Sales Team</h4>
+                     <p class="text-gray-600">Your final step is to prepare the vehicle for the customer presentation.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Final Handoff Checklist</h4>
+                         <ul class="list-decimal list-inside mt-4 space-y-3">
+                             <li><strong>Final Quality Control:</strong> Perform one last walk-around of the vehicle in good light. Check for any imperfections.</li>
+                             <li><strong>Stage the Vehicle:</strong> Park the vehicle in the designated delivery area, ready for customer pickup.</li>
+                             <li><strong>Communicate Completion:</strong> Inform the Shop Manager or Salesperson that the vehicle is 100% complete, has passed QC, and is ready for customer handoff.</li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>
