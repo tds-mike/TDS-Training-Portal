@@ -7,6 +7,7 @@
     <script src="auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
     <script src="footer.js" defer></script>
     <script src="module-navigation.js" defer></script>
     <style>
@@ -23,20 +24,14 @@
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
 
-    <header class="bg-gray-900 text-white shadow-md">
-        <div class="container mx-auto px-6 py-4 text-center">
-            <h1 class="text-4xl font-bold"><span class="text-green-400">TDS</span> Central Training Portal</h1>
-        </div>
-    </header>
+    <main-header></main-header>
 
     <main class="container mx-auto px-6 py-12">
-        <!-- Hero Section -->
         <section class="text-center py-16">
         <h2 class="text-5xl font-bold mb-4"><center><img src="tds-white-w-outline-blk-small.png"></center></h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">This is the starting point for all training and development at The Detail Shop. Please enter the password provided by Shop Manager, then you may select your department below to access your dedicated training portal.</p>
         </section>
 
-        <!-- Portal Selection -->
         <section class="py-12">
     <div id="portal-links-container" class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 hidden">
         <a href="shop_index.html" class="block rounded-lg shadow-lg overflow-hidden portal-card">
@@ -79,7 +74,7 @@
 </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 <script>
     // Check if the user is already logged in from this session
     if (sessionStorage.getItem('isLoggedIn') === 'true') {
