@@ -15,6 +15,9 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .details-arrow { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -56,7 +59,7 @@
                 </div>
 
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">3. Product Deep Dive: Our Film Hierarchy</h4>
+                    <h3 class="text-3xl font-semibold mb-3">3. Product Deep Dive: Our Film Hierarchy</h3>
                     <p class="text-gray-600 mb-4">Educating the customer on the clear, tiered benefits of our film options positions you as an expert and justifies the value of our premium products.</p>
                     <div class="overflow-x-auto">
                         <table class="w-full text-sm">
@@ -142,12 +145,41 @@
                     </div>
                 </div>
 
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">7. Putting It All Together: Sample Phone Consultation</h3>
+                    <p class="text-gray-600 mb-4">This example script demonstrates how to use the NEPQ framework and product knowledge in a real phone conversation to guide a customer from a price inquiry to a scheduled appointment.</p>
+                    
+                    <details class="bg-gray-50 border rounded-md">
+                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
+                            <span>Click to Expand/Collapse Full Tint Inquiry Script</span>
+                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <div class="p-6 border-t text-gray-700 space-y-3">
+                            <p><strong>Salesperson:</strong> "Thanks for calling The Detail Shop, this is [Your Name]. How can I help you?"</p>
+                            <p><strong>Client:</strong> "Hi, I was just looking to get a price for window tint on my new Honda Civic."</p>
+                            <p><strong>Salesperson:</strong> "Excellent, I can definitely help with that. So I can give you the most accurate information, who do I have the pleasure of speaking with?"</p>
+                            <p><strong>Client:</strong> "My name is Sarah."</p>
+                            <p><strong>Salesperson:</strong> "Great to meet you, Sarah. <em>[Connecting Question]</em> To give you the best recommendation, are you looking for tint more for privacy and the sleek look, or is rejecting that summer heat a bigger priority for you?"</p>
+                            <p><strong>Client:</strong> "Hmm, I guess mostly for the heat. My last car had a black interior and it was unbearable in the summer."</p>
+                            <p><strong>Salesperson:</strong> "I know exactly what you mean, it can be brutal. <em>[Problem Awareness]</em> So when you get in your car on a hot day, is the main issue the leather seats being hot, or is it more the sun beating on you while you're driving?"</p>
+                            <p><strong>Client:</strong> "It's both really. I have to blast the AC for 10 minutes before I can even think about driving."</p>
+                            <p><strong>Salesperson:</strong> "That makes perfect sense. <em>[Educate Briefly]</em> Based on what you've said, our Ceramic film is going to be the best solution for you. While our Carbon film is great for looks, the Ceramic film is designed specifically to block infrared heat. It makes a massive difference in comfort."</p>
+                            <p><strong>Client:</strong> "Okay, so what does that cost?"</p>
+                            <p><strong>Salesperson:</strong> "For a full installation on your Civic with the Ceramic film, you're looking at [Price]. That comes with a 10-year warranty against any bubbling or fading."</p>
+                            <p><strong>Client:</strong> "Okay, that's a bit more than I was expecting."</p>
+                            <p><strong>Salesperson:</strong> <em>[Diffuse Concern]</em> "I understand. It's definitely a premium product. The main difference you're paying for is that feeling of getting into a car that's significantly cooler every single day. <em>[Consequence Question]</em> How much of a difference would it make for your daily commute if the car was comfortable from the moment you got in, without having to wait for the AC to cool it down?"</p>
+                            <p><strong>Client:</strong> "That would be a huge difference. I drive a lot for work."</p>
+                            <p><strong>Salesperson:</strong> <em>[Transition/Committing Question]</em> "It sounds like this is the right long-term solution to solve that heat problem for good. I have an opening this Friday morning at 9 AM, would that work for you to get it installed?"</p>
+                            <p><strong>Client:</strong> "Yes, that works perfectly. Let's do it."</p>
+                        </div>
+                    </details>
+                </div>
+
             </div>
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
 </body>
 </html>
-

@@ -15,6 +15,9 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .details-arrow { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -30,7 +33,6 @@
 
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <h3 class="text-3xl font-semibold mb-3">1. The Core Benefits of PPF</h3>
-                    <p class="text-gray-600 mb-4">These are the fundamental value propositions that form the foundation of any PPF sales conversation.</p>
                      <ul class="list-disc list-inside space-y-2 mt-2 pl-4 text-gray-700">
                         <li><strong>Impact & Scratch Protection:</strong> Provides a robust, sacrificial barrier against rock chips, road debris, scratches, and minor dings.</li>
                         <li><strong>Self-Healing Properties:</strong> Minor scratches and swirl marks on the film's top coat disappear when exposed to heat.</li>
@@ -56,7 +58,7 @@
                 </div>
 
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">3. Product Deep Dive: Self-Healing Armor</h4>
+                    <h3 class="text-3xl font-semibold mb-3">3. Product Deep Dive: Self-Healing Armor</h3>
                     <p class="text-gray-600 mb-4">Understanding the technology helps you sell with confidence.</p>
                     <div class="education-box">
                         <h4 class="font-bold text-lg">The "Screen Protector" Analogy</h4>
@@ -173,13 +175,37 @@
                         <p class="mt-2"><strong>Script:</strong> <em>"So, as you can see, they do two completely different jobs. The PPF is the armor that stops physical damage, and the ceramic coating is the force field that makes it incredibly glossy and easy to clean. That's why our most popular package for new car owners is to apply PPF to the high-impact areas on the front end, and then apply a ceramic coating over the entire vehicle, including the film. This gives you the absolute best of both worlds: impact protection where you need it most, and effortless cleaning and gloss everywhere else."</em></p>
                     </div>
                 </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">7. Putting It All Together: Sample Phone Consultation</h3>
+                    <p class="text-gray-600 mb-4">This example script demonstrates a full consultation for a new car owner interested in PPF.</p>
+                    <details class="bg-gray-50 border rounded-md">
+                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
+                            <span>Click to Expand/Collapse Full PPF Inquiry Script</span>
+                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <div class="p-6 border-t text-gray-700 space-y-3">
+                            <p><strong>Salesperson:</strong> "Thanks for calling The Detail Shop, this is [Your Name]."</p>
+                            <p><strong>Client:</strong> "Hi, I just bought a new BMW M3 and my friend said I should call you about getting it protected."</p>
+                            <p><strong>Salesperson:</strong> "Congratulations on the new M3, that's an incredible car! You've definitely called the right place. <em>[Connecting Question]</em> What was it about protecting the car that was on your mind?"</p>
+                            <p><strong>Client:</strong> "Well, I drive on the Merritt Parkway every day, and I'm terrified of getting rock chips on the front end."</p>
+                            <p><strong>Salesperson:</strong> "That's the #1 concern we hear from new car owners, especially for highway drivers. <em>[Problem Awareness]</em> So when you're driving, are you finding yourself keeping a huge distance from the car in front of you, just worried about what might kick up and hit your paint?"</p>
+                            <p><strong>Client:</strong> "Yes, exactly! It's stressful. I want to enjoy my new car, not worry about it constantly."</p>
+                            <p><strong>Salesperson:</strong> "That's completely understandable. The service you're looking for is Paint Protection Film, or PPF. The easiest way to think of it is like a screen protector for your car's paint. It's a thick, clear film that takes the impact so your paint doesn't have to."</p>
+                            <p><strong>Client:</strong> "Okay, that makes sense. Does it cover the whole car?"</p>
+                            <p><strong>Salesperson:</strong> "It can, but our most popular package is the Full Front End. We protect the entire hood, fenders, bumper, and mirrors—all the high-impact areas. <em>[Consequence Question]</em> What do you think would happen to the value and your enjoyment of the car a year from now if you didn't protect it and the front end was covered in chips?"</p>
+                            <p><strong>Client:</strong> "I'd hate it. It would drive me crazy and definitely hurt the resale value."</p>
+                            <p><strong>Salesperson:</strong> <em>[Transition/Committing Question]</em> "It sounds like getting that peace of mind and protecting your investment is a huge priority. Based on that, our Full Front End package is the perfect solution. The next step would be to get you on the schedule. How does next Thursday look for you?"</p>
+                             <p><strong>Client:</strong> "That works. Let's lock it in."</p>
+                        </div>
+                    </details>
+                </div>
 
             </div>
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
 </body>
 </html>
-
