@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TDS Training Portal</title>
+    <script src="auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="footer.js" defer></script>
@@ -37,39 +38,71 @@
 
         <!-- Portal Selection -->
         <section class="py-12">
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-                <!-- Shop Portal Card -->
-                <a href="shop_index.html" class="block rounded-lg shadow-lg overflow-hidden portal-card">
-                    <div class="p-8">
-                        <div class="mb-4 text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-bold text-center text-gray-900">Shop Technician Portal</h3>
-                        <p class="text-gray-600 text-center mt-2">Access in-depth guides on detailing procedures, chemical usage, safety, and hands-on training pathways.</p>
-                    </div>
-                     <div class="bg-blue-500 text-white text-center font-bold py-4">
-                        Enter Shop Portal
-                    </div>
-                </a>
-
-                <!-- Sales Portal Card -->
-                <a href="sales_index.html" class="block rounded-lg shadow-lg overflow-hidden portal-card">
-                     <div class="p-8">
-                        <div class="mb-4 text-amber-500">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-bold text-center text-gray-900">Sales Team Portal</h3>
-                        <p class="text-gray-600 text-center mt-2">Access product knowledge modules, advanced sales techniques, and strategies for consulting with our clients.</p>
-                    </div>
-                    <div class="bg-amber-500 text-gray-900 text-center font-bold py-4">
-                        Enter Sales Portal
-                    </div>
-                </a>
+    <div id="portal-links-container" class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 hidden">
+        <a href="shop_index.html" class="block rounded-lg shadow-lg overflow-hidden portal-card">
+            <div class="p-8">
+                <div class="mb-4 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                </div>
+                <h3 class="text-3xl font-bold text-center text-gray-900">Shop Technician Portal</h3>
+                <p class="text-gray-600 text-center mt-2">Access in-depth guides on detailing procedures, chemical usage, safety, and hands-on training pathways.</p>
             </div>
-        </section>
+             <div class="bg-blue-500 text-white text-center font-bold py-4">
+                Enter Shop Portal
+            </div>
+        </a>
+
+        <a href="sales_index.html" class="block rounded-lg shadow-lg overflow-hidden portal-card">
+             <div class="p-8">
+                <div class="mb-4 text-amber-500">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </div>
+                <h3 class="text-3xl font-bold text-center text-gray-900">Sales Team Portal</h3>
+                <p class="text-gray-600 text-center mt-2">Access product knowledge modules, advanced sales techniques, and strategies for consulting with our clients.</p>
+            </div>
+            <div class="bg-amber-500 text-gray-900 text-center font-bold py-4">
+                Enter Sales Portal
+            </div>
+        </a>
+    </div>
+
+    <div id="password-gate" class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-md">
+        <form id="login-form">
+            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Enter Password to Access Portals</label>
+            <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mt-4">
+                Enter
+            </button>
+            <p id="error-message" class="text-red-500 text-xs italic mt-2 text-center"></p>
+        </form>
+    </div>
+</section>
     </main>
 
     <main-footer><script src="navigation.js" defer></script></main-footer>
+<script>
+    // Check if the user is already logged in from this session
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        document.getElementById('password-gate').classList.add('hidden');
+        document.getElementById('portal-links-container').classList.remove('hidden');
+    }
 
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+        const passwordGate = document.getElementById('password-gate');
+        const portalLinks = document.getElementById('portal-links-container');
+
+        // IMPORTANT: Change 'your-secret-password' to your actual password
+        if (password === 'TheDetailShop2019$') {
+            sessionStorage.setItem('isLoggedIn', 'true');
+            passwordGate.classList.add('hidden');
+            portalLinks.classList.remove('hidden');
+        } else {
+            errorMessage.textContent = 'Incorrect password. Please try again.';
+        }
+    });
+</script>
 </body>
 </html>
