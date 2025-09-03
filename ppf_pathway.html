@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - PPF Training Pathway</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .task-list li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; }
+        .task-list input { margin-top: 5px; margin-right: 0.75rem; flex-shrink: 0; }
+        .sign-off { margin-top: 1.5rem; border-top: 2px solid #e5e7eb; padding-top: 1.5rem; }
+        .day-block { margin-top: 1.5rem; border-left: 3px solid #f3f4f6; padding-left: 1rem; }
+        
+        @media print {
+            body * { visibility: hidden; } .printable-section, .printable-section * { visibility: visible; }
+            .printable-section { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: none !important; padding: 1rem; }
+            .no-print { display: none !important; } .printable-section h2, .printable-section h3, .printable-section h4 { text-align: center; }
+            .page-break { page-break-after: always; } .task-list a { text-decoration: none; color: inherit; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+    <main-header></main-header>
+    <main class="container mx-auto px-6 py-12">
+        <div class="printable-section">
+            <div class="text-center">
+                <h2 class="text-5xl font-bold mb-4 text-indigo-600">Advanced Pathway: PPF Certification</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">This 4-week curriculum is for Certified Core Detailers specializing in Paint Protection Film. PPF requires extreme attention to detail. This program builds the foundational skills and advanced techniques for a flawless, invisible installation.</p>
+                <div class="no-print mb-12"><button onclick="window.print()" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Print This Curriculum</button></div>
+            </div>
+            <div class="space-y-12">
+                <!-- Week 1: Prep & Fundamentals -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-indigo-600 section-title border-indigo-200">Week 1: Prep & Squeegee Fundamentals</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Re-read the <a href="ppf.html" class="text-blue-600 hover:underline">PPF Guide</a>, focusing on the "Non-Negotiable Prep Protocol."</span></li><li><input type="checkbox"><span>Demonstrate correct mixing of ImmoGel (slip) and Tack solutions.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Practice Squeegee Technique:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Spend 4-5 hours on a test hood practicing the "Float, Anchor, Squeegee" method with scrap film. Goal is a bubble/lift-free finish.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Shadow & Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Shadow a Full Front End installation, assisting with surgical prep and final wipe-downs.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Demonstrate Small Parts:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised installation on headlights and mirrors.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Fundamentals:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Independently prep and install film on a test hood to TDS Standard.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                 <!-- Week 2: Complex Curves & Bumpers -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-indigo-600 section-title border-indigo-200">Week 2: Complex Curves & Bumpers</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn & Practice:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Review advanced sections of the <a href="ppf.html" class="text-blue-600 hover:underline">PPF Guide</a> on stretching and heat use.</span></li><li><input type="checkbox"><span>Practice conforming film on a test bumper with a steamer.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Shadow & Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Shadow a bumper installation, assisting with cleaning and positioning the film.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Demonstrate Bumper:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised bumper installation on a client vehicle.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Demonstrate Fenders:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised fender installation, focusing on wrapping edges.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Bumper Install:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Independently install a bumper kit to TDS Standard.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                <!-- Week 3: Full Front End & Edge Work -->
+                 <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-indigo-600 section-title border-indigo-200">Week 3: Full Front End & Edge Work</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Hoods:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised full hood installation.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Full Front End Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Assist mentor on a Full Front End, installing the hood and fenders under supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Edge Work Mastery:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Spend 3-4 hours on test panels practicing advanced edge wrapping and corner techniques.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Supervised Full Front End:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a full front end installation on a client vehicle under mentor supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Review & Refine:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Mentor reviews Thursday's install and provides detailed feedback for refinement.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                 <!-- Week 4: Certification -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h4 class="text-3xl font-semibold mb-6 text-indigo-600 section-title border-indigo-200">Week 4: Quality Control & Certification</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday & Tuesday - Final Project:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Project:** Perform a complete Full Front End installation with minimal supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Quality Control:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Learn the post-install QC check. Inspect your own final project for any flaws (lift lines, bubbles, contamination).</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Troubleshooting:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Mentor creates common issues on a test panel (lift lines, small bubbles). Trainee must identify and fix them.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Review:** Shop manager inspects final project and discusses readiness for independent work.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Shop Manager Sign-Off (TDS PPF SPECIALIST CERTIFIED):</strong> _________________________</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main-footer></main-footer>
+</body>
+</html>

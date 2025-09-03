@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Tinting Training Pathway</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <!-- No module-navigation.js here as this is a separate track -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .task-list li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; }
+        .task-list input { margin-top: 5px; margin-right: 0.75rem; flex-shrink: 0; }
+        .sign-off { margin-top: 1.5rem; border-top: 2px solid #e5e7eb; padding-top: 1.5rem; }
+        .day-block { margin-top: 1.5rem; border-left: 3px solid #f3f4f6; padding-left: 1rem; }
+        
+        @media print {
+            body * { visibility: hidden; } .printable-section, .printable-section * { visibility: visible; }
+            .printable-section { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: none !important; padding: 1rem; }
+            .no-print { display: none !important; } .printable-section h2, .printable-section h3, .printable-section h4 { text-align: center; }
+            .page-break { page-break-after: always; } .task-list a { text-decoration: none; color: inherit; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+    <main-header></main-header>
+    <main class="container mx-auto px-6 py-12">
+        <div class="printable-section">
+            <div class="text-center">
+                <h2 class="text-5xl font-bold mb-4 text-purple-600">Advanced Pathway: Window Tinting Certification</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">This 3-week curriculum is for Certified Core Detailers specializing in window tinting. The goal is to build the technical skill, precision, and efficiency required to become a professional TDS film installer.</p>
+                <div class="no-print mb-12"><button onclick="window.print()" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Print This Curriculum</button></div>
+            </div>
+            <div class="space-y-12">
+                <!-- Week 1: Fundamentals & Film Manipulation -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-purple-600 section-title border-purple-200">Week 1: Fundamentals & Film Manipulation</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Re-read the <a href="tint.html" class="text-blue-600 hover:underline">Tint Guide</a> entirely.</span></li><li><input type="checkbox"><span>Practice plotter usage: Load film, select patterns in CORE, and weed 5+ jobs.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Practice Shrinking:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Spend 3-4 hours on a test rear windshield practicing the traditional "H-pattern" shrink until consistent.</span></li><li><input type="checkbox"><span>Spend 2 hours on a test side window mastering the "Snap-Shrink" method.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Practice Hand-Cutting:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Shadow mentor on a full tint job, focusing on their prep and installation workflow.</span></li><li><input type="checkbox"><span>Spend 3 hours on test glass practicing hand-cutting patterns for side windows.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Demonstrate Prep:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised, surgical-level glass prep on a client vehicle's side windows.</span></li><li><input type="checkbox"><span>Assist mentor on a "2 Fronts" installation, handling the prep and liner removal.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Fundamentals:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Flawlessly shrink a rear windshield and a side window for mentor review.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                <!-- Week 2: Side Windows & Installation Mastery -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-purple-600 section-title border-purple-200">Week 2: Side Windows & Installation</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn & Shadow:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Review installation methods in the <a href="tint.html" class="text-blue-600 hover:underline">Tint Guide</a> (Seal Removal vs. Two-Stage).</span></li><li><input type="checkbox"><span>Shadow a full tint install, focusing on how the mentor avoids contamination.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Demonstrate "2 Fronts":</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised installation of "2 Fronts" on a client vehicle.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Demonstrate "2 Fronts":</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a second supervised installation of "2 Fronts", aiming to improve speed and reduce contamination.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Full Vehicle Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Assist on a full vehicle tint, installing all side windows under supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Side Windows:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Independently install "2 Fronts" to TDS Standard (no creases, minimal contamination, clean edges).</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                <!-- Week 3: Complex Glass & Certification -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h4 class="text-3xl font-semibold mb-6 text-purple-600 section-title border-purple-200">Week 3: Complex Glass & Certification</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Rear Windshields:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Assist mentor on two rear windshield installations.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Rear Windshields:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised rear windshield installation.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Full Vehicle Supervised:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a full tint installation on a client vehicle under mentor supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Final Project:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Project:** Perform a full tint installation with minimal supervision, reviewed by Shop Manager.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Review:** Shop manager inspects final project and discusses readiness for independent work.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Shop Manager Sign-Off (TDS TINT SPECIALIST CERTIFIED):</strong> _________________________</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main-footer></main-footer>
+</body>
+</html>

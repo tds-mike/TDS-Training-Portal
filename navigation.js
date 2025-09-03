@@ -1,16 +1,5 @@
 /**
  * TDS Training Portal Navigation Module
- *
- * This script defines a custom HTML element <main-header> that dynamically
- * generates the site's header, a desktop navigation with dropdowns, and
- * a unified slide-out navigation menu for mobile with an accordion feature.
- * It reduces code duplication and simplifies maintenance.
- *
- * Usage:
- * 1. Include this script in your HTML page: <script src="navigation.js" defer></script>
- * 2. Place the custom element where you want the header: <main-header></main-header>
- *
- * The script automatically highlights the active page link.
  */
 class MainHeader extends HTMLElement {
     connectedCallback() {
@@ -32,6 +21,11 @@ class MainHeader extends HTMLElement {
                     { href: 'interior.html', text: 'Interior Restoration' },
                     { href: 'tint.html', text: 'Window Tinting Guide' },
                     { href: 'ppf.html', text: 'PPF Installation Guide' }
+                ],
+                 "Advanced Pathways": [
+                    { href: 'tint_pathway.html', text: 'Tinting Pathway' },
+                    { href: 'ppf_pathway.html', text: 'PPF Pathway' },
+                    { href: 'vinyl_pathway.html', text: 'Vinyl Pathway' }
                 ],
                 "Resources": [
                     { href: 'checklists.html', text: 'Printable Checklists' }
@@ -157,7 +151,6 @@ class MainHeader extends HTMLElement {
     }
 
     addEventListeners() {
-        // ... (rest of the event listener code remains the same)
         const menuButton = this.querySelector('#mobile-menu-button');
         const closeMenuButton = this.querySelector('#close-menu-button');
         const slideOutMenu = this.querySelector('#slide-out-menu');
@@ -182,6 +175,7 @@ class MainHeader extends HTMLElement {
             menuOverlay.addEventListener('click', toggleMenu);
         }
         
+        // Accordion functionality
         this.querySelectorAll('.accordion-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -191,7 +185,13 @@ class MainHeader extends HTMLElement {
                     content.style.maxHeight = '0px';
                     icon.classList.remove('rotate-180');
                 } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    // Temporarily set to auto to get the full scroll height, then set it
+                    content.style.maxHeight = 'auto';
+                    const fullHeight = content.scrollHeight + 'px';
+                    content.style.maxHeight = '0px';
+                    setTimeout(() => {
+                         content.style.maxHeight = fullHeight;
+                    }, 10);
                     icon.classList.add('rotate-180');
                 }
             });
