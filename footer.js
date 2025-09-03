@@ -15,12 +15,14 @@ class MainFooter extends HTMLElement {
             <style>
                 #scrollTopBtn {
                     position: fixed;
-                    bottom: 20px;
+                    /* TWEAK: Increased bottom value to sit above the module progress bar */
+                    bottom: 85px;
                     right: 20px;
                     display: none;
                     transition: opacity 0.3s, transform 0.3s;
                     opacity: 0;
                     transform: translateY(10px);
+                    z-index: 40; /* Ensure it's below the menu but above content */
                 }
                 #scrollTopBtn.show {
                     display: block;
@@ -31,7 +33,7 @@ class MainFooter extends HTMLElement {
             <footer class="bg-gray-900 text-white text-center p-6 mt-12">
                 <p>&copy; 2024 The Detail Shop, LLC. All Rights Reserved.</p>
             </footer>
-            <button id="scrollTopBtn" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold p-3 rounded-full shadow-lg z-30">
+            <button id="scrollTopBtn" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold p-3 rounded-full shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
@@ -66,4 +68,3 @@ class MainFooter extends HTMLElement {
 }
 
 customElements.define('main-footer', MainFooter);
-

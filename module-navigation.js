@@ -1,7 +1,7 @@
 /**
  * TDS Training Portal Module Navigation
  *
- * This script adds a sticky bottom navigation bar with a progress bar, 
+ * This script adds a sticky bottom navigation bar with a progress bar,
  * next/previous module buttons, and estimated completion time.
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -74,16 +74,33 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     `;
-    
-    // Add the navigation bar to the body
+
     document.body.appendChild(navBar);
 
-    // Add padding to the bottom of the body to prevent content from being hidden
-    const setBodyPadding = () => {
+    // TWEAK: This function now applies padding to the body and the slide-out menu.
+    const setPadding = () => {
+        const slideOutMenu = document.getElementById('slide-out-menu');
         const navBarHeight = navBar.offsetHeight;
+
+        // Pad the main body content
         document.body.style.paddingBottom = `${navBarHeight}px`;
+
+        // If the slide-out menu exists, pad it as well.
+        if (slideOutMenu) {
+            slideOutMenu.style.paddingBottom = `${navBarHeight + 20}px`; // Added extra space
+        }
     };
 
-    setBodyPadding();
-    window.addEventListener('resize', setBodyPadding);
+    // TWEAK: Use a reliable interval to wait for the slide-out menu to be created.
+    // This resolves the race condition between the two navigation scripts.
+    const paddingInterval = setInterval(() => {
+        const slideOutMenu = document.getElementById('slide-out-menu');
+        if (slideOutMenu) {
+            setPadding();
+            clearInterval(paddingInterval); // Stop checking once the menu is found and padded.
+        }
+    }, 100);
+
+    // Also apply padding on window resize to handle orientation changes.
+    window.addEventListener('resize', setPadding);
 });

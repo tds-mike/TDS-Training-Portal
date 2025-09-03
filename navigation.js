@@ -3,7 +3,7 @@
  *
  * This script defines a custom HTML element <main-header> that dynamically
  * generates the site's header, a desktop navigation with dropdowns, and
- * a unified slide-out navigation menu for mobile.
+ * a unified slide-out navigation menu for mobile with an accordion feature.
  * It reduces code duplication and simplifies maintenance.
  *
  * Usage:
@@ -55,7 +55,7 @@ class MainHeader extends HTMLElement {
                     { href: 'sales_ppf.html', text: 'Selling PPF' },
                     { href: 'sales_coatings.html', text: 'Selling Ceramic Coatings' },
                     { href: 'sales_paint_correction.html', text: 'Selling Paint Correction' },
-                    { href: 'sales_detailing.html', text: 'Selling Detailing' },        
+                    { href: 'sales_detailing.html', text: 'Selling Detailing' },
                 ],
                 "Testing": [
                     { href: 'sales_quiz.html', text: 'Sales Quiz' },
@@ -64,16 +64,22 @@ class MainHeader extends HTMLElement {
         };
 
         const createSlideOutNav = () => {
-            let html = `<div class="mb-6">
-                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Main Portal</h3>
-                <div class="mt-2 space-y-1">
-                    <a href="index.html" class="block p-2 rounded-md text-base font-medium ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
-                </div>
+            let html = `<div class="mb-4">
+                <a href="index.html" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
             </div>`;
 
             for (const portal in allLinks) {
-                html += `<div class="mb-6">`;
                 const portalData = allLinks[portal];
+                // Check if the current page belongs to this portal to decide if it should be open by default
+                const isCurrentPortal = Object.values(portalData).flat().some(link => link.href === currentPage);
+
+                html += `<div class="mb-2">`;
+                html += `<button class="accordion-toggle w-full text-left p-3 rounded-md text-lg font-semibold flex justify-between items-center ${isCurrentPortal ? 'bg-gray-700' : ''} text-white hover:bg-gray-600">
+                            <span>${portal}</span>
+                            <svg class="w-6 h-6 transform transition-transform ${isCurrentPortal ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                         </button>`;
+                html += `<div class="accordion-content overflow-hidden transition-all duration-300 ease-in-out ${isCurrentPortal ? 'max-h-screen' : 'max-h-0'}" style="padding-left: 1rem;">`;
+
                 for (const category in portalData) {
                     html += `<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4">${category}</h3>`;
                     html += '<div class="mt-2 space-y-1">';
@@ -83,11 +89,11 @@ class MainHeader extends HTMLElement {
                     });
                     html += `</div>`;
                 }
-                html += `</div>`;
+                html += `</div></div>`;
             }
             return html;
         };
-        
+
         const createDesktopDropdown = (portalName) => {
             const portalData = allLinks[portalName];
             let html = `<div class="dropdown-menu absolute hidden bg-gray-800 text-white rounded-md shadow-lg py-2 w-64 z-20">`;
@@ -113,6 +119,7 @@ class MainHeader extends HTMLElement {
                 .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
                 .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
                 .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
+                .accordion-content { transition: max-height 0.3s ease-in-out; }
             </style>
             <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -173,9 +180,23 @@ class MainHeader extends HTMLElement {
             closeMenuButton.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);
         }
+        
+        // Accordion functionality
+        this.querySelectorAll('.accordion-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = '0px';
+                    icon.classList.remove('rotate-180');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
     }
 }
 
 customElements.define('main-header', MainHeader);
-
-
