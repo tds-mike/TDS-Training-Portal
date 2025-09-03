@@ -15,6 +15,8 @@
         .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .phase-box { background-color: #f9fafb; border-left: 4px solid #3b82f6; padding: 1.5rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -23,43 +25,89 @@
 
     <main class="container mx-auto px-6 py-12">
         <section id="sop-content">
-            <h2 class="text-5xl font-bold mb-8 text-sky-600 section-title border-sky-600">Sales SOPs & Checklists</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12">Standard Operating Procedures (SOPs) are essential for delivering a consistent, high-quality customer experience. This framework outlines the process for in-person consultations, combining our NEPQ principles with practical, actionable steps.</p>
+            <h2 class="text-5xl font-bold mb-8 text-sky-600 section-title border-sky-600">Sales SOP & Checklists</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">This is the master checklist for the entire customer journey. Following these Standard Operating Procedures (SOPs) ensures a consistent, professional, and high-quality experience for every client.</p>
 
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-3xl font-semibold mb-6">SOP: In-Person Consultation Framework</h3>
-                
-                <div class="phase-box">
-                    <h4 class="text-2xl font-bold text-gray-800">Phase 1: The Warm Welcome & Discovery</h4>
-                    <p class="mt-2 text-gray-600">The goal is to build rapport and uncover the client's needs before you even get to the vehicle. This is where you connect with the client on a personal level.</p>
-                    <ul class="list-disc list-inside mt-4 space-y-2">
-                        <li><strong>Welcome:</strong> Start with a warm greeting and thank them for coming in.</li>
-                        <li><strong>Qualify:</strong> Ask a broad, open-ended question to understand their motivation. <em class="text-gray-500">"What brought you in today?"</em></li>
-                        <li><strong>Identify the "Why":</strong> Use NEPQ questions to get to the heart of their needs. <em class="text-gray-500">"Is your primary goal to protect the paint, enhance the look, or make the car easier to clean?"</em></li>
-                        <li><strong>Listen Actively:</strong> Pay close attention to their answers. These details are your key selling points for the rest of the conversation.</li>
-                    </ul>
+            <div class="space-y-12">
+                <!-- Phase 1: Inquiry -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 1: Inquiry & Follow-Up</h3>
+                    <p class="text-gray-600">The goal is to provide a rapid, professional response to every inquiry and convert them into a scheduled consultation.</p>
+                    <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Follow-Up Cadence Flowchart</h4>
+                        <div class="mt-4 p-4 border rounded-lg">
+                            <p><strong>Initial Inquiry → Day 1-5:</strong> Daily Follow-Up (Call, Voicemail, Text) <strong>→ Weeks 2-5:</strong> Weekly Follow-Up (Call, Voicemail) <strong>→ Ongoing:</strong> Monthly Follow-Up (Call or Text)</p>
+                        </div>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li>All inquiries are managed in GoHighLevel and must be logged in the customer follow-up log.</li>
+                            <li>The standard procedure is to **always call first, then immediately send a text.**</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="phase-box">
-                    <h4 class="text-2xl font-bold text-gray-800">Phase 2: The On-Site Vehicle Assessment (The Walk-Around)</h4>
-                    <p class="mt-2 text-gray-600">This is where you transition from conversation to a hands-on, educational experience. The walk-around should be about educating and building value, not just selling.</p>
-                    <ul class="list-disc list-inside mt-4 space-y-2">
-                        <li><strong>Assess "As-Is" Condition:</strong> Begin the walk-around by politely pointing out any existing scratches, rock chips, or swirls. This builds a case for the need for your services.</li>
-                        <li><strong>Educate with the Vehicle:</strong> Use the physical car as a teaching tool. Explain how a ceramic coating would protect against future water spots or how PPF would prevent rock chips.</li>
-                        <li><strong>Use Physical Samples:</strong> Bring out samples of your ceramic coating, PPF, or window tint film. Let the customer feel the product's quality.</li>
-                        <li><strong>Offer a Tailored Solution:</strong> Based on your conversation, recommend a specific package that addresses their needs.</li>
-                    </ul>
+                <!-- Phase 2: Drop-Off -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 2: Vehicle Drop-Off & Onboarding</h3>
+                    <p class="text-gray-600">This is where we build trust, diagnose the vehicle, and set clear expectations.</p>
+                    <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Onboarding Checklist</h4>
+                        <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li><strong>Create Invoice in Urable:</strong> Enter all customer and vehicle information (VIN, plate, mileage) while with the client.</li>
+                            <li><strong>Perform Digital Inspection:</strong>
+                                <div class="education-box">
+                                    <h5 class="font-bold">Urable Digital Inspection Protocol</h5>
+                                    <p>A complete inspection is non-negotiable. Required photos include: all four corners of the vehicle, front and rear, odometer showing mileage, and clear close-ups of any pre-existing damage (swirls, scratches, curb rash, interior stains).</p>
+                                </div>
+                            </li>
+                            <li><strong>Conduct Vehicle Walk-Around:</strong> Physically point out damages to the customer. This is your opportunity to diagnose their needs using <a href="sales_nepq_framework.html" class="text-blue-600 hover:underline">NEPQ skills</a>.</li>
+                            <li><strong>Use In-Shop Displays:</strong> Use the tint heat lamp, ceramic-coated hood, and PPF displays to demonstrate the real-world benefits of our services and plant seeds for upsells.
+                                <div class="pro-tip">
+                                    <h4 class="font-bold">Resource Link</h4>
+                                    <p>Refer to the <a href="sales_tint.html" class="text-blue-600 hover:underline">Selling Window Tint</a>, <a href="sales_ppf.html" class="text-blue-600 hover:underline">Selling PPF</a>, and <a href="sales_coatings.html" class="text-blue-600 hover:underline">Selling Ceramic Coatings</a> guides for key talking points.</p>
+                                </div>
+                            </li>
+                            <li><strong>Set Final Expectations:</strong> Review the scope of work, expected outcomes, and pick-up time. Answer any questions.</li>
+                            <li><strong>Secure Approval & Deposit:</strong> Obtain a customer signature for the work approval in Urable and take a 50% deposit.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="phase-box">
-                    <h4 class="text-2xl font-bold text-gray-800">Phase 3: The Proposal & Close</h4>
-                    <p class="mt-2 text-gray-600">Bring the conversation back to the office to present the final quote and secure the booking.</p>
-                     <ul class="list-disc list-inside mt-4 space-y-2">
-                        <li><strong>Review the Proposal:</strong> Walk the client through the itemized quote, explaining the value of each service.</li>
-                        <li><strong>Address Objections:</strong> Be prepared to handle common objections like price or timing.</li>
-                        <li><strong>Encourage Commitment:</strong> Use your committing questions to gently guide the client toward a decision. <em class="text-gray-500">"Based on what we've discussed, does this feel like the right solution for you and your vehicle?"</em></li>
-                        <li><strong>Confirm Next Steps:</strong> Once they agree, take the deposit, schedule the appointment, and discuss your referral program.</li>
-                    </ul>
+                <!-- Phase 3: During Service -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 3: During Service Communication</h3>
+                    <p class="text-gray-600">Maintain communication and transparency while the vehicle is in our care.</p>
+                     <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Communication Protocol</h4>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                           <li>Monitor technician progress and photos in Urable.</li>
+                           <li>Use compelling before/after photos to provide the customer with a progress update.</li>
+                           <li>If an upsell opportunity arises (e.g., heavy swirls are discovered that need more correction), use the photos to get customer approval for additional work.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Pick-Up -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 4: Vehicle Pick-Up & Handoff</h3>
+                    <p class="text-gray-600">The final handoff is our last chance to make a great impression and build a long-term customer relationship.</p>
+                     <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Handoff Checklist</h4>
+                        <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li>Walk the customer around the vehicle, showcasing the completed work.</li>
+                            <li>Obtain signature on the "Work Completed" approval form.</li>
+                            <li>**Educate on Maintenance:** Explain proper aftercare. Provide any warranty booklets (for coatings/film) and the official CARPRO maintenance guide.</li>
+                            <li>**Sell Maintenance Products:** Recommend the TDS Washbox or other essential maintenance items.</li>
+                            <li>**Schedule Next Appointment:** Proactively offer to book their first maintenance wash.</li>
+                            <li>**Take Final Payment.**</li>
+                            <li>**Reinforce Referral Program:** Hand the customer 3 physical referral cards. **Instruct them: "Be sure to write your name on the back of these before you give them out so you get your service credit."**</li>
+                            <li>**Ask for a Review:** Inform them that an automated link will be sent from Urable in 24 hours and that we would greatly appreciate their feedback with photos.</li>
+                        </ul>
+                        <div class="pro-tip">
+                             <h4 class="font-bold">Handoff Script Starters</h4>
+                             <p><strong>For Selling Products:</strong> <em>"To keep this new coating looking its best, the two most important things are a pH-neutral soap and a clean drying towel. Our maintenance kit right here has everything you need to get started."</em></p>
+                             <p class="mt-2"><strong>For Scheduling Next Service:</strong> <em>"The first wash is the most important for a new coating. While you're here, let's get your first maintenance wash on the calendar for about two weeks from now."</em></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,6 +117,4 @@
 
 </body>
 </html>
-
-
 
