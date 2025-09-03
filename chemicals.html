@@ -16,6 +16,7 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .danger-box { background-color: #FEE2E2; border-left: 4px solid #EF4444; padding: 1.5rem; border-radius: 0.25rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -27,35 +28,51 @@
             <h2 class="text-5xl font-bold mb-8 text-red-600 section-title border-red-600">Chemicals Guide</h2>
             <div class="space-y-12">
 
+                <div class="danger-box">
+                    <h3 class="text-2xl font-bold text-red-800">Chemical Safety & Emergency Protocol</h3>
+                    <p class="mt-2 text-red-700">Safety is the foundation of professionalism. Always know your chemicals and how to handle them.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-red-900">
+                        <li><strong>Eye Contact:</strong> Immediately flush with water. An eye rinse station and first-aid supplies are located in the main bathroom.</li>
+                        <li><strong>Skin Contact:</strong> Wash the affected area thoroughly with soap and water. Remove contaminated clothing.</li>
+                        <li><strong>SDS Binder:</strong> The Safety Data Sheet (SDS) binder contains detailed information on every chemical. It is located [Specify Location].</li>
+                        <li><strong>PPE:</strong> Personal Protective Equipment is located in various toolboxes and on shelves throughout the shop. Nitrile gloves and safety glasses are the minimum required PPE when handling any chemical.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">The "Why": Our Product Philosophy</h3>
+                    <p>We exclusively use professional-grade product lines like CARPRO because they are rigorously tested, highly concentrated, and produce consistent, superior results. Unlike retail products, which are often heavily diluted and contain harsh fillers, our chemicals are designed for specific tasks, ensuring maximum effectiveness and safety on high-end vehicle surfaces. This expertise helps us answer customer questions with authority.</p>
+                </div>
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-3xl font-semibold mb-3">The Science of Cleaning</h3>
-                    <p>Understanding the fundamental types of chemicals we use is crucial for safety and effectiveness. Each chemical is a specialized tool designed for a specific job. Using the right product ensures efficiency and prevents damage to sensitive surfaces like paint, leather, and plastic.</p>
+                    <p>Understanding the fundamental types of chemicals we use is crucial for safety and effectiveness. Each chemical is a specialized tool designed for a specific job.</p>
                     <div class="education-box">
                         <h4 class="font-bold">Key Chemical Components</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2">
-                            <li><strong>Surfactants:</strong> Found in car wash soaps, they reduce surface tension to lift and emulsify dirt and grease, allowing them to be washed away easily.</li>
-                            <li><strong>Solvents:</strong> Dissolve sticky and oily residues like tar, grease, and adhesives. Isopropyl alcohol and mineral spirits are common examples.</li>
-                            <li><strong>Abrasives:</strong> Fine particles found in polishes and compounds that physically wear away imperfections to remove scratches and restore shine to paintwork.</li>
-                            <li><strong>Protectants:</strong> These are waxes, sealants, and coatings that provide a protective barrier against UV rays and contaminants, enhancing shine and durability.</li>
+                            <li><strong>Surfactants:</strong> Found in car wash soaps, they reduce surface tension to lift and emulsify dirt and grease.</li>
+                            <li><strong>Solvents:</strong> Dissolve sticky and oily residues like tar, grease, and adhesives.</li>
+                            <li><strong>Abrasives:</strong> Fine particles in polishes/compounds that physically remove imperfections from paintwork.</li>
+                            <li><strong>Protectants:</strong> Waxes, sealants, and coatings that provide a protective barrier against UV rays and contaminants.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-3xl font-semibold mb-3">Understanding the pH Scale (0-14)</h3>
-                    <p>The pH scale is critical for choosing the right chemical for the task. It measures how acidic or alkaline a substance is. Using the wrong pH can damage surfaces.</p>
+                    <p>The pH scale is critical for choosing the right chemical. Using the wrong pH can damage surfaces.</p>
                     <div class="grid md:grid-cols-3 gap-8 mt-4 text-center">
                         <div>
                             <h4 class="font-bold text-lg">Acidic (pH Below 7)</h4>
-                            <p class="text-sm">Effective at removing mineral deposits, water spots, and rust. Examples include CARPRO Descale and Spotless 2.0.</p>
+                            <p class="text-sm">Effective at removing mineral deposits, water spots, and rust. (e.g., CARPRO Descale)</p>
                         </div>
                         <div>
                             <h4 class="font-bold text-lg">Neutral (pH 7)</h4>
-                            <p class="text-sm">Gentle and safe for regular maintenance washes. It cleans effectively without stripping existing waxes, sealants, or coatings. Our primary neutral soap is CARPRO Reset.</p>
+                            <p class="text-sm">Gentle and safe for regular maintenance washes. (e.g., CARPRO Reset)</p>
                         </div>
                         <div>
                             <h4 class="font-bold text-lg">Alkaline/Basic (pH Above 7)</h4>
-                            <p class="text-sm">Excellent at cutting through grease, oils, and heavy organic grime. Used for pre-washing and degreasing. An example is CARPRO Lift.</p>
+                            <p class="text-sm">Excellent at cutting through grease, oils, and heavy organic grime. (e.g., CARPRO Lift)</p>
                         </div>
                     </div>
                      <div class="pro-tip">
@@ -66,78 +83,147 @@
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">Comprehensive Chemical Arsenal & Dilution Ratios</h3>
-                    <div class="space-y-10">
+                    <h3 class="text-3xl font-semibold mb-3">Comprehensive Chemical Arsenal</h3>
+                     <div class="space-y-10">
                         <div>
                             <h4 class="text-2xl font-semibold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Exterior Wash & Decontamination</h4>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Lift:</strong> Alkaline pre-wash foam. High pH to dissolve heavy road film. Dilute 1:10.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Descale:</strong> Acidic soap. Removes stubborn mineral deposits and water spots. Dilute 1:10.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reset:</strong> pH-Neutral maintenance soap. Dilute 1:1500 (1oz per 4 gallons).</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Hydro2 Foam:</strong> Wash and seal soap. Leaves SiO2 protection. Dilute 1:10.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>IronX:</strong> pH-Neutral iron remover. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tar X:</strong> Solvent-based tar & adhesive remover. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>TriX:</strong> Iron & Tar remover combo. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>BugOut:</strong> Intensive bug remover. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Spotless 2.0:</strong> Strong acid water spot remover. Use with caution. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Ech2o Concentrate:</strong> Dilutions: 1:200 (Rinseless Wash), 1:40 (Clay Lube), 1:25 (Quick Detailer), 1:15 (Waterless Pre-Soak).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Lift:</strong> Alkaline pre-wash foam. High pH to dissolve heavy road film.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Descale:</strong> Acidic soap. Removes stubborn mineral deposits and water spots.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reset:</strong> pH-Neutral maintenance soap. Safely cleans without stripping protection.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Hydro2 Foam:</strong> Wash and seal soap. Leaves SiO2 protection.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>IronX:</strong> pH-Neutral iron remover. Dissolves embedded ferrous particles.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tar X:</strong> Solvent-based tar & adhesive remover.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>TriX:</strong> Iron & Tar remover combo. A time-saver.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>BugOut:</strong> Intensive bug remover. Breaks down bug remains.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Spotless 2.0:</strong> Strong acid water spot remover. Use with caution.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Ech2o Concentrate:</strong> Highly versatile for Rinseless Wash, Clay Lube, and Quick Detailer.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Optimum No Rinse:</strong> Alternative for rinseless washes.</div>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-2xl font-semibold text-sky-600 border-b-2 border-sky-200 pb-2 mb-4">Exterior Protection & Finishing</h4>
-                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Eraser:</strong> Oil & polish remover. Essential pre-coating wipe. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reload:</strong> SiO2 spray sealant (3-6 month protection). Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>EliXir:</strong> Quick detailer for high gloss. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Release:</strong> Wax-based spray for protecting fresh coatings. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify PHOBIC:</strong> Glass cleaner & sealant combo. Use RTU.</div>
+                            <h4 class="text-2xl font-semibold text-amber-600 border-b-2 border-amber-200 pb-2 mb-4">Paint Correction Compounds & Polishes</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>UltraCut:</strong> Most aggressive compound. For removing deep scratches and severe defects.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ClearCut:</strong> Fast-acting compound for heavy defect removal with less dusting.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Fixer:</strong> One-step polish/compound. Removes moderate swirls and scratches.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reflect:</strong> Finishing polish. Creates a deep, jeweled, swirl-free finish.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Essence:</strong> All-in-One primer polish. Minor correction, extreme gloss, and SiO2 primer.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>3D Speed:</strong> All-in-One alternative. A cleaner wax with light correction.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-semibold text-sky-600 border-b-2 border-sky-200 pb-2 mb-4">Exterior Protection, Coatings & Finishing</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Eraser:</strong> Oil & polish remover. Essential pre-coating/PPF wipe.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Reload:</strong> SiO2 spray sealant (3-6 month protection).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>EliXir:</strong> Quick detailer for high gloss and slickness.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Lite:</strong> User-friendly ceramic coating (~1 year protection).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ UK 3.0:</strong> Our primary professional coating (3+ years durability).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>DQUARTZ:</strong> Premium, high-density coating (10+ years durability).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Leather 2.0:</strong> Durable coating for leather surfaces.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CQUARTZ Fabric 2.0:</strong> Super-hydrophobic coating for fabric.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify PHOBIC:</strong> Glass cleaner & sealant combo.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Release:</strong> Wax-based spray for protecting fresh coatings.</div>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-2xl font-semibold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Interior Cleaning & Protection</h4>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>MultiX:</strong> All-purpose cleaner for heavy interior tasks. Dilute 1:20.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Inside:</strong> Leather & vinyl cleaner. Dilute 1:1 or 1:2.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>InnerQD:</strong> Light cleaning and anti-static protection. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>SO2Pure 2.0:</strong> Odor eliminator. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify:</strong> Ammonia-free glass cleaner. Use RTU.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>MultiX:</strong> All-purpose cleaner for heavy interior tasks.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Inside:</strong> Leather & vinyl cleaner. Lifts dirt from grain.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>InnerQD:</strong> Interior quick detailer. Cleans light dust, adds anti-static properties.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>SO2Pure 2.0:</strong> Odor eliminator. Breaks down organic odors.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Clarify:</strong> Ammonia-free, tint-safe glass cleaner.</div>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-2xl font-semibold text-gray-700 border-b-2 border-gray-300 pb-2 mb-4">Wheels, Tires, & Dressing</h4>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>WheelX:</strong> Dedicated wheel cleaner. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ReTyre:</strong> Heavy-duty tire & rubber cleaner. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>DarkSide:</strong> High gloss tire sealant. Use RTU.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>PERL:</strong> Versatile dressing. Dilutions: 1:1 (Tires), 1:3 (Engine/Exterior Plastic), 1:5 (Interior).</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>WheelX:</strong> Dedicated wheel cleaner for brake dust and grime.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ReTyre:</strong> Heavy-duty tire & rubber cleaner. Removes old dressing.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>DarkSide:</strong> High gloss, durable tire sealant.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>PERL:</strong> Versatile water-based dressing for plastic, engine, rubber, leather.</div>
                             </div>
                         </div>
                          <div>
                             <h4 class="text-2xl font-semibold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Film Installation Solutions</h4>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ImmoGel:</strong> PPF slip solution concentrate. Dilute 1:100 with water.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tint Slip Solution:</strong> Baby shampoo or Tint Slime. Mix 1oz per gallon of water.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tack Solution:</strong> For setting PPF edges. Mix 20% Isopropyl Alcohol with 80% water.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>ImmoGel:</strong> PPF slip solution concentrate.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tint Slip Solution:</strong> Baby shampoo or Tint Slime.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Tack Solution:</strong> For setting PPF edges.</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6 border-b pb-4">Knowledge Check</h3>
-                     <div class="space-y-4">
-                        <p><strong>1. What is the correct dilution ratio for CARPRO Reset for a standard maintenance wash?</strong></p>
-                        <p><strong>2. A client's car has heavy mineral deposits (water spots). Which primary soap would you choose for the decon wash?</strong></p>
-                        <p><strong>3. You need to dress the plastic trim on a vehicle's exterior. What is the correct dilution for CARPRO PERL?</strong></p>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <button class="bg-amber-500 text-gray-900 font-bold py-2 px-4 rounded hover:bg-amber-600">Submit Answers (Coming Soon)</button>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Quick-Reference Dilution Chart</h3>
+                    <p class="mb-4">Proper dilution is essential for safety, effectiveness, and cost-control. If you notice a chemical is running low, report it to the shop manager immediately.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-100"><tr class="text-left"><th class="p-2">Product</th><th class="p-2">Purpose</th><th class="p-2">Dilution Ratio</th></tr></thead>
+                            <tbody>
+                                <tr class="border-b"><td class="p-2 font-semibold">Lift</td><td>Alkaline Pre-Wash Foam</td><td class="p-2">1:10</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Descale</td><td>Acidic Soap (Minerals/Spots)</td><td class="p-2">1:10</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Reset</td><td>pH-Neutral Maintenance Soap</td><td class="p-2">1:1500 (1oz / 4 gal)</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">MultiX</td><td>All-Purpose Cleaner (Interior)</td><td class="p-2">1:20</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Inside</td><td>Leather & Vinyl Cleaner</td><td class="p-2">1:1 to 1:2</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">PERL</td><td>Tires / Engine / Interior Dressing</td><td class="p-2">1:1 / 1:3 / 1:5</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Ech2o</td><td>Rinseless / Clay Lube / QD</td><td class="p-2">1:200 / 1:40 / 1:25</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">ImmoGel</td><td>PPF Slip Solution</td><td class="p-2">1:100</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                 <div class="text-center">
-                     <a href="#" class="text-blue-600 hover:underline">[Link to Full Chemical SOP Document]</a>
-                 </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Troubleshooting with Chemicals</h3>
+                    <p>Quick reference guide for common detailing challenges.</p>
+                     <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-100"><tr class="text-left"><th class="p-2">Problem</th><th class="p-2">Primary Chemical</th><th class="p-2">Technique</th></tr></thead>
+                            <tbody>
+                                <tr class="border-b"><td class="p-2 font-semibold">Heavy Brake Dust (Iron)</td><td>CARPRO IronX</td><td>Spray on cool, dry wheel. Let dwell until it turns purple, agitate, rinse.</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Road Tar / Tree Sap</td><td>CARPRO Tar X</td><td>Apply to a microfiber towel, gently wipe affected area. Do not spray directly on paint.</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Dried Bug Guts</td><td>CARPRO BugOut</td><td>Spray on area, let dwell for 1-2 minutes to break down enzymes, then wash.</td></tr>
+                                <tr class="border-b"><td class="p-2 font-semibold">Oily Interior Grime</td><td>CARPRO MultiX (1:20)</td><td>Spray on a brush, agitate surface to lift grime from grain, wipe with clean towel.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Shop Protocols & Best Practices</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Chemical Handling & Storage</h4>
+                            <ul class="list-disc list-inside space-y-2 pl-4">
+                                <li><strong>Label Everything:</strong> Any chemical transferred into a secondary container (like a spray bottle) MUST be clearly labeled with the chemical name and its dilution ratio.</li>
+                                <li><strong>Proper Storage:</strong> Always return chemicals to their designated cabinets with caps sealed tightly. Flammable liquids must be kept in the fire-rated safety cabinet.</li>
+                                <li><strong>Check for Leaks:</strong> Regularly inspect bottles and spray heads for any leaks or damage.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Tool & Applicator Management</h4>
+                            <div class="pro-tip">
+                                <h4 class="font-bold">One Tool, One Purpose</h4>
+                                <p>To prevent cross-contamination, towels, pads, and brushes must be dedicated. A towel used for sealant should never touch a car being prepped for coating. Dedicate specific applicators for specific jobs (e.g., separate pads for compounding, polishing, and waxing).</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Shop Environment & Personal Habits</h4>
+                             <div class="education-box">
+                                <h4 class="font-bold">Work Clean, Work Safe</h4>
+                                <ul class="list-disc list-inside space-y-2 mt-2">
+                                    <li><strong>Ventilation:</strong> Ensure good airflow, especially when using solvents (TarX, Eraser) or applying ceramic coatings. Open bay doors when possible.</li>
+                                    <li><strong>Product Conservation:</strong> Spray chemicals onto your towel or applicator, not the surface. This prevents wasteful overspray and gives you more control.</li>
+                                    <li><strong>Waste Disposal:</strong> Properly dispose of used towels. Towels soaked with solvents or coatings should be placed in designated, covered fire-safe trash cans.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -146,3 +232,4 @@
 
 </body>
 </html>
+

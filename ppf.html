@@ -16,6 +16,7 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .danger-box { background-color: #FEE2E2; border-left: 4px solid #EF4444; padding: 1.5rem; border-radius: 0.25rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -27,121 +28,203 @@
             <h2 class="text-5xl font-bold mb-8 text-indigo-600 section-title border-indigo-600">The Art of Paint Protection Film</h2>
             <div class="space-y-12">
                  <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">Module 1: The Science & Strategy of PPF</h3>
+                    <h3 class="text-3xl font-semibold mb-3">Module 1: The Science of PPF</h3>
                     <div class="education-box">
                         <h4 class="font-bold">What is PPF? The Invisible Armor</h4>
                         <p>Paint Protection Film is a multi-layered Thermoplastic Urethane (TPU) film that provides a sacrificial barrier between a vehicle's paint and road hazards. Its primary function is impact resistance against rock chips, but it also protects against scratches, chemical etching, and UV damage. The top layer is a "self-healing" clear coat that can re-form when heated, making light scratches disappear.</p>
                     </div>
-                     <div class="grid md:grid-cols-2 gap-8 mt-6">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-2">Coverage Packages Explained</h4>
-                            <ul class="list-disc list-inside space-y-2">
-                                <li><strong>Full Front End:</strong> The most popular choice. Covers the entire bumper, full hood, full fenders, and side mirrors.</li>
-                                <li><strong>Track Pack:</strong> Extends the Full Front package to include A-pillars, roofline, and rocker panels.</li>
-                                <li><strong>Entire Vehicle:</strong> Provides complete peace of mind, protecting every painted panel.</li>
-                            </ul>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Understanding the Layers</h4>
+                        <p>Knowing the composition of the film helps in understanding its properties and limitations.</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 mt-4 pl-4">
+                            <li><strong>Top Coat:</strong> A thin, clear layer that provides self-healing properties and UV resistance.</li>
+                            <li><strong>Polyurethane (TPU):</strong> The thickest layer, providing the film's impact resistance and durability (general stretch limit of 10-15%).</li>
+                            <li><strong>Adhesive:</strong> A specialized, optically clear adhesive that allows the film to be repositioned during installation but forms a strong bond once cured.</li>
+                            <li><strong>Liner:</strong> A protective backing that is removed just before application.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Understanding Coverage Packages & Time Estimates</h4>
+                        <p>Each service level has a defined scope of work and a target completion time.</p>
+                        <div class="overflow-x-auto mt-4">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr class="text-left">
+                                        <th class="p-2 font-semibold">Package Name</th>
+                                        <th class="p-2 font-semibold">Coverage Area</th>
+                                        <th class="p-2 font-semibold">Est. Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-bold">Partial Front End</td>
+                                        <td class="p-2">First 18-24" of hood and fenders, plus full front bumper and mirrors.</td>
+                                        <td class="p-2">~4 Hours</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-bold">Full Front End</td>
+                                        <td class="p-2">Full hood, full fenders, full front bumper, and mirrors. Our most popular package.</td>
+                                        <td class="p-2">~6 Hours</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-bold">Track Pack</td>
+                                        <td class="p-2">Full Front End coverage plus A-pillars, leading edge of the roof, and side skirts/rocker panels.</td>
+                                        <td class="p-2">~8 Hours</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold">Entire Vehicle</td>
+                                        <td class="p-2">Every painted exterior surface of the vehicle.</td>
+                                        <td class="p-2">~20 Hours (3 Days)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div>
-                             <h4 class="text-xl font-semibold mb-2">The Power of Plotters</h4>
-                             <p>Using a plotter with software like CORE allows us to cut patterns that are digitally designed for a specific vehicle. This provides extreme accuracy, minimizes blade-to-paint contact, and ensures clean, repeatable installations.</p>
-                        </div>
-                     </div>
+                    </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">Module 2: The Surgical Bay - Prep & Tools</h3>
-                    <div class="pro-tip">
-                        <h4 class="font-bold">The Surgical Standard</h4>
-                        <p>If tinting requires a clean room, PPF requires a surgical suite. The large, wet adhesive surface is a magnet for dust and hair. A single piece of contamination is a permanent flaw. Meticulous cleaning of the vehicle AND the work environment is the foundation of a quality installation.</p>
-                    </div>
-                     <h4 class="text-2xl font-semibold mt-6 mb-3 pt-4 border-t">The Non-Negotiable Prep Protocol</h4>
-                     <ol class="list-decimal list-inside space-y-3">
-                        <li><strong>Mandatory Paint Correction:</strong> The paint surface must be FLAWLESS. Any defect left on the paint will be magnified under the film and permanently sealed. A minimum of a one-step polish is required on all panels receiving PPF.</li>
-                        <li><strong>The Surgical Wash:</strong> After correction, the vehicle must be washed again to remove all polishing oils and dust. Blow out panel gaps with compressed air to remove hidden debris.</li>
-                        <li><strong>The Final Wipe-Down:</strong> The last step before film touches paint is a meticulous wipe-down with CARPRO Eraser. Perform the "nail test": slide the back of your fingernail on the surface. If it grips, it's clean. If it's slippery, there is still residue.</li>
-                     </ol>
-                     <div class="grid md:grid-cols-2 gap-8 mt-6 pt-6 border-t">
+                    <h3 class="text-3xl font-semibold mb-3">Module 2: Our PPF Arsenal</h3>
+                     <div class="grid md:grid-cols-2 gap-8 mt-6">
                         <div>
-                             <h4 class="text-2xl font-semibold mb-3">Required Tools & Solutions</h4>
+                             <h4 class="text-2xl font-semibold mb-3">Tools & Equipment</h4>
                              <ul class="list-disc list-inside space-y-2">
-                                <li><strong>Slip Solution:</strong> CARPRO ImmoGel (1:100 with water) or Baby Shampoo (5mL per gallon).</li>
-                                <li><strong>Tack Solution:</strong> 20% Isopropyl Alcohol with 80% water.</li>
-                                <li><strong>Squeegees:</strong> CARPRO PPF Squeegee Kit.</li>
-                                <li><strong>Misc:</strong> Cutter/knife with 45° carbon blades, steam cleaner, lint-free towels, clay bar.</li>
+                                <li><strong>Graphtec Plotter:</strong> For precise, computer-cut patterns.</li>
+                                <li><strong>CARPRO Squeegee Kit:</strong> A set of soft, flexible squeegees for safe application.</li>
+                                <li><strong>Knives:</strong> Cutters with fresh 45° carbon blades for trimming.</li>
+                                <li><strong>Steam Cleaner / Heat Gun:</strong> Essential for conforming film on complex curves and setting edges.</li>
                              </ul>
                         </div>
                         <div>
-                            <h4 class="text-2xl font-semibold mb-3">Time Estimates by Package</h4>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-sm">
-                                    <tbody>
-                                        <tr class="border-b"><td class="p-2 font-semibold">Front Bumper</td><td class="p-2">~1 Hour</td></tr>
-                                        <tr class="border-b"><td class="p-2 font-semibold">Partial Package</td><td class="p-2">~4 Hours</td></tr>
-                                        <tr class="border-b"><td class="p-2 font-semibold">Full Front Package</td><td class="p-2">~6 Hours</td></tr>
-                                        <tr class="border-b"><td class="p-2 font-semibold">Track Pack</td><td class="p-2">~8 Hours</td></tr>
-                                        <tr><td class="p-2 font-semibold">Entire Vehicle</td><td class="p-2">~20 Hours (3 days)</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <h4 class="text-2xl font-semibold mb-3">Chemicals & Solutions</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Slip Solution:</strong> CARPRO ImmoGel. Mix 1 part ImmoGel to 100 parts distilled water (1:100).</li>
+                                <li><strong>Tack Solution:</strong> Mix 3 parts distilled water to 1 part 90% Isopropyl Alcohol (3:1).</li>
+                                <li><strong>CARPRO Eraser:</strong> For the final, mandatory wipe-down to remove all oils before application.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">Module 3: The Art of the Install</h3>
+                    <h3 class="text-3xl font-semibold mb-3">Module 3: The Installation Workflow</h3>
+                     <div class="danger-box">
+                        <h4 class="text-xl font-bold text-red-800">Preparation is the Most Crucial Step</h4>
+                        <p class="mt-2 text-red-700">A flawless installation is impossible without perfect preparation. 90% of film failures and imperfections are due to shortcuts in this phase. Do not proceed until every step is completed to the highest standard.</p>
+                     </div>
                      <div class="education-box">
-                        <h4 class="font-bold">Slip Solution vs. Tack Solution</h4>
-                        <p>Mastering PPF is about mastering your solutions.<br><strong>Slip Solution (ImmoGel):</strong> Creates a thick, slippery layer that allows you to float, position, and squeegee the film without it sticking prematurely.<br><strong>Tack Solution (Alcohol/Water):</strong> Neutralizes the slip solution, allowing the adhesive to "bite" the surface. It is used to lock down anchor points and set edges.</p>
-                    </div>
-                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Installation Procedure</h4>
+                         <h4 class="font-bold">The TDS Standard: Plotter-First</h4>
+                         <p>We use plotter-cut patterns for 99% of our installations. This is not a shortcut; it's a commitment to quality. Using a plotter ensures a level of precision and repeatability that hand-cutting cannot match. Most importantly, it aligns with our safety-first principle by ensuring a sharp blade never has to touch a customer's paint.</p>
+                     </div>
+
+                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Step 1: The Non-Negotiable Prep Protocol</h4>
                      <ol class="list-decimal list-inside space-y-4">
-                        <li><strong>Starting Installation:</strong> Remove the film's protective top liner. Liberally spray the panel and the film's adhesive side with slip solution. Float the film onto the panel.</li>
-                        <li><strong>The Anchor & Squeegee:</strong> Position the film correctly. Create an "anchor" by squeegeeing a flat area from the center outwards. From this anchor, squeegee the rest of the film with firm, 50% overlapping strokes to evacuate all slip solution.</li>
-                        <li><strong>Conforming & Stretching:</strong> For curves, gently but firmly pull the film to conform it to the shape. A steamer or hot water can be used to make the film more pliable. Avoid overstretching, which can cause distortion marks.
+                        <li><strong>Set Up The Work Area & Environment:</strong> Prepare your installation bay. Ensure you have excellent lighting, your tool cart is organized, and your solutions are mixed. The ideal environment is 65-75°F (18-24°C) to control drying times.
                             <div class="pro-tip">
-                                <h4 class="font-bold">Watch: Conforming & Stretching PPF</h4>
-                                <p>This video shows how to properly stretch film around a complex curve like a bumper or mirror without leaving stretch marks.</p>
-                                <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
+                                <h4 class="font-bold">Use Distilled Water Only</h4>
+                                <p>All slip and tack solutions MUST be mixed with distilled water. Tap water contains minerals that can get trapped under the film, creating permanent imperfections and "sandy" feeling spots.</p>
                             </div>
                         </li>
-                        <li><strong>Finishing Edges:</strong> Lift the edge of the film. Spray the underside and the panel edge with TACK solution to wash away the slip. Wrap the edge and use a squeegee with firm pressure to lock it down.</li>
-                        <li><strong>Trimming:</strong> If hand-trimming, use a new, sharp blade. Use light pressure to score only the top half of the film, then gently break the excess material away.</li>
+                        <li><strong>The Surgical Decontamination Wash:</strong> Perform a full decontamination wash. Pay extra attention to panel edges, wheel wells, and any gaps where dirt can hide and dislodge during installation.</li>
+                        <li><strong>Document and Address Defects:</strong> Inspect every panel for existing rock chips or deep scratches. Document these in the Urable inspection report. Small chips may need to be touched up before applying film. Report any major issues to the shop manager for customer approval before proceeding.</li>
+                        <li><strong>Hardware & Badge Removal:</strong> If the client has opted for it, carefully remove badges, license plates/frames, and any other hardware (e.g., Tesla fender camera modules) that will allow for a cleaner installation.</li>
+                        <li><strong>Paint Correction:</strong> The paint surface must be as smooth as possible. A minimum of a Level 1 Primer Polish (e.g., CARPRO Essence) is required on all panels receiving PPF. If deeper correction is needed, this should be noted as an upsell recommendation by the technician.</li>
+                        <li><strong>Final Wipe-Down:</strong> After a quick rinse/wash to remove polishing oils, perform a final, meticulous wipe-down with CARPRO Eraser. This ensures a pure surface for the adhesive to bond to.</li>
                      </ol>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Module 4: Installation & Finishing Techniques</h3>
+                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Step 2: The Installation Procedure</h4>
+                     <p>A "Full Front" is our most common package. Each panel requires a specific focus and technique.</p>
+                     <div class="space-y-6">
+                        <div>
+                            <h5 class="font-bold text-lg">The Float, Anchor, and Squeegee (Universal Technique)</h5>
+                             <ol class="list-decimal list-inside space-y-2 mt-2 pl-4">
+                                <li><strong>The Float:</strong> Liberally spray both the panel and the film's adhesive side with slip solution. Gently float the film onto the panel.</li>
+                                <li><strong>The Anchor:</strong> Position the film correctly. Pick a relatively flat area and perform a firm squeegee stroke outwards from the center. This creates an "anchor" point that holds the film in place.</li>
+                                <li><strong>The Squeegee:</strong> Working from your anchor point, squeegee outwards towards the edges with firm, 50% overlapping strokes to evacuate all slip solution.</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Bumpers (Complex Curves)</h5>
+                            <div class="pro-tip">
+                                <h4 class="font-bold">Watch: Bumper Installation</h4>
+                                <p>[Video Tutorial Placeholder]</p>
+                            </div>
+                            <p>This is often the most challenging panel. It requires careful stretching (no more than 10-15%) to conform to recesses and sensors. A steamer is essential for making the film pliable around sharp curves.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Hoods & Fenders</h5>
+                             <div class="pro-tip">
+                                <h4 class="font-bold">Watch: Hood & Fender Installation</h4>
+                                <p>[Video Tutorial Placeholder]</p>
+                            </div>
+                            <p>These large panels are about consistency. Anchor the film in the center and work methodically outwards, ensuring a "glass-out" finish with no bubbles. Pay close attention to body lines.</p>
+                        </div>
+                         <div>
+                            <h5 class="font-bold text-lg">Mirrors & Headlights</h5>
+                             <div class="pro-tip">
+                                <h4 class="font-bold">Watch: Mirror & Light Installation</h4>
+                                <p>[Video Tutorial Placeholder]</p>
+                            </div>
+                            <p>These small, highly curved surfaces are a test of skill. They require significant stretching and careful use of a steamer to conform the film without distortion.</p>
+                        </div>
+                     </div>
+                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Step 3: Advanced Finishing & Edge Work</h4>
+                         <div class="pro-tip">
+                            <h4 class="font-bold">Watch: Advanced Edge Wrapping</h4>
+                            <p>[Video Tutorial Placeholder]</p>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-2 pl-4">
+                            <li><strong>Wrapping Edges for Invisible Installation:</strong> Where plotter patterns provide extra material, wrap it around panel edges. Use tack solution (or hot water) to flush the slip solution, then use a squeegee to secure the edge.</li>
+                            <li><strong>Setting Edges with Heat:</strong> After an edge is wrapped, applying gentle heat with a heat gun or steamer helps soften the film and secure the adhesive, preventing lifting.</li>
+                            <li><strong>Adhesive Promoters (ProBond):</strong> This is a last resort for extremely difficult areas. It makes the film nearly permanent and should be used with extreme caution.</li>
+                        </ul>
+                        <div class="mt-6">
+                            <h5 class="font-bold text-lg">The Art of Trimming: Using a Blade</h5>
+                            <div class="pro-tip">
+                                <h4 class="font-bold">Watch: Precision Trimming Technique</h4>
+                                <p>Listen for the audible "squeak" that indicates you are scoring the film correctly without applying too much pressure.</p>
+                                <p>[Video Tutorial Placeholder]</p>
+                            </div>
+                            <p>When hand-trimming is necessary, use a new, sharp 45° carbon blade. Use very light pressure to score only the top half of the film. Do not cut through. Once scored, the excess film will easily tear away along the line, leaving a perfect edge.</p>
+                        </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">Module 4: Final Inspection & Aftercare</h3>
-                    <div class="education-box">
-                         <h4 class="text-2xl font-semibold mb-3">Troubleshooting Common Issues</h4>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li><strong>"Silvering":</strong> Tiny air/moisture pockets. Can often be pushed out if addressed quickly.</li>
-                            <li><strong>"Lift Lines":</strong> An edge that isn't fully adhered. Re-lift, clean, re-apply tack solution, and squeegee firmly.</li>
-                            <li><strong>Contamination:</strong> A speck of dirt/hair under the film. This is a permanent flaw and requires replacement. This is why prep is paramount.</li>
-                            <li><strong>Stretch Marks:</strong> Distorted lines from overstretching. Requires replacement.</li>
+                    <h3 class="text-3xl font-semibold mb-3">Module 5: Quality Control & Handoff</h3>
+                     <div class="mb-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-2">Common Installation Challenges</h4>
+                         <div class="overflow-x-auto mt-4">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-100"><tr class="text-left"><th class="p-2">Problem</th><th class="p-2">Solution</th></tr></thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="p-2 font-semibold">"Silvering" (Moisture Pockets)</td><td class="p-2">Re-squeegee with firm pressure. Most small spots will evaporate during the curing process.</td></tr>
+                                    <tr class="border-b"><td class="p-2 font-semibold">"Lift Lines" on an Edge</td><td class="p-2">The edge is not fully adhered. Re-lift, flush the area with tack solution, and use a hard-edge squeegee to set it firmly.</td></tr>
+                                    <tr class="border-b"><td class="p-2 font-semibold">Contamination (Dirt/Hair)</td><td class="p-2">This is a permanent flaw. The only solution is to remove and replace the piece. This is why prep is paramount.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                     <div class="mb-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-2">Technician's Post-Installation Final Check</h4>
+                        <p>This is the final quality gate before a vehicle is ready for the customer. It should be performed hours after the installation is complete to allow the film to set.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-2 pl-4">
+                           <li><strong>Bubble Check:</strong> Meticulously inspect every panel for any remaining moisture or air pockets. Small bubbles can often be pushed out with a squeegee.</li>
+                           <li><strong>Edge Check:</strong> Run a finger along every single edge of the film. If you feel any lift, use a steamer/heat gun and a hard-edge squeegee to re-set the edge firmly.</li>
+                           <li><strong>Final Wipe-Down:</strong> Perform a final wipe-down of the entire vehicle with a gentle quick detailer to remove any fingerprints or dried slip solution residue.</li>
                         </ul>
                     </div>
                     <div class="mt-8 pt-8 border-t">
                         <h4 class="text-2xl font-semibold mb-3">The Customer Handoff & Education</h4>
-                        <div class="pro-tip">
-                            <p><strong>The Curing Process & Self-Healing:</strong> "Your new Paint Protection Film is self-healing, so light scratches will disappear with heat. The film is still curing, so you may notice small water pockets; these are normal and will evaporate through the film over the next few days."</p>
+                        <div class="education-box">
+                            <p><strong>The Curing Process & Self-Healing:</strong> "Your new Paint Protection Film is self-healing, so light scratches will disappear with heat. The film is still curing, so you may notice some small water pockets; these are normal and will evaporate through the film over the next few days."</p>
                             <p class="mt-4"><strong>CRITICAL Aftercare Instructions:</strong> "To ensure a long-lasting installation, please <strong class='text-red-600'>do not wash the vehicle for one week.</strong> After that, regular hand washing is best. When using a pressure washer, stay at least 3-4 feet away and avoid spraying directly at the film's edges."</p>
                         </div>
                     </div>
                 </div>
-                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6 border-b pb-4">Knowledge Check</h3>
-                     <div class="space-y-4">
-                        <p><strong>1. What is the mandatory first step before applying PPF to any panel?</strong></p>
-                        <p><strong>2. What is the primary purpose of Tack Solution (Alcohol/Water)?</strong></p>
-                        <p><strong>3. How long must a customer wait before washing their vehicle after a PPF installation?</strong></p>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <button class="bg-amber-500 text-gray-900 font-bold py-2 px-4 rounded hover:bg-amber-600">Submit Answers (Coming Soon)</button>
-                    </div>
-                </div>
-                <div class="text-center">
-                     <a href="#" class="text-blue-600 hover:underline">[Link to Full PPF SOP Document]</a>
-                 </div>
 
             </div>
         </section>
@@ -151,3 +234,4 @@
 
 </body>
 </html>
+
