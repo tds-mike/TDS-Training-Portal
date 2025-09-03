@@ -51,6 +51,8 @@ class MainHeader extends HTMLElement {
                     { href: 'sales_tint.html', text: 'Selling Window Tint' },
                     { href: 'sales_ppf.html', text: 'Selling PPF' },
                     { href: 'sales_coatings.html', text: 'Selling Ceramic Coatings' },
+                    { href: 'sales_paint_correction.html', text: 'Selling Paint Correction' },
+                    { href: 'sales_detailing.html', text: 'Selling Detailing' },        
                 ]
             }
         };
