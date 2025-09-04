@@ -1,11 +1,11 @@
 /**
  * TDS Training Portal Module Navigation
- *
- * This script adds a sticky bottom navigation bar with a progress bar,
- * next/previous module buttons, and estimated completion time.
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Define the module structure for both portals
+    const path = window.location.pathname;
+    const isRoot = !path.includes('/shop/') && !path.includes('/sales/') && !path.includes('/checklists/');
+    const getRelativePath = (target) => isRoot ? target : `../${target}`;
+
     const portals = {
         technician: [
             { url: 'shop/shop_index.html', title: 'Technician Home' },
@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { url: 'shop/shop_tech_workflow.html', title: 'Technician SOP' },
             { url: 'shop/shop_safety.html', title: 'Safety Guide' },
             { url: 'shop/shop_chemicals.html', title: 'Chemicals Guide' },
-            { url: 'shop/shop_exterior.html', title: 'Exterior Mastery' },
+            { url: 'shop/shop_exterior.html', title: 'Exterior: Wash & Decon' },
+            { url: 'shop/shop_paint_correction.html', title: 'Paint Correction' },
+            { url: 'shop/shop_ceramic_coating.html', title: 'Ceramic Coating' },
             { url: 'shop/shop_interior.html', title: 'Interior Restoration' },
             { url: 'shop/shop_tint.html', title: 'Window Tinting Guide' },
             { url: 'shop/shop_ppf.html', title: 'PPF Installation Guide' },
-            { url: 'shop/shop_quiz.html', title: 'Technician Knowledge Quiz' }
+            { url: 'shop/shop_quiz.html', title: 'Technician Quiz' }
         ],
         sales: [
             { url: 'sales/sales_index.html', title: 'Sales Home' },
@@ -35,20 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    const currentPage = window.location.pathname.split('/').pop();
-    let currentPortalModules = [];
+    const currentPage = path.substring(path.lastIndexOf('tds-training-portal/') + 'tds-training-portal/'.length);
 
-    // Determine which portal's module list to use
-    if (portals.technician.some(module => module.url.endsWith(currentPage))) {
+    let currentPortalModules = [];
+    if (path.includes('/shop/')) {
         currentPortalModules = portals.technician;
-    } else if (portals.sales.some(module => module.url.endsWith(currentPage))) {
+    } else if (path.includes('/sales/')) {
         currentPortalModules = portals.sales;
     }
 
+    if (currentPortalModules.length === 0) return;
 
-    if (currentPortalModules.length === 0) return; // Don't run on non-module pages
-
-    const currentIndex = currentPortalModules.findIndex(module => module.url.endsWith(currentPage));
+    const currentIndex = currentPortalModules.findIndex(module => module.url.endsWith(currentPage.split('/').pop()));
     if (currentIndex === -1) return;
 
     const prevModule = currentIndex > 0 ? currentPortalModules[currentIndex - 1] : null;
@@ -64,36 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="flex justify-between items-center text-sm">
                 <div class="w-1/3 text-left">
-                    ${prevModule ? `<a href="../${prevModule.url}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
+                    ${prevModule ? `<a href="${getRelativePath(prevModule.url)}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
                 </div>
                 <div class="w-1/3 text-center text-gray-400">
                     Module ${currentIndex + 1} of ${currentPortalModules.length}
                 </div>
                 <div class="w-1/3 text-right">
-                    ${nextModule ? `<a href="../${nextModule.url}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
+                    ${nextModule ? `<a href="${getRelativePath(nextModule.url)}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
                 </div>
             </div>
         </div>
     `;
 
     document.body.appendChild(navBar);
-
-    const setPadding = () => {
-        const slideOutMenu = document.getElementById('slide-out-menu');
-        const navBarHeight = navBar.offsetHeight;
-        document.body.style.paddingBottom = `${navBarHeight}px`;
-        if (slideOutMenu) {
-            slideOutMenu.style.paddingBottom = `${navBarHeight + 20}px`;
-        }
-    };
-
-    const paddingInterval = setInterval(() => {
-        const slideOutMenu = document.getElementById('slide-out-menu');
-        if (slideOutMenu) {
-            setPadding();
-            clearInterval(paddingInterval);
-        }
-    }, 100);
-
-    window.addEventListener('resize', setPadding);
+    document.body.style.paddingBottom = `${navBar.offsetHeight}px`;
 });

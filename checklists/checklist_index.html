@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Printable Checklists</title>
+    <script src="../auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../navigation.js" defer></script>
+    <script src="../footer.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .checklist-link {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .checklist-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="text-center py-12">
+            <h1 class="text-5xl font-bold mb-4">Printable Job Checklists</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Use these checklists in the bay to ensure consistency, quality control, and adherence to the TDS Standard on every single service.</p>
+        </section>
+        
+        <section class="py-8">
+            <h2 class="text-3xl font-bold text-center mb-10">Technician Checklists</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="checklist_tech_workflow.html" target="_blank" class="block bg-blue-600 text-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-bold mb-2">Master Technician Workflow</h3>
+                    <p>The main checklist for every job, covering the entire process from start to finish.</p>
+                </a>
+                <a href="checlist_decon_wash.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Decontamination Wash</h3>
+                    <p class="text-gray-600">The step-by-step process for a perfect decon wash.</p>
+                </a>
+                <a href="checklist_interior.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Full Interior Restoration</h3>
+                    <p class="text-gray-600">Ensure every step of an interior detail is completed to standard.</p>
+                </a>
+                <a href="checklist_paint_correction.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Paint Correction</h3>
+                    <p class="text-gray-600">The workflow for a safe and effective paint correction job.</p>
+                </a>
+                 <a href="checklist_ceramic_coating.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Ceramic Coating</h3>
+                    <p class="text-gray-600">The checklist for a flawless ceramic coating application.</p>
+                </a>
+                <a href="checklist_ppf.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">PPF Installation</h3>
+                    <p class="text-gray-600">The non-negotiable prep and installation steps for PPF.</p>
+                </a>
+                <a href="checklist_tint.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Window Tint Installation</h3>
+                    <p class="text-gray-600">The workflow for a contamination-free tint job.</p>
+                </a>
+            </div>
+        </section>
+        
+        <section class="py-8 mt-8">
+            <h2 class="text-3xl font-bold text-center mb-10">Sales Checklists</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="checklist_sales_process.html" target="_blank" class="block bg-amber-500 text-gray-900 p-6 rounded-lg shadow checklist-link">
+                    <h3 class="text-2xl font-bold mb-2">Master Sales Process</h3>
+                    <p>The complete checklist for the customer journey, from lead to delivery.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>

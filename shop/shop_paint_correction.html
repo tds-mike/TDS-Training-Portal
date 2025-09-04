@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Paint Correction Guide</title>
+    <script src="../auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../navigation.js" defer></script>
+    <script src="../footer.js" defer></script>
+    <script src="../module-navigation.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .danger-box { background-color: #FEE2E2; border-left: 4px solid #EF4444; padding: 1.5rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="paint-correction-content">
+            <h2 class="text-5xl font-bold mb-8 text-cyan-600 section-title border-cyan-600">The Art of Paint Correction</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">Paint correction is the most transformative service we offer. It is the process of meticulously leveling the clear coat to remove imperfections like swirl marks, scratches, and water spots, restoring a flawless, mirror-like finish. This is an advanced skill that requires patience, precision, and a deep understanding of the tools and chemicals involved.</p>
+            
+            <div class="my-8">
+                <img src="https://placehold.co/1200x600/111827/FBBF24?text=50/50+Paint+Correction+Result" alt="A 50/50 shot of a car's paint, with one side swirled and dull and the other side deep, glossy, and clear." class="rounded-lg shadow-md mx-auto">
+                <p class="text-center text-xs mt-2 text-gray-500">The goal of paint correction: Transforming a swirled, hazy finish into a perfect, mirror-like surface.</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Prerequisites & Initial Diagnosis</h3>
+                     <div class="education-box">
+                        <h4 class="font-bold text-lg">MANDATORY: Flawless Preparation</h4>
+                        <p>You cannot begin paint correction until the vehicle has undergone a full, meticulous <a href="shop_exterior.html" class="text-blue-600 hover:underline">Decontamination Wash</a>. The paint surface must be 100% free of all bonded contaminants. Attempting to polish a contaminated surface will cause severe damage.</p>
+                    </div>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">The Diagnostic Protocol</h4>
+                        <p class="mb-4">Before any machine touches the paint, a full diagnosis must be performed. This is a non-negotiable safety and strategy step.</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h5 class="font-semibold text-lg mb-2">1. Using Light for Diagnosis</h5>
+                                <p>A swirl finder light is your most important diagnostic tool. Inspect every panel to understand the true condition of the paint, identify the severity of defects (light swirls vs. deep scratches), and create an effective correction plan.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-lg mb-2">2. The Paint Depth Gauge (PDG) Protocol</h5>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>Procedure:</strong> Take 3-5 readings on each major panel to get an average thickness.</li>
+                                    <li><strong>Interpreting Readings:</strong>
+                                        <ul class="list-disc list-inside ml-6 mt-2">
+                                            <li><strong>130µm+:</strong> Healthy factory paint.</li>
+                                            <li><strong>90-130µm:</strong> Thinner paint. Proceed with caution.</li>
+                                            <li><strong>Below 90µm:</strong> Dangerously thin. Do NOT compound.</li>
+                                            <li><strong>Over 160µm / Inconsistent:</strong> Indicates a repaint.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Our Paint Correction Arsenal</h3>
+                    <div class="space-y-4 mt-4">
+                        <h5 class="font-bold text-lg">Chemicals (Polishes & Compounds)</h5>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO UltraCut:</strong> Most aggressive compound. For removing deep scratches and severe defects.</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO ClearCut:</strong> Fast-acting compound for heavy defect removal with less dusting.</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Fixer:</strong> Versatile one-step polish/compound. Removes moderate defects.</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Reflect:</strong> Our primary finishing polish. Creates a deep, jeweled, swirl-free finish.</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Essence:</strong> All-in-One (AIO) primer polish. Minor correction, extreme gloss, and leaves a layer of SiO2 primer for coatings.</div>
+                        </div>
+                        <h5 class="font-bold text-lg mt-6">Tools & Pads</h5>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>Rupes Polishers (DA & Rotary):</strong> A full range of sizes (1", 3", 5", 6").</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>Pads (Microfiber & Wool):</strong> Used for the heavy cutting/compounding stage.</div>
+                            <div class="bg-gray-50 p-4 rounded-lg"><strong>Pads (Foam - Orange, White):</strong> Orange for medium polishing, White for fine finishing.</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">At-a-Glance: Pad & Product Combinations</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="p-3 font-semibold">Goal</th>
+                                        <th class="p-3 font-semibold">Recommended Pad</th>
+                                        <th class="p-3 font-semibold">Recommended Product</th>
+                                        <th class="p-3 font-semibold">Correction Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="p-3">Heavy Defect Removal</td><td class="p-3 font-semibold">Microfiber / Wool Pad</td><td class="p-3 font-semibold">CARPRO UltraCut</td><td class="p-3">Level 3 (Compounding)</td></tr>
+                                    <tr class="border-b"><td class="p-3">Medium Swirl Removal</td><td class="p-3 font-semibold">Orange Foam Pad</td><td class="p-3 font-semibold">CARPRO Fixer</td><td class="p-3">Level 2 (One-Step)</td></tr>
+                                    <tr class="border-b"><td class="p-3">Fine Finishing / Gloss</td><td class="p-3 font-semibold">White Foam Pad</td><td class="p-3 font-semibold">CARPRO Reflect</td><td class="p-3">Level 3 (Polishing)</td></tr>
+                                    <tr><td class="p-3">Gloss Enhancement</td><td class="p-3 font-semibold">White Foam Pad</td><td class="p-3 font-semibold">CARPRO Essence</td><td class="p-3">Level 1 (AIO)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">The Correction Workflow: Prep, Polish, Perfect</h3>
+                    <div class="mt-4 pt-4 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Step 1: Meticulous Preparation</h4>
+                        <ul class="list-decimal list-inside space-y-3 pl-4">
+                           <li><strong>Set Up Your Cart:</strong> Equip your detailing cart with polishers, clean pads, polishes/compounds, and clean microfiber towels.</li>
+                           <li><strong>Prepare Pad Washer:</strong> Ensure the pad washer is ready with clean water and pad cleaning solution.</li>
+                           <li><strong>Tape Off All Trim:</strong> Carefully tape off all unpainted plastic trim, rubber seals, clear plastics, and badges. Polish can permanently stain these surfaces.</li>
+                        </ul>
+                        <div class="my-4">
+                            <img src="https://placehold.co/800x400/E0E7FF/4F46E5?text=Meticulously+Taped+Vehicle" alt="A car with all its black plastic trim and emblems carefully taped off with green automotive tape." class="rounded-lg shadow-md mx-auto">
+                            <p class="text-center text-xs mt-2 text-gray-500">Proper taping is the mark of a professional. It protects sensitive areas and ensures clean results.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t">
+                        <div class="danger-box">
+                            <h4 class="text-xl font-bold text-red-800 mb-2">Safety First: Correction-Specific Hazards</h4>
+                            <ul class="list-disc list-inside space-y-2 text-red-900">
+                                <li><strong>Respiratory Protection:</strong> Polishing creates fine airborne dust (silica). A respirator is highly recommended during heavy compounding.</li>
+                                <li><strong>Eye Protection:</strong> Safety glasses are mandatory to protect from chemical splash or flying debris.</li>
+                                <li><strong>Cord Management:</strong> Always drape the polisher's cord over your shoulder to keep it away from the spinning pad and the vehicle's paint.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Step 2: The Mandatory Test Spot</h4>
+                        <div class="pro-tip">
+                            <h4 class="font-bold">The Most Important Step</h4>
+                            <p>Never start correcting an entire vehicle without first performing a test spot. This is a 2'x2' section on a flat panel (like the hood or trunk) where you test and validate your chosen pad/product combination. It confirms you can achieve the desired result safely before committing to the whole car. If the result is not what you expect, adjust your combo and test again.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Step 3: The Core Polishing Technique</h4>
+                        <div class="my-4">
+                            <img src="https://placehold.co/800x400/FEF3C7/D97706?text=Cross-Hatch+Polishing+Pattern" alt="A diagram showing a DA polisher moving in an overlapping up-and-down, then left-and-right pattern." class="rounded-lg shadow-md mx-auto">
+                            <p class="text-center text-xs mt-2 text-gray-500">The cross-hatch pattern ensures complete and even coverage of the work area.</p>
+                        </div>
+                        <ol class="list-decimal list-inside space-y-4">
+                            <li><strong>Section the Panel:</strong> Mentally divide the panel into 2'x2' sections.</li>
+                            <li><strong>Prime the Pad:</strong> Apply 4-6 pea-sized drops of product for a fresh pad. Add 2-3 drops for subsequent sections.</li>
+                            <li><strong>Spread the Product:</strong> On speed 1-2, quickly spread the product over the section.</li>
+                            <li><strong>The Correction Pass:</strong> Increase speed to 4-5. Apply 5-10 lbs of pressure. Move the polisher slowly (1-2 inches per second) in a cross-hatch pattern (3 passes up/down, 3 passes left/right).</li>
+                            <li><strong>Clean Pad On-The-Fly:</strong> After each section, clean your pad with a brush or pad washer. A clean pad cuts more effectively.</li>
+                            <li><strong>Wipe & Inspect:</strong> Wipe away residue with a clean microfiber and inspect with a swirl-finder light before moving on.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Step 4: Paint Correction Levels & Procedures</h4>
+                         <p class="mb-4">Once you have mastered the core technique, you will apply it to perform our specific service levels. Each level has a defined goal and process.</p>
+                        <div class="space-y-6">
+                             <div class="pt-4">
+                                <h5 class="text-xl font-semibold mb-3">Procedure: Level 1 - The Paint Enhancement (AIO)</h5>
+                                <p class="mb-4 text-sm"><strong>Goal:</strong> To significantly improve gloss and clarity while adding a layer of protection in one step. This is not for heavy defect removal. <strong>Defect Removal:</strong> ~20-40%.</p>
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Product/Pad Combo:</strong> CARPRO Essence on a White Foam Gloss Pad.</li>
+                                    <li><strong>Technique:</strong> Follow the Core Polishing Technique but with a faster arm speed (4-5 inches per second) and lighter pressure. Focus on spreading the product evenly to create a uniform, high-gloss finish.</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-4 border-t">
+                                <h5 class="text-xl font-semibold mb-3">Procedure: Level 2 - The One-Step Correction</h5>
+                                <p class="mb-4 text-sm"><strong>Goal:</strong> To remove light to moderate swirls, hazing, and water spots in a single, efficient polishing stage. This is our most common correction service. <strong>Defect Removal:</strong> ~70-80%.</p>
+                                 <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Product/Pad Combo:</strong> CARPRO Fixer on an Orange Foam Polishing Pad.</li>
+                                    <li><strong>Technique:</strong> Follow the Core Polishing Technique with a slow, deliberate arm speed (1-2 inches per second). This allows the abrasives in the polish to fully break down and work through their cutting and finishing phases.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pt-4 border-t">
+                                <h5 class="text-xl font-semibold mb-3">Procedure: Level 3 - The Two-Step Correction</h5>
+                                <p class="mb-4 text-sm"><strong>Goal:</strong> To remove medium to heavy defects by using separate, dedicated compounding and polishing stages for maximum defect removal and gloss. <strong>Defect Removal:</strong> ~85-95%.</p>
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Step 1 (Compounding):</strong> Use CARPRO UltraCut on a Microfiber or Wool Pad. Follow the Core Polishing Technique to remove the deepest scratches and swirls. The finish will appear hazy after this step; this is normal.</li>
+                                    <li><strong>Step 2 (Polishing):</strong> After compounding the entire vehicle, switch to a fresh pad. Use CARPRO Reflect on a White or Orange Foam Pad. Follow the Core Polishing Technique again to remove the compounding haze and refine the finish to a flawless, high-gloss shine.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pt-4 border-t">
+                                <h5 class="text-xl font-semibold mb-3">Procedure: Level 4 - Wetsanding Correction</h5>
+                                <p class="mb-4 text-sm"><strong>Goal:</strong> The highest level of correction, reserved for deep, isolated scratches or severe texture issues ("orange peel"). This is an advanced, high-risk technique. <strong>Defect Removal:</strong> ~99%.</p>
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Sanding Stage:</strong> Use a sequence of grits (e.g., 1500 -> 3000) by hand or with a DA sander to precisely level the defect.</li>
+                                    <li><strong>Correction Stage:</strong> A full **Level 3 - Two-Step Correction** must be performed after sanding to remove the sanding marks and fully restore gloss.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t">
+                        <h4 class="text-2xl font-semibold mb-3">Step 5: Post-Correction Cleanup</h4>
+                        <ul class="list-disc list-inside space-y-3 pl-4">
+                           <li><strong>Remove Tape:</strong> Carefully peel away all masking tape.</li>
+                           <li><strong>Purge Crevices:</strong> Use compressed air to blow compound dust from panel gaps and emblem edges.</li>
+                           <li><strong>Final Wipe-Down:</strong> Meticulously wipe down the entire vehicle with CARPRO Eraser to remove all polishing oils. This is a critical step to ensure a pure surface for waxes, sealants, or coatings to bond to.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-4">Advanced Techniques & Professional Habits</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="danger-box">
+                             <h4 class="text-xl font-bold text-red-800 mb-2">Common Pitfalls to Avoid</h4>
+                            <ul class="list-disc list-inside space-y-2 text-red-900">
+                                <li><strong>Burning Paint on Edges:</strong> Body lines and edges build heat much faster. Use very light pressure and fewer passes.</li>
+                                <li><strong>Ignoring Repaints:</strong> If the PDG indicates a repaint, you MUST perform a test spot. Single-stage paint can transfer color to your pad. Be cautious.</li>
+                            </ul>
+                        </div>
+                        <div class="education-box">
+                             <h4 class="text-xl font-bold text-indigo-800 mb-2">Pad Maintenance</h4>
+                            <p>Proper pad care extends their life and ensures consistent results.</p>
+                             <ul class="list-disc list-inside space-y-2 mt-2 text-indigo-900">
+                                <li><strong>Clean After Use:</strong> After a job is complete, thoroughly clean all used pads in the pad washer before storing them.</li>
+                                <li><strong>Store Properly:</strong> Store pads in a clean, dry location away from dust and debris.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Printable Paint Correction Checklist</h3>
+                    <p class="text-gray-600">Use this printable checklist in the bay to ensure every step of the paint correction process is completed to the TDS Standard.</p>
+                    <div class="mt-4">
+                        <button onclick="window.open('../checklists/checklist_paint_correction.html', '_blank')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded">
+                            View & Print Paint Correction Checklist
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-blue-600 text-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-3xl font-bold mb-3">Next Step: Long-Term Protection</h3>
+                    <p class="text-lg">You've now learned how to create a flawless surface. The final step is to protect it. Proceed to the next module to master the art of applying long-lasting ceramic coatings.</p>
+                    <a href="shop_ceramic_coating.html" class="mt-4 inline-block bg-white text-blue-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors">
+                        Proceed to Ceramic Coating Module &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>
+

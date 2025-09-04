@@ -12,9 +12,6 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
-        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
@@ -27,15 +24,15 @@
 
     <main class="container mx-auto px-6 py-12">
         <section id="exterior-content">
-            <h2 class="text-5xl font-bold mb-8 text-blue-600 section-title border-blue-600">Mastering the Exterior</h2>
-            <div class="space-y-12">
+            <h2 class="text-5xl font-bold mb-8 text-blue-600 section-title border-blue-600">Exterior Mastery: The Foundation</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">This module covers the foundational skills of all exterior detailing: the wash and decontamination process. Mastering these steps is non-negotiable, as they create the clean canvas required for all other services, from simple waxes to advanced paint correction and ceramic coatings.</p>
 
-                <!-- Wash Bay Section -->
+            <div class="space-y-12">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-3xl font-semibold mb-4">The Wash Bay: Foundation of a Flawless Finish</h3>
                     <div class="education-box">
                         <h4 class="font-bold">The Crucial Role of Decontamination</h4>
-                        <p>A vehicle's paint is constantly bombarded with contaminants. Attempting to polish a contaminated surface is like rubbing sandpaper on the paint, inflicting deeper swirls. A thorough chemical and mechanical decontamination is the <strong class="text-red-600">non-negotiable first step</strong> to any true paint enhancement. It creates a truly clean slate, allowing polishes to work correctly and coatings to bond permanently.</p>
+                        <p>A vehicle's paint is constantly bombarded with contaminants. Attempting to polish or protect a contaminated surface is like rubbing sandpaper on the paint, inflicting deeper swirls. A thorough chemical and mechanical decontamination is the <strong class="text-red-600">non-negotiable first step</strong> to any true paint enhancement. It creates a truly clean slate, allowing polishes to work correctly and coatings to bond permanently.</p>
                     </div>
                     
                     <div class="mt-8 pt-8 border-t">
@@ -45,237 +42,205 @@
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Lift:</strong> For touchless pre-soak.</div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Reset:</strong> For two-bucket contact wash.</div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Descale:</strong> For acidic washes to remove mineral deposits.</div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO IronX:</strong> For iron particle removal.</div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO TarX:</strong> For tar and adhesive removal.</div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Ech2o:</strong> For clay lubricant.</div>
                             </div>
-                             <h5 class="font-bold text-lg mt-6">Tools</h5>
+                             <h5 class="font-bold text-lg mt-6">Tools & Equipment</h5>
                              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>Pressure Washer & Foam Cannon</strong></div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>Two Buckets with Grit Guards</strong></div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>High-Quality Wash Mitts</strong></div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>High-Quality Wash Mitts & Body Brushes</strong></div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Soft Detail Brushes</strong></div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Dedicated Wheel, Tire & Fender Brushes</strong></div>
+                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Pole Brush & Step Ladders (for large vehicles)</strong></div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>Synthetic Clay Towel/Bar</strong></div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Wheel & Tire Brushes</strong></div>
                                 <div class="bg-gray-50 p-4 rounded-lg"><strong>Air Blower & Drying Towels</strong></div>
                              </div>
                         </div>
                     </div>
 
                     <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Procedure: The Full Decontamination Wash</h4>
+                        <h4 class="text-2xl font-semibold mb-3">Procedure: The Full Decontamination Wash (Idiot-Proof Guide)</h4>
                         <div class="pro-tip">
                             <h4 class="font-bold">Watch: The Full Decontamination Wash</h4>
                             <p>This video covers the entire process, from wheel cleaning and the two-bucket method to chemical and mechanical decontamination steps.</p>
                             <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
                         </div>
                         <p class="mb-4"><strong>Goal:</strong> To remove ALL above and below-surface bonded contaminants. <strong>Time:</strong> 45-90 minutes.</p>
-                        <ol class="list-decimal list-inside space-y-4">
-                            <li><strong>Inspection & Strategy:</strong> Use a swirl finder light to assess the paint's condition and identify problem areas. Perform the "baggie test" for roughness.</li>
-                            <li><strong>Wheels, Tires & Wells First:</strong> Clean these first to prevent slinging grime onto clean panels.</li>
-                            <li><strong>Touchless Pre-Soak:</strong> Foam the vehicle with CARPRO Lift (1:10). Let dwell for 5-10 minutes (do not let dry). Rinse thoroughly.</li>
-                            <li><strong>Two-Bucket Contact Wash:</strong> Using a clean mitt and CARPRO Reset, wash following the strict <strong>Wash Order (WO):</strong> Roof → Glass → Hood/Trunk → Upper Sides → Front/Rear Bumpers → Lower Sides.</li>
-                            <li><strong>Chemical Decontamination:</strong> While wet, apply CARPRO IronX, let it turn purple, then rinse. Apply CARPRO TarX to a microfiber applicator to remove tar deposits.</li>
-                            <li><strong>Mechanical Decontamination:</strong> Use a clay lubricant (Ech2o 1:40) and glide a clay towel over the surface with zero pressure until it feels glass-smooth.</li>
-                            <li><strong>Final Rinse & Drying:</strong> Perform a thorough final rinse. Dry using an air blower and a plush drying towel.</li>
-                        </ol>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Procedure: The Basic Maintenance Wash</h4>
-                        <div class="pro-tip">
-                            <h4 class="font-bold">Watch: The Maintenance Wash</h4>
-                            <p>This video demonstrates the efficient and safe process for a routine maintenance wash on a well-kept vehicle.</p>
-                            <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
-                        </div>
-                        <p class="mb-4"><strong>Goal:</strong> To safely clean a well-maintained or ceramic-coated vehicle without inflicting new scratches. <strong>Time:</strong> 20-45 minutes.</p>
-                        <ol class="list-decimal list-inside space-y-3">
-                           <li>Rinse the entire vehicle to remove loose debris.</li>
-                           <li>Clean wheels and tires using the standard procedure.</li>
-                           <li>Use a foam cannon with a pH-neutral soap like CARPRO Reset to provide lubrication.</li>
-                           <li>Using the two-bucket method and a clean wash mitt, gently wash the vehicle following the <strong>Wash Order (WO)</strong>. There is no need to scrub; the goal is to gently lift dirt off the protected surface.</li>
-                           <li>Rinse thoroughly and dry using an air blower and a plush drying towel with a drying aid.</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- Paint Correction Section -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-4">Paint Correction: The Art of Restoring Clarity</h3>
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">MANDATORY: Initial Diagnosis Protocol</h4>
-                        <p class="mb-4">Before any machine touches the paint, a full diagnosis must be performed. This is a non-negotiable safety and strategy step.</p>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h5 class="font-semibold text-lg mb-2">1. Using Light for Initial Diagnosis</h5>
-                                <p>A swirl finder light is your most important diagnostic tool. Before quoting a job or starting work, inspect every panel to understand the true condition of the paint. This allows you to identify the severity of defects (light swirls vs. deep scratches) and create an effective correction plan.</p>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-lg mb-2">2. The Paint Depth Gauge (PDG) Protocol</h5>
-                                <ul class="list-disc list-inside space-y-2">
-                                    <li><strong>Procedure:</strong> Take 3-5 readings on each major panel to get an average thickness.</li>
-                                    <li><strong>Interpreting Readings:</strong>
-                                        <ul class="list-disc list-inside ml-6 mt-2">
-                                            <li><strong>130µm+:</strong> Healthy factory paint.</li>
-                                            <li><strong>90-130µm:</strong> Thinner paint. Proceed with caution.</li>
-                                            <li><strong>Below 90µm:</strong> Dangerously thin. Do NOT compound.</li>
-                                            <li><strong>Over 160µm / Inconsistent:</strong> Indicates a repaint.</li>
-                                        </ul>
+                        
+                        <div class="space-y-8">
+                           <div>
+                                <h5 class="text-xl font-bold mb-2">Phase 1: Diagnosis & Setup</h5>
+                                <p class="text-gray-600 text-sm mb-3">The most critical thinking happens before water touches the car. A correct diagnosis dictates the entire workflow.</p>
+                                <ul class="list-decimal list-inside space-y-3 pl-4">
+                                    <li><strong>Visual & Tactile Inspection:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li><strong>Visual Inspection:</strong> Use a swirl finder light to inspect every panel for major defects, heavy water spotting, or bird dropping etches.</li>
+                                            <li><strong>Tactile Inspection (Baggie Test):</strong> Place your hand inside a thin plastic sandwich bag and gently feel the paint. If it feels gritty or rough, it requires a full decontamination.</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>Make the Soap Decision:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>If the paint is covered in visible, crusted-on water spots or the client has known hard water, you will use <strong>CARPRO Descale</strong> (acidic soap) for the contact wash.</li>
+                                            <li>For all other scenarios, you will use <strong>CARPRO Reset</strong> (pH-neutral soap).</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>Prepare Your Buckets:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Place a grit guard into the bottom of two separate wash buckets.</li>
+                                            <li>Fill both buckets about three-quarters full with water.</li>
+                                            <li>Designate one bucket as "Rinse" (water only). Add 1-2oz of your chosen soap (Reset or Descale) to the "Wash" bucket.</li>
+                                        </ol>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Workflow & Tool Prep</h4>
-                        <p class="mb-4">Efficiency and consistency come from preparation. Set up your workspace before you begin correcting.</p>
-                        <ul class="list-disc list-inside space-y-3">
-                           <li><strong>Set Up Your Cart:</strong> Your detailing cart should be equipped with your polishers, a stack of clean pads for each step, various polishes/compounds, and a collection of clean microfiber towels.</li>
-                           <li><strong>Prepare Pad Washer:</strong> Ensure the Lake Country pad washer is filled with clean water and a pad cleaning solution. This should be ready to use throughout the process.</li>
-                           <li><strong>Organize Your Tools:</strong> Have your masking tape, inspection lights, and any other necessary tools readily available on your cart to minimize downtime.</li>
-                        </ul>
-                    </div>
 
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Vehicle Preparation for Paint Correction</h4>
-                        <p class="mb-4">Meticulous preparation is required to protect sensitive areas from accidental damage during polishing.</p>
-                        <div class="pro-tip">
-                             <h4 class="font-bold">Watch: Taping and Preparation</h4>
-                            <p>This video demonstrates how to efficiently tape off complex trim, badges, and sensitive areas for a safe and professional paint correction job.</p>
-                            <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
-                        </div>
-                        <ul class="list-disc list-inside space-y-3">
-                            <li><strong>Tape Off All Trim:</strong> Using high-quality automotive masking tape, carefully tape off all unpainted plastic trim, rubber seals, and matte-finished pieces. Polish and compound residue can permanently stain these surfaces.</li>
-                            <li><strong>Protect Clear Plastics:</strong> Mask off headlights, taillights, and any clear plastic sensors or camera lenses.</li>
-                            <li><strong>Cover Badges and Emblems:</strong> Use precise tape lines around badges and emblems to avoid buildup of polish residue.</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Our Paint Correction Arsenal</h4>
-                        <p>Using the right combination of tools and chemicals is essential for achieving professional results efficiently.</p>
-                        <div class="space-y-4 mt-4">
-                            <h5 class="font-bold text-lg">Chemicals (Polishes & Compounds)</h5>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO UltraCut:</strong> Our most aggressive compound, designed for heavy defect removal and sanding mark removal.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO ClearCut:</strong> A fast-acting, less dusty compound for heavy to medium defect removal.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Fixer:</strong> A versatile one-step polish that can remove moderate defects while leaving a high-gloss finish.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Reflect:</strong> Our primary finishing polish. Ultra-fine abrasives create a deep, jeweled, swirl-free finish.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>CARPRO Essence:</strong> An "All-in-One" (AIO) primer polish that offers minor correction, extreme gloss, and leaves a layer of SiO2 primer for coatings.</div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Phase 2: Meticulous Wheel & Detail Cleaning</h5>
+                                <p class="text-gray-600 text-sm mb-3">We clean the dirtiest parts first to avoid contaminating clean paint. Use dedicated tools for each area.</p>
+                                <ul class="list-decimal list-inside space-y-3 pl-4">
+                                     <li><strong>The Wheel, Tire, & Well Deep Clean (One Corner at a Time):</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li><strong>Rinse Liberally:</strong> Use the pressure washer to blast away all loose dirt and brake dust from the wheel face, barrel, tire, and the entire plastic fender liner.</li>
+                                            <li><strong>Apply Chemicals:</strong> Spray CARPRO WheelX on the wheel face and barrel. Spray CARPRO ReTyre on the tire sidewall. Spray a diluted APC (MultiX) inside the fender well. Do not let these chemicals dry.</li>
+                                            <li><strong>Agitate Systematically:</strong> Use a large, soft barrel brush for the inner wheel barrels. Use a smaller, soft-bristle face brush for the wheel faces and around lug nuts. Use a stiff, dedicated tire brush to scrub the tire sidewall until the foam turns white, indicating old dressing is removed. Use a long-handle, stiff-bristle brush for the fender liner.</li>
+                                            <li><strong>Rinse Meticulously:</strong> Pressure wash the entire area again, ensuring all chemical residue and grime is completely flushed out. Repeat this entire process for the other three corners.</li>
+                                        </ol>
+                                    </li>
+                                     <li><strong>Touchless Pre-Soak & Detail Brush Work:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Foam the entire vehicle with CARPRO Lift.</li>
+                                            <li>While the foam is dwelling, use a soft, dedicated detail brush to gently agitate grime in every single intricate area. This includes: around all emblems, inside the grille, the entire gas cap housing, along all window trim and rubber seals, and inside the crevices of headlights and taillights.</li>
+                                            <li>Rinse the entire vehicle thoroughly from the top down.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
                             </div>
-                             <h5 class="font-bold text-lg mt-6">Tools & Pads</h5>
-                             <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Rupes Polishers (DA & Rotary):</strong> A full range of sizes (1", 3", 5", 6") to properly correct every part of the vehicle.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Pads (Microfiber & Wool):</strong> Used for the heavy cutting/compounding stage to remove deep defects.</div>
-                                <div class="bg-gray-50 p-4 rounded-lg"><strong>Pads (Foam - Orange, White):</strong> Orange pads are for medium polishing (one-step corrections), while white pads are for fine finishing.</div>
-                             </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Phase 3: Full Body Decontamination</h5>
+                                 <p class="text-gray-600 text-sm mb-3">This multi-step process removes all remaining contaminants, from visible dirt to invisible embedded particles.</p>
+                                 <ul class="list-decimal list-inside space-y-3 pl-4">
+                                    <li><strong>Two-Bucket Contact Wash & Detail Areas:</strong>
+                                        <div class="my-4">
+                                            <img src="https://placehold.co/800x400/E0E7FF/4F46E5?text=Two-Bucket+Method+with+Grit+Guards" alt="Diagram of the two-bucket wash method with grit guards" class="rounded-lg shadow-md mx-auto">
+                                            <p class="text-center text-xs mt-2 text-gray-500">The two-bucket method is essential for preventing scratches during the contact wash.</p>
+                                        </div>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Submerge your clean wash mitt in the "Wash" bucket to load it with soap.</li>
+                                            <li>Wash one small section (e.g., half the roof) following the strict <strong>Wash Order (WO):</strong> Roof → Glass → Hood/Trunk → Upper Sides → Front/Rear Bumpers → Lower Sides. Use straight, overlapping passes with light pressure.</li>
+                                            <li>After each section, immediately dunk the dirty mitt into the "Rinse" bucket and scrub it against the grit guard to release contaminants.</li>
+                                            <li>Squeeze out the excess water from the mitt, then return to the "Wash" bucket to pick up fresh soap for the next section.</li>
+                                            <li><strong>Lower Panels & Bumpers:</strong> For heavily soiled lower rocker panels and bumpers, use a large, soft body brush (dipped in your wash bucket) for more effective cleaning.</li>
+                                            <li><strong>Jambs & Sills:</strong> Before the final rinse, open doors, trunk, and the gas cap. Use a dedicated mitt or towel with your wash solution to meticulously clean all painted door jambs, trunk sills, and the gas cap area. Rinse these areas gently with low pressure.</li>
+                                        </ol>
+                                        <div class="pro-tip">
+                                            <h4 class="font-bold">Washing Large Vehicles (Trucks/Vans)</h4>
+                                            <p>Use a step ladder to safely reach the center of the roof. A long-handled pole brush with a soft head can be used to effectively clean the upper sections of large vehicles, ensuring no area is missed.</p>
+                                        </div>
+                                    </li>
+                                    <li><strong>Chemical Decontamination (Iron & Tar):</strong>
+                                        <div class="my-4">
+                                             <img src="https://placehold.co/800x400/FEE2E2/B91C1C?text=IronX+'Bleeding'+Effect+on+Paint" alt="Car paint showing the purple bleeding effect of IronX dissolving iron particles" class="rounded-lg shadow-md mx-auto">
+                                             <p class="text-center text-xs mt-2 text-gray-500">The dramatic purple reaction shows iron fallout being safely dissolved from the paint.</p>
+                                        </div>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                             <li>After the contact wash, rinse the entire car.</li>
+                                             <li>While the surface is wet, spray CARPRO IronX liberally over every panel. Wait 2-3 minutes. You will see the chemical react and "bleed" purple as it dissolves iron particles. Do not let it dry.</li>
+                                             <li>Rinse the vehicle thoroughly.</li>
+                                             <li>Next, spray CARPRO TarX onto a microfiber applicator (NOT directly on the paint) and gently wipe any visible black tar specs, usually found on lower body panels. The tar will dissolve instantly.</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>Mechanical Decontamination (Clay Towel):</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Work on one panel at a time (e.g., the hood). The vehicle can be wet or dry.</li>
+                                            <li>Generously spray the panel with CARPRO Ech2o as a lubricant. The surface must be very slick.</li>
+                                            <li>Gently glide your clay towel over the lubricated surface in straight lines with ZERO pressure. You will feel and hear the contamination being sheared away.</li>
+                                            <li>When the towel glides silently and smoothly, the panel is fully decontaminated. Wipe the panel dry with a clean microfiber towel and feel the glass-smooth surface.</li>
+                                            <li>Fold the clay towel to a clean side after each major panel.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Phase 4: Final Rinse & Safe Drying</h5>
+                                <p class="text-gray-600 text-sm mb-3">Improper drying can reintroduce scratches. This process ensures a perfect, streak-free, and safe finish.</p>
+                                <ul class="list-decimal list-inside space-y-3 pl-4">
+                                     <li><strong>Final Thorough Rinse:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Work from top to bottom, ensuring all chemical and clay lube residue is completely removed from all surfaces and panel gaps.</li>
+                                        </ol>
+                                     </li>
+                                     <li><strong>Air Dry Crevices:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Systematically use the air blower to force all trapped water from panel gaps, mirrors, emblems, lights, and grilles. This is critical to prevent drips that will ruin later steps like polishing or coating.</li>
+                                        </ol>
+                                     </li>
+                                     <li><strong>Towel Dry Body Panels:</strong>
+                                        <div class="my-4">
+                                             <img src="https://placehold.co/800x400/FEF3C7/D97706?text=Safe+Drying+Technique+-+The+Drag+Method" alt="A large microfiber towel being gently dragged across a car hood to dry it safely" class="rounded-lg shadow-md mx-auto">
+                                             <p class="text-center text-xs mt-2 text-gray-500">The drag method minimizes pressure on the paint, reducing the risk of scratches.</p>
+                                        </div>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Lightly mist one panel at a time with a drying aid to provide lubrication.</li>
+                                            <li><strong>The Drag Method:</strong> Lay a large, plush, and completely clean drying towel flat on the panel. Gently drag the towel towards you in one direction. Do not apply pressure or swirl the towel in circles.</li>
+                                            <li><strong>Pat Dry Remaining Drops:</strong> Use a second, smaller plush towel to gently pat dry any remaining water spots or streaks.</li>
+                                        </ol>
+                                     </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Phase 5: Post-Wash Cleanup & Staging</h5>
+                                 <p class="text-gray-600 text-sm mb-3">A professional finishes the job completely. This means resetting your workspace for the next vehicle, ensuring efficiency and maintaining tool integrity.</p>
+                                 <ul class="list-decimal list-inside space-y-3 pl-4">
+                                    <li><strong>Tool & Bucket Cleaning:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                             <li>Thoroughly rinse all wash mitts, brushes, and bucket grit guards.</li>
+                                             <li>Empty and rinse out both wash buckets completely.</li>
+                                             <li>Hang mitts and brushes to dry in the designated area.</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>Wash Bay Reset:</strong>
+                                        <ol class="list-decimal list-inside ml-6 mt-2 space-y-2 text-sm text-gray-700">
+                                            <li>Squeegee all excess water from the wash bay floor towards the drain.</li>
+                                            <li>Coil all hoses neatly and return the pressure washer gun to its holster.</li>
+                                            <li>Return all chemical bottles to their proper storage locations with caps secured.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
+                </div>
 
-
-                    <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Paint Correction Levels & At-a-Glance</h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-sm">
-                            <thead class="bg-gray-100"><tr><th class="p-2 text-left">Level</th><th class="p-2 text-left">Goal / Defect Removal</th><th class="p-2 text-left">Time</th></tr></thead>
-                            <tbody>
-                                <tr class="border-b"><td class="p-2 font-semibold">1 - Enhancement (AIO)</td><td>Gloss Only / 0-20%</td><td>45-60 min</td></tr>
-                                <tr class="border-b"><td class="p-2 font-semibold">2 - One Step</td><td>Light Swirls / ~70%</td><td>2-3 hours</td></tr>
-                                <tr class="border-b"><td class="p-2 font-semibold">3 - Two Step</td><td>Medium Scratches / ~85%</td><td>4-6 hours</td></tr>
-                                <tr class="border-b"><td class="p-2 font-semibold">4 - Wetsand</td><td>Deep Scratches / ~99%</td><td>6-10 hours</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="mt-8 pt-8 border-t">
-                        <h5 class="text-xl font-semibold mb-3">Procedure: Level 1 - The Paint Enhancement (AIO)</h5>
-                        <p class="mb-4"><strong>Goal:</strong> To significantly improve gloss and clarity while adding a layer of protection in one step. This is not for heavy defect removal.</p>
-                        <ul class="list-disc list-inside space-y-3">
-                            <li><strong>Product/Pad Combo:</strong> CARPRO Essence on a White Gloss Pad.</li>
-                            <li><strong>Technique:</strong> Follow the Core DA Polisher Technique with a faster arm speed (4-5 inches per second).</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t">
-                        <h5 class="text-xl font-semibold mb-3">Procedure: Level 2 - The One-Step Correction</h5>
-                        <p class="mb-4"><strong>Goal:</strong> To remove light to moderate swirls (~70%) in a single polishing stage.</p>
-                         <ul class="list-disc list-inside space-y-3">
-                            <li><strong>Product/Pad Combo:</strong> CARPRO Fixer or Reflect on an Orange Foam Pad.</li>
-                            <li><strong>Technique:</strong> Follow the Core DA Polisher Technique with a slow arm speed (1-2 inches per second) to allow the abrasives to fully break down.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 pt-8 border-t">
-                        <h5 class="text-xl font-semibold mb-3">Procedure: Level 3 - The Two-Step Correction</h5>
-                        <p class="mb-4"><strong>Goal:</strong> To remove medium to heavy defects (~85%) by using separate compounding and polishing stages.</p>
-                        <ul class="list-disc list-inside space-y-3">
-                            <li><strong>Step 1 (Compounding):</strong> Use CARPRO UltraCut on a Microfiber/Wool Pad.</li>
-                            <li><strong>Step 2 (Polishing):</strong> Use CARPRO Reflect on an Orange/White Foam Pad to refine the finish.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 pt-8 border-t">
-                        <h5 class="text-xl font-semibold mb-3">Procedure: Level 4 - Wetsanding Correction</h5>
-                        <p class="mb-4"><strong>Goal:</strong> The highest level of correction for deep scratches and severe texture (~99% defect removal). This is an advanced technique.</p>
-                        <ul class="list-disc list-inside space-y-3">
-                            <li><strong>Sanding Stage:</strong> Use a sequence of grits (e.g., 1500 -> 3000) to level the defect.</li>
-                            <li><strong>Correction Stage:</strong> A full **Level 3 - Two-Step Correction** must be performed to remove sanding marks and restore gloss.</li>
-                        </ul>
-                    </div>
-
-                    <h4 class="text-2xl font-semibold my-4 pt-4 border-t">The Core Technique: Using a DA Polisher</h4>
-                     <div class="pro-tip">
-                        <h4 class="font-bold">Watch: DA Polisher Technique</h4>
-                        <p>This video demonstrates the correct pressure, arm speed, and cross-hatch pattern for effective and safe paint correction.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-3">Procedure: The Basic Maintenance Wash</h3>
+                    <div class="pro-tip">
+                        <h4 class="font-bold">Watch: The Maintenance Wash</h4>
+                        <p>This video demonstrates the efficient and safe process for a routine maintenance wash on a well-kept vehicle.</p>
                         <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
                     </div>
-                    <ol class="list-decimal list-inside space-y-4">
-                        <li><strong>Section the Panel:</strong> Mentally divide the panel into 2'x2' sections.</li>
-                        <li><strong>Prime the Pad:</strong> For a fresh pad, apply 4-6 pea-sized drops of product. For subsequent sections, add 2-3 drops.</li>
-                        <li><strong>Spread the Product:</strong> On speed 1-2, quickly spread the product over the section without pressure.</li>
-                        <li><strong>The Correction Pass:</strong> Increase speed to 3-4. Apply about 5-10 lbs of pressure. Move the polisher slowly in a cross-hatch pattern (3 passes up/down, 3 passes left/right).</li>
-                        <li><strong>Clean Pad On-The-Fly:</strong> After each section, use the Lake Country pad washer to clean your pad. A clean pad cuts more effectively and produces a better finish.</li>
-                        <li><strong>Wipe & Inspect:</strong> Turn off the machine, wipe residue with a plush microfiber, and inspect with a swirl-finder light before moving to the next section.</li>
-                    </ol>
-                    
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Post-Correction Cleanup</h4>
-                        <p class="mb-4">The job isn't finished until the vehicle is perfectly clean and ready for the protection step.</p>
-                        <ul class="list-disc list-inside space-y-3">
-                           <li><strong>Remove Tape:</strong> Carefully peel away all masking tape.</li>
-                           <li><strong>Purge Crevices:</strong> Use compressed air or a detail brush to remove any dried compound dust from panel gaps, emblem edges, and window seals.</li>
-                           <li><strong>Final Wipe-Down:</strong> Meticulously wipe down the entire vehicle with CARPRO Eraser to remove all polishing oils. This is a critical step to ensure a pure surface for waxes, sealants, or coatings to bond to. Use multiple clean towels.</li>
-                        </ul>
-                    </div>
+                    <p class="mb-4"><strong>Goal:</strong> To safely clean a well-maintained or ceramic-coated vehicle without inflicting new scratches. <strong>Time:</strong> 20-45 minutes.</p>
+                    <ul class="list-decimal list-inside space-y-4 pl-4">
+                        <li><strong>Initial Rinse & Wheels:</strong> Rinse the entire vehicle to remove loose debris. Perform the standard wheel, tire, and well cleaning procedure.</li>
+                        <li><strong>Foam Application:</strong> Use a foam cannon to cover the vehicle in a thick layer of pH-neutral soap like CARPRO Reset. This provides essential lubrication.</li>
+                        <li><strong>Gentle Two-Bucket Wash:</strong> Using a clean wash mitt and the two-bucket method, gently wash the vehicle following the <strong>Wash Order (WO)</strong>. There is no need to scrub; the goal is to gently lift dirt off the protected surface.</li>
+                        <li><strong>Thorough Rinse & Dry:</strong> Rinse the vehicle completely. Dry using an air blower for crevices and the safe "drag method" with a plush drying towel and a drying aid for the panels.</li>
+                        <li><strong>Optional "Wash & Seal":</strong> For added efficiency and protection, you can substitute <strong>CARPRO Hydro2 Foam</strong> in the foam cannon step. After foaming and rinsing, the vehicle will have a fresh layer of SiO2 sealant, creating intense water beading. Skip any separate wax/sealant step if using this method.</li>
+                    </ul>
                 </div>
-
+                
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-4">Advanced Techniques & Professional Habits</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="danger-box">
-                             <h4 class="text-xl font-bold text-red-800 mb-2">Common Pitfalls to Avoid</h4>
-                            <ul class="list-disc list-inside space-y-2 text-red-900">
-                                <li><strong>Burning Paint on Edges:</strong> Body lines and edges build heat much faster. Use very light pressure and fewer passes.</li>
-                                <li><strong>Ignoring Repaints:</strong> If the PDG indicates a repaint, you MUST perform a small test spot. Record any issues in the Urable app inspection, and report to the shop manager before proceeding.</li>
-                            </ul>
-                        </div>
-                        <div class="education-box">
-                             <h4 class="text-xl font-bold text-indigo-800 mb-2">Pad Maintenance</h4>
-                            <p>Proper pad care extends their life and ensures consistent results.</p>
-                             <ul class="list-disc list-inside space-y-2 mt-2 text-indigo-900">
-                                <li><strong>Clean After Use:</strong> After a job is complete, thoroughly clean all used pads in the pad washer before storing them.</li>
-                                <li><strong>Store Properly:</strong> Store pads in a clean, dry location away from dust and debris to ensure they are ready for the next job.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Protection Section -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-4">Protection: Applying the Armor</h3>
+                    <h3 class="text-3xl font-semibold mb-4">Protection: Applying Waxes & Sealants</h3>
+                    <p>After decontamination, applying a layer of protection is essential to preserve the finish. Waxes and sealants are excellent entry-level options.</p>
                     
                     <div class="mt-4 pt-4 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Our Protection Arsenal</h4>
-                        <p>Choosing the right protection is the final step to preserve the finish. Each product offers a different level of durability, appearance, and performance.</p>
+                        <h4 class="text-2xl font-semibold mb-3">Our Protection Arsenal (Waxes & Sealants)</h4>
                         <div class="space-y-4 mt-4">
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h5 class="font-bold">Wax: Collinite 845</h5>
@@ -283,19 +248,11 @@
                             </div>
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h5 class="font-bold">Sealant: CARPRO Reload 2.0</h5>
-                                <p class="text-sm">Our standard for robust, short-to-mid-term protection. This SiO2 spray sealant offers fantastic gloss, extreme hydrophobicity (water beading), and durability for up to 6 months. It's an excellent topper for existing ceramic coatings or as a standalone sealant.</p>
+                                <p class="text-sm">Our standard for robust, short-to-mid-term protection. This SiO2 spray sealant offers fantastic gloss, extreme hydrophobicity (water beading), and durability for up to 6 months.</p>
                             </div>
                             <div class="bg-gray-50 p-4 rounded-lg">
-                                <h5 class="font-bold">Ceramic: CQUARTZ SiC</h5>
-                                <p class="text-sm">An excellent entry-level professional ceramic coating. Known for its incredible slickness, resistance to water spots, and enhanced chemical resistance. Offers durability of up to 2 years.</p>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h5 class="font-bold">Ceramic: CQUARTZ Professional</h5>
-                                <p class="text-sm">A certified-professional only coating. It features a higher concentration of pure silica, providing exceptional long-term protection, increased resistance to swirls, and a deep, rich gloss. A significant step up in hardness and durability.</p>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h5 class="font-bold">Ceramic: DQUARTZ Professional</h5>
-                                <p class="text-sm">Our top-tier offering. A nano-diamond infused coating that provides the absolute highest level of scratch resistance, hardness, and protection available. It is the ultimate choice for long-term preservation of a vehicle's finish.</p>
+                                <h5 class="font-bold">Wash & Seal: CARPRO Hydro2 Foam</h5>
+                                <p class="text-sm">An efficient touchless sealant applied via foam cannon during the wash process. Provides several months of SiO2 protection and hydrophobicity. Ideal for maintenance clients.</p>
                             </div>
                         </div>
                     </div>
@@ -312,39 +269,30 @@
                             <li><strong>Liquid Wax (Collinite 845):</strong> Apply a few small drops to a foam applicator. Apply a very thin, even coat to one panel at a time. Let it haze (5-10 minutes). With a clean, plush microfiber towel, buff off the residue.</li>
                         </ul>
                     </div>
-
-                     <h4 class="text-2xl font-semibold my-4 pt-4 border-t">Procedure: Ceramic Coating Application</h4>
-                     <div class="pro-tip">
-                        <h4 class="font-bold">Watch: Ceramic Coating Application</h4>
-                        <p>Learn how to identify the "flash," the correct technique for leveling, and how to spot and fix high spots before they cure.</p>
-                        <p class="mt-2 text-center font-semibold">[Video Tutorial Placeholder]</p>
-                    </div>
-                     <ol class="list-decimal list-inside space-y-3">
-                         <li><strong>Final Prep is Paramount:</strong> Meticulously wipe down the entire vehicle with CARPRO Eraser. This step is critical for a proper bond.</li>
-                         <li><strong>Application:</strong> Work in 2'x2' sections. Apply coating to a suede applicator and spread in a criss-cross pattern.</li>
-                         <li><strong>Observe the "Flash":</strong> After 2-5 minutes, you will see a "rainbow" effect. This is the signal to begin removal.</li>
-                         <li><strong>Leveling & Removal:</strong> With a short-nap microfiber, perform an initial wipe to "level" the coating. Immediately follow with a second, plush microfiber to remove all residue.</li>
-                         <li><strong>Inspect for High Spots:</strong> Use an inspection light to check for dark smudges (high spots). If caught within minutes, they can be removed by re-applying coating and immediately wiping off. If cured, they must be polished off.</li>
-                     </ol>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-4">Final Inspection</h3>
-                     <div class="mt-4 pt-4 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Using Light for a Flawless Inspection</h4>
-                        <p>A perfect finish can only be confirmed with proper lighting. Use multiple light sources to catch different types of defects.</p>
-                        <ul class="list-disc list-inside space-y-2 pl-4">
-                            <li><strong>Direct Light (Swirl Finder):</strong> The focused, intense beam is essential for identifying swirls, scratches, and rotary holograms.</li>
-                            <li><strong>Diffused Light (Large Ceiling Panels):</strong> This soft, broad light is best for spotting ceramic coating high spots and ensuring a uniform, streak-free finish.</li>
-                            <li><strong>Angled Light:</strong> Holding your light at a low angle to the panel can help reveal any remaining light haze or fine micro-marring from the final polishing step.</li>
-                        </ul>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Printable Decontamination Wash Checklist</h3>
+                    <p class="text-gray-600">Use this printable checklist in the bay to ensure every step of the Decontamination Wash is completed to the TDS Standard, every single time.</p>
+                    <div class="mt-4">
+                        <button onclick="window.open('../checklists/checklist_decon_wash.html', '_blank')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded">
+                            View & Print Decon Wash Checklist
+                        </button>
                     </div>
+                </div>
+
+                <div class="bg-blue-600 text-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-3xl font-bold mb-3">Next Step: Paint Perfection</h3>
+                    <p class="text-lg">Now that you've mastered the art of creating a perfectly clean surface, it's time to learn how to perfect it. Proceed to the next module to learn the advanced skill of paint correction.</p>
+                    <a href="shop_paint_correction.html" class="mt-4 inline-block bg-white text-blue-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors">
+                        Proceed to Paint Correction Module &rarr;
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
 </body>
 </html>
