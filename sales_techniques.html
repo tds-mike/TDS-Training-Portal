@@ -16,95 +16,176 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .modal-overlay { transition: opacity 0.3s ease; }
+        .modal-container { transition: transform 0.3s ease; }
+        .modal-content {
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+        .copy-button {
+            background-color: #e5e7eb;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-button:hover {
+            background-color: #d1d5db;
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+<body class="bg-gray-100 text-gray-800">
 
     <main-header data-type="sales"></main-header>
 
     <main class="container mx-auto px-6 py-12">
         <section id="techniques-content">
             <h2 class="text-5xl font-bold mb-8 text-amber-500 section-title border-amber-500">Mastering the Sales Process SOP</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12">This is the central roadmap for the entire customer journey at The Detail Shop. It outlines the process from the first inquiry to post-service follow-up, and shows how each of our sales modules fits into this workflow.</p>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">This is the central roadmap for the entire customer journey at The Detail Shop. It outlines the process from the first inquiry to post-service follow-up, integrating our digital tools and communication strategies into a seamless, premium workflow.</p>
 
             <div class="space-y-12">
 
                 <!-- Phase 1: Lead Intake -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 1: Lead Intake & Follow-Up</h3>
-                    <p class="text-gray-600">The goal is to provide a rapid, professional response to every inquiry and convert them into a scheduled consultation. All leads from all sources are to be managed within the GoHighLevel platform.</p>
+                    <h3 class="text-3xl font-semibold mb-6">Phase 1: The First Impression</h3>
+                    <p class="text-gray-600">The goal is to provide a rapid, professional, and reassuring response that immediately sets us apart from the competition.</p>
                     <div class="phase-box">
-                        <h4 class="text-2xl font-bold text-gray-800">Inquiry Handling Protocol</h4>
-                        <p class="mt-2 text-gray-600">A structured and persistent follow-up process is crucial for maximizing lead conversion.</p>
+                        <h4 class="text-2xl font-bold text-gray-800">Inquiry Handling Protocol (GoHighLevel)</h4>
                         <ul class="list-decimal list-inside mt-4 space-y-3">
-                            <li><strong>Initial Response Time:** Inquiries received before 2:00 PM must be followed up on the same day. Inquiries after 2:00 PM are followed up the next morning.</li>
-                            <li><strong>Daily Follow-Up (First 5 Days):</strong> Follow up daily. The required process is to **always call first, then immediately send a text.** If the call is not answered, leave a voicemail.</li>
-                            <li><strong>Weekly Follow-Up (Next 4 Weeks):** Follow up once per week. For this phase, **call only** and leave a voicemail.</li>
-                            <li><strong>Monthly Follow-Up (Ongoing):** Follow up once per month indefinitely. You can use a call or text for this long-term follow-up.</li>
+                            <li><strong>Initial Response Time:</strong> Inquiries before 2:00 PM are followed up same-day. After 2:00 PM, next morning.</li>
+                            <li><strong>Follow-Up Cadence:</strong> Adhere to the automated follow-up sequences. Always **call first, then text** if there is no answer. Log all outcomes.</li>
                         </ul>
-                        <div class="pro-tip">
-                            <h4 class="font-bold">Use the Follow-Up Log</h4>
-                            <p>Every call and its outcome (e.g., customer objections) must be logged. This data is vital for refining our <a href="sales_scripts.html" class="text-blue-600 hover:underline">Sales Scripts</a> and <a href="sales_objection_handling.html" class="text-blue-600 hover:underline">Objection Handling</a> guides.</p>
+                        <div class="education-box">
+                            <h4 class="font-bold">The Urable Proposal: Formalizing the Quote</h4>
+                            <p>For every new lead, create a <strong>Proposal</strong> in Urable. This provides a professional, detailed document outlining services and costs, serving as our primary tool for quoting.</p>
+                        </div>
+                         <div class="pro-tip">
+                            <h4 class="font-bold">Elevate the Experience: The "What to Expect" Email</h4>
+                            <p>After a positive call where an appointment is likely, send a personalized "What to Expect" email. This builds anticipation and reinforces their decision to choose us. </p>
+                            <button onclick="openModal('whatToExpectModal')" class="mt-2 bg-amber-500 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-amber-600">View "What to Expect" Template</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Phase 2: Onboarding -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 2: The Onboarding & Consultation Process</h3>
-                     <p class="text-gray-600">This is the most critical phase where we build trust and value. This process begins the moment the customer arrives for their drop-off.</p>
+                    <h3 class="text-3xl font-semibold mb-6">Phase 2: The Onboarding Experience & Authorization</h3>
+                     <p class="text-gray-600">This is where we define the TDS Experience. We transition from salesperson to trusted consultant, demonstrating a level of professionalism and meticulousness that justifies our premium pricing.</p>
                     <div class="phase-box">
-                         <h4 class="text-2xl font-bold text-gray-800">Vehicle Drop-Off & Inspection Checklist</h4>
-                         <ul class="list-decimal list-inside mt-4 space-y-3">
-                            <li><strong>Create Invoice & Enter Data:</strong> While with the customer, create a new invoice in Urable. Enter all customer and vehicle information (VIN, plate, mileage).</li>
-                            <li><strong>Perform Vehicle Walk-Around:</strong>
-                                <ul class="list-disc list-inside ml-6 mt-2">
-                                    <li>Take photos of any pre-existing damage and upload them to the "Inspection" section in Urable.</li>
-                                    <li>Physically point out damages to the customer and ask if they have any areas of special concern. This is where you use your <a href="sales_nepq_framework.html" class="text-blue-600 hover:underline">NEPQ questioning skills</a>.</li>
-                                    <li>**Plant Upsell Seeds:** Use your product knowledge of <a href="sales_tint.html" class="text-blue-600 hover:underline">Tint</a>, <a href="sales_ppf.html" class="text-blue-600 hover:underline">PPF</a>, and <a href="sales_coatings.html" class="text-blue-600 hover:underline">Coatings</a> to identify and suggest opportunities based on the vehicle's condition.</li>
+                         <h4 class="text-2xl font-bold text-gray-800">The Consultative Walk-Around Checklist</h4>
+                         <ul class="list-decimal list-inside mt-4 space-y-4">
+                            <li>
+                                <strong>Initiate the Job in Urable WITH the Customer:</strong>
+                                <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li>Begin by converting their proposal or creating a new job.</li>
+                                    <li>Accurately input the vehicle's VIN, mileage, and plate information in front of them. This act shows transparency and meticulousness.</li>
                                 </ul>
                             </li>
-                            <li><strong>Set Final Expectations:</strong> Clearly review the scope of work, the expected outcome, and the estimated completion time. Answer any questions.</li>
-                            <li><strong>Secure Approval & Deposit:</strong> Obtain a customer signature for the work approval in Urable. Take a 50% deposit or full payment.</li>
-                            <li><strong>Introduce Referral Program:</strong> Briefly discuss the referral program incentives while processing the payment.</li>
+                            <li>
+                                <strong>Conduct a Thorough Digital Inspection:</strong>
+                                 <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li>Using a tablet, walk the vehicle with the customer. Photograph and document every pre-existing issue in the "Inspection" tab of Urable—swirls, scratches, curb rash, interior stains. </li>
+                                    <li>Get the customer's signature on the inspection to confirm the vehicle's condition upon arrival.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Diagnose, Educate, and Upsell (Plant the Seed):</strong>
+                                <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li>Ask the customer about areas of special concern and take detailed notes in the job file.</li>
+                                    <li><strong>Exterior:</strong> Point out swirls, scratches, and water spots. Use a paint depth gauge for coating/correction jobs and explain, "We measure the paint to ensure we can correct it safely." This is your chance to upsell to a necessary paint correction.</li>
+                                    <li><strong>Interior:</strong> Note heavily soiled areas or damage. Explain what is and isn't possible: "We can significantly improve this stain, but some setting may have occurred."</li>
+                                    <li>Utilize in-shop displays (heat lamp, coated hood) to let them physically experience the difference our services make.</li>
+                                </ul>
+                            </li>
+                             <div class="pro-tip">
+                                <h4 class="font-bold">The TDS Welcome Packet</h4>
+                                <p>Present the customer with a branded folder containing your business card, relevant CARPRO brochures for their chosen services, and a printed copy of the aftercare instructions. This tangible packet adds a layer of professionalism and ensures they have all necessary information.</p>
+                            </div>
+                            <li>
+                                <strong>Set Final Expectations & Review Approvals:</strong>
+                                <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li>Clearly state the full scope of work, the expected outcome ("This will remove ~85% of swirls"), and the exact pick-up time. Ask them if they have any final questions.</li>
+                                    <li>Verbally review the key points of the Work Authorization and other required approval documents before sending them for signature.</li>
+                                </ul>
+                            </li>
+                            <div class="education-box">
+                                <h4 class="font-bold">The Approval Documents: Non-Negotiable Authorization</h4>
+                                <p>A technician cannot begin work until all documents (Work Authorization, Tint, PPF, or Coating approvals) are digitally signed in Urable. This protects the business and confirms the customer understands the scope of work.</p>
+                            </div>
+                             <li>
+                                <strong>Finalize the Booking:</strong>
+                                <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li>Once all documents are signed, take the 50% deposit.</li>
+                                    <li>Discuss the referral program incentives while processing the payment.</li>
+                                    <li>Mark the vehicle as "Dropped Off" in Urable.</li>
+                                    <li>Enter any necessary "Custom Data" at the bottom of the invoice.</li>
+                                </ul>
+                            </li>
                          </ul>
                     </div>
                 </div>
 
                  <!-- Phase 3: During Service -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 3: During the Service</h3>
-                     <p class="text-gray-600">Maintain communication and transparency while the vehicle is in our care.</p>
+                    <h3 class="text-3xl font-semibold mb-6">Phase 3: Proactive Communication & Upselling</h4>
+                     <p class="text-gray-600">Maintain communication and transparency while the vehicle is in our care to build value and peace of mind. This is also a key opportunity to make expert recommendations for additional services.</p>
                     <div class="phase-box">
-                         <h4 class="text-2xl font-bold text-gray-800">Progress Updates & Quality Control</h4>
+                         <h4 class="text-2xl font-bold text-gray-800">Progress Update Protocol</h4>
                          <ul class="list-decimal list-inside mt-4 space-y-3">
-                             <li>Technicians will upload 50/50 and before/after photos to Urable.</li>
-                             <li>Use these progress photos to update the customer, especially if it presents an opportunity for an upsell or requires approval for additional work.</li>
-                             <li>Ensure the job is on track for the promised pick-up time.</li>
-                             <li>Once work is complete, the vehicle must be quality checked to ensure it meets the expectations set during onboarding.</li>
+                             <li>Monitor technician progress and photos in Urable. These photos are your most powerful sales tools.</li>
+                             <div class="education-box">
+                                <h4 class="font-bold">The Mid-Service Upsell Opportunity</h4>
+                                <p>When a technician uncovers a condition that could be improved with an additional service, it creates a natural and low-pressure upsell opportunity. Your role is to present this as a professional recommendation based on their expert findings.</p>
+                                <ul class="list-disc list-inside ml-6 mt-2 text-gray-700">
+                                    <li><strong>Paint Correction:</strong> Technician notes a Level 1 isn't fully clearing up deeper swirls. You can recommend upgrading to a Level 2.</li>
+                                    <li><strong>Ceramic Coating:</strong> Vehicle is prepped for a paint coating. This is the perfect time to recommend adding a wheel, glass, or interior coating. </li>
+                                    <li><strong>PPF:</strong> While applying a front end kit, you can recommend adding coverage to other high-impact areas like rocker panels or A-pillars.</li>
+                                    <li><strong>Tint:</strong> After tinting the main windows, a sunstrip is an easy and logical add-on.</li>
+                                </ul>
+                                <button onclick="openModal('upsellModal')" class="mt-3 bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">View Mid-Service Upsell Templates</button>
+                            </div>
+                             <li><strong>First Update:</strong> Send a compelling 50/50 photo to the customer mid-service. This visually demonstrates the value of the work and builds excitement.</li>
+                             <div class="pro-tip">
+                                <h4 class="font-bold">Second Update: Build Anticipation</h4>
+                                <p>Send a second, brief text when the job is nearing completion. This personal touch shows you're actively managing their project and gets them excited for the pickup.</p>
+                                <button onclick="openModal('progressUpdateModal')" class="mt-2 bg-amber-500 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-amber-600">View Progress Update Template</button>
+                            </div>
+                             <li>Ensure the job is on track for the promised pick-up time. Communicate any potential delays immediately.</li>
                          </ul>
                     </div>
                 </div>
 
                 <!-- Phase 4: Pick-Up -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 4: Vehicle Pick-Up & Post-Service Loyalty</h3>
-                     <p class="text-gray-600">The final step is to deliver a professional handoff that ensures customer satisfaction and encourages future business.</p>
+                    <h3 class="text-3xl font-semibold mb-6">Phase 4: The Final Impression & Long-Term Loyalty</h4>
+                     <p class="text-gray-600">The final handoff is our last chance to solidify the premium TDS Experience, ensuring the customer leaves feeling wowed and valued, turning them into a long-term client and advocate.</p>
                     <div class="phase-box">
-                         <h4 class="text-2xl font-bold text-gray-800">Vehicle Handoff & Closing Checklist</h4>
+                         <h4 class="text-2xl font-bold text-gray-800">The Professional Handoff Checklist</h4>
                          <ul class="list-decimal list-inside mt-4 space-y-3">
-                             <li>Walk the customer around the vehicle, showcasing the completed work.</li>
-                             <li>Obtain a signature on the "Work Completed" approval form.</li>
-                             <li>**Educate on Proper Maintenance:** Explain aftercare and recommend specific products.</li>
-                             <li>**Schedule Next Appointment:** Proactively offer to schedule their next maintenance wash or service.</li>
-                             <li>**Take Final Payment:** Process the remaining balance.</li>
-                             <li>**Reinforce Referral Program:** Hand the customer 3 referral cards and encourage them to put their name on them. Remind them of the benefits.</li>
-                             <li>**Ask for a Review:** Inform the customer they will receive an automated link from Urable in 24 hours asking for a review and that we would appreciate their feedback.</li>
+                             <li><strong>Showcase the Transformation:</strong> Walk the customer around their vehicle, using the technician's before/after photos on a tablet to highlight the results.</li>
+                             <li><strong>Educate on Aftercare:</strong> Explain how to maintain the work. Hand them any physical warranty booklets (for coatings/PPF) and recommend maintenance products.</li>
+                             <li><strong>Schedule the Next Appointment:</strong> Proactively book their first maintenance wash.</li>
+                             <li><strong>Finalize the Transaction:</strong> Have the customer sign the "Work Completed" approval, then take the final payment.</li>
+                             <li><strong>Launch the Referral Program:</strong> Hand the customer three physical referral cards and instruct them to write their name on the back.</li>
+                             <li><strong>Set the Stage for a Review:</strong> Inform them they will receive an automated link from Urable asking for a review.</li>
                          </ul>
                          <div class="education-box">
-                             <h4 class="font-bold">The Referral Program Explained</h4>
-                             <p>When a new client uses a referral code, they get **10% off** their service. The referrer receives a credit of **$25 to $100** in their account based on the new client's invoice total, which can be used for future services or products.</p>
-                         </div>
+                            <h4 class="font-bold">The Personal Follow-Up</h4>
+                            <p>While Urable handles automated follow-ups, a personal touch goes a long way. Make a quick, personal call or send a text 3-7 days after a major service. This is a powerful tool for building loyalty.</p>
+                            <button onclick="openModal('personalFollowUpModal')" class="mt-2 bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">View Personal Follow-Up Template</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sales Process Checklist -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">The Ultimate TDS Sales Experience Checklist</h3>
+                    <p class="text-gray-600">This checklist is the ultimate tool for ensuring consistency. Use it to guide your workflow for every client, guaranteeing that each one receives the full, premium TDS Experience.</p>
+                    <div class="mt-4">
+                        <button onclick="openPrintableChecklist()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded">
+                            View & Print Full Sales Checklist
+                        </button>
                     </div>
                 </div>
 
@@ -112,8 +193,167 @@
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <!-- Modals for Templates -->
+    <div id="whatToExpectModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden" onclick="closeModal('whatToExpectModal')">
+        <div class="modal-container bg-white rounded-lg shadow-xl w-full max-w-2xl transform scale-95" onclick="event.stopPropagation()">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-semibold">"What to Expect" Email Template</h3>
+                <button onclick="copyToClipboard('whatToExpectText', this)" class="copy-button" title="Copy to Clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </button>
+            </div>
+            <div id="whatToExpectText" class="p-6 bg-gray-50">
+                <p><strong>Subject:</strong> Your upcoming appointment with The Detail Shop!</p>
+                <p class="mt-4">Hi [Client Name],</p>
+                <p class="mt-2">Thank you again for your interest in our [Service Name] for your [Vehicle Year/Make/Model]. We're looking forward to seeing you on [Date] at [Time].</p>
+                <p class="mt-2">Our goal is to provide a transparent, professional, and exceptional experience from start to finish. When you arrive, we will perform a full walk-around of your vehicle with you to document its current condition and confirm the exact services to be performed.</p>
+                <p class="mt-2">In the meantime, feel free to browse some of our recent work on our Instagram page: [Link to Instagram]</p>
+                <p class="mt-2">If you have any questions before your appointment, please don't hesitate to reach out.</p>
+                <p class="mt-4">Best regards,<br>The Team at The Detail Shop</p>
+            </div>
+        </div>
+    </div>
 
+    <div id="progressUpdateModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden" onclick="closeModal('progressUpdateModal')">
+        <div class="modal-container bg-white rounded-lg shadow-xl w-full max-w-2xl transform scale-95" onclick="event.stopPropagation()">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-semibold">Progress Update Text Template</h3>
+                <button onclick="copyToClipboard('progressUpdateText', this)" class="copy-button" title="Copy to Clipboard">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </button>
+            </div>
+            <div id="progressUpdateText" class="p-6 bg-gray-50">
+                 <p>Hi [Client Name], just a quick update from The Detail Shop. The [Service Name] on your [Vehicle Make] is wrapping up and the results are looking fantastic! We're right on track for your scheduled pickup at [Time]. We can't wait for you to see it!</p>
+            </div>
+        </div>
+    </div>
+
+     <div id="personalFollowUpModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden" onclick="closeModal('personalFollowUpModal')">
+        <div class="modal-container bg-white rounded-lg shadow-xl w-full max-w-2xl transform scale-95" onclick="event.stopPropagation()">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-semibold">Personal Follow-Up Template</h3>
+                <button onclick="copyToClipboard('personalFollowUpText', this)" class="copy-button" title="Copy to Clipboard">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </button>
+            </div>
+            <div id="personalFollowUpText" class="p-6 bg-gray-50">
+                 <p><strong>(Text Message)</strong><br>Hi [Client Name], this is [Your Name] from The Detail Shop. I just wanted to personally follow up and see how you're enjoying the new [Ceramic Coating/PPF/etc.] on your [Vehicle Make]. Please don't hesitate to reach out if you have any questions about the aftercare!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="upsellModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden" onclick="closeModal('upsellModal')">
+        <div class="modal-container bg-white rounded-lg shadow-xl w-full max-w-2xl transform scale-95" onclick="event.stopPropagation()">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-semibold">Mid-Service Upsell Templates (Text)</h3>
+                 <button onclick="closeModal('upsellModal')" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 bg-gray-50 space-y-4 modal-content">
+                <div class="border-b pb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-bold">Paint Correction Upsell:</h4>
+                         <button onclick="copyToClipboard('upsellText1', this)" class="copy-button" title="Copy to Clipboard">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </button>
+                    </div>
+                    <p class="text-sm" id="upsellText1">"Hi [Client Name], your technician is making great progress on your [Vehicle]. They've noted that while the Level 1 Enhancement is making a huge difference, the paint has some deeper swirls that would be fully removed by our Level 2 Correction. We can add that step for [Price]. No pressure at all, just wanted to present the option while we have the car. Here's a photo of what they're seeing."</p>
+                </div>
+                <div class="border-b pb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-bold">Ceramic Coating Add-On:</h4>
+                        <button onclick="copyToClipboard('upsellText2', this)" class="copy-button" title="Copy to Clipboard">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </button>
+                    </div>
+                    <p class="text-sm" id="upsellText2">"Hi [Client Name], your [Vehicle] is looking stunning after the paint prep! While we're getting ready to apply the coating, we noticed your wheels are in great shape. We can add our CQUARTZ Wheel & Caliper coating for [Price] to make them just as easy to clean as your paint. Let me know if you're interested!"</p>
+                </div>
+                <div class="border-b pb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-bold">PPF Add-On:</h4>
+                         <button onclick="copyToClipboard('upsellText3', this)" class="copy-button" title="Copy to Clipboard">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </button>
+                    </div>
+                    <p class="text-sm" id="upsellText3">"Hi [Client Name], progress on the PPF install for your [Vehicle] is going smoothly. Your technician mentioned the high-gloss black pillar areas are prone to scratching. We can add PPF to those for [Price] while we have the material out. Just wanted to offer the option!"</p>
+                </div>
+                 <div>
+                     <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-bold">Tint Add-On:</h4>
+                         <button onclick="copyToClipboard('upsellText4', this)" class="copy-button" title="Copy to Clipboard">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </button>
+                    </div>
+                    <p class="text-sm" id="upsellText4">"Hi [Client Name], your tint is looking great on the [Vehicle]! We have enough film to add a sunstrip to the top of the windshield to help with sun glare for just [Price]. Let us know if you'd like to add it on before we finish up."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- This modal is now just a button that opens the print-friendly page -->
+    <div id="checklistModal" class="hidden"></div>
+
+
+    <main-footer></main-footer>
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.modal-container').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.add('opacity-0');
+            modal.querySelector('.modal-container').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+
+        function copyToClipboard(elementId, buttonElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                const originalContent = buttonElement.innerHTML;
+                buttonElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>`;
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalContent;
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+            document.body.removeChild(tempTextArea);
+        }
+        
+        function openPrintableChecklist() {
+            window.open('checklist_print.html', '_blank');
+        }
+
+
+        // Initialize modals to be hidden and prepared for transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.classList.add('opacity-0');
+                if(modal.querySelector('.modal-container')) {
+                    modal.querySelector('.modal-container').classList.add('scale-95');
+                }
+            });
+            // Since we removed the checklist modal from the page, we don't need to initialize it.
+            // The button now directly calls the openPrintableChecklist function.
+        });
+    </script>
 </body>
 </html>
 

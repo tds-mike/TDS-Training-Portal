@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Technician's Urable Guide</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="module-navigation.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .phase-box { background-color: #f9fafb; border-left: 4px solid #1D4ED8; padding: 1.5rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+        .danger-box { background-color: #FEE2E2; border-left: 4px solid #EF4444; padding: 1.5rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="tech-urable-content">
+            <h2 class="text-5xl font-bold mb-8 text-blue-700 section-title border-blue-700">Urable Guide for Technicians: Documenting Excellence</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">As a technician, Urable is your primary tool for communication, documentation, and quality control. It's the official logbook for every job, proving the quality of your work and protecting the shop. Using it correctly is a core part of the TDS Standard.</p>
+
+            <div class="space-y-12">
+
+                <!-- Phase 1: Pre-Job Briefing -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 1: Pre-Job Briefing & Job Management</h3>
+                    <p class="text-gray-600">Before you touch a vehicle, your first step is to open the work order in Urable and perform a thorough review.</p>
+                    <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Pre-Work Checklist</h4>
+                        <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li>
+                                <strong>Read the Full Work Order:</strong> Understand exactly what services were sold. Are you performing a Level 1 or Level 2 correction? Is there a coating application? Know the full scope.
+                            </li>
+                            <li>
+                                <strong>Review Sales Inspection Photos:</strong> Go to the "Inspection" tab. Look at the photos taken by the sales team to see the vehicle's condition upon arrival. Pay attention to any pre-existing damage they noted.
+                            </li>
+                            <li>
+                                <strong>Identify Customer Concerns:</strong> Read any notes from the sales team about specific customer requests or problem areas (e.g., "customer is most concerned about the scratch on the driver's door").
+                            </li>
+                             <li class="font-bold text-red-600">
+                                <strong>Report Discrepancies Immediately:</strong> If your own visual inspection reveals damage or issues not noted in the sales inspection (like peeling clear coat or a repainted panel), stop. Take a photo, upload it, and notify the Shop Manager before proceeding.
+                            </li>
+                            <li>
+                                <strong>Start the Job Timer:</strong> Once you are ready to begin work, find the job in the "In Progress" column on the main dashboard and press the "Start" button. This is mandatory for accurately tracking labor hours. 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2: In-Service Documentation -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 2: In-Service Documentation & QC</h3>
+                     <p class="text-gray-600">This is your most important task in Urable. Your photos and checklist completions are our primary record of quality control.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Photo & Checklist Protocol</h4>
+                         <ul class="list-disc list-inside mt-4 space-y-3">
+                             <li>
+                                <strong>Upload to "Technician Photos":</strong> All photos you take must be uploaded to the dedicated "Technician Photos" section of the work order, not the general inspection area.
+                             </li>
+                             <li>
+                                <strong>Master the 50/50 Shot:</strong> During paint correction or interior cleaning, the 50/50 photo is king. Use masking tape to create a sharp line showing the "before" and "after" in a single, powerful image. This is a non-negotiable part of the process.
+                             </li>
+                             <li>
+                                <strong>Complete Line Item Checklists:</strong> Each service on the work order (e.g., "Full Interior Detail") has a digital checklist attached. As you complete each step of the service, you must check it off in Urable. This is our internal quality control and ensures no steps are missed.
+                             </li>
+                              <li>
+                                <strong>Document Unexpected Issues:</strong> If you uncover an issue mid-job (e.g., a hidden repair, a stain that won't come out), take a clear photo immediately. Add a concise note explaining the issue (e.g., "Stain on passenger seat appears to be permanent dye. Extraction did not remove.") and notify the manager.
+                             </li>
+                         </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Final Handoff -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 3: Job Completion & Handoff Prep</h3>
+                     <p class="text-gray-600">Before you mark a job as complete, ensure your documentation is as pristine as your detail work.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Final Checklist</h4>
+                         <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li>
+                                <strong>Take "After" Shots:</strong> Once the vehicle is complete, take a few high-quality "beauty shots" of the finished product from various angles in good lighting. These are your "hero" photos.
+                            </li>
+                             <li>
+                                <strong>Final Checklist Review:</strong> Ensure every single box on every service's checklist has been ticked. A job is not complete until all checklists are 100% filled out.
+                            </li>
+                             <li>
+                                <strong>Add Final Notes:</strong> Add any relevant notes for the sales team or for future reference (e.g., "Customer's trim is sensitive; used minimal pressure," or "Coating applied at 3:30 PM.").
+                            </li>
+                             <li>
+                                <strong>Stop the Job Timer:</strong> Go back to the main dashboard and press the "Stop" button on the job. This finalizes the total labor time.
+                             </li>
+                             <li>
+                                <strong>Communicate Completion:</strong> Notify the Shop Manager that the vehicle is 100% complete, has passed your personal quality control, and is ready for the final handoff to the customer.
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>
+
