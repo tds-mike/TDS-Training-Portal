@@ -22,15 +22,17 @@ class MainHeader extends HTMLElement {
                     { href: 'shop/shop_paint_correction.html', text: 'Paint Correction Guide' },
                     { href: 'shop/shop_ceramic_coating.html', text: 'Ceramic Coating Guide' }
                 ],
-                "Advanced Film Installation": [
-                    { href: 'shop/shop_tint.html', text: 'Window Tinting' },
-                    { href: 'shop/shop_ppf.html', text: 'PPF Installation' },
-                    { href: 'shop/shop_vinyl_wrapping.html', text: 'Vinyl Wrapping' }
+                "Window Tinting": [
+                    { href: 'shop/shop_tint.html', text: 'Installation Guide' },
+                    { href: 'shop/shop_tint_pathway.html', text: 'Training Pathway' }
                 ],
-                "Advanced Training Pathways": [
-                    { href: 'shop/shop_tint_pathway.html', text: 'Tinting Pathway' },
-                    { href: 'shop/shop_ppf_pathway.html', text: 'PPF Pathway' },
-                    { href: 'shop/shop_vinyl_pathway.html', text: 'Vinyl Pathway' }
+                "Paint Protection Film": [
+                    { href: 'shop/shop_ppf.html', text: 'Installation Guide' },
+                    { href: 'shop/shop_ppf_pathway.html', text: 'Training Pathway' }
+                ],
+                "Vinyl Wrapping": [
+                    { href: 'shop/shop_vinyl_wrapping.html', text: 'Installation Guide' },
+                    { href: 'shop/shop_vinyl_pathway.html', text: 'Training Pathway' }
                 ],
                 "Certification": [
                     { href: 'shop/shop_quiz.html', text: 'Technician Quiz' }

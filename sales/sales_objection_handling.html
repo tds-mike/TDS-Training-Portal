@@ -12,15 +12,11 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
-        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
-        .objection-box { border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
+        .objection-box { border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; margin-top: 1.5rem; }
         .objection-header { background-color: #f9fafb; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
         .objection-body { padding: 1.5rem; }
-        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
-        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1.5rem; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -30,90 +26,111 @@
     <main class="container mx-auto px-6 py-12">
         <section id="objections-content">
             <h2 class="text-5xl font-bold mb-8 text-red-600 section-title border-red-600">Diffusing Objections with NEPQ</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md mb-12">
-                <h3 class="text-3xl font-semibold mb-3">The Mindset for Objections</h3>
-                <p class="text-gray-600">An "objection" is not a rejection—it's a sign of engagement. It's a request for more information, a test of our value, or a concern that needs reassurance. Our job is not to "handle" or "fight" objections, but to welcome them as an opportunity to understand the customer better and guide them to the right solution. A confident, empathetic approach is key.</p>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">This guide provides the framework and mindset for effectively navigating customer concerns. An objection is not a rejection—it is a request for more information and an opportunity to build trust.</p>
+
+            <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                 <div class="flex items-center mb-6">
+                    <div class="bg-red-100 text-red-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-semibold">The Mindset for Objections</h3>
+                        <p class="text-gray-600">Welcome concerns as a sign of engagement. Your role is to be a consultant who clarifies, educates, and reassures.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-                <h3 class="text-3xl font-semibold mb-4">The 3-Step Formula for Diffusing Concerns</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div>
-                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">1</div>
-                        <h4 class="font-semibold text-xl">Clarify</h4>
-                        <p class="text-sm text-gray-600">Understand what their concern *really* is. Paraphrase their concern to show you're listening (e.g., "So it sounds like the main concern is the upfront investment?"). Don't assume you know.</p>
-                    </div>
-                    <div>
-                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">2</div>
-                        <h4 class="font-semibold text-xl">Discuss</h4>
-                        <p class="text-sm text-gray-600">Talk about the concern conversationally. Use analogies to re-frame value (e.g., "It's like a screen protector for your phone, but for your car's paint.").</p>
-                    </div>
-                    <div>
-                        <div class="bg-red-100 text-red-700 h-16 w-16 rounded-full flex items-center justify-center mx-auto text-2xl font-bold mb-3">3</div>
-                        <h4 class="font-semibold text-xl">Diffuse</h4>
-                        <p class="text-sm text-gray-600">Ask questions that help them overcome their own concern. Use the "Direct Response" questions to guide them back to the value they're seeking.</p>
-                    </div>
+                <h3 class="text-3xl font-semibold mb-8 text-center">The 3-Step Formula for Diffusing Concerns</h3>
+                <div class="max-w-2xl mx-auto">
+                    <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                         <defs><marker id="arrowhead-red" markerWidth="5" markerHeight="3.5" refX="0" refY="1.75" orient="auto"><polygon points="0 0, 5 1.75, 0 3.5" fill="#f87171"/></marker></defs>
+                        <!-- Steps -->
+                        <g><rect x="10" y="10" width="100" height="40" rx="5" class="fill-red-50"/><text x="60" y="35" font-size="12" text-anchor="middle" font-weight="bold" class="fill-red-700">1. Clarify</text></g>
+                        <g><rect x="150" y="10" width="100" height="40" rx="5" class="fill-red-50"/><text x="200" y="35" font-size="12" text-anchor="middle" font-weight="bold" class="fill-red-700">2. Discuss</text></g>
+                        <g><rect x="290" y="10" width="100" height="40" rx="5" class="fill-red-50"/><text x="340" y="35" font-size="12" text-anchor="middle" font-weight="bold" class="fill-red-700">3. Diffuse</text></g>
+                        <!-- Arrows -->
+                        <line x1="115" y1="30" x2="145" y2="30" stroke="#f87171" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+                        <line x1="255" y1="30" x2="285" y2="30" stroke="#f87171" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+                    </svg>
+                </div>
+                 <div class="grid md:grid-cols-3 gap-8 mt-8 text-center">
+                    <div><p class="text-gray-600">Understand the *real* concern behind their words. Paraphrase it back to them.</p></div>
+                    <div><p class="text-gray-600">Have a conversation. Use analogies to re-frame value and educate.</p></div>
+                    <div><p class="text-gray-600">Ask questions that help them overcome their own concern and see the value.</p></div>
                 </div>
             </div>
 
-            <h3 class="text-3xl font-bold text-center mb-10">A Library of Common Objections & Responses</h3>
-            <div class="space-y-8">
-                <div class="objection-box">
-                    <div class="objection-header"><h4 class="text-xl font-bold">Concern: "I'll call you back / I'll let you know."</h4></div>
-                    <div class="objection-body">
-                        <p class="font-semibold">Step 1: Clarify</p>
-                        <p>"Of course. Just so I know what information would be most helpful for you when you're thinking it over, what's the biggest question on your mind right now?"</p>
-                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
-                        <p>This objection is often a polite way of hiding the real concern (usually price or needing to speak with a spouse). Your job is to gently uncover it. Once they state the real concern, you can address it directly using the appropriate script below.</p>
+            <h2 class="text-4xl font-bold text-center mb-10 mt-16">A Library of Common Objections & Responses</h2>
+            <div class="space-y-12">
+                <!-- Price & Budget Concerns -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-100 text-red-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
+                        </div>
+                        <h3 class="text-3xl font-semibold">Price & Budget Concerns</h3>
                     </div>
-                </div>
-
-                <div class="objection-box">
-                    <div class="objection-header"><h4 class="text-xl font-bold">Concern: "It's too expensive."</h4></div>
-                    <div class="objection-body">
-                        <p class="font-semibold">Step 1: Clarify</p>
-                        <p>"I understand. When you say it's expensive, are you thinking about the upfront cost, or the long-term value?"</p>
-                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
-                        <p>"I agree it's a significant investment, but let's compare it to the alternative. The cost to repaint a bumper from rock chip damage is often over $1,000. This PPF package protects that investment for years and preserves your resale value. To make it more manageable, we do have financing options available. Would breaking it down into smaller monthly payments be helpful?"</p>
-                    </div>
-                </div>
-
-                <div class="objection-box">
-                    <div class="objection-header"><h4 class="text-xl font-bold">Concern: "Is a ceramic coating really worth it compared to just waxing?"</h4></div>
-                    <div class="objection-body">
-                        <p class="font-semibold">Step 1: Clarify</p>
-                        <p>"That's a great question. It really comes down to what you value more: short-term shine or long-term protection and ease of maintenance."</p>
-                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
-                        <p>"Wax is like a temporary glow—it looks great for a few weeks, but you have to reapply it constantly. Our ceramic coating is more like adding an extra layer of clear coat. It's a semi-permanent shield that protects your paint for years, not weeks. Would you agree that making your car much easier to clean for years to come would be a huge benefit?" (Direct Response Question)</p>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"It's too expensive."</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"I understand. It's a significant investment, but let's compare it to the alternative. The cost to repaint a bumper from rock chip damage is often over $1,000. This PPF package protects that investment for years and preserves your resale value. To make it more manageable, we do offer financing options. Would breaking it down into smaller monthly payments be helpful?"</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"I can get it cheaper somewhere else."</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"That's fair. While price is important, the quality of the film and the skill of the installer are what truly determine the result. We use premium, warrantied films and our technicians are certified experts, which prevents issues like peeling, bubbling, or blade marks on your paint. Are you more concerned with the lowest initial price, or the best long-term value and peace of mind?"</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"Can you do anything on the price? / Can I get a discount?"</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"I appreciate you asking. We price our services based on the high-quality materials we use and the immense amount of skilled labor required to achieve a perfect result. While we don't discount our work, we do have different packages and coating options that can help us find a solution that fits within your budget without compromising on quality."</p></div></div>
+                    <div class="pro-tip">
+                        <h4 class="font-bold text-lg">Scenario: Diffusing the "Too Expensive" Concern</h4>
+                        <p class="mt-2"><strong>Client:</strong> "Wow, that's a lot more than I was expecting. It's too expensive."</p>
+                        <p class="mt-2"><strong>Salesperson (Clarify):</strong> "I understand it's a significant investment. Just to be sure I'm on the right page, when you say it's expensive, are you comparing it to something else, or is it more than you had budgeted for this project right now?"</p>
+                        <p class="mt-2"><strong>Client:</strong> "It's just more than I thought I'd be spending today."</p>
+                        <p class="mt-2"><strong>Salesperson (Discuss):</strong> "I can definitely appreciate that. Let's look at it this way: the ceramic coating is a one-time investment that protects your paint for years. You mentioned how frustrating it is to constantly wash and wax the car. This eliminates that need, saving you time and money on other products over the next few years."</p>
+                        <p class="mt-2"><strong>Salesperson (Diffuse):</strong> "If we were to look at our financing options, which could break this down to about the cost of a few coffees a week, would that make it more feasible to get the long-term protection and peace of mind you're looking for?"</p>
                     </div>
                 </div>
                 
-                <div class="objection-box">
-                    <div class="objection-header"><h4 class="text-xl font-bold">Concern: "Will the PPF turn yellow over time?"</h4></div>
-                    <div class="objection-body">
-                        <p class="font-semibold">Step 1: Clarify</p>
-                        <p>"I'm glad you brought that up. That's a common concern based on older, lower-quality films from years ago."</p>
-                        <p class="mt-4 font-semibold">Step 2: Discuss & Diffuse</p>
-                        <p>"The modern, premium films we use are completely different. They are optically clear and contain UV inhibitors that prevent yellowing. We are so confident in the technology that we back it with a 10-year warranty against yellowing, cracking, or peeling. Does knowing it's protected by a long-term warranty give you peace of mind?"</p>
+                 <!-- Value & Trust Concerns -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                         <div class="bg-red-100 text-red-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-3xl font-semibold">Value & Trust Concerns</h3>
+                    </div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"Is a ceramic coating really worth it compared to just waxing?"</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"That's a great question. Wax is like a temporary glow—it looks great for a few weeks, but you have to reapply it constantly. Our ceramic coating is more like adding an extra layer of clear coat. It's a semi-permanent shield that protects your paint for years, not weeks. Would you agree that making your car much easier to clean for years to come would be a huge benefit?"</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"Will the PPF turn yellow over time?"</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"I'm glad you brought that up, as that's a common concern based on older films. The modern, premium films we use are completely different. They have built-in UV inhibitors and are backed by a 10-year warranty that guarantees against yellowing, cracking, or peeling. Does knowing it's protected by a long-term warranty give you peace of mind?"</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"My car is brand new. Does it really need paint correction?"</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"It's a surprising fact, but almost all 'new' cars are delivered from the dealership with microscopic swirls and scratches from improper washing by their staff. Applying a coating now would seal in those imperfections. Our paint enhancement is a critical step that creates a perfectly flawless surface, ensuring the coating bonds properly and delivers the incredible gloss you're paying for. You want to lock in perfection, not flaws, right?"</p></div></div>
+                    <div class="pro-tip">
+                        <h4 class="font-bold text-lg">Scenario: Diffusing the "Is it worth it?" Concern</h4>
+                        <p class="mt-2"><strong>Client:</strong> "I'm still not sure if a ceramic coating is really worth it over just getting a good wax."</p>
+                        <p class="mt-2"><strong>Salesperson (Clarify):</strong> "That's the best question to ask. So it sounds like the main thing you're weighing is the long-term benefit versus the upfront cost, is that right?"</p>
+                        <p class="mt-2"><strong>Client:</strong> "Exactly."</p>
+                        <p class="mt-2"><strong>Salesperson (Discuss):</strong> "Let's use an analogy. A wax is like renting—you get a temporary benefit but you have to keep paying for it over and over. A ceramic coating is like buying—you make a one-time investment that provides a huge return in protection and ease of maintenance for years."</p>
+                        <p class="mt-2"><strong>Salesperson (Diffuse):</strong> "You mentioned earlier how frustrating it is to have your car look dirty the day after you wash it. What would it be worth to you to solve that frustration and have your car stay cleaner for weeks, not days, for the next several years?"</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-md mt-12">
-                <h3 class="text-3xl font-semibold mb-4">Role-Playing Scenario: Diffusing "I'll call you back"</h3>
-                 <div class="education-box">
-                    <p><strong>Client:</strong> "Okay, that all sounds good. Thanks for the information, I'll call you back to schedule."</p>
-                    <p class="mt-2"><strong>Salesperson (Clarify):</strong> "Of course, take all the time you need. Just so I can make a note, what's the biggest factor you'll be considering when you think it over?"</p>
-                    <p class="mt-2"><strong>Client:</strong> "Well, it's a bit more than I was expecting to spend."</p>
-                    <p class="mt-2"><strong>Salesperson (Discuss):</strong> "I completely understand that. It's definitely a premium investment. The main reason it's priced this way is because it's a permanent solution that protects you from a much larger expense, like having to repaint a bumper down the road."</p>
-                    <p class="mt-2"><strong>Salesperson (Diffuse):</strong> "You mentioned earlier how frustrating it is to see new chips on your car after every highway drive. If we could find a way to make this investment fit your budget with a monthly payment plan, would you agree that getting that peace of mind now is the right move for your new car?"</p>
-                     <p class="mt-2"><strong>Client:</strong> "A payment plan could work. What would that look like?"</p>
+                <!-- Stalling Tactics -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-100 text-red-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-3xl font-semibold">Stalling Tactics</h3>
+                    </div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"I need to think about it / I'll call you back."</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"Of course, take all the time you need. Just so I can make a note of what information would be most helpful for you, what's the biggest question still on your mind right now?"</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"I need to talk to my spouse."</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"That's a great idea. I find it's always best to make these decisions together. What do you think their main question will be? Maybe we can go over that now so you have all the information you need for your conversation."</p></div></div>
+                    <div class="objection-box"><div class="objection-header"><h4 class="text-xl font-bold">"I'm just shopping around right now."</h4></div><div class="objection-body"><p class="font-semibold">Response:</p><p>"I encourage it! It's important to know your options. So I can give you the most accurate comparison, what other types of protection are you looking at? This will help me make sure you're comparing apples to apples in terms of the technology and the warranty."</p></div></div>
+                    <div class="pro-tip">
+                        <h4 class="font-bold text-lg">Scenario: Diffusing the "I need to talk to my spouse" Concern</h4>
+                        <p class="mt-2"><strong>Client:</strong> "This all sounds great, but I really need to talk it over with my wife before I decide."</p>
+                        <p class="mt-2"><strong>Salesperson (Clarify):</strong> "That makes perfect sense, it's a big decision. When you talk with her, what do you think her biggest question or concern about this will be?"</p>
+                        <p class="mt-2"><strong>Client:</strong> "She'll probably just ask about the price."</p>
+                        <p class="mt-2"><strong>Salesperson (Discuss):</strong> "Okay, that's completely fair. When you discuss the price, it might be helpful to also mention that this isn't just a cosmetic upgrade, but a way to protect the investment you both made in this car, which really helps with the resale value down the road."</p>
+                        <p class="mt-2"><strong>Salesperson (Diffuse):</strong> "Does it make sense to maybe schedule a tentative appointment for next week? That way, you have a spot reserved, and you can confirm with me after you've had a chance to talk. There's no obligation if you need to cancel."</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
 </body>
 </html>
+

@@ -12,9 +12,6 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
-        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .question-box { background-color: #f3f4f6; border-left: 4px solid #4f46e5; padding: 1rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
@@ -27,7 +24,7 @@
     <main class="container mx-auto px-6 py-12">
         <section id="nepq-content">
             <h2 class="text-5xl font-bold mb-8 text-indigo-600 section-title border-indigo-600">Mastering the NEPQ Framework</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-md mb-12">
                 <h3 class="text-3xl font-semibold mb-3">The "Why" Behind NEPQ</h3>
                 <p class="text-gray-600">NEPQ (Neuro-Emotional Persuasion Questioning) is the engine of our sales process. It is a psychological framework that shifts you from a "product pusher" to an expert "problem solver." Instead of telling clients what they need, we ask questions that help them discover their own problems, understand the emotional and logical consequences of those problems, and ultimately persuade themselves that our services are the solution they've been looking for. This builds massive trust and positions you as a helpful consultant.</p>
                 <div class="pro-tip">
@@ -35,145 +32,225 @@
                     <p>To ask these questions effectively, you must have deep product knowledge. Review our guides on <a href="sales_tint.html" class="text-blue-600 hover:underline">Selling Window Tint</a>, <a href="sales_ppf.html" class="text-blue-600 hover:underline">Selling PPF</a>, and <a href="sales_coatings.html" class="text-blue-600 hover:underline">Selling Ceramic Coatings</a> regularly.</p>
                 </div>
             </div>
+            
+            <!-- Conversation Flow Graphic -->
+            <div class="my-12 p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">The NEPQ Conversation Flow</h3>
+                <svg viewBox="0 0 400 120" class="w-full max-w-3xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Arrows -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="5" markerHeight="3.5" refX="0" refY="1.75" orient="auto">
+                            <polygon points="0 0, 5 1.75, 0 3.5" fill="#d1d5db"/>
+                        </marker>
+                    </defs>
+                    <line x1="80" y1="35" x2="115" y2="35" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                    <line x1="180" y1="35" x2="215" y2="35" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                    <line x1="280" y1="35" x2="315" y2="35" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                    <line x1="80" y1="95" x2="115" y2="95" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                    <line x1="180" y1="95" x2="215" y2="95" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                    <line x1="280" y1="95" x2="315" y2="95" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#arrowhead)" />
 
-            <div class="space-y-12">
+                    <!-- Top Row -->
+                    <g transform="translate(0, 20)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">1</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Connecting</text>
+                    </g>
+                    <g transform="translate(100, 20)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">2</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Situation</text>
+                    </g>
+                    <g transform="translate(200, 20)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">3</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Problem</text>
+                    </g>
+                    <g transform="translate(300, 20)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">4</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Solution</text>
+                    </g>
+                    <!-- Bottom Row -->
+                     <g transform="translate(0, 80)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">5</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Consequence</text>
+                    </g>
+                    <g transform="translate(100, 80)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">6</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Qualifying</text>
+                    </g>
+                    <g transform="translate(200, 80)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">7</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Transition</text>
+                    </g>
+                    <g transform="translate(300, 80)">
+                        <circle cx="20" cy="15" r="15" class="fill-indigo-100" />
+                        <text x="17" y="19" font-size="10" font-weight="bold" class="fill-indigo-600">8</text>
+                        <text x="40" y="18" font-size="7" font-weight="bold">Committing</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="space-y-8 mt-12">
+                <!-- Question Cards -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg></div>
+                        <h4 class="text-2xl font-semibold">1. Connecting Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These initial questions build rapport and show you're interested in their specific situation.</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"Thanks for coming in! What was it about our paint protection film that caught your attention?"</li>
+                            <li>"I see you're interested in window tint. What are you hoping to achieve for your car today?"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                         <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></div>
+                        <h4 class="text-2xl font-semibold">2. Situation Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These questions help you understand the client's current reality and their relationship with their vehicle.</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"This is a beautiful car. How long have you had it?"</li>
+                            <li>"What are you doing now to protect the paint or keep it clean?"</li>
+                             <li>"How do you typically use the vehicle? Is it a daily commuter on the highway, or more of a weekend car?"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
+                        <h4 class="text-2xl font-semibold">3. Problem Awareness Questions</h4>
+                    </div>
+                    <p class="text-gray-600">This is the most critical step. These questions help the client articulate their specific frustrations (their "problem").</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li><strong>For Coatings:</strong> "What's the most frustrating part about trying to keep your black paint looking clean and glossy?"</li>
+                            <li><strong>For PPF:</strong> "What are your biggest concerns when you're driving on the highway behind other cars?"</li>
+                            <li><strong>For Tint:</strong> "How does the heat and glare affect your comfort, or your family's comfort, during summer drives?"</li>
+                        </ul>
+                    </div>
+                </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-3">The Dialogue Framework Questions</h3>
-                    <p class="mb-6">The NEPQ framework is a sequence of questions designed to guide the conversation naturally from introduction to close. It's crucial to ask these with a tone of genuine curiosity, not like you're reading a checklist.</p>
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2h2" /></svg></div>
+                        <h4 class="text-2xl font-semibold">4. Solution Awareness Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These questions get the client to start thinking about a future where their problem is solved.</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"What have you looked into so far to solve that issue with the rock chips?"</li>
+                            <li>"Ideally, what would the perfect solution for keeping your car clean look like for you?"</li>
+                            <li>"How do you imagine your driving experience would be different if the car wasn't so hot in the summer?"</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">1. Connecting Questions</h4>
-                            <p>These initial questions build rapport and show you're interested in their specific situation.</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"Thanks for coming in! What was it about our paint protection film that caught your attention?"</li>
-                                    <li>"I see you're interested in window tint. What are you hoping to achieve for your car today?"</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4 class="text-2xl font-semibold">5. Consequence Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These questions help the client understand the negative consequences of not taking action, both logically and emotionally.</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"What happens if you don't do anything to protect the front end, and those rock chips continue to get worse over the next year?"</li>
+                            <li>"If you continue spending hours every weekend washing the car, what other things could you be doing with that time?"</li>
+                        </ul>
+                    </div>
+                </div>
 
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">2. Situation Questions</h4>
-                            <p>These questions help you understand the client's current reality and their relationship with their vehicle.</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"This is a beautiful car. How long have you had it?"</li>
-                                    <li>"What are you doing now to protect the paint or keep it clean?"</li>
-                                     <li>"How do you typically use the vehicle? Is it a daily commuter on the highway, or more of a weekend car?"</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">3. Problem Awareness Questions</h4>
-                            <p>This is the most critical step. These questions help the client articulate their specific frustrations (their "problem").</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>**For Coatings:** "What's the most frustrating part about trying to keep your black paint looking clean and glossy?"</li>
-                                    <li>**For PPF:** "What are your biggest concerns when you're driving on the highway behind other cars?"</li>
-                                    <li>**For Tint:** "How does the heat and glare affect your comfort, or your family's comfort, during summer drives?"</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">4. Solution Awareness Questions</h4>
-                            <p>These questions get the client to start thinking about a future where their problem is solved.</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"What have you looked into so far to solve that issue with the rock chips?"</li>
-                                    <li>"Ideally, what would the perfect solution for keeping your car clean look like for you?"</li>
-                                    <li>"How do you imagine your driving experience would be different if the car wasn't so hot in the summer?"</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">5. Consequence Questions</h4>
-                            <p>These questions help the client understand the negative consequences of not taking action, both logically and emotionally.</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"What happens if you don't do anything to protect the front end, and those rock chips continue to get worse over the next year?"</li>
-                                    <li>"If you continue spending hours every weekend washing the car, what other things could you be doing with that time?"</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                         <div>
-                            <h4 class="text-2xl font-semibold mb-2">6. Qualifying Questions</h4>
-                            <p>These questions determine how important it is for the client to solve the problem now.</p>
-                            <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"On a scale of 1-10, how important is it for you to solve this problem with keeping the paint protected?"</li>
-                                    <li>"Why is it a priority for you to get this done now, though, instead of waiting a few months?"</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">7. Transition Questions</h4>
-                            <p>These bridge the gap from diagnosis to recommendation, summarizing their problem and teeing up your solution.</p>
-                             <div class="question-box mt-4">
-                                <p class="font-semibold">Example:</p>
-                                <p class="mt-2">"Okay, so based on what you've told me about the constant frustration of seeing new rock chips on your new car, it sounds like our Full Front PPF package could be exactly what you're looking for to give you that peace of mind. Does that feel like it might be the right solution for you?"</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-2xl font-semibold mb-2">8. Committing Questions</h4>
-                            <p>These questions secure commitment for the next step, which is either a scheduled appointment or a confirmed follow-up.</p>
-                             <div class="question-box mt-4">
-                                <p class="font-semibold">Examples:</p>
-                                <ul class="list-disc list-inside mt-2">
-                                    <li>"Do you feel like this could be the answer for you?"</li>
-                                    <li>"It looks like we've found the perfect solution for your needs. The next step would be to get you on the schedule. Would that be appropriate?"</li>
-                                    <li>"If you'd like some time to review the proposal, when would be a good day and time for me to give you a quick follow-up call?"</li>
-                                </ul>
-                            </div>
-                        </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg></div>
+                        <h4 class="text-2xl font-semibold">6. Qualifying Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These questions determine how important it is for the client to solve the problem now.</p>
+                    <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"On a scale of 1-10, how important is it for you to solve this problem with keeping the paint protected?"</li>
+                            <li>"Why is it a priority for you to get this done now, though, instead of waiting a few months?"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></div>
+                        <h4 class="text-2xl font-semibold">7. Transition Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These bridge the gap from diagnosis to recommendation, summarizing their problem and teeing up your solution.</p>
+                     <div class="question-box mt-4">
+                        <p class="font-semibold">Example:</p>
+                        <p class="mt-2">"Okay, so based on what you've told me about the constant frustration of seeing new rock chips on your new car, it sounds like our Full Front PPF package could be exactly what you're looking for to give you that peace of mind. Does that feel like it might be the right solution for you?"</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                     <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4 class="text-2xl font-semibold">8. Committing Questions</h4>
+                    </div>
+                    <p class="text-gray-600">These questions secure commitment for the next step, which is either a scheduled appointment or a confirmed follow-up.</p>
+                     <div class="question-box mt-4">
+                        <p class="font-semibold">Examples:</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>"Do you feel like this could be the answer for you?"</li>
+                            <li>"It looks like we've found the perfect solution for your needs. The next step would be to get you on the schedule. Would that be appropriate?"</li>
+                            <li>"If you'd like some time to review the proposal, when would be a good day and time for me to give you a quick follow-up call?"</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-3xl font-semibold mb-3">Putting It All Together: A Sample Conversation</h3>
-                    <div class="mt-4 p-4 border rounded-lg">
+                    <div class="mt-4 p-4 border rounded-lg bg-gray-50">
                         <p><strong>Salesperson:</strong> "Thanks for coming in! What was it about our ceramic coatings that caught your eye?" (Connecting)</p>
-                        <p><strong>Client:</strong> "I just got this new black car, and I want to keep it looking nice."</p>
-                        <p><strong>Salesperson:</strong> "It's a beautiful car. What have you been doing so far to take care of it?" (Situation)</p>
-                        <p><strong>Client:</strong> "Just washing it, but it seems like it gets dirty and covered in water spots the very next day."</p>
-                        <p><strong>Salesperson:</strong> "I understand completely. What's the most frustrating part about that for you?" (Problem Awareness)</p>
-                        <p><strong>Client:</strong> "It's just exhausting to spend hours washing it, only to have it look bad so quickly. It makes me not want to drive it sometimes."</p>
-                        <p><strong>Salesperson:</strong> "What if you didn't do anything about it and just kept washing it the same way for the next year?" (Consequence)</p>
-                        <p><strong>Client:</strong> "I'd probably go crazy, and the paint would get all swirled up from so much washing."</p>
-                        <p><strong>Salesperson:</strong> "It sounds like finding a way to keep it cleaner for longer and protect the paint is a big priority for you now, then?" (Qualifying)</p>
-                        <p><strong>Client:</strong> "Absolutely."</p>
-                        <p><strong>Salesperson:</strong> "Okay, based on your frustration with the constant cleaning and the desire to protect your new investment, it sounds like our 3-Year Ceramic Coating would be the perfect solution to make your life easier and give you peace of mind. Does that feel like the right answer for you?" (Transition)</p>
-                        <p><strong>Client:</strong> "Yes, that sounds like exactly what I need."</p>
-                        <p><strong>Salesperson:</strong> "Great! The next step then would be to get you on the schedule. I have an opening next Tuesday, would that work for you?" (Committing)</p>
+                        <p class="mt-2"><strong>Client:</strong> "I just got this new black car, and I want to keep it looking nice."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "It's a beautiful car. What have you been doing so far to take care of it?" (Situation)</p>
+                        <p class="mt-2"><strong>Client:</strong> "Just washing it, but it seems like it gets dirty and covered in water spots the very next day."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "I understand completely. What's the most frustrating part about that for you?" (Problem Awareness)</p>
+                        <p class="mt-2"><strong>Client:</strong> "It's just exhausting to spend hours washing it, only to have it look bad so quickly. It makes me not want to drive it sometimes."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "What if you didn't do anything about it and just kept washing it the same way for the next year?" (Consequence)</p>
+                        <p class="mt-2"><strong>Client:</strong> "I'd probably go crazy, and the paint would get all swirled up from so much washing."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "It sounds like finding a way to keep it cleaner for longer and protect the paint is a big priority for you now, then?" (Qualifying)</p>
+                        <p class="mt-2"><strong>Client:</strong> "Absolutely."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "Okay, based on your frustration with the constant cleaning and the desire to protect your new investment, it sounds like our 3-Year Ceramic Coating would be the perfect solution to make your life easier and give you peace of mind. Does that feel like the right answer for you?" (Transition)</p>
+                        <p class="mt-2"><strong>Client:</strong> "Yes, that sounds like exactly what I need."</p>
+                        <p class="mt-2"><strong>Salesperson:</strong> "Great! The next step then would be to get you on the schedule. I have an opening next Tuesday, would that work for you?" (Committing)</p>
                     </div>
                 </div>
 
-                 <div class="pro-tip">
-                    <h4 class="font-bold text-lg">Common Mistakes to Avoid</h4>
-                    <ul class="list-disc list-inside space-y-2 mt-2">
-                        <li><strong>Sounding Robotic:</strong> Don't just read the questions. Have a natural, curious conversation.</li>
-                        <li><strong>Skipping Steps:</strong> Never jump to the solution (your product) before the client has fully explained their problem and its consequences. The problem is the focus, not the product.</li>
-                        <li><strong>Assuming the Problem:</strong> Don't assume you know what the client wants. Let them tell you in their own words by asking good questions.</li>
-                    </ul>
-                </div>
+            </div>
+
+            <div class="pro-tip mt-12">
+                <h4 class="font-bold text-lg">Common Mistakes to Avoid</h4>
+                <ul class="list-disc list-inside space-y-2 mt-2">
+                    <li><strong>Sounding Robotic:</strong> Don't just read the questions. Have a natural, curious conversation.</li>
+                    <li><strong>Skipping Steps:</strong> Never jump to the solution (your product) before the client has fully explained their problem and its consequences. The problem is the focus, not the product.</li>
+                    <li><strong>Assuming the Problem:</strong> Don't assume you know what the client wants. Let them tell you in their own words by asking good questions.</li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
 </body>
 </html>

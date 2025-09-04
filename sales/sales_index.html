@@ -12,9 +12,6 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
-        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .card-link { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card-link:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
     </style>
@@ -25,82 +22,109 @@
 
     <main class="container mx-auto px-6 py-12">
         <!-- Hero Section -->
-        <section class="text-center py-16">
+        <section class="text-center pt-16 pb-8">
             <h1 class="text-5xl font-bold mb-4">The TDS Master Sales Framework</h1>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">This is the blueprint for our sales success. We move beyond simple price quotes to become trusted consultants. Our process is built on a simple but powerful premise: <strong class="text-amber-500">Diagnose, Educate, Recommend.</strong></p>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">This is the blueprint for our sales success. We move beyond simple price quotes to become trusted consultants by following one powerful premise:</p>
         </section>
 
-        <!-- Core Philosophy -->
-        <section class="py-12 bg-white rounded-lg shadow-md">
-            <div class="grid md:grid-cols-3 gap-12 items-center text-center p-8">
-                <div>
-                    <div class="mb-4 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div>
-                    <h3 class="text-2xl font-bold">1. Diagnose</h3>
-                    <p class="text-gray-600">Understand the client's true needs, problems, and desired outcomes through skilled questioning.</p>
-                </div>
-                <div>
-                    <div class="mb-4 text-green-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg></div>
-                    <h3 class="text-2xl font-bold">2. Educate</h3>
-                    <p class="text-gray-600">Position our services as the solution, building value and demonstrating our expertise.</p>
-                </div>
-                <div>
-                    <div class="mb-4 text-amber-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                    <h3 class="text-2xl font-bold">3. Recommend</h3>
-                    <p class="text-gray-600">Offer a tailored solution and provide a clear, confident path to securing the sale.</p>
+        <!-- Core Philosophy Section -->
+        <section class="pb-16">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md">
+                <div class="grid md:grid-cols-3 gap-8 text-center p-8">
+                    <div>
+                        <div class="mb-4 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div>
+                        <h3 class="text-2xl font-bold">1. Diagnose</h3>
+                        <p class="text-gray-600 mt-1">Understand the client's true needs, problems, and desired outcomes through skilled questioning.</p>
+                    </div>
+                    <div>
+                        <div class="mb-4 text-green-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg></div>
+                        <h3 class="text-2xl font-bold">2. Educate</h3>
+                        <p class="text-gray-600 mt-1">Position our services as the solution, building value and demonstrating our expertise.</p>
+                    </div>
+                    <div>
+                        <div class="mb-4 text-amber-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h3 class="text-2xl font-bold">3. Recommend</h3>
+                        <p class="text-gray-600 mt-1">Offer a tailored solution and provide a clear, confident path to securing the sale.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Sales Methodology Modules -->
-        <section class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-10">Sales Methodology Modules</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="sales_techniques.html" class="block bg-white p-8 rounded-lg shadow card-link lg:col-span-3">
-                    <h3 class="text-2xl font-semibold mb-2 text-amber-600">Mastering the Sales Process (SOP)</h3>
-                    <p class="text-gray-600">This is the master roadmap. It outlines the entire customer journey, from lead intake and follow-up to the in-person consultation and post-service handoff.</p>
+        <section class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-10">Sales Methodology</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <a href="sales_techniques.html" class="block bg-white p-8 rounded-lg shadow card-link col-span-1 md:col-span-2 lg:col-span-4">
+                    <div class="flex items-center">
+                        <div class="mr-6 text-amber-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V7.618a1 1 0 011.447-.894L9 9m0 11l6-3m-6 3V9m6 8l5.447 2.724A1 1 0 0021 16.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg></div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-amber-600">Mastering the Sales Process (SOP)</h3>
+                            <p class="text-gray-600 mt-1">The master roadmap. Outlines the entire customer journey, from lead intake and follow-up to the in-person consultation and post-service handoff.</p>
+                        </div>
+                    </div>
                 </a>
+
                 <a href="sales_nepq_framework.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-indigo-600">The NEPQ Framework</h3>
-                    <p class="text-gray-600">The core of our methodology. Learn the art of Neuro-Emotional Persuasion Questioning to guide conversations, uncover pain points, and help clients persuade themselves.</p>
+                     <div class="mb-4 text-indigo-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-600">The NEPQ Framework</h3>
+                    <p class="text-gray-600 text-sm">Learn the art of questioning to guide conversations, uncover pain points, and help clients persuade themselves.</p>
                 </a>
+
                 <a href="sales_scripts.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-purple-600">Sales Scripts & Dialogues</h3>
-                    <p class="text-gray-600">Practical, real-world scripts for incoming calls, voicemails, text messages, and in-person consultations. Use these as a guide to structure your conversations.</p>
+                    <div class="mb-4 text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-purple-600">Sales Scripts & Dialogues</h3>
+                    <p class="text-gray-600 text-sm">Practical, real-world scripts for calls, voicemails, texts, and in-person consultations.</p>
                 </a>
+
                 <a href="sales_objection_handling.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-red-600">Diffusing Objections</h3>
-                    <p class="text-gray-600">Learn to reframe objections as concerns. Master the 3-step formula to clarify, discuss, and diffuse any hesitation from a potential client.</p>
+                    <div class="mb-4 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-red-600">Diffusing Objections</h3>
+                    <p class="text-gray-600 text-sm">Learn to reframe objections as concerns and master the 3-step formula to clarify, discuss, and diffuse hesitation.</p>
                 </a>
+                
+                 <a href="sales_sop.html" class="block bg-white p-8 rounded-lg shadow card-link">
+                     <div class="mb-4 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Sales SOP & Checklists</h3>
+                    <p class="text-gray-600 text-sm">The master checklist for the entire customer journey, from inquiry and onboarding to the final handoff.</p>
+                </a>
+
             </div>
         </section>
         
         <!-- Product Knowledge Modules -->
         <section class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-10">Product Knowledge Modules</h2>
+            <h2 class="text-3xl font-bold text-center mb-10">Product Knowledge</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="sales_tint.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-purple-600">Selling Window Tint</h3>
-                    <p class="text-gray-600">Master the key benefits of Carbon vs. Ceramic film, understand the legal regulations, and learn how to recommend the perfect solution for comfort and style.</p>
-                </a>
-                <a href="sales_ppf.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-indigo-600">Selling PPF</h3>
-                    <p class="text-gray-600">Learn to sell the ultimate protection. Understand self-healing technology, coverage packages, and how to articulate the value of preserving a vehicle's paint.</p>
-                </a>
-                <a href="sales_coatings.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-sky-600">Selling Ceramic Coatings</h3>
-                    <p class="text-gray-600">Become an expert in long-term protection. Learn the science behind hydrophobicity and how to sell the dream of an easy-to-clean, perpetually glossy vehicle.</p>
+                <a href="sales_detailing.html" class="block bg-white p-8 rounded-lg shadow card-link">
+                    <div class="mb-4 text-green-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-green-600">Selling Detailing</h3>
+                    <p class="text-gray-600 text-sm">Learn to sell a transformation by articulating the value of our interior and exterior detailing services.</p>
                 </a>
                 <a href="sales_paint_correction.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Selling Paint Correction</h3>
-                    <p class="text-gray-600">Master the art of selling perfection. Learn to explain the different levels of correction and why it's the foundation for a flawless ceramic coating.</p>
+                    <div class="mb-4 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Selling Paint Correction</h3>
+                    <p class="text-gray-600 text-sm">Master the art of selling perfection and explaining why it's the foundation for a flawless finish.</p>
                 </a>
-                 <a href="sales_detailing.html" class="block bg-white p-8 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-green-600">Selling Detailing</h3>
-                    <p class="text-gray-600">Learn to sell a transformation. Articulate the value of our interior and exterior detailing services, from maintenance washes to full restorations.</p>
+                <a href="sales_coatings.html" class="block bg-white p-8 rounded-lg shadow card-link">
+                    <div class="mb-4 text-sky-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-sky-600">Selling Ceramic Coatings</h3>
+                    <p class="text-gray-600 text-sm">Sell the dream of an easy-to-clean, perpetually glossy vehicle with long-term protection.</p>
                 </a>
-                <a href="sales_quiz.html" class="block bg-green-500 text-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-bold mb-2">Sales Knowledge Quiz</h3>
-                    <p>Ready to test your skills? Take the final quiz to certify your knowledge of the TDS Master Sales Framework.</p>
+                <a href="sales_ppf.html" class="block bg-white p-8 rounded-lg shadow card-link">
+                    <div class="mb-4 text-indigo-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-600">Selling PPF</h3>
+                    <p class="text-gray-600 text-sm">Sell the ultimate peace of mind. Understand self-healing technology and coverage packages.</p>
+                </a>
+                <a href="sales_tint.html" class="block bg-white p-8 rounded-lg shadow card-link">
+                    <div class="mb-4 text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2 text-purple-600">Selling Window Tint</h3>
+                    <p class="text-gray-600 text-sm">Master the key benefits of Carbon vs. Ceramic film to sell comfort, privacy, and style.</p>
+                </a>
+                <a href="sales_quiz.html" class="block bg-green-500 text-white p-8 rounded-lg shadow card-link">
+                    <div class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3 class="text-xl font-bold mb-2">Sales Knowledge Quiz</h3>
+                    <p class="text-sm">Ready to test your skills? Take the final quiz to certify your knowledge of the TDS Master Sales Framework.</p>
                 </a>
             </div>
         </section>

@@ -12,17 +12,12 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .quiz-question { border: 1px solid #e5e7eb; border-radius: 0.5rem; margin-bottom: 2rem; }
-        .question-header { background-color: #f9fafb; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
-        .question-body { padding: 1.5rem; }
-        .answer-option { display: block; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s ease; }
-        .answer-option:hover:not(:disabled) { background-color: #f3f4f6; }
-        .answer-option.selected { border-color: #2563eb; background-color: #dbeafe; }
-        .answer-option.correct { border-color: #16a34a; background-color: #dcfce7; }
-        .answer-option.incorrect { border-color: #dc2626; background-color: #fee2e2; }
-        .feedback-summary { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; display: none; }
-        .feedback-summary.correct { background-color: #dcfce7; color: #166534; }
-        .feedback-summary.incorrect { background-color: #fee2e2; color: #991b1b; }
+        .quiz-option { transition: all 0.2s ease-in-out; }
+        .quiz-option:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .quiz-option:disabled { cursor: not-allowed; }
+        .quiz-option.correct { background-color: #16a34a; border-color: #15803d; color: white; }
+        .quiz-option.incorrect { background-color: #dc2626; border-color: #b91c1c; color: white; }
+        .quiz-option.selected { background-color: #60a5fa; border-color: #2563eb; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -32,141 +27,324 @@
     <main class="container mx-auto px-6 py-12">
         <section id="quiz-content">
             <h2 class="text-5xl font-bold mb-8 text-center text-amber-500">Sales Knowledge Quiz</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12 mx-auto text-center">Test your knowledge of our sales process and product value propositions. This quiz covers key information from all modules in the Sales Portal.</p>
             
-            <div id="quiz-container">
-                <!-- Questions will be dynamically inserted here -->
+            <!-- Quiz Category Selection -->
+            <div id="category-selection" class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg text-gray-600 max-w-3xl mb-8 mx-auto text-center">Select a category to start a practice quiz, or take the final comprehensive exam to certify your knowledge.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <button data-category="SOP & Process" class="quiz-category-btn text-left p-6 bg-gray-50 hover:bg-gray-100 rounded-lg border">
+                        <h3 class="font-bold text-xl">SOP & Sales Process</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your knowledge of the entire customer journey.</p>
+                    </button>
+                    <button data-category="NEPQ & Scripts" class="quiz-category-btn text-left p-6 bg-gray-50 hover:bg-gray-100 rounded-lg border">
+                        <h3 class="font-bold text-xl">NEPQ & Scripts</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your mastery of our core sales framework.</p>
+                    </button>
+                    <button data-category="Objection Handling" class="quiz-category-btn text-left p-6 bg-gray-50 hover:bg-gray-100 rounded-lg border">
+                        <h3 class="font-bold text-xl">Objection Handling</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your ability to diffuse customer concerns.</p>
+                    </button>
+                    <button data-category="Tint" class="quiz-category-btn text-left p-6 bg-purple-50 hover:bg-purple-100 rounded-lg border border-purple-200">
+                        <h3 class="font-bold text-xl text-purple-700">Product: Window Tint</h3>
+                    </button>
+                    <button data-category="PPF" class="quiz-category-btn text-left p-6 bg-indigo-50 hover:bg-indigo-100 rounded-lg border border-indigo-200">
+                        <h3 class="font-bold text-xl text-indigo-700">Product: PPF</h3>
+                    </button>
+                     <button data-category="Coatings" class="quiz-category-btn text-left p-6 bg-sky-50 hover:bg-sky-100 rounded-lg border border-sky-200">
+                        <h3 class="font-bold text-xl text-sky-700">Product: Ceramic Coatings</h3>
+                    </button>
+                    <button data-category="Paint Correction" class="quiz-category-btn text-left p-6 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200">
+                        <h3 class="font-bold text-xl text-blue-700">Product: Paint Correction</h3>
+                    </button>
+                    <button data-category="Detailing" class="quiz-category-btn text-left p-6 bg-green-50 hover:bg-green-100 rounded-lg border border-green-200">
+                        <h3 class="font-bold text-xl text-green-700">Product: Detailing</h3>
+                    </button>
+                    <button data-category="Final Exam" class="quiz-category-btn text-left p-6 bg-amber-400 hover:bg-amber-500 rounded-lg border border-amber-500 md:col-span-2 lg:col-span-3 text-center">
+                        <h3 class="font-bold text-2xl text-gray-900">Comprehensive Final Exam</h3>
+                        <p class="text-sm text-gray-800 mt-1">A random selection of 25 questions from all categories.</p>
+                    </button>
+                </div>
             </div>
 
-            <button id="submit-answers" class="hidden w-full bg-amber-500 text-gray-900 font-bold py-3 px-4 rounded hover:bg-amber-600">Submit Answers</button>
-
-            <div id="results-container" class="hidden text-center bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-3xl font-bold">Quiz Complete!</h3>
-                <p class="text-xl mt-4">You scored <span id="score" class="font-bold"></span> out of <span id="total-questions" class="font-bold"></span>.</p>
-                <div id="results-details" class="mt-6 text-left max-w-2xl mx-auto"></div>
-                <button id="retake-quiz" class="mt-8 bg-amber-500 text-gray-900 font-bold py-2 px-4 rounded hover:bg-amber-600">Retake Quiz</button>
+            <!-- Interactive Quiz Container -->
+            <div id="quiz-container" class="hidden">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div id="quiz-header" class="flex justify-between items-center mb-6">
+                        <h3 id="quiz-title" class="text-2xl font-bold"></h3>
+                        <p id="quiz-progress-text" class="text-sm font-semibold text-gray-600"></p>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-8">
+                        <div id="quiz-progress-bar" class="bg-amber-500 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <div id="question-container">
+                        <p id="question-text" class="text-xl font-semibold mb-6"></p>
+                        <div id="options-container" class="space-y-3"></div>
+                    </div>
+                    <div id="feedback-container" class="mt-6 text-center">
+                        <p id="feedback-text" class="text-lg font-bold"></p>
+                    </div>
+                    <div class="mt-8 flex justify-end">
+                        <button id="next-question-btn" class="hidden bg-gray-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-900">Next</button>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Results Container -->
+            <div id="results-container" class="hidden">
+                 <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold">Quiz Complete!</h3>
+                    <p class="text-2xl mt-4">You scored <span id="score" class="font-bold text-amber-500"></span> out of <span id="total-questions" class="font-bold"></span>.</p>
+                    <div id="results-message" class="mt-4 text-lg"></div>
+                    <div class="mt-8 space-x-4">
+                        <button id="retake-quiz-btn" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-900">Retake This Quiz</button>
+                        <button id="back-to-categories-btn" class="bg-amber-500 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-amber-600">Back to Categories</button>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
-     <script>
-        const salesQuizData = [
-            // Sales Process & SOP
-            { module: "SOP", question: "According to the Sales SOP, what are the first two actions in the follow-up cadence for a new lead?", options: ["Send an email, then call", "Send a text, then an email", "Call, leave a voicemail, then immediately send a text", "Wait for them to call back"], answer: "Call, leave a voicemail, then immediately send a text" },
-            { module: "SOP", question: "During a vehicle handoff, what is the final step to encourage future business?", options: ["Taking the final payment", "Handing over the keys", "Asking them to schedule their next appointment", "Handing them 3 referral cards and asking for a review"], answer: "Handing them 3 referral cards and asking for a review" },
-            { module: "SOP", question: "What is the minimum deposit required to secure an appointment?", options: ["10%", "25%", "50%", "100%"], answer: "50%" },
-            { module: "SOP", question: "What is the required first step when a customer drops off their vehicle for service?", options: ["Take the keys and park the car", "Create a new invoice in Urable while with the customer", "Ask them to wait inside", "Immediately start the work"], answer: "Create a new invoice in Urable while with the customer" },
-            { module: "SOP", question: "How long should a salesperson continue to follow up with a lead that has not responded?", options: ["For one week", "For one month", "For three months", "Indefinitely"], answer: "Indefinitely" },
-            // NEPQ & Techniques
-            { module: "NEPQ", question: "What is the primary goal of the NEPQ framework?", options: ["To give the customer a price quickly", "To help the customer persuade themselves our service is the solution", "To list all product features", "To close the sale as fast as possible"], answer: "To help the customer persuade themselves our service is the solution" },
-            { module: "NEPQ", question: "A customer says 'I'm frustrated with how quickly my new black car gets dirty.' This statement is a direct result of which type of NEPQ question?", options: ["Situation Question", "Problem Awareness Question", "Solution Awareness Question", "Connecting Question"], answer: "Problem Awareness Question" },
-            { module: "NEPQ", question: "The 'Bodyguard and the Raincoat' is an analogy used to explain the difference between which two services?", options: ["Tint and PPF", "PPF and Ceramic Coatings", "Waxes and Sealants", "Interior and Exterior Detailing"], answer: "PPF and Ceramic Coatings" },
-            { module: "NEPQ", question: "What is the most powerful and relatable analogy for explaining Paint Protection Film (PPF)?", options: ["A permanent wax", "An extra layer of clear coat", "A screen protector for your car's paint", "A new paint job"], answer: "A screen protector for your car's paint" },
-            { module: "NEPQ", question: "What is the purpose of a 'Consequence Question' in the NEPQ framework?", options: ["To list the benefits of our service", "To help the client understand the negative results of inaction", "To ask for the sale", "To find out their budget"], answer: "To help the client understand the negative results of inaction" },
-            // Objection Handling
-            { module: "Objections", question: "When a customer says, 'I'll call you back,' what is the most likely hidden objection?", options: ["They are too busy", "They lost interest", "Price or need to speak with a spouse", "They don't like the service"], answer: "Price or need to speak with a spouse" },
-            { module: "Objections", question: "A customer objects to the price of a ceramic coating. What is the most effective response?", options: ["Immediately offer a discount", "Explain that the cost is high due to the product", "Agree that it's expensive", "Re-frame the value by comparing it to the cost of neglect and mention financing"], answer: "Re-frame the value by comparing it to the cost of neglect and mention financing" },
-            { module: "Objections", question: "What is the first step in the 3-step formula for diffusing concerns?", options: ["Discuss", "Diffuse", "Clarify", "Close"], answer: "Clarify" },
-            { module: "Objections", question: "A customer says, 'I found it cheaper at another shop.' How should you respond?", options: ["Match the price", "Say the other shop uses bad products", "Question the quality of the film and skill of the installers at the other shop", "Tell them to go there instead"], answer: "Question the quality of the film and skill of the installers at the other shop" },
-            { module: "Objections", question: "What is the core 'mindset' for handling objections?", options: ["An objection is a rejection", "An objection is a sign of engagement and a request for more information", "An objection is an insult", "An objection means the sale is lost"], answer: "An objection is a sign of engagement and a request for more information" },
-            // Product Knowledge
-            { module: "Products", question: "A customer's main priority for window tint is maximum heat rejection. Which film tier do you recommend?", options: ["Economy", "Premium Carbon", "Supreme Ceramic or CARPRO UVX", "The darkest film possible"], answer: "Supreme Ceramic or CARPRO UVX" },
-            { module: "Products", question: "What is the primary, #1 selling point of Paint Protection Film?", options: ["UV Protection", "Gloss Enhancement", "Impact Protection from rock chips", "Hydrophobic properties"], answer: "Impact Protection from rock chips" },
-            { module: "Products", question: "What is the most logical and beneficial service to upsell to a customer who has just purchased a full PPF front end?", options: ["An interior detail", "A ceramic coating over the entire vehicle", "A basic maintenance wash", "Windshield tint"], answer: "A ceramic coating over the entire vehicle" },
-            { module: "Products", question: "A customer asks for paint correction but thinks it will fix rock chips. What is the first and most important thing to do?", options: ["Agree and give them a quote", "Politely clarify that paint correction removes swirls, while PPF protects against chips", "Tell them we can't help", "Recommend a full repaint"], answer: "Politely clarify that paint correction removes swirls, while PPF protects against chips" },
-            { module: "Products", question: "What is the primary emotional problem that a Full Interior Restoration solves for a customer?", options: ["It makes the car easier to sell", "It removes some dust", "It restores the 'new car feeling' of pride and comfort", "It's required for a trade-in"], answer: "It restores the 'new car feeling' of pride and comfort" },
-            { module: "Products", question: "Which type of window tint has the highest TSER and outperforms competitors like Xpel XR+?", options: ["Economy", "Premium Carbon", "Supreme Ceramic", "CARPRO UVX"], answer: "CARPRO UVX" },
-            { module: "Products", question: "What is the essential service that must be performed before any ceramic coating application?", options: ["A basic car wash", "A clay bar treatment", "A minimum of a Level 1 Paint Enhancement", "Applying a wax"], answer: "A minimum of a Level 1 Paint Enhancement" },
-            { module: "Products", question: "The 'lock it in' upsell refers to selling what service after a paint correction?", options: ["Window Tint", "Paint Protection Film", "A Ceramic Coating", "An interior detail"], answer: "A Ceramic Coating" },
-            { module: "Products", question: "What is the key difference between Standard and Premium PPF?", options: ["Color", "Thickness", "Warranty length and instant vs. heat-activated self-healing", "Price only"], answer: "Warranty length and instant vs. heat-activated self-healing" },
-            { module: "Products", question: "What is the key benefit of the 'Decontamination Wash' over a standard car wash?", options: ["It's faster", "It uses less water", "It removes bonded contaminants like iron and tar", "It adds a layer of wax"], answer: "It removes bonded contaminants like iron and tar" },
-        ];
-        
-        // --- Generic Quiz Logic ---
-        const quizContainer = document.getElementById('quiz-container');
-        const submitButton = document.getElementById('submit-answers');
-        const resultsContainer = document.getElementById('results-container');
-        const scoreElement = document.getElementById('score');
-        const totalQuestionsElement = document.getElementById('total-questions');
-        const retakeQuizButton = document.getElementById('retake-quiz');
-        const resultsDetails = document.getElementById('results-details');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
-        let userAnswers = {};
+            const allQuestions = {
+                "SOP & Process": [
+                    { q: "According to the Sales SOP, what is the first action in the follow-up cadence for a new lead?", o: ["Send an email", "Send a text", "Call first", "Wait for them to call back"], a: "Call first" },
+                    { q: "During a vehicle handoff, what is a key step to encourage future business?", o: ["Taking final payment", "Handing over keys", "Asking for a review and providing referral cards", "Explaining the warranty"], a: "Asking for a review and providing referral cards" },
+                    { q: "What is the minimum deposit required to secure an appointment?", o: ["10%", "25%", "50%", "100%"], a: "50%" },
+                    { q: "A customer drops off their car. What is the first and most critical action you must take WITH them before they leave?", o: ["Take their keys and park the car", "Create/convert an invoice in Urable and perform a full digital inspection for their signature", "Ask them to wait inside", "Immediately start the work"], a: "Create/convert an invoice in Urable and perform a full digital inspection for their signature" },
+                    { q: "What is the purpose of the 'TDS Welcome Packet'?", o: ["It's the final invoice", "It provides a professional, tangible takeaway for the customer that reinforces value", "It's for internal use only", "It's a discount coupon"], a: "It provides a professional, tangible takeaway for the customer that reinforces value" },
+                    { q: "A technician finds an upsell opportunity (e.g., heavy swirls). What is the salesperson's role?", o: ["To ignore it", "To tell the technician to just fix it", "To use the technician's photos/notes to contact the customer and get approval for the additional work", "To add it to the bill without telling the customer"], a: "To use the technician's photos/notes to contact the customer and get approval for the additional work" },
+                    { q: "What is the primary goal of sending a mid-service progress update with a 50/50 photo?", o: ["To show the customer you are working", "To build excitement and visually demonstrate the value of the service", "To ask for final payment early", "To fulfill a contractual obligation"], a: "To build excitement and visually demonstrate the value of the service" },
+                    { q: "After a major service, a personal follow-up call/text is recommended. When should this be done?", o: ["The same day", "3-7 days after pickup", "One month later", "Never, it's all automated"], a: "3-7 days after pickup" },
+                    { q: "The 'What to Expect' email serves what purpose?", o: ["To confirm the price", "To build anticipation and reinforce their decision to choose us before the appointment", "To send them the final bill", "To ask for a deposit"], a: "To build anticipation and reinforce their decision to choose us before the appointment" },
+                    { q: "Why is it critical to get a signature on the digital inspection in Urable?", o: ["It's just a formality", "It protects the shop by creating an agreed-upon record of the vehicle's pre-existing condition", "It allows you to start the work timer", "It's required by law to have a digital signature"], a: "It protects the shop by creating an agreed-upon record of the vehicle's pre-existing condition" }
+                ],
+                "NEPQ & Scripts": [
+                    { q: "What is the primary goal of the NEPQ framework?", o: ["To give a price quickly", "To help the customer discover their own problems and persuade themselves our service is the solution", "To list all product features", "To close the sale as fast as possible"], a: "To help the customer discover their own problems and persuade themselves our service is the solution" },
+                    { q: "A customer says 'I'm frustrated with how quickly my new black car gets dirty.' This is a result of which type of NEPQ question?", o: ["Situation", "Problem Awareness", "Solution Awareness", "Connecting"], a: "Problem Awareness" },
+                    { q: "The 'Bodyguard and the Raincoat' is an analogy used to explain the difference between which two services?", o: ["Tint and PPF", "PPF and Ceramic Coatings", "Waxes and Sealants", "Interior and Exterior Detailing"], a: "PPF and Ceramic Coatings" },
+                    { q: "What is the main goal of the initial phone call with a new lead?", o: ["To sell the most expensive package", "To provide a firm quote", "To build enough value to get them to schedule an in-person consultation", "To get their email address"], a: "To build enough value to get them to schedule an in-person consultation" },
+                    { q: "The question 'What happens if you don't do anything to protect the front end...?' is an example of which NEPQ step?", o: ["Solution Awareness", "Qualifying", "Consequence", "Transition"], a: "Consequence" },
+                    { q: "A customer asks for a price on a 'good wax'. You ask, 'What is it about getting a wax that you were hoping to achieve for the car?' This is what kind of question?", o: ["Situation Question", "Connecting Question", "Committing Question", "Problem Awareness Question"], a: "Connecting Question" },
+                    { q: "Which NEPQ question helps you determine how important it is for the client to solve their problem *now*?", o: ["Situation Question", "Problem Awareness Question", "Qualifying Question", "Transition Question"], a: "Qualifying Question" },
+                    { q: "The statement 'So, based on what you've told me... it sounds like our package is the perfect fit. Does that feel like the answer for you?' is an example of a...", o: ["Connecting Question", "Consequence Question", "Problem Awareness Question", "Transition Question"], a: "Transition Question" },
+                    { q: "When a customer says 'Just give me a price,' what is the correct NEPQ-based response?", o: ["Give them the highest price", "Refuse to give a price", "Acknowledge the request, then pivot back to diagnosis to ensure you recommend the right solution", "Give them the lowest price to get them in the door"], a: "Acknowledge the request, then pivot back to diagnosis to ensure you recommend the right solution" },
+                    { q: "What is the purpose of a 'Committing Question' at the end of a consultation?", o: ["To ask about their budget", "To secure a commitment for the next logical step (scheduling, follow-up, etc.)", "To ask more about their problem", "To talk about the weather"], a: "To secure a commitment for the next logical step (scheduling, follow-up, etc.)" }
+                ],
+                "Objection Handling": [
+                    { q: "When a customer says, 'I'll call you back,' what is often the hidden objection?", o: ["They are too busy", "They lost interest", "Price or the need to speak with a spouse", "They don't like the service"], a: "Price or the need to speak with a spouse" },
+                    { q: "A customer objects to the price of a ceramic coating. What is the most effective response?", o: ["Immediately offer a discount", "Explain the cost is high due to the product", "Agree that it's expensive", "Re-frame the value by comparing it to the cost of neglect and mention financing"], a: "Re-frame the value by comparing it to the cost of neglect and mention financing" },
+                    { q: "What is the first step in the 3-step formula for diffusing concerns?", o: ["Discuss", "Diffuse", "Clarify", "Close"], a: "Clarify" },
+                    { q: "A customer says, 'My car is brand new, it doesn't need paint correction.' How should you respond?", o: ["Agree with them", "Use an inspection light to educate them on the swirls/defects that come from the dealership", "Say all new cars need it", "Offer a discount on the correction"], a: "Use an inspection light to educate them on the swirls/defects that come from the dealership" },
+                    { q: "What is the core 'mindset' for handling objections?", o: ["An objection is a rejection", "An objection is a request for more information and a sign of engagement", "An objection is an insult", "An objection means the sale is lost"], a: "An objection is a request for more information and a sign of engagement" },
+                    { q: "A customer says 'I need to talk to my spouse.' What is the best way to handle this?", o: ["Tell them to call you back after they talk", "Offer a 'take-it-or-leave-it' deal", "Ask what their spouse's main concern will likely be so you can arm them with information", "Pressure them to make the decision themselves"], a: "Ask what their spouse's main concern will likely be so you can arm them with information" },
+                    { q: "The 'Diffuse' step of the 3-step formula involves what?", o: ["Arguing with the customer", "Lowering the price", "Asking questions that help the customer overcome their own concern", "Ending the conversation"], a: "Asking questions that help the customer overcome their own concern" },
+                    { q: "A customer says 'I can get it cheaper at another shop.' What is the best way to re-frame value?", o: ["Match the price", "Say the other shop is bad", "Question the quality of the film, the skill of the installers, and the warranty at the other shop", "Tell them to go there instead"], a: "Question the quality of the film, the skill of the installers, and the warranty at the other shop" },
+                    { q: "What is the purpose of paraphrasing a customer's concern back to them?", o: ["To stall for time", "To show them you were listening and to confirm you understand their actual concern", "To make them repeat themselves", "To start an argument"], a: "To show them you were listening and to confirm you understand their actual concern" },
+                    { q: "If a customer is concerned about the price, what is often the best solution to offer that maintains the value of the service?", o: ["A significant discount", "Financing options", "A lower quality product", "A shorter warranty"], a: "Financing options" }
+                ],
+                "Tint": [
+                    { q: "A customer's main priority for window tint is maximum heat rejection. Which film do you recommend?", o: ["Economy Dyed", "Premium Carbon", "Supreme Ceramic or CARPRO UVX", "The darkest film possible"], a: "Supreme Ceramic or CARPRO UVX" },
+                    { q: "What is the most powerful tool for upselling from Carbon to Ceramic tint?", o: ["A brochure", "A video", "The heat lamp display", "A discount"], a: "The heat lamp display" },
+                    { q: "What is the legal VLT% for the front windows on a sedan in Connecticut?", o: ["5%", "20%", "35%", "50%"], a: "35%" },
+                    { q: "The 'TDS Difference' for tint installation emphasizes what key technique?", o: ["Hand-cutting all patterns", "Using a plotter for blade-free, precise cuts", "Using darker film than legal", "A 1-year warranty"], a: "Using a plotter for blade-free, precise cuts" },
+                    { q: "A customer has an SUV and wants the rear windows very dark for privacy, but is worried about the front windows being too dark. What do you explain to them?", o: ["They have to have the same shade all around", "That in CT, SUVs can have any VLT on the rear windows, but the fronts must be 35% or lighter", "We can only tint the rear windows", "Tint is illegal on front windows"], a: "That in CT, SUVs can have any VLT on the rear windows, but the fronts must be 35% or lighter" },
+                    { q: "What is TSER?", o: ["A brand of tint film", "The darkness of the film", "Total Solar Energy Rejected - the true measure of a film's heat-blocking performance", "A type of warranty"], a: "Total Solar Energy Rejected - the true measure of a film's heat-blocking performance" },
+                    { q: "A client is worried about their cell phone signal being interrupted. Which film type completely eliminates this concern?", o: ["Dyed film", "Metallic film", "Carbon and Ceramic films", "All films interfere with signals"], a: "Carbon and Ceramic films" },
+                    { q: "What is the best upsell to recommend to a customer who is already getting all their side and rear windows tinted?", o: ["A car wash", "An interior detail", "Adding the front windshield with a clear ceramic film for maximum heat rejection", "A discount on their next service"], a: "Adding the front windshield with a clear ceramic film for maximum heat rejection" },
+                    { q: "What core problem does tint solve for a parent with young children in the back seat?", o: ["It makes the car look cooler", "It provides UV protection for their children's skin and reduces heat and glare for a more comfortable ride", "It helps the car go faster", "It makes the windows stronger"], a: "It provides UV protection for their children's skin and reduces heat and glare for a more comfortable ride" },
+                    { q: "How long is the warranty we offer on our premium tint installations?", o: ["1 year", "5 years", "10 years", "Lifetime"], a: "10 years" }
+                ],
+                "PPF": [
+                    { q: "What is the primary, #1 selling point of Paint Protection Film?", o: ["UV Protection", "Gloss Enhancement", "Impact Protection from rock chips", "Hydrophobic properties"], a: "Impact Protection from rock chips" },
+                    { q: "What is the most logical and beneficial service to upsell to a customer who has just purchased a full PPF front end?", o: ["An interior detail", "A ceramic coating over the entire vehicle", "A basic maintenance wash", "Windshield tint"], a: "A ceramic coating over the entire vehicle" },
+                    { q: "The 'New Car Owner' is primarily motivated by what when considering PPF?", o: ["Saving money", "Anxiety about the first rock chip", "Making the car faster", "Changing the car's color"], a: "Anxiety about the first rock chip" },
+                    { q: "What is the key difference between Standard and Premium PPF?", o: ["Color", "Thickness", "Warranty length and instant vs. heat-activated self-healing", "Price only"], a: "Warranty length and instant vs. heat-activated self-healing" },
+                    { q: "What is the most powerful and relatable analogy for explaining PPF?", o: ["A permanent wax", "An extra layer of clear coat", "A screen protector for your car's paint", "A new paint job"], a: "A screen protector for your car's paint" },
+                    { q: "A customer asks what happens if their PPF-covered bumper gets into a minor accident. What is the correct response?", o: ["The whole car needs to be re-filmed", "The film is designed to be a sacrificial layer; we can remove and replace the film on just the damaged panel, and the paint underneath will likely be preserved", "The warranty covers accidents", "The film cannot be removed"], a: "The film is designed to be a sacrificial layer; we can remove and replace the film on just the damaged panel, and the paint underneath will likely be preserved" },
+                    { q: "The 'Track Pack' coverage option is designed for which type of customer?", o: ["The daily commuter", "The family with an SUV", "The enthusiast who drives their car hard and wants extra protection on high-wear areas", "The person selling their car"], a: "The enthusiast who drives their car hard and wants extra protection on high-wear areas" },
+                    { q: "Why is it important to explain that we wrap the film around panel edges?", o: ["It uses more material", "It demonstrates a commitment to a seamless, virtually invisible installation", "It's required by law", "It makes the film easier to remove"], a: "It demonstrates a commitment to a seamless, virtually invisible installation" },
+                    { q: "A customer with a brand new car is the ideal PPF client. Why?", o: ["Their car is already clean", "They are in the 'honeymoon phase' and are highly motivated to protect their investment BEFORE it gets damaged", "They have more money", "Their paint is softer"], a: "They are in the 'honeymoon phase' and are highly motivated to protect their investment BEFORE it gets damaged" },
+                    { q: "What does the 'self-healing' property of PPF mean?", o: ["It cannot be damaged", "Light scratches and swirls will disappear from the film's top coat when heat is applied", "It repairs rock chips in the paint", "The film grows back if it is torn"], a: "Light scratches and swirls will disappear from the film's top coat when heat is applied" }
+                ],
+                "Coatings": [
+                    { q: "What is the essential service that must be performed before any ceramic coating application?", o: ["A basic car wash", "A clay bar treatment", "A minimum of a Level 1 Paint Enhancement", "Applying a wax"], a: "A minimum of a Level 1 Paint Enhancement" },
+                    { q: "The 'lock it in' upsell refers to selling what service after a paint correction?", o: ["Window Tint", "Paint Protection Film", "A Ceramic Coating", "An interior detail"], a: "A Ceramic Coating" },
+                    { q: "The 'Busy Professional' customer is primarily motivated by what benefit of ceramic coatings?", o: ["Extreme gloss", "Time-saving and convenience", "Scratch resistance", "Increased resale value"], a: "Time-saving and convenience" },
+                    { q: "The 'Permanent Wax' analogy is used to explain which service?", o: ["PPF", "Window Tint", "Ceramic Coatings", "Detailing"], a: "Ceramic Coatings" },
+                    { q: "What does 'hydrophobic' mean in the context of a ceramic coating?", o: ["It repels UV rays", "It repels scratches", "It repels water, making the car easy to clean", "It repels heat"], a: "It repels water, making the car easy to clean" },
+                    { q: "What is the primary difference between CQUARTZ Lite and CQUARTZ Professional?", o: ["Color", "Durability and hardness", "Smell", "Application method"], a: "Durability and hardness" },
+                    { q: "Why is selling a 'Total Surface Protection' package (wheels, glass, interior) a huge value for the client?", o: ["It's cheaper than doing them separately", "It provides comprehensive, long-term protection for every part of their vehicle", "It's the only way we sell coatings", "It makes the car sell for more"], a: "It provides comprehensive, long-term protection for every part of their vehicle" },
+                    { q: "How does a ceramic coating protect against UV damage?", o: ["It makes the paint darker", "It acts as a sacrificial barrier, absorbing the UV rays before they can fade the clear coat", "It reflects all sunlight", "It doesn't protect against UV damage"], a: "It acts as a sacrificial barrier, absorbing the UV rays before they can fade the clear coat" },
+                    { q: "A customer wants the ultimate in scratch resistance from a coating. Which product do you recommend?", o: ["CQUARTZ Lite", "CQUARTZ SiC", "CQUARTZ Professional", "DQUARTZ Professional"], a: "DQUARTZ Professional" },
+                    { q: "A customer is worried about water spots. Which coating is known for its enhanced resistance to water spotting?", o: ["CQUARTZ Lite", "CQUARTZ SiC", "DQUARTZ Professional", "All coatings are the same"], a: "CQUARTZ SiC" }
+                ],
+                "Paint Correction": [
+                    { q: "What is the most important tool for a salesperson to use to show a customer the need for paint correction?", o: ["A flashlight", "A high-powered inspection light", "Their phone light", "Sunlight"], a: "A high-powered inspection light" },
+                    { q: "Paint correction permanently removes defects. What does a traditional wax do?", o: ["Permanently removes defects", "Temporarily fills and hides minor swirls", "Makes the paint rough", "Changes the paint color"], a: "Temporarily fills and hides minor swirls" },
+                    { q: "A 'Level 2 - One-Step Correction' is designed to remove what percentage of defects?", o: ["10-20%", "30-40%", "~70%", "95-99%"], a: "~70%" },
+                    { q: "The 'Refinishing Fine Furniture' analogy is used to explain which service?", o: ["PPF", "Paint Correction", "Ceramic Coatings", "Detailing"], a: "Paint Correction" },
+                    { q: "A customer with a new black car wants a coating but doesn't think they need paint correction. Why is this a critical educational moment?", o: ["You can't apply a coating to a new car", "Because you must explain that the coating will 'lock in' the existing dealership-installed swirls if they are not polished away first", "You should just apply the coating anyway", "New cars don't need coatings"], a: "Because you must explain that the coating will 'lock in' the existing dealership-installed swirls if they are not polished away first" },
+                    { q: "What is the primary difference between a Level 1 Paint Enhancement and a Level 2 One-Step Correction?", o: ["Level 1 is a two-step process, Level 2 is one", "Level 1 is primarily for gloss enhancement with minimal correction, while Level 2 is designed to remove a significant amount of swirls", "They use the same products", "There is no difference"], a: "Level 1 is primarily for gloss enhancement with minimal correction, while Level 2 is designed to remove a significant amount of swirls" },
+                    { q: "Why is using a Paint Depth Gauge (PDG) during a consultation a powerful sales tool?", o: ["It's fast", "It shows a high level of professionalism and care, demonstrating that you prioritize the safety of the vehicle's paint", "It tells you the color code", "It's required by the customer's insurance"], a: "It shows a high level of professionalism and care, demonstrating that you prioritize the safety of the vehicle's paint" },
+                    { q: "A client wants their 10-year-old daily driver to look 'perfect'. What is the most important part of this consultation?", o: ["Selling them the most expensive package", "Managing their expectations about what is realistically achievable", "Telling them it's impossible", "Quoting them for a full repaint"], a: "Managing their expectations about what is realistically achievable" },
+                    { q: "What is the main goal of a 'Two-Step Correction'?", o: ["To apply two layers of wax", "To use a heavy compounding step to remove deep defects, followed by a separate polishing step to refine the finish and restore gloss", "To wash the car twice", "To correct half the car at a time"], a: "To use a heavy compounding step to remove deep defects, followed by a separate polishing step to refine the finish and restore gloss" },
+                    { q: "The 'Enthusiast' customer is the ideal profile for which level of paint correction?", o: ["Level 1 - Paint Enhancement", "A simple wax", "Level 3 - Two-Step Correction", "No correction is needed"], a: "Level 3 - Two-Step Correction" }
+                ],
+                "Detailing": [
+                    { q: "A customer with a coating should be sold which type of exterior service for regular cleaning?", o: ["Decontamination Wash", "Paint Enhancement", "Maintenance Wash", "A wax package"], a: "Maintenance Wash" },
+                    { q: "A Decontamination Wash is recommended how often to maintain a coating/PPF warranty?", o: ["Every month", "Every 6 months", "Once a year", "Only when the car is new"], a: "Every 6 months" },
+                    { q: "The primary upsell path for a new client asking for a 'good wash' is to what package?", o: ["A Maintenance Wash", "A Full Interior Restoration", "A Decontamination Wash, then a Paint Enhancement", "A basic wax"], a: "A Decontamination Wash, then a Paint Enhancement" },
+                    { q: "A 'Full Interior Restoration' is designed to solve what core customer problem?", o: ["Remove some light dust", "Restore the 'new car feeling' of a sanitized, fresh, and comfortable space", "Prepare the car for a race", "Meet dealership trade-in requirements"], a: "Restore the 'new car feeling' of a sanitized, fresh, and comfortable space" },
+                    { q: "What is the correct way to handle a request for severe smoke odor removal?", o: ["Suggest a basic interior detail", "Explain that it requires a full deep cleaning and a separate ozone treatment", "Spray air freshener", "Tell them it's not possible"], a: "Explain that it requires a full deep cleaning and a separate ozone treatment" },
+                    { q: "A 'Maintenance Client' is primarily motivated by what?", o: ["Getting the lowest price", "Trying a new service every time", "Preserving their prior investment (like a coating) with consistent, professional care", "A one-time cleaning"], a: "Preserving their prior investment (like a coating) with consistent, professional care" },
+                    { q: "What is the key selling point of a professional detail for someone about to sell their car?", o: ["It's a required step", "It's a good way to find any issues with the car", "It provides a huge return on investment by increasing the curb appeal and perceived value to potential buyers", "It makes the car smell nice"], a: "It provides a huge return on investment by increasing the curb appeal and perceived value to potential buyers" },
+                    { q: "When managing expectations for stain removal, what is the most important thing to communicate to the customer?", o: ["That all stains can be removed", "That we will do everything possible, but some old or dye-based stains may be permanent", "That stain removal is free", "That we use a secret formula"], a: "That we will do everything possible, but some old or dye-based stains may be permanent" },
+                    { q: "What is the difference between a 'Basic Interior Detail' and a 'Full Interior Restoration'?", o: ["There is no difference", "The Basic is a maintenance service for already clean cars; the Full Restoration is a deep cleaning for heavily soiled cars", "The Basic uses soap, the Full uses steam", "The Basic is for trucks, the Full is for cars"], a: "The Basic is a maintenance service for already clean cars; the Full Restoration is a deep cleaning for heavily soiled cars" },
+                    { q: "The 'Discerning Owner' who notices their paint feels rough is the ideal customer for which service?", o: ["A basic wax", "A Maintenance Wash", "A Decontamination Wash", "An interior detail"], a: "A Decontamination Wash" }
+                ]
+            };
 
-        function loadQuiz() {
-            quizContainer.innerHTML = '';
-            userAnswers = {};
-            salesQuizData.sort(() => Math.random() - 0.5); // Randomize questions
+            const categorySelection = document.getElementById('category-selection');
+            const quizContainer = document.getElementById('quiz-container');
+            const resultsContainer = document.getElementById('results-container');
             
-            salesQuizData.forEach((q, index) => {
-                const questionElement = document.createElement('div');
-                questionElement.classList.add('quiz-question');
-                
-                let optionsHTML = '';
-                q.options.forEach(option => {
-                    optionsHTML += `<button class="answer-option w-full text-left" data-question-index="${index}">${option}</button>`;
-                });
-
-                questionElement.innerHTML = `
-                    <div class="question-header">
-                        <h4 class="text-xl font-bold">Question ${index + 1}</h4>
-                    </div>
-                    <div class="question-body">
-                        <p class="text-lg mb-4">${q.question}</p>
-                        <div class="options-container">${optionsHTML}</div>
-                    </div>
-                `;
-                quizContainer.appendChild(questionElement);
-            });
-
-            document.querySelectorAll('.answer-option').forEach(option => {
-                option.addEventListener('click', () => {
-                    const questionIndex = option.dataset.questionIndex;
-                    userAnswers[questionIndex] = option.textContent;
-                    
-                    document.querySelectorAll(`button[data-question-index="${questionIndex}"]`).forEach(btn => btn.classList.remove('selected'));
-                    option.classList.add('selected');
-                });
-            });
-
-            submitButton.classList.remove('hidden');
-            resultsContainer.classList.add('hidden');
-            quizContainer.classList.remove('hidden');
-        }
-
-        submitButton.addEventListener('click', () => {
+            let currentQuestions = [];
+            let currentQuestionIndex = 0;
             let score = 0;
-            resultsDetails.innerHTML = '';
+            let currentCategory = '';
 
-            salesQuizData.forEach((q, index) => {
-                const userAnswer = userAnswers[index];
-                const isCorrect = userAnswer === q.answer;
-                if (isCorrect) {
-                    score++;
+            document.querySelectorAll('.quiz-category-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    currentCategory = button.dataset.category;
+                    startQuiz(currentCategory);
+                });
+            });
+
+            function startQuiz(category) {
+                currentQuestionIndex = 0;
+                score = 0;
+                
+                if (category === 'Final Exam') {
+                    // Create a pool of all questions
+                    let all = [];
+                    for (const key in allQuestions) {
+                        all.push(...allQuestions[key]);
+                    }
+                    // Shuffle all and pick 25
+                    currentQuestions = all.sort(() => 0.5 - Math.random()).slice(0, 25);
+                } else {
+                    currentQuestions = [...allQuestions[category]].sort(() => 0.5 - Math.random());
                 }
-                const resultItem = document.createElement('div');
-                resultItem.classList.add('mb-4', 'p-4', 'rounded-lg', isCorrect ? 'bg-green-50' : 'bg-red-50');
-                resultItem.innerHTML = `
-                    <p class="font-bold">${index + 1}. ${q.question}</p>
-                    <p class="text-sm mt-2">Your answer: <span class="${isCorrect ? 'text-green-700' : 'text-red-700'}">${userAnswer || 'Not answered'}</span></p>
-                    ${!isCorrect ? `<p class="text-sm mt-1">Correct answer: <span class="text-green-700">${q.answer}</span></p>` : ''}
-                `;
-                resultsDetails.appendChild(resultItem);
+
+                categorySelection.classList.add('hidden');
+                resultsContainer.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                
+                document.getElementById('quiz-title').textContent = category;
+                displayQuestion();
+            }
+
+            function displayQuestion() {
+                const question = currentQuestions[currentQuestionIndex];
+                document.getElementById('question-text').textContent = question.q;
+                
+                const optionsContainer = document.getElementById('options-container');
+                optionsContainer.innerHTML = '';
+                
+                // Use original order for options
+                const options = question.o;
+                
+                options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('quiz-option', 'w-full', 'text-left', 'p-4', 'bg-white', 'border', 'rounded-lg');
+                    button.addEventListener('click', selectAnswer);
+                    optionsContainer.appendChild(button);
+                });
+                
+                updateProgress();
+                document.getElementById('next-question-btn').classList.add('hidden');
+                document.getElementById('feedback-text').textContent = '';
+            }
+
+            function selectAnswer(e) {
+                const selectedButton = e.target;
+                const selectedAnswer = selectedButton.textContent;
+                const correctAnswer = currentQuestions[currentQuestionIndex].a;
+                
+                const feedbackText = document.getElementById('feedback-text');
+
+                if (selectedAnswer === correctAnswer) {
+                    score++;
+                    selectedButton.classList.add('correct');
+                    feedbackText.textContent = "Correct!";
+                    feedbackText.style.color = '#16a34a';
+                } else {
+                    selectedButton.classList.add('incorrect');
+                     feedbackText.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+                     feedbackText.style.color = '#dc2626';
+                }
+                
+                document.querySelectorAll('.quiz-option').forEach(button => {
+                    button.disabled = true; // Disable all options
+                    if (button.textContent === correctAnswer) {
+                       if(!button.classList.contains('correct')) button.classList.add('correct');
+                    }
+                });
+
+                document.getElementById('next-question-btn').classList.remove('hidden');
+            }
+            
+            function updateProgress() {
+                const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+                document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+                document.getElementById('quiz-progress-text').textContent = `Question ${currentQuestionIndex + 1} of ${currentQuestions.length}`;
+            }
+
+            document.getElementById('next-question-btn').addEventListener('click', () => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < currentQuestions.length) {
+                    displayQuestion();
+                } else {
+                    showResults();
+                }
+            });
+
+            function showResults() {
+                quizContainer.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                
+                document.getElementById('score').textContent = score;
+                document.getElementById('total-questions').textContent = currentQuestions.length;
+                
+                const percentage = Math.round((score / currentQuestions.length) * 100);
+                const resultsMessage = document.getElementById('results-message');
+                if (percentage >= 90) {
+                    resultsMessage.textContent = "Excellent work! You've mastered this subject.";
+                    resultsMessage.style.color = '#16a34a';
+                } else if (percentage >= 70) {
+                    resultsMessage.textContent = "Good job! A little more review and you'll be an expert.";
+                     resultsMessage.style.color = '#ca8a04';
+                } else {
+                    resultsMessage.textContent = "Good effort. Review the training materials and try this quiz again.";
+                     resultsMessage.style.color = '#dc2626';
+                }
+            }
+
+            document.getElementById('retake-quiz-btn').addEventListener('click', () => {
+                startQuiz(currentCategory);
             });
             
-            scoreElement.textContent = score;
-            totalQuestionsElement.textContent = salesQuizData.length;
-            
-            quizContainer.classList.add('hidden');
-            submitButton.classList.add('hidden');
-            resultsContainer.classList.remove('hidden');
+            document.getElementById('back-to-categories-btn').addEventListener('click', () => {
+                resultsContainer.classList.add('hidden');
+                categorySelection.classList.remove('hidden');
+            });
         });
-        
-        retakeQuizButton.addEventListener('click', loadQuiz);
-
-        loadQuiz();
     </script>
 </body>
 </html>

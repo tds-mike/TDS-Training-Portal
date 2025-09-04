@@ -12,17 +12,12 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .quiz-question { border: 1px solid #e5e7eb; border-radius: 0.5rem; margin-bottom: 2rem; }
-        .question-header { background-color: #f9fafb; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
-        .question-body { padding: 1.5rem; }
-        .answer-option { display: block; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s ease; }
-        .answer-option:hover:not(:disabled) { background-color: #f3f4f6; }
-        .answer-option.selected { border-color: #2563eb; background-color: #dbeafe; }
-        .answer-option.correct { border-color: #16a34a; background-color: #dcfce7; }
-        .answer-option.incorrect { border-color: #dc2626; background-color: #fee2e2; }
-        .feedback-summary { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; display: none; }
-        .feedback-summary.correct { background-color: #dcfce7; color: #166534; }
-        .feedback-summary.incorrect { background-color: #fee2e2; color: #991b1b; }
+        .quiz-option { transition: all 0.2s ease-in-out; }
+        .quiz-option:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .quiz-option:disabled { cursor: not-allowed; }
+        .quiz-option.correct { background-color: #16a34a; border-color: #15803d; color: white; }
+        .quiz-option.incorrect { background-color: #dc2626; border-color: #b91c1c; color: white; }
+        .quiz-option.selected { background-color: #60a5fa; border-color: #2563eb; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -32,142 +27,297 @@
     <main class="container mx-auto px-6 py-12">
         <section id="quiz-content">
             <h2 class="text-5xl font-bold mb-8 text-center text-blue-600">Technician Knowledge Quiz</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12 mx-auto text-center">Test your knowledge of our core procedures and standards. This quiz covers key information from all modules in the Technician Portal.</p>
             
-            <div id="quiz-container">
-                <!-- Questions will be dynamically inserted here -->
+            <!-- Quiz Category Selection -->
+            <div id="category-selection" class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg text-gray-600 max-w-3xl mb-8 mx-auto text-center">Select a category to start a practice quiz, or take the final comprehensive exam to certify your knowledge.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <button data-category="Safety & SOP" class="quiz-category-btn text-left p-6 bg-gray-50 hover:bg-gray-100 rounded-lg border">
+                        <h3 class="font-bold text-xl">Safety & SOP</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your knowledge of our core safety and workflow procedures.</p>
+                    </button>
+                    <button data-category="Chemicals" class="quiz-category-btn text-left p-6 bg-red-50 hover:bg-red-100 rounded-lg border border-red-200">
+                        <h3 class="font-bold text-xl text-red-700">Chemicals</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your understanding of our chemical arsenal and dilutions.</p>
+                    </button>
+                    <button data-category="Exterior" class="quiz-category-btn text-left p-6 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200">
+                        <h3 class="font-bold text-xl text-blue-700">Exterior Detailing</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your knowledge of the wash and paint correction process.</p>
+                    </button>
+                    <button data-category="Interior" class="quiz-category-btn text-left p-6 bg-green-50 hover:bg-green-100 rounded-lg border border-green-200">
+                        <h3 class="font-bold text-xl text-green-700">Interior Restoration</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your skills in cleaning and restoring interiors.</p>
+                    </button>
+                    <button data-category="Tint" class="quiz-category-btn text-left p-6 bg-purple-50 hover:bg-purple-100 rounded-lg border border-purple-200">
+                        <h3 class="font-bold text-xl text-purple-700">Window Tinting</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your knowledge of tinting procedures.</p>
+                    </button>
+                    <button data-category="PPF" class="quiz-category-btn text-left p-6 bg-indigo-50 hover:bg-indigo-100 rounded-lg border border-indigo-200">
+                        <h3 class="font-bold text-xl text-indigo-700">PPF Installation</h3>
+                        <p class="text-sm text-gray-600 mt-1">Test your skills in PPF prep and application.</p>
+                    </button>
+                    <button data-category="Final Exam" class="quiz-category-btn text-left p-6 bg-blue-500 hover:bg-blue-600 rounded-lg border border-blue-600 md:col-span-2 lg:col-span-3 text-center">
+                        <h3 class="font-bold text-2xl text-white">Comprehensive Final Exam</h3>
+                        <p class="text-sm text-blue-100 mt-1">A random selection of 25 questions from all categories.</p>
+                    </button>
+                </div>
             </div>
-            
-            <button id="submit-answers" class="hidden w-full bg-blue-600 text-white font-bold py-3 px-4 rounded hover:bg-blue-700">Submit Answers</button>
 
-            <div id="results-container" class="hidden text-center bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-3xl font-bold">Quiz Complete!</h3>
-                <p class="text-xl mt-4">You scored <span id="score" class="font-bold"></span> out of <span id="total-questions" class="font-bold"></span>.</p>
-                <div id="results-details" class="mt-6 text-left max-w-2xl mx-auto"></div>
-                <button id="retake-quiz" class="mt-8 bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Retake Quiz</button>
+            <!-- Interactive Quiz Container -->
+            <div id="quiz-container" class="hidden">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div id="quiz-header" class="flex justify-between items-center mb-6">
+                        <h3 id="quiz-title" class="text-2xl font-bold"></h3>
+                        <p id="quiz-progress-text" class="text-sm font-semibold text-gray-600"></p>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-8">
+                        <div id="quiz-progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <div id="question-container">
+                        <p id="question-text" class="text-xl font-semibold mb-6"></p>
+                        <div id="options-container" class="space-y-3"></div>
+                    </div>
+                    <div id="feedback-container" class="mt-6 text-center">
+                        <p id="feedback-text" class="text-lg font-bold"></p>
+                    </div>
+                    <div class="mt-8 flex justify-end">
+                        <button id="next-question-btn" class="hidden bg-gray-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-900">Next</button>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Results Container -->
+            <div id="results-container" class="hidden">
+                 <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold">Quiz Complete!</h3>
+                    <p class="text-2xl mt-4">You scored <span id="score" class="font-bold text-blue-600"></span> out of <span id="total-questions" class="font-bold"></span>.</p>
+                    <div id="results-message" class="mt-4 text-lg"></div>
+                    <div class="mt-8 space-x-4">
+                        <button id="retake-quiz-btn" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-900">Retake This Quiz</button>
+                        <button id="back-to-categories-btn" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Back to Categories</button>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
-    <main-footer><script src="navigation.js" defer></script></main-footer>
+    <main-footer></main-footer>
 
     <script>
-        const shopQuizData = [
-            // Chemicals
-            { module: "Chemicals", question: "What is the correct dilution ratio for CARPRO PERL when used on interior plastics?", options: ["1:1", "1:3", "1:5", "1:10"], answer: "1:5" },
-            { module: "Chemicals", question: "Which chemical is mandatory for the final wipe-down before applying any ceramic coating?", options: ["CARPRO Reset", "CARPRO MultiX", "CARPRO Eraser", "CARPRO TarX"], answer: "CARPRO Eraser" },
-            { module: "Chemicals", question: "What type of water MUST be used for mixing PPF slip and tack solutions?", options: ["Tap Water", "Bottled Water", "Distilled Water", "Softened Water"], answer: "Distilled Water" },
-            { module: "Chemicals", question: "A vehicle has heavy mineral deposits (water spots). Which CARPRO soap is specifically designed to remove them?", options: ["Reset", "Lift", "Hydro2 Foam", "Descale"], answer: "Descale" },
-            { module: "Chemicals", question: "What is the primary danger associated with using an Ozone Generator?", options: ["Fire hazard", "Toxic to humans/pets if inhaled", "Can stain interiors", "Electrical shock"], answer: "Toxic to humans/pets if inhaled" },
-            // Exterior
-            { module: "Exterior", question: "A PDG reads 85µm on a panel. What is the maximum level of paint correction that is safe to perform?", options: ["Wetsanding", "Two-Step Correction", "One-Step Correction", "Light Gloss Enhancement"], answer: "Light Gloss Enhancement" },
-            { module: "Exterior", question: "What is the primary purpose of a Decontamination Wash?", options: ["To make the car shiny", "To remove loose dirt only", "To remove bonded contaminants like iron and tar", "To prepare for a quick wax"], answer: "To remove bonded contaminants like iron and tar" },
-            { module: "Exterior", question: "When performing a two-step correction, what is the purpose of the second (polishing) step?", options: ["To remove deep scratches", "To add a layer of wax", "To remove compounding haze and refine the gloss", "To clean the paint"], answer: "To remove compounding haze and refine the gloss" },
-            { module: "Exterior", question: "What is the visual cue that a ceramic coating is ready to be leveled (wiped off)?", options: ["It turns white", "It creates a 'rainbow' or 'oil slick' effect", "It becomes sticky", "It disappears completely"], answer: "It creates a 'rainbow' or 'oil slick' effect" },
-            { module: "Exterior", question: "What does the 'WO' (Wash Order) dictate?", options: ["Washing from the dirtiest to cleanest areas", "Washing from bottom to top", "Washing from cleanest to dirtiest areas (top to bottom)", "Washing in any order"], answer: "Washing from cleanest to dirtiest areas (top to bottom)" },
-            // Interior
-            { module: "Interior", question: "What is the first step in the 'Full Interior Restoration' workflow after removing all personal items?", options: ["Vacuuming", "Shampooing carpets", "The 'Back-to-Front' Air Purge", "Cleaning the glass"], answer: "The 'Back-to-Front' Air Purge" },
-            { module: "Interior", question: "You encounter Alcantara seats. Which product is strictly forbidden for cleaning them?", options: ["A dedicated Alcantara cleaner", "A soft brush", "A degreaser or harsh APC", "A damp microfiber towel"], answer: "A degreaser or harsh APC" },
-            { module: "Interior", question: "What is the mandatory air-out time after running an ozone generator in a vehicle?", options: ["5 minutes", "10 minutes", "15 minutes", "A minimum of 30 minutes"], answer: "A minimum of 30 minutes" },
-            { module: "Interior", question: "When cleaning perforated leather, what is the correct technique to avoid clogging the holes?", options: ["Spray the cleaner directly onto the seat", "Use a pressure washer", "Spray the cleaner onto your brush or towel first", "Avoid cleaning it"], answer: "Spray the cleaner onto your brush or towel first" },
-            { module: "Interior", question: "Which of these is NOT part of the 'TDS Signature Finish'?", options: ["Applying a TDS sticker to the door jamb", "Placing a paper floor mat on the driver's side", "Leaving the invoice on the passenger seat", "Hanging a TDS air freshener"], answer: "Leaving the invoice on the passenger seat" },
-            // Tint
-            { module: "Tint", question: "What is the TDS Standard for an installation with a visible crease or several specs of debris?", options: ["Offer a discount", "Ignore it", "When in doubt, redo it", "Try to hide it"], answer: "When in doubt, redo it" },
-            { module: "Tint", question: "What is the critical aftercare instruction for every window tint customer?", options: ["Don't wash the car for a week", "Avoid direct sunlight", "Do not roll down the windows for 3-5 days", "Apply wax to the tint"], answer: "Do not roll down the windows for 3-5 days" },
-            { module: "Tint", question: "What is the primary, faster method taught for shrinking film on side windows?", options: ["Traditional Shrink", "Snap-Shrink", "Dry Shrink", "No-Shrink method"], answer: "Snap-Shrink" },
-            { module: "Tint", question: "Which type of tint film requires more heat and time to shrink properly?", options: ["Dyed Film", "Carbon Film", "Ceramic Film", "All films shrink the same"], answer: "Ceramic Film" },
-            { module: "Tint", question: "What is the purpose of 'flushing the seals' during glass prep?", options: ["To lubricate the rubber", "To force water and hidden debris out from the edges", "To cool down the glass", "To make the film stick better"], answer: "To force water and hidden debris out from the edges" },
-            // PPF
-            { module: "PPF", question: "What is the TDS Standard for water used in all PPF solutions?", options: ["Tap Water", "Softened Water", "Distilled Water", "Bottled Spring Water"], answer: "Distilled Water" },
-            { module: "PPF", question: "What is the audible sound a technician should listen for when trimming PPF with a blade?", options: ["A loud pop", "A tearing sound", "An audible 'squeak'", "Silence"], answer: "An audible 'squeak'" },
-            { module: "PPF", question: "A customer with Premium (10-Year) PPF notices a light scratch. What feature does this film have?", options: ["It needs to be replaced", "Heat-activated self-healing", "Instant self-healing", "The warranty covers scratches"], answer: "Instant self-healing" },
-            { module: "PPF", question: "When is it appropriate to use an adhesive promoter like ProBond?", options: ["On all installations", "Never", "As a last resort on extremely difficult areas", "To make the film easier to remove"], answer: "As a last resort on extremely difficult areas" },
-            { module: "PPF", question: "What is the purpose of wrapping edges during a PPF installation?", options: ["To use more film", "To make it easier to remove", "To create a cleaner, virtually invisible look", "To trap moisture"], answer: "To create a cleaner, virtually invisible look" },
-        ];
-        
-        // --- Generic Quiz Logic ---
-        const quizContainer = document.getElementById('quiz-container');
-        const submitButton = document.getElementById('submit-answers');
-        const resultsContainer = document.getElementById('results-container');
-        const scoreElement = document.getElementById('score');
-        const totalQuestionsElement = document.getElementById('total-questions');
-        const retakeQuizButton = document.getElementById('retake-quiz');
-        const resultsDetails = document.getElementById('results-details');
+        document.addEventListener('DOMContentLoaded', () => {
 
-        let userAnswers = {};
+            const allQuestions = {
+                "Safety & SOP": [
+                    { q: "What is the CRITICAL first step a technician must take before starting any work on a vehicle?", o: ["Start the job timer in Urable", "Gather their tools", "Confirm all approval documents are SIGNED in Urable", "Perform a wash"], a: "Confirm all approval documents are SIGNED in Urable" },
+                    { q: "According to the SOP, what are your 'Technician Photos' the ultimate proof of?", o: ["That the car was dirty", "Your skill and the value you provide", "That you completed the job", "That the customer was happy"], a: "Your skill and the value you provide" },
+                    { q: "What is the mandatory PPE when applying a ceramic coating?", o: ["Gloves only", "Safety glasses only", "Nitrile gloves, safety glasses, and a respirator", "Just good ventilation"], a: "Nitrile gloves, safety glasses, and a respirator" },
+                    { q: "You discover damage on a vehicle that was not noted in the sales inspection. What is the correct procedure?", o: ["Ignore it and continue working", "Fix it yourself without telling anyone", "Stop work, document it with photos in Urable, and immediately notify the Shop Manager", "Tell the customer when they pick up the car"], a: "Stop work, document it with photos in Urable, and immediately notify the Shop Manager" },
+                    { q: "What is the correct procedure for handling a chemical spill on your skin?", o: ["Wipe it with a dry towel", "Ignore it", "Wash the affected area thoroughly with soap and water", "Spray it with a different chemical"], a: "Wash the affected area thoroughly with soap and water" },
+                    { q: "During a detail, you realize a service the customer approved (e.g. Level 1 Polish) will not be sufficient to fix the issues you see. What is the technician's responsibility?", o: ["Do the best you can with the approved service", "Upgrade the service for free", "Stop, document the issue with photos/notes in Urable, and notify the sales team of the upsell opportunity", "Tell the customer at pickup that they should have paid for more"], a: "Stop, document the issue with photos/notes in Urable, and notify the sales team of the upsell opportunity" },
+                    { q: "What does the 'TDS Signature Finish' entail?", o: ["A quick wipe down", "Cleaning the glass and dressing the tires", "A comprehensive final presentation including sticker, mat, freshener, and thank you card", "Leaving the tools in the car"], a: "A comprehensive final presentation including sticker, mat, freshener, and thank you card" },
+                    { q: "Before starting a job, you must review the sales notes to understand what?", o: ["The price of the job", "The customer's specific concerns and priorities", "How long the job should take", "The color of the car"], a: "The customer's specific concerns and priorities" },
+                    { q: "If you are working on a large truck or SUV and cannot safely reach the roof, what should you do?", o: ["Skip the roof", "Stand on the tires", "Use a sturdy, approved step ladder", "Lean a towel on the door and stand on the door sill"], a: "Use a sturdy, approved step ladder" },
+                    { q: "What is the final action a technician must take in Urable upon completing a job?", o: ["Add more photos", "Check off the last checklist item", "Press the 'Stop' button on their assigned job timer", "Log out of the app"], a: "Press the 'Stop' button on their assigned job timer" }
+                ],
+                "Chemicals": [
+                    { q: "What is the correct dilution ratio for CARPRO PERL when used on interior plastics?", o: ["1:1 (Tires)", "1:3 (Exterior Trim)", "1:5 (Interior Plastics)", "1:10 (Leather)"], a: "1:5 (Interior Plastics)" },
+                    { q: "A vehicle has heavy mineral deposits (water spots). Which CARPRO soap is specifically designed to remove them due to its acidic nature?", o: ["Reset", "Lift", "Hydro2 Foam", "Descale"], a: "Descale" },
+                    { q: "What is the primary danger associated with using an Ozone Generator?", o: ["Fire hazard", "It is toxic to humans/pets if inhaled", "Can stain interiors", "Electrical shock"], a: "It is toxic to humans/pets if inhaled" },
+                    { q: "You need to clean a greasy engine bay. Which chemical is the most appropriate choice for this task?", o: ["CARPRO Eraser", "CARPRO PERL", "CARPRO MultiX at a strong dilution", "CARPRO Reset"], a: "CARPRO MultiX at a strong dilution" },
+                    { q: "Which chemical is mandatory for the final wipe-down before applying any ceramic coating to ensure a pure surface?", o: ["CARPRO Reset", "CARPRO MultiX", "CARPRO Eraser", "CARPRO TarX"], a: "CARPRO Eraser" },
+                    { q: "What type of water MUST be used for mixing PPF slip and tack solutions to avoid mineral contamination?", o: ["Tap Water", "Bottled Water", "Distilled Water", "Softened Water"], a: "Distilled Water" },
+                    { q: "A customer's car has fine scratches and needs a layer of protection before delivery. Which single CARPRO product is designed as an 'All-in-One' (AIO) that can achieve this?", o: ["CARPRO UltraCut", "CARPRO Reflect", "CARPRO Essence", "CARPRO Fixer"], a: "CARPRO Essence" },
+                    { q: "You are cleaning a car with a high-quality ceramic coating. Which soap should you choose for a routine maintenance wash to avoid damaging the coating?", o: ["A strong degreaser", "An acidic wheel cleaner", "A pH-neutral soap like CARPRO Reset", "A wash-and-wax soap"], a: "A pH-neutral soap like CARPRO Reset" },
+                    { q: "What is the key difference between an alkaline soap (like Lift) and an acidic soap (like Descale)?", o: ["There is no difference", "Alkaline is for minerals, Acidic is for grease", "Alkaline is effective on organic grime/oils, Acidic is effective on mineral deposits/water spots", "Alkaline is for interiors, Acidic is for exteriors"], a: "Alkaline is effective on organic grime/oils, Acidic is effective on mineral deposits/water spots" },
+                    { q: "You grab a spray bottle with no label. What is the correct and safe procedure?", o: ["Smell it to try and identify it", "Assume it's water and use it", "Safely dispose of the unknown chemical and remake the solution in a properly labeled bottle", "Spray a little on the floor to see what it does"], a: "Safely dispose of the unknown chemical and remake the solution in a properly labeled bottle" }
+                ],
+                "Exterior": [
+                    { q: "A PDG reads 85µm on a panel. What is the maximum level of paint correction that is safe to perform?", o: ["Wetsanding", "Two-Step Correction", "One-Step Correction", "Light Gloss Enhancement Only"], a: "Light Gloss Enhancement Only" },
+                    { q: "What is the primary purpose of a Decontamination Wash?", o: ["To make the car shiny", "To remove loose dirt only", "To remove bonded contaminants like iron and tar", "To prepare for a quick wax"], a: "To remove bonded contaminants like iron and tar" },
+                    { q: "When performing a two-step correction, what is the purpose of the second (polishing) step?", o: ["To remove deep scratches", "To add a layer of wax", "To remove compounding haze and refine the gloss", "To clean the paint"], a: "To remove compounding haze and refine the gloss" },
+                    { q: "What is the visual cue that a ceramic coating is ready to be leveled (wiped off)?", o: ["It turns white", "It creates a 'rainbow' or 'oil slick' effect", "It becomes sticky", "It disappears completely"], a: "It creates a 'rainbow' or 'oil slick' effect" },
+                    { q: "What is the correct procedure if you discover a cured ceramic coating high spot the next day?", o: ["Apply more coating over it", "Wash the car again", "It must be polished off with a machine polisher and the panel re-coated", "Wipe it with a wet towel"], a: "It must be polished off with a machine polisher and the panel re-coated" },
+                    { q: "In what order should a Decontamination Wash be performed?", o: ["Wash, Clay, Iron Remover", "Iron Remover, Clay, Wash", "Wash, Iron Remover, Clay", "Clay, Wash, Iron Remover"], a: "Wash, Iron Remover, Clay" },
+                    { q: "What is the 'two-bucket method' designed to prevent?", o: ["Using too much soap", "The water getting dirty", "Inducing swirl marks and scratches during the wash", "Wasting water"], a: "Inducing swirl marks and scratches during the wash" },
+                    { q: "What is the first area of the car you should always clean during the wash process?", o: ["The roof", "The hood", "The wheels, tires, and fender wells", "The glass"], a: "The wheels, tires, and fender wells" },
+                    { q: "What is the purpose of the 'baggie test' during a vehicle inspection?", o: ["To check for dust", "To amplify your sense of touch to feel for bonded surface contaminants", "To see if the paint is wet", "To protect your hand"], a: "To amplify your sense of touch to feel for bonded surface contaminants" },
+                    { q: "You've finished polishing a panel. What is the mandatory next step before applying a coating or sealant?", o: ["Wipe it with a dry towel", "Rinse it with water", "Perform a thorough wipe-down with an oil remover like CARPRO Eraser", "Let it air dry for an hour"], a: "Perform a thorough wipe-down with an oil remover like CARPRO Eraser" }
+                ],
+                "Interior": [
+                    { q: "What is the first step in the 'Full Interior Restoration' workflow after removing all personal items?", o: ["Vacuuming", "Shampooing carpets", "The 'Back-to-Front' Air Purge", "Cleaning the glass"], a: "The 'Back-to-Front' Air Purge" },
+                    { q: "You encounter Alcantara seats. Which product is strictly forbidden for cleaning them?", o: ["A dedicated Alcantara cleaner", "A soft brush", "A degreaser or harsh APC", "A damp microfiber towel"], a: "A degreaser or harsh APC" },
+                    { q: "When cleaning perforated leather, what is the correct technique to avoid clogging the holes?", o: ["Spray cleaner directly onto the seat", "Use a pressure washer", "Spray cleaner onto your brush or towel first", "Avoid cleaning it"], a: "Spray cleaner onto your brush or towel first" },
+                    { q: "Which of these is NOT part of the 'TDS Signature Finish'?", o: ["Applying a TDS sticker to the door jamb", "Placing a paper floor mat on the driver's side", "Leaving the invoice on the passenger seat", "Hanging a TDS air freshener"], a: "Leaving the invoice on the passenger seat" },
+                    { q: "You have a vehicle with a severe smoke odor. What is the required process?", o: ["Spray extra air freshener", "A deep cleaning of all surfaces followed by a separate Ozone Generator treatment", "Only use the Ozone Generator", "Only perform a deep cleaning"], a: "A deep cleaning of all surfaces followed by a separate Ozone Generator treatment" },
+                    { q: "What is the safest and most effective tool for removing embedded pet hair from carpets?", o: ["A vacuum cleaner only", "A stiff bristle brush", "A rubber pet hair brush or stone", "Duct tape"], a: "A rubber pet hair brush or stone" },
+                    { q: "What is the 'Loop' method in an interior detail and why is it important?", o: ["Cleaning in circles to save time", "Working around the car in a systematic circle (e.g., driver's side, rear, passenger's side) to avoid re-contaminating clean areas", "A special type of vacuum", "The shape of the extractor hose"], a: "Working around the car in a systematic circle (e.g., driver's side, rear, passenger's side) to avoid re-contaminating clean areas" },
+                    { q: "A customer has a coffee stain on a fabric seat. What is the correct first step?", o: ["Immediately use the hot water extractor", "Blot the stain with a gentle cleaner on a towel; do not scrub", "Scrub the stain aggressively with a stiff brush", "Pour water on it"], a: "Blot the stain with a gentle cleaner on a towel; do not scrub" },
+                    { q: "How should you clean a sensitive piano black trim piece or a navigation screen?", o: ["With a paper towel and glass cleaner", "With a plush microfiber towel and a dedicated interior quick detailer like CARPRO InnerQD", "With a degreaser", "With a wet scrub pad"], a: "With a plush microfiber towel and a dedicated interior quick detailer like CARPRO InnerQD" },
+                    { q: "Why is it important to clean the headliner first during an interior detail?", o: ["It's the easiest part", "So any dirt or drips fall down onto surfaces that haven't been cleaned yet", "It's the least important part", "It doesn't matter what order you clean in"], a: "So any dirt or drips fall down onto surfaces that haven't been cleaned yet" }
+                ],
+                "Tint": [
+                    { q: "What is the TDS Standard for an installation with a visible crease or several specs of debris?", o: ["Offer a discount", "Ignore it", "When in doubt, redo it", "Try to hide it"], a: "When in doubt, redo it" },
+                    { q: "What is the critical aftercare instruction for every window tint customer?", o: ["Don't wash the car for a week", "Avoid direct sunlight", "Do not roll down the windows for 3-5 days", "Apply wax to the tint"], a: "Do not roll down the windows for 3-5 days" },
+                    { q: "What is the primary, faster method taught for shrinking film on side windows?", o: ["Traditional Shrink", "Snap-Shrink", "Dry Shrink", "No-Shrink method"], a: "Snap-Shrink" },
+                    { q: "Which type of tint film requires more heat and time to shrink properly due to its thickness and density?", o: ["Dyed Film", "Carbon Film", "Ceramic Film", "All films shrink the same"], a: "Ceramic Film" },
+                    { q: "What is the purpose of 'flushing the seals' during glass prep?", o: ["To lubricate the rubber", "To force water and hidden debris out from the edges", "To cool down the glass", "To make the film stick better"], a: "To force water and hidden debris out from the edges" },
+                    { q: "You are shrinking a rear windshield and you get a large 'finger' that won't lay down. What is the most likely cause?", o: ["Not enough heat", "Too much heat in one spot, causing the film to over-shrink", "The glass is too clean", "The slip solution is too strong"], a: "Too much heat in one spot, causing the film to over-shrink" },
+                    { q: "Why is it important to use a high-quality, ammonia-free glass cleaner on tinted windows?", o: ["Ammonia can break down the film's adhesive and cause bubbling or peeling", "Ammonia makes the glass too slick", "It doesn't matter what cleaner you use", "Ammonia can stain the dot matrix"], a: "Ammonia can break down the film's adhesive and cause bubbling or peeling" },
+                    { q: "The 'H-Pattern' is the foundational technique for shrinking what type of glass?", o: ["Side windows", "Quarter glass", "Large, curved glass like rear windshields", "Sunroofs"], a: "Large, curved glass like rear windshields" },
+                    { q: "A customer sees small water pockets or a hazy look a day after installation. What should you tell them?", o: ["The tint job is ruined and needs to be redone", "This is normal; the moisture will evaporate through the film as it cures over the next few days", "They should park the car in a cold garage", "They should try to squeegee it out themselves"], a: "This is normal; the moisture will evaporate through the film as it cures over the next few days" },
+                    { q: "What is the primary reason we use a plotter to cut tint patterns?", o: ["It uses more film", "It's slower but more accurate", "It ensures precision and safety by not taking a blade to the vehicle's glass", "It's the only way to cut ceramic film"], a: "It ensures precision and safety by not taking a blade to the vehicle's glass" }
+                ],
+                "PPF": [
+                    { q: "What is the audible sound a technician should listen for when trimming PPF with a blade?", o: ["A loud pop", "A tearing sound", "An audible 'squeak'", "Silence"], a: "An audible 'squeak'" },
+                    { q: "When is it appropriate to use an adhesive promoter like ProBond?", o: ["On all installations", "Never", "As a last resort on extremely difficult areas", "To make the film easier to remove"], a: "As a last resort on extremely difficult areas" },
+                    { q: "What is the purpose of wrapping edges during a PPF installation?", o: ["To use more film", "To make it easier to remove", "To create a cleaner, virtually invisible look", "To trap moisture"], a: "To create a cleaner, virtually invisible look" },
+                    { q: "The 'Float, Anchor, and Squeegee' is the universal technique for what?", o: ["Washing a car", "Applying PPF", "Applying a ceramic coating", "Cleaning interiors"], a: "Applying PPF" },
+                    { q: "What is the first step in the 'Non-Negotiable Prep Protocol' for PPF?", o: ["A Level 1 Polish", "Final Eraser wipe-down", "A Surgical Decontamination Wash", "Hardware removal"], a: "A Surgical Decontamination Wash" },
+                    { q: "You have an air bubble under the film after squeegeeing. What is the correct way to remove it?", o: ["Leave it and hope it goes away", "Use a sharp blade to pop it", "Lift the film carefully, re-spray slip solution, and re-squeegee the area", "Heat it with a torch"], a: "Lift the film carefully, re-spray slip solution, and re-squeegee the area" },
+                    { q: "What is the maximum percentage you should generally stretch PPF to avoid distorting the adhesive and top coat?", o: ["5%", "10-15%", "25%", "50%"], a: "10-15%" },
+                    { q: "You see 'silvering' (tiny moisture pockets) under the film after installation. What should you do?", o: ["Immediately rip the film off", "Re-squeegee the area with firm pressure and know that most small spots will evaporate during curing", "Add more slip solution", "It's a permanent flaw"], a: "Re-squeegee the area with firm pressure and know that most small spots will evaporate during curing" },
+                    { q: "What is the primary difference between a 'heat-activated' and 'instant' self-healing top coat?", o: ["One is glossy, one is matte", "Heat-activated requires sun or a heat gun to fix scratches, while instant self-heals at room temperature", "Instant self-healing is only for colored films", "There is no difference"], a: "Heat-activated requires sun or a heat gun to fix scratches, while instant self-heals at room temperature" },
+                    { q: "A customer must not do what for the first week after a PPF installation?", o: ["Drive the car", "Park in the sun", "Use a high-pressure washer on the film's edges", "Look at the film too closely"], a: "Use a high-pressure washer on the film's edges" }
+                ]
+            };
 
-        function loadQuiz() {
-            quizContainer.innerHTML = '';
-            userAnswers = {};
-            shopQuizData.sort(() => Math.random() - 0.5); // Randomize questions
+            const categorySelection = document.getElementById('category-selection');
+            const quizContainer = document.getElementById('quiz-container');
+            const resultsContainer = document.getElementById('results-container');
             
-            shopQuizData.forEach((q, index) => {
-                const questionElement = document.createElement('div');
-                questionElement.classList.add('quiz-question');
-                
-                let optionsHTML = '';
-                q.options.forEach(option => {
-                    optionsHTML += `<button class="answer-option w-full text-left" data-question-index="${index}">${option}</button>`;
-                });
-
-                questionElement.innerHTML = `
-                    <div class="question-header">
-                        <h4 class="text-xl font-bold">Question ${index + 1}</h4>
-                    </div>
-                    <div class="question-body">
-                        <p class="text-lg mb-4">${q.question}</p>
-                        <div class="options-container">${optionsHTML}</div>
-                    </div>
-                `;
-                quizContainer.appendChild(questionElement);
-            });
-
-            document.querySelectorAll('.answer-option').forEach(option => {
-                option.addEventListener('click', () => {
-                    const questionIndex = option.dataset.questionIndex;
-                    userAnswers[questionIndex] = option.textContent;
-                    
-                    document.querySelectorAll(`button[data-question-index="${questionIndex}"]`).forEach(btn => btn.classList.remove('selected'));
-                    option.classList.add('selected');
-                });
-            });
-
-            submitButton.classList.remove('hidden');
-            resultsContainer.classList.add('hidden');
-            quizContainer.classList.remove('hidden');
-        }
-
-        submitButton.addEventListener('click', () => {
+            let currentQuestions = [];
+            let currentQuestionIndex = 0;
             let score = 0;
-            resultsDetails.innerHTML = '';
+            let currentCategory = '';
 
-            shopQuizData.forEach((q, index) => {
-                const userAnswer = userAnswers[index];
-                const isCorrect = userAnswer === q.answer;
-                if (isCorrect) {
-                    score++;
+            document.querySelectorAll('.quiz-category-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    currentCategory = button.dataset.category;
+                    startQuiz(currentCategory);
+                });
+            });
+
+            function startQuiz(category) {
+                currentQuestionIndex = 0;
+                score = 0;
+                
+                if (category === 'Final Exam') {
+                    // Create a pool of all questions
+                    let all = [];
+                    for (const key in allQuestions) {
+                        all.push(...allQuestions[key]);
+                    }
+                    // Shuffle all and pick 25
+                    currentQuestions = all.sort(() => 0.5 - Math.random()).slice(0, 25);
+                } else {
+                    currentQuestions = [...allQuestions[category]].sort(() => 0.5 - Math.random());
                 }
-                const resultItem = document.createElement('div');
-                resultItem.classList.add('mb-4', 'p-4', 'rounded-lg', isCorrect ? 'bg-green-50' : 'bg-red-50');
-                resultItem.innerHTML = `
-                    <p class="font-bold">${index + 1}. ${q.question}</p>
-                    <p class="text-sm mt-2">Your answer: <span class="${isCorrect ? 'text-green-700' : 'text-red-700'}">${userAnswer || 'Not answered'}</span></p>
-                    ${!isCorrect ? `<p class="text-sm mt-1">Correct answer: <span class="text-green-700">${q.answer}</span></p>` : ''}
-                `;
-                resultsDetails.appendChild(resultItem);
+
+                categorySelection.classList.add('hidden');
+                resultsContainer.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                
+                document.getElementById('quiz-title').textContent = category;
+                displayQuestion();
+            }
+
+            function displayQuestion() {
+                const question = currentQuestions[currentQuestionIndex];
+                document.getElementById('question-text').textContent = question.q;
+                
+                const optionsContainer = document.getElementById('options-container');
+                optionsContainer.innerHTML = '';
+                
+                // Shuffle options
+                const shuffledOptions = [...question.o].sort(() => 0.5 - Math.random());
+                
+                shuffledOptions.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('quiz-option', 'w-full', 'text-left', 'p-4', 'bg-white', 'border', 'rounded-lg');
+                    button.addEventListener('click', selectAnswer);
+                    optionsContainer.appendChild(button);
+                });
+                
+                updateProgress();
+                document.getElementById('next-question-btn').classList.add('hidden');
+                document.getElementById('feedback-text').textContent = '';
+            }
+
+            function selectAnswer(e) {
+                const selectedButton = e.target;
+                const selectedAnswer = selectedButton.textContent;
+                const correctAnswer = currentQuestions[currentQuestionIndex].a;
+                
+                const feedbackText = document.getElementById('feedback-text');
+
+                if (selectedAnswer === correctAnswer) {
+                    score++;
+                    selectedButton.classList.add('correct');
+                    feedbackText.textContent = "Correct!";
+                    feedbackText.style.color = '#16a34a';
+                } else {
+                    selectedButton.classList.add('incorrect');
+                     feedbackText.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+                     feedbackText.style.color = '#dc2626';
+                }
+                
+                document.querySelectorAll('.quiz-option').forEach(button => {
+                    button.disabled = true; // Disable all options
+                    if (button.textContent === correctAnswer) {
+                       if(!button.classList.contains('correct')) button.classList.add('correct');
+                    }
+                });
+
+                document.getElementById('next-question-btn').classList.remove('hidden');
+            }
+            
+            function updateProgress() {
+                const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+                document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+                document.getElementById('quiz-progress-text').textContent = `Question ${currentQuestionIndex + 1} of ${currentQuestions.length}`;
+            }
+
+            document.getElementById('next-question-btn').addEventListener('click', () => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < currentQuestions.length) {
+                    displayQuestion();
+                } else {
+                    showResults();
+                }
+            });
+
+            function showResults() {
+                quizContainer.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                
+                document.getElementById('score').textContent = score;
+                document.getElementById('total-questions').textContent = currentQuestions.length;
+                
+                const percentage = Math.round((score / currentQuestions.length) * 100);
+                const resultsMessage = document.getElementById('results-message');
+                if (percentage >= 90) {
+                    resultsMessage.textContent = "Excellent work! You've mastered this subject.";
+                    resultsMessage.style.color = '#16a34a';
+                } else if (percentage >= 70) {
+                    resultsMessage.textContent = "Good job! A little more review and you'll be an expert.";
+                     resultsMessage.style.color = '#ca8a04';
+                } else {
+                    resultsMessage.textContent = "Good effort. Review the training materials and try this quiz again.";
+                     resultsMessage.style.color = '#dc2626';
+                }
+            }
+
+            document.getElementById('retake-quiz-btn').addEventListener('click', () => {
+                startQuiz(currentCategory);
             });
             
-            scoreElement.textContent = score;
-            totalQuestionsElement.textContent = shopQuizData.length;
-            
-            quizContainer.classList.add('hidden');
-            submitButton.classList.add('hidden');
-            resultsContainer.classList.remove('hidden');
+            document.getElementById('back-to-categories-btn').addEventListener('click', () => {
+                resultsContainer.classList.add('hidden');
+                categorySelection.classList.remove('hidden');
+            });
         });
-        
-        retakeQuizButton.addEventListener('click', loadQuiz);
-
-        loadQuiz();
     </script>
 </body>
 </html>

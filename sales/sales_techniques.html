@@ -18,21 +18,9 @@
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
         .modal-overlay { transition: opacity 0.3s ease; }
         .modal-container { transition: transform 0.3s ease; }
-        .modal-content {
-            max-height: 75vh;
-            overflow-y: auto;
-        }
-        .copy-button {
-            background-color: #e5e7eb;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 0.375rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .copy-button:hover {
-            background-color: #d1d5db;
-        }
+        .modal-content { max-height: 75vh; overflow-y: auto; }
+        .copy-button { background-color: #e5e7eb; border: none; padding: 0.5rem; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.2s; }
+        .copy-button:hover { background-color: #d1d5db; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -43,13 +31,36 @@
         <section id="techniques-content">
             <h2 class="text-5xl font-bold mb-8 text-amber-500 section-title border-amber-500">Mastering the Sales Process SOP</h2>
             <p class="text-lg text-gray-600 max-w-3xl mb-12">This is the central roadmap for the entire customer journey at The Detail Shop. It outlines the process from the first inquiry to post-service follow-up, integrating our digital tools and communication strategies into a seamless, premium workflow.</p>
+            
+            <!-- Sales Funnel Graphic -->
+            <div class="my-12 p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">The TDS Customer Journey Funnel</h3>
+                <svg viewBox="0 0 300 200" class="w-full max-w-lg mx-auto" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Funnel Layers -->
+                    <polygon points="0,0 300,0 250,50 50,50" class="fill-amber-200"/>
+                    <polygon points="50,50 250,50 210,100 90,100" class="fill-amber-300"/>
+                    <polygon points="90,100 210,100 180,150 120,150" class="fill-amber-400"/>
+                    <polygon points="120,150 180,150 165,200 135,200" class="fill-amber-500"/>
+                    
+                    <!-- Text Labels -->
+                    <text x="150" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" class="fill-gray-800">Phase 1: First Impression (Lead)</text>
+                    <text x="150" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" class="fill-gray-800">Phase 2: Onboarding (Consultation)</text>
+                    <text x="150" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" class="fill-gray-800">Phase 3: Communication (Service)</text>
+                    <text x="150" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" class="fill-white">Phase 4: Handoff (Loyalty)</text>
+                </svg>
+            </div>
 
             <div class="space-y-12">
 
                 <!-- Phase 1: Lead Intake -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 1: The First Impression</h3>
-                    <p class="text-gray-600">The goal is to provide a rapid, professional, and reassuring response that immediately sets us apart from the competition.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 text-amber-600 h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold mr-6">1</div>
+                        <div>
+                            <h3 class="text-3xl font-semibold">Phase 1: The First Impression</h3>
+                            <p class="text-gray-600">Goal: Provide a rapid, professional, and reassuring response that immediately sets us apart.</p>
+                        </div>
+                    </div>
                     <div class="phase-box">
                         <h4 class="text-2xl font-bold text-gray-800">Inquiry Handling Protocol (GoHighLevel)</h4>
                         <ul class="list-decimal list-inside mt-4 space-y-3">
@@ -70,8 +81,13 @@
 
                 <!-- Phase 2: Onboarding -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 2: The Onboarding Experience & Authorization</h3>
-                     <p class="text-gray-600">This is where we define the TDS Experience. We transition from salesperson to trusted consultant, demonstrating a level of professionalism and meticulousness that justifies our premium pricing.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 text-amber-600 h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold mr-6">2</div>
+                        <div>
+                            <h3 class="text-3xl font-semibold">Phase 2: The Onboarding Experience</h3>
+                            <p class="text-gray-600">Goal: Transition from salesperson to trusted consultant, demonstrating professionalism that justifies our premium price.</p>
+                        </div>
+                    </div>
                     <div class="phase-box">
                          <h4 class="text-2xl font-bold text-gray-800">The Consultative Walk-Around Checklist</h4>
                          <ul class="list-decimal list-inside mt-4 space-y-4">
@@ -128,8 +144,13 @@
 
                  <!-- Phase 3: During Service -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 3: Proactive Communication & Upselling</h4>
-                     <p class="text-gray-600">Maintain communication and transparency while the vehicle is in our care to build value and peace of mind. This is also a key opportunity to make expert recommendations for additional services.</p>
+                     <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 text-amber-600 h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold mr-6">3</div>
+                        <div>
+                            <h3 class="text-3xl font-semibold">Phase 3: Proactive Communication</h4>
+                            <p class="text-gray-600">Goal: Build value and peace of mind with progress updates, creating natural upsell opportunities.</p>
+                        </div>
+                    </div>
                     <div class="phase-box">
                          <h4 class="text-2xl font-bold text-gray-800">Progress Update Protocol</h4>
                          <ul class="list-decimal list-inside mt-4 space-y-3">
@@ -158,8 +179,13 @@
 
                 <!-- Phase 4: Pick-Up -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-3xl font-semibold mb-6">Phase 4: The Final Impression & Long-Term Loyalty</h4>
-                     <p class="text-gray-600">The final handoff is our last chance to solidify the premium TDS Experience, ensuring the customer leaves feeling wowed and valued, turning them into a long-term client and advocate.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 text-amber-600 h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold mr-6">4</div>
+                        <div>
+                            <h3 class="text-3xl font-semibold">Phase 4: The Final Impression</h4>
+                            <p class="text-gray-600">Goal: Solidify the premium TDS Experience, ensuring the customer leaves feeling wowed and valued.</p>
+                        </div>
+                    </div>
                     <div class="phase-box">
                          <h4 class="text-2xl font-bold text-gray-800">The Professional Handoff Checklist</h4>
                          <ul class="list-decimal list-inside mt-4 space-y-3">
@@ -183,9 +209,9 @@
                     <h3 class="text-3xl font-semibold mb-6">The Ultimate TDS Sales Experience Checklist</h3>
                     <p class="text-gray-600">This checklist is the ultimate tool for ensuring consistency. Use it to guide your workflow for every client, guaranteeing that each one receives the full, premium TDS Experience.</p>
                     <div class="mt-4">
-                        <button onclick="openPrintableChecklist()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded">
+                        <a href="../checklists/checklist_sales_process.html" target="_blank" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded">
                             View & Print Full Sales Checklist
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -289,10 +315,6 @@
         </div>
     </div>
     
-    <!-- This modal is now just a button that opens the print-friendly page -->
-    <div id="checklistModal" class="hidden"></div>
-
-
     <main-footer></main-footer>
 
     <script>
@@ -303,7 +325,9 @@
             document.body.classList.add('overflow-hidden');
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
-                modal.querySelector('.modal-container').classList.remove('scale-95');
+                if (modal.querySelector('.modal-container')) {
+                    modal.querySelector('.modal-container').classList.remove('scale-95');
+                }
             }, 10);
         }
 
@@ -311,7 +335,9 @@
             const modal = document.getElementById(modalId);
             if (!modal) return;
             modal.classList.add('opacity-0');
-            modal.querySelector('.modal-container').classList.add('scale-95');
+            if (modal.querySelector('.modal-container')) {
+                modal.querySelector('.modal-container').classList.add('scale-95');
+            }
             setTimeout(() => {
                 modal.classList.add('hidden');
                 document.body.classList.remove('overflow-hidden');
@@ -337,11 +363,6 @@
             document.body.removeChild(tempTextArea);
         }
         
-        function openPrintableChecklist() {
-            window.open('checklists/checklist_sales_process.html', '_blank');
-        }
-
-
         // Initialize modals to be hidden and prepared for transitions
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.modal-overlay').forEach(modal => {
@@ -350,8 +371,6 @@
                     modal.querySelector('.modal-container').classList.add('scale-95');
                 }
             });
-            // Since we removed the checklist modal from the page, we don't need to initialize it.
-            // The button now directly calls the openPrintableChecklist function.
         });
     </script>
 </body>
