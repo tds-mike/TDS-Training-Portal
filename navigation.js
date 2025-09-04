@@ -9,26 +9,23 @@ class MainHeader extends HTMLElement {
             "Technician Portal": {
                 "Getting Started": [
                     { href: 'shop_index.html', text: 'Technician Home' },
-                    { href: 'training-pathway.html', text: 'New Technician Pathway' },
-                    { href: 'technician_sop.html', text: 'Technician SOP & Workflow' }
+                    { href: 'shop/shop_training-pathway.html', text: 'New Technician Pathway' },
+                    { href: 'shop/shop_tech_workflow.html', text: 'Technician Workflow' }
                 ],
                 "Core Principles": [
-                    { href: 'safety.html', text: 'Safety Guide' },
-                    { href: 'chemicals.html', text: 'Chemicals Guide' },
+                    { href: 'shop/shop_safety.html', text: 'Safety Guide' },
+                    { href: 'shop/shop_chemicals.html', text: 'Chemicals Guide' },
                 ],
                 "Practical Guides": [
-                    { href: 'exterior.html', text: 'Exterior Mastery' },
-                    { href: 'interior.html', text: 'Interior Restoration' },
-                    { href: 'tint.html', text: 'Window Tinting Guide' },
-                    { href: 'ppf.html', text: 'PPF Installation Guide' }
+                    { href: 'shop/shop_exterior.html', text: 'Exterior Mastery' },
+                    { href: 'shop/shop_interior.html', text: 'Interior Restoration' },
+                    { href: 'shop/shop_tint.html', text: 'Window Tinting Guide' },
+                    { href: 'shop/shop_ppf.html', text: 'PPF Installation Guide' }
                 ],
                  "Advanced Pathways": [
-                    { href: 'tint_pathway.html', text: 'Tinting Pathway' },
-                    { href: 'ppf_pathway.html', text: 'PPF Pathway' },
-                    { href: 'vinyl_pathway.html', text: 'Vinyl Pathway' }
-                ],
-                "Resources": [
-                    { href: 'checklists.html', text: 'Printable Checklists' }
+                    { href: 'shop/shop_tint_pathway.html', text: 'Tinting Pathway' },
+                    { href: 'shop/shop_ppf_pathway.html', text: 'PPF Pathway' },
+                    { href: 'shop/shop_vinyl_pathway.html', text: 'Vinyl Pathway' }
                 ],
                 "Testing": [
                     { href: 'shop_quiz.html', text: 'Shop Quiz' },
@@ -36,23 +33,23 @@ class MainHeader extends HTMLElement {
             },
             "Sales Portal": {
                 "Getting Started": [
-                    { href: 'sales_index.html', text: 'Sales Home' },
+                    { href: 'sales/sales_index.html', text: 'Sales Home' },
                 ],
                 "Sales Methodology": [
-                    { href: 'sales_techniques.html', text: 'The TDS Sales Process' },
-                    { href: 'sales_nepq_framework.html', text: 'The NEPQ Framework' },
-                    { href: 'sales_scripts.html', text: 'Sales Scripts' },
-                    { href: 'sales_objection_handling.html', text: 'Diffusing Objections' },
+                    { href: 'sales/sales_techniques.html', text: 'The TDS Sales Process' },
+                    { href: 'sales/sales_nepq_framework.html', text: 'The NEPQ Framework' },
+                    { href: 'sales/sales_scripts.html', text: 'Sales Scripts' },
+                    { href: 'sales/sales_objection_handling.html', text: 'Diffusing Objections' },
                 ],
                 "Product Knowledge": [
-                    { href: 'sales_tint.html', text: 'Selling Window Tint' },
-                    { href: 'sales_ppf.html', text: 'Selling PPF' },
-                    { href: 'sales_coatings.html', text: 'Selling Ceramic Coatings' },
-                    { href: 'sales_paint_correction.html', text: 'Selling Paint Correction' },
-                    { href: 'sales_detailing.html', text: 'Selling Detailing' },
+                    { href: 'sales/sales_tint.html', text: 'Selling Window Tint' },
+                    { href: 'sales/sales_ppf.html', text: 'Selling PPF' },
+                    { href: 'sales/sales_coatings.html', text: 'Selling Ceramic Coatings' },
+                    { href: 'sales/sales_paint_correction.html', text: 'Selling Paint Correction' },
+                    { href: 'sales/sales_detailing.html', text: 'Selling Detailing' },
                 ],
                 "Testing": [
-                    { href: 'sales_quiz.html', text: 'Sales Quiz' },
+                    { href: 'sales/sales_quiz.html', text: 'Sales Quiz' },
                 ]
             }
         };
@@ -199,5 +196,6 @@ class MainHeader extends HTMLElement {
 }
 
 customElements.define('main-header', MainHeader);
+
 
 

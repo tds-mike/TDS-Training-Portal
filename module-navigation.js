@@ -8,31 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define the module structure for both portals
     const portals = {
         technician: [
-            { url: 'shop_index.html', title: 'Technician Home' },
-            { url: 'training-pathway.html', title: 'New Tech Pathway' },
-            { url: 'technician_sop.html', title: 'Technician SOP' },
-            { url: 'safety.html', title: 'Safety Guide' },
-            { url: 'chemicals.html', title: 'Chemicals Guide' },
-            { url: 'exterior.html', title: 'Exterior Mastery' },
-            { url: 'interior.html', title: 'Interior Restoration' },
-            { url: 'tint.html', title: 'Window Tinting Guide' },
-            { url: 'ppf.html', title: 'PPF Installation Guide' },
-            { url: 'checklists.html', title: 'Printable Checklists' },
-            { url: 'shop_quiz.html', title: 'Technician Knowledge Quiz' }
+            { url: 'shop/shop_index.html', title: 'Technician Home' },
+            { url: 'shop/shop_training-pathway.html', title: 'New Tech Pathway' },
+            { url: 'shop/shop_tech_workflow.html', title: 'Technician SOP' },
+            { url: 'shop/shop_safety.html', title: 'Safety Guide' },
+            { url: 'shop/shop_chemicals.html', title: 'Chemicals Guide' },
+            { url: 'shop/shop_exterior.html', title: 'Exterior Mastery' },
+            { url: 'shop/shop_interior.html', title: 'Interior Restoration' },
+            { url: 'shop/shop_tint.html', title: 'Window Tinting Guide' },
+            { url: 'shop/shop_ppf.html', title: 'PPF Installation Guide' },
+            { url: 'shop/shop_shop_quiz.html', title: 'Technician Knowledge Quiz' }
         ],
         sales: [
-            { url: 'sales_index.html', title: 'Sales Home' },
-            { url: 'sales_techniques.html', title: 'The TDS Sales Process' },
-            { url: 'sales_nepq_framework.html', title: 'The NEPQ Framework' },
-            { url: 'sales_scripts.html', title: 'Sales Scripts' },
-            { url: 'sales_sop.html', title: 'SOPs & Checklists' },
-            { url: 'sales_objection_handling.html', title: 'Diffusing Objections' },
-            { url: 'sales_tint.html', title: 'Selling Window Tint' },
-            { url: 'sales_ppf.html', title: 'Selling PPF' },
-            { url: 'sales_coatings.html', title: 'Selling Ceramic Coatings' },
-            { url: 'sales_paint_correction.html', title: 'Selling Paint Correction' },
-            { url: 'sales_detailing.html', title: 'Selling Detailing' },
-            { url: 'sales_quiz.html', title: 'Sales Quiz' }
+            { url: 'sales/sales_index.html', title: 'Sales Home' },
+            { url: 'sales/sales_techniques.html', title: 'The TDS Sales Process' },
+            { url: 'sales/sales_nepq_framework.html', title: 'The NEPQ Framework' },
+            { url: 'sales/sales_scripts.html', title: 'Sales Scripts' },
+            { url: 'sales/sales_sop.html', title: 'SOPs & Checklists' },
+            { url: 'sales/sales_objection_handling.html', title: 'Diffusing Objections' },
+            { url: 'sales/sales_tint.html', title: 'Selling Window Tint' },
+            { url: 'sales/sales_ppf.html', title: 'Selling PPF' },
+            { url: 'sales/sales_coatings.html', title: 'Selling Ceramic Coatings' },
+            { url: 'sales/sales_paint_correction.html', title: 'Selling Paint Correction' },
+            { url: 'sales/sales_detailing.html', title: 'Selling Detailing' },
+            { url: 'sales/sales_quiz.html', title: 'Sales Quiz' }
         ]
     };
 

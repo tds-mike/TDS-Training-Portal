@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Paint Correction Checklist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .checklist-item { display: flex; align-items: center; padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
+        .checklist-box { width: 1.25rem; height: 1.25rem; border: 2px solid #9ca3af; border-radius: 0.25rem; margin-right: 0.75rem; flex-shrink: 0; }
+    </style>
+</head>
+<body class="p-8">
+    <div>
+        <div class="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
+            <img src="../tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+            <h3 class="text-3xl font-bold">Paint Correction Job</h3>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-sm mb-6">
+            <div><strong>Customer:</strong> ____________________</div>
+            <div><strong>Vehicle:</strong> ____________________</div>
+            <div><strong>Date:</strong> ____________________</div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-12">
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Phase 1: Diagnosis & Prep</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Full Decontamination Wash complete</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Light & PDG inspection performed</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>All trim and sensitive areas taped off</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Tool cart & pad washer prepared</span></div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Phase 2: Correction & Cleanup</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Test spot performed to confirm combo</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>All panels corrected per work order</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Tape carefully removed</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Compound/polish dust purged from crevices</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Full CARPRO Eraser wipe-down complete</span></div>
+            </div>
+             <div>
+                <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Protection & Final QC</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Protection (wax/sealant/coating) applied</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Final light inspection (direct & diffused)</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>No high spots or residue remaining</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Pads cleaned and stored</span></div>
+            </div>
+        </div>
+    </div>
+    <script> window.onload = function() { window.print(); } </script>
+</body>
+</html>

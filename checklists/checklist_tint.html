@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Window Tint Checklist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .checklist-item { display: flex; align-items: center; padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
+        .checklist-box { width: 1.25rem; height: 1.25rem; border: 2px solid #9ca3af; border-radius: 0.25rem; margin-right: 0.75rem; flex-shrink: 0; }
+    </style>
+</head>
+<body class="p-8">
+    <div>
+        <div class="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
+            <img src="../tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+            <h3 class="text-3xl font-bold">Window Tint Installation</h3>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-sm mb-6">
+            <div><strong>Customer:</strong> ____________________</div>
+            <div><strong>Vehicle:</strong> ____________________</div>
+            <div><strong>Date:</strong> ____________________</div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-12">
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Phase 1: Prep & Staging</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Pre-installation vehicle inspection complete</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Work bay is clean, doors closed</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Patterns cut via plotter or by hand</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Film shrunk correctly for each window</span></div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Phase 2: Installation</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Interior panels protected from water</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>All glass surfaces surgically prepped</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Film applied using correct method</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>All slip solution squeegeed out</span></div>
+            </div>
+             <div>
+                <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Final QC</h4>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Film inspected: no large debris, creases, or scratches</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Edges are flat with no lift lines</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>Final wipe-down of glass & door panels</span></div>
+                <div class="checklist-item"><div class="checklist-box"></div><span>"Do not roll down" stickers applied</span></div>
+            </div>
+        </div>
+    </div>
+    <script> window.onload = function() { window.print(); } </script>
+</body>
+</html>
