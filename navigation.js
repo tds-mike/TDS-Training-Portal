@@ -3,48 +3,41 @@
  */
 class MainHeader extends HTMLElement {
     connectedCallback() {
-        const path = window.location.pathname;
-        const currentPage = path.substring(path.lastIndexOf('/') + 1);
-        const isRoot = !path.includes('/shop/') && !path.includes('/sales/') && !path.includes('/checklists/');
-
-        const getRelativePath = (target) => {
-            if (isRoot) {
-                return target;
-            }
-            return `../${target}`;
-        };
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
         const allLinks = {
             "Technician Portal": {
-                "Getting Started": [
+                "Start Here": [
                     { href: 'shop/shop_index.html', text: 'Technician Home' },
-                    { href: 'shop/shop_training-pathway.html', text: 'New Technician Pathway' },
-                    { href: 'shop/shop_tech_workflow.html', text: 'Technician Workflow' }
+                    { href: 'shop/shop_training-pathway.html', text: 'New Technician Pathway' }
                 ],
-                "Core Principles": [
+                "Foundational Knowledge": [
+                    { href: 'shop/shop_tech_workflow.html', text: 'Technician SOP' },
                     { href: 'shop/shop_safety.html', text: 'Safety Guide' },
-                    { href: 'shop/shop_chemicals.html', text: 'Chemicals Guide' },
+                    { href: 'shop/shop_chemicals.html', text: 'Chemicals Guide' }
                 ],
-                "Practical Guides": [
-                    { href: 'shop/shop_exterior.html', text: 'Exterior: Wash & Decon' },
-                    { href: 'shop/shop_paint_correction.html', text: 'Exterior: Paint Correction' },
-                    { href: 'shop/shop_ceramic_coating.html', text: 'Exterior: Ceramic Coating' },
+                "Core Detailing Skills": [
+                    { href: 'shop/shop_exterior.html', text: 'Exterior Mastery' },
                     { href: 'shop/shop_interior.html', text: 'Interior Restoration' },
-                    { href: 'shop/shop_tint.html', text: 'Window Tinting Guide' },
-                    { href: 'shop/shop_ppf.html', text: 'PPF Installation Guide' }
+                    { href: 'shop/shop_paint_correction.html', text: 'Paint Correction Guide' },
+                    { href: 'shop/shop_ceramic_coating.html', text: 'Ceramic Coating Guide' }
                 ],
-                 "Advanced Pathways": [
+                "Advanced Film Installation": [
+                    { href: 'shop/shop_tint.html', text: 'Window Tinting' },
+                    { href: 'shop/shop_ppf.html', text: 'PPF Installation' },
+                    { href: 'shop/shop_vinyl_wrapping.html', text: 'Vinyl Wrapping' }
+                ],
+                "Advanced Training Pathways": [
                     { href: 'shop/shop_tint_pathway.html', text: 'Tinting Pathway' },
                     { href: 'shop/shop_ppf_pathway.html', text: 'PPF Pathway' },
                     { href: 'shop/shop_vinyl_pathway.html', text: 'Vinyl Pathway' }
                 ],
-                "Testing & Resources": [
-                    { href: 'shop/shop_quiz.html', text: 'Technician Quiz' },
-                    { href: 'checklists/checklist_index.html', text: 'Printable Checklists' },
+                "Certification": [
+                    { href: 'shop/shop_quiz.html', text: 'Technician Quiz' }
                 ]
             },
             "Sales Portal": {
-                 "Getting Started": [
+                "Getting Started": [
                     { href: 'sales/sales_index.html', text: 'Sales Home' },
                 ],
                 "Sales Methodology": [
@@ -60,22 +53,21 @@ class MainHeader extends HTMLElement {
                     { href: 'sales/sales_paint_correction.html', text: 'Selling Paint Correction' },
                     { href: 'sales/sales_detailing.html', text: 'Selling Detailing' },
                 ],
-                "Testing & Resources": [
+                "Testing": [
                     { href: 'sales/sales_quiz.html', text: 'Sales Quiz' },
-                    { href: 'checklists/checklist_index.html', text: 'Printable Checklists' },
                 ]
             }
         };
 
         const createSlideOutNav = () => {
-             let html = `<div class="mb-4">
-                <a href="${getRelativePath('index.html')}" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
+            let html = `<div class="mb-4">
+                <a href="../index.html" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
             </div>`;
 
             for (const portal in allLinks) {
                 const portalData = allLinks[portal];
                 const isCurrentPortal = Object.values(portalData).flat().some(link => link.href.endsWith(currentPage));
-                
+
                 html += `<div class="mb-2">`;
                 html += `<button class="accordion-toggle w-full text-left p-3 rounded-md text-lg font-semibold flex justify-between items-center ${isCurrentPortal ? 'bg-gray-700' : ''} text-white hover:bg-gray-600">
                             <span>${portal}</span>
@@ -88,7 +80,7 @@ class MainHeader extends HTMLElement {
                     html += '<div class="mt-2 space-y-1">';
                     portalData[category].forEach(link => {
                         const isActive = link.href.endsWith(currentPage);
-                        html += `<a href="${getRelativePath(link.href)}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
+                        html += `<a href="../${link.href}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
                     });
                     html += `</div>`;
                 }
@@ -99,21 +91,21 @@ class MainHeader extends HTMLElement {
 
         const createDesktopDropdown = (portalName) => {
             const portalData = allLinks[portalName];
-            let html = `<div class="dropdown-menu absolute hidden bg-gray-800 text-white rounded-md shadow-lg py-2 w-72 z-20">`; // Increased width to w-72
+            let html = `<div class="dropdown-menu absolute hidden bg-gray-800 text-white rounded-md shadow-lg py-2 w-64 z-20">`;
             for (const category in portalData) {
                 html += `<h3 class="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">${category}</h3>`;
                 portalData[category].forEach(link => {
                     const isActive = link.href.endsWith(currentPage);
-                    html += `<a href="${getRelativePath(link.href)}" class="block px-4 py-2 text-sm ${isActive ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700'}">${link.text}</a>`;
+                    html += `<a href="../${link.href}" class="block px-4 py-2 text-sm ${isActive ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700'}">${link.text}</a>`;
                 });
             }
             html += `</div>`;
             return html;
         };
 
-        const isShopPage = path.includes('/shop/');
-        const isSalesPage = path.includes('/sales/');
-        
+        const isShopPage = Object.values(allLinks["Technician Portal"]).flat().some(link => link.href.endsWith(currentPage));
+        const isSalesPage = Object.values(allLinks["Sales Portal"]).flat().some(link => link.href.endsWith(currentPage));
+
         this.innerHTML = `
             <style>
                 .slide-out-menu { transition: transform 0.3s ease-in-out; }
@@ -126,18 +118,18 @@ class MainHeader extends HTMLElement {
             </style>
             <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="${getRelativePath('index.html')}" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+                    <a href="../index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
                     <button id="mobile-menu-button" class="md:hidden focus:outline-none z-50">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                      <nav class="hidden md:flex items-center space-x-6">
-                        <a href="${getRelativePath('index.html')}" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
+                        <a href="../index.html" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
                         <div class="relative has-dropdown">
-                            <a href="${getRelativePath('shop/shop_index.html')}" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
+                            <a href="../shop/shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
                             ${createDesktopDropdown("Technician Portal")}
                         </div>
                         <div class="relative has-dropdown">
-                             <a href="${getRelativePath('sales/sales_index.html')}" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
+                             <a href="../sales/sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
                             ${createDesktopDropdown("Sales Portal")}
                         </div>
                     </nav>
@@ -158,7 +150,7 @@ class MainHeader extends HTMLElement {
 
         this.addEventListeners();
     }
-    
+
     addEventListeners() {
         const menuButton = this.querySelector('#mobile-menu-button');
         const closeMenuButton = this.querySelector('#close-menu-button');
@@ -171,12 +163,10 @@ class MainHeader extends HTMLElement {
                 slideOutMenu.classList.remove('-translate-x-full');
                 menuOverlay.classList.remove('hidden');
                 setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
-                document.body.style.overflow = 'hidden';
             } else {
                 slideOutMenu.classList.add('-translate-x-full');
                 menuOverlay.classList.add('opacity-0');
                 setTimeout(() => menuOverlay.classList.add('hidden'), 300);
-                 document.body.style.overflow = '';
             }
         };
 
@@ -186,6 +176,7 @@ class MainHeader extends HTMLElement {
             menuOverlay.addEventListener('click', toggleMenu);
         }
         
+        // Accordion functionality
         this.querySelectorAll('.accordion-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -195,7 +186,13 @@ class MainHeader extends HTMLElement {
                     content.style.maxHeight = '0px';
                     icon.classList.remove('rotate-180');
                 } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    // Temporarily set to auto to get the full scroll height, then set it
+                    content.style.maxHeight = 'auto';
+                    const fullHeight = content.scrollHeight + 'px';
+                    content.style.maxHeight = '0px';
+                    setTimeout(() => {
+                         content.style.maxHeight = fullHeight;
+                    }, 10);
                     icon.classList.add('rotate-180');
                 }
             });
@@ -204,3 +201,4 @@ class MainHeader extends HTMLElement {
 }
 
 customElements.define('main-header', MainHeader);
+

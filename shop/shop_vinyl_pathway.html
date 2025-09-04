@@ -11,16 +11,72 @@
     <script src="../footer.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .task-list li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; }
+        .task-list input { margin-top: 5px; margin-right: 0.75rem; flex-shrink: 0; }
+        .sign-off { margin-top: 1.5rem; border-top: 2px solid #e5e7eb; padding-top: 1.5rem; }
+        .day-block { margin-top: 1.5rem; border-left: 3px solid #f3f4f6; padding-left: 1rem; }
+        
+        @media print {
+            body * { visibility: hidden; } .printable-section, .printable-section * { visibility: visible; }
+            .printable-section { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: none !important; padding: 1rem; }
+            .no-print { display: none !important; } .printable-section h2, .printable-section h3, .printable-section h4 { text-align: center; }
+            .page-break { page-break-after: always; } .task-list a { text-decoration: none; color: inherit; }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
     <main-header></main-header>
     <main class="container mx-auto px-6 py-12">
-        <div class="text-center py-16">
-            <h2 class="text-5xl font-bold mb-4 text-gray-700">Advanced Pathway: Vinyl Wrapping</h2>
-            <div class="mt-8 max-w-2xl mx-auto bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-6 rounded-lg">
-                <p class="text-xl">The comprehensive training curriculum for Vinyl Wrapping is currently under development.</p>
-                <p class="mt-2">This module will provide an in-depth, multi-week program covering material properties, advanced application techniques, and design principles for full vehicle color changes and commercial wraps.</p>
+        <div class="printable-section">
+            <div class="text-center">
+                <h2 class="text-5xl font-bold mb-4 text-teal-600">Advanced Pathway: Vinyl Wrapping Certification</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">This 4-week curriculum is for Certified Core Detailers specializing in Vinyl Wrapping. The program focuses on the meticulous prep, material handling, and advanced techniques required to produce a flawless, paint-like finish.</p>
+                <div class="no-print mb-12"><button onclick="window.print()" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Print This Curriculum</button></div>
+            </div>
+            <div class="space-y-12">
+                <!-- Week 1: Fundamentals & Flat Panels -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-teal-600 section-title border-teal-200">Week 1: Fundamentals & Flat Panels</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Re-read the <a href="shop_vinyl_wrapping.html" class="text-blue-600 hover:underline">Vinyl Wrapping Guide</a> entirely.</span></li><li><input type="checkbox"><span>Practice with a heat gun to understand the "reading" and softening points of scrap vinyl.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Practice Squeegee Technique:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Spend 4-5 hours on a test hood practicing "glassing out" and squeegee technique. Goal is a flawless, bubble-free surface.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Shadow & Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Shadow a full color change wrap, assisting with surgical prep and hardware removal.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Demonstrate Fenders:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised installation on two test fenders, focusing on trimming and tucking edges.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Fundamentals:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Independently prep and wrap a test hood to TDS Standard, including proper post-heating.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                 <!-- Week 2: Doors & Inlays -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-teal-600 section-title border-teal-200">Week 2: Doors & Inlays</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Learn & Practice:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Review advanced sections of the <a href="shop_vinyl_wrapping.html" class="text-blue-600 hover:underline">Vinyl Wrapping Guide</a>.</span></li><li><input type="checkbox"><span>Practice using Knifeless Tape to create seams on a test panel.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Shadow & Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Shadow a door wrap, assisting with deconstruction (handle/mirror removal).</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Demonstrate Doors:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised wrap on two client vehicle doors.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Inlays:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised inlay on a complex recessed area of a test bumper.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify Door Install:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Certification Task:** Independently deconstruct, prep, and wrap a vehicle door to TDS Standard.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                <!-- Week 3: Bumpers & Complex Curves -->
+                 <div class="bg-white p-8 rounded-lg shadow-md mb-8 page-break">
+                    <h4 class="text-3xl font-semibold mb-6 text-teal-600 section-title border-teal-200">Week 3: Bumpers & Complex Curves</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday - Mirrors:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a supervised wrap on two vehicle mirrors, focusing on triangulation and heat control.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Tuesday - Front Bumper Assist:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Assist mentor on a full front bumper wrap, focusing on teamwork to "glass out" the vinyl.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Front Bumper Supervised:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a full front bumper wrap on a client vehicle under mentor supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Rear Bumper Supervised:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a full rear bumper wrap on a client vehicle under mentor supervision.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Review & Refine:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Mentor reviews the week's installs and provides detailed feedback on corner and seam techniques.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Mentor Sign-Off:</strong> _________________________</p></div>
+                </div>
+
+                 <!-- Week 4: Certification -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h4 class="text-3xl font-semibold mb-6 text-teal-600 section-title border-teal-200">Week 4: Full Vehicle & Certification</h4>
+                    <div class="day-block"><h5 class="font-bold">Monday & Tuesday - Final Project:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Project:** Trainee will be the lead installer on a full color change wrap, with mentor assisting.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Wednesday - Quality Control:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Perform a full QC check on the final project. Identify and fix any minor flaws.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Thursday - Troubleshooting:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>Mentor creates common issues on a test panel (e.g., over-stretching, silvering). Trainee must identify and explain how to fix them.</span></li></ul></div>
+                    <div class="day-block"><h5 class="font-bold">Friday - Certify:</h5><ul class="task-list mt-2"><li><input type="checkbox"><span>**Final Review:** Shop manager inspects final project and discusses readiness for independent work.</span></li></ul></div>
+                    <div class="sign-off"><p><strong>Shop Manager Sign-Off (TDS VINYL SPECIALIST CERTIFIED):</strong> _________________________</p></div>
+                </div>
             </div>
         </div>
     </main>

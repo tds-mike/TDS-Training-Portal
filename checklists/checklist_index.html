@@ -11,12 +11,11 @@
     <script src="../footer.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .checklist-link {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .checklist-link:hover {
-            transform: translateY(-5px);
+        .card-link { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; border: 1px solid transparent; }
+        .card-link:hover { 
+            transform: translateY(-5px); 
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            border-color: #FBBF24; /* Amber color on hover */
         }
     </style>
 </head>
@@ -25,58 +24,94 @@
     <main-header></main-header>
 
     <main class="container mx-auto px-6 py-12">
+        <!-- Hero Section -->
         <section class="text-center py-12">
             <h1 class="text-5xl font-bold mb-4">Printable Job Checklists</h1>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">Use these checklists in the bay to ensure consistency, quality control, and adherence to the TDS Standard on every single service.</p>
         </section>
-        
-        <section class="py-8">
-            <h2 class="text-3xl font-bold text-center mb-10">Technician Checklists</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="checklist_tech_workflow.html" target="_blank" class="block bg-blue-600 text-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-bold mb-2">Master Technician Workflow</h3>
-                    <p>The main checklist for every job, covering the entire process from start to finish.</p>
-                </a>
-                <a href="checklist_decon_wash.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Decontamination Wash</h3>
-                    <p class="text-gray-600">The step-by-step process for a perfect decon wash.</p>
-                </a>
-                <a href="checklist_interior.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Full Interior Restoration</h3>
-                    <p class="text-gray-600">Ensure every step of an interior detail is completed to standard.</p>
-                </a>
-                <a href="checklist_paint_correction.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Paint Correction</h3>
-                    <p class="text-gray-600">The workflow for a safe and effective paint correction job.</p>
-                </a>
-                 <a href="checklist_ceramic_coating.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Ceramic Coating</h3>
-                    <p class="text-gray-600">The checklist for a flawless ceramic coating application.</p>
-                </a>
-                <a href="checklist_ppf.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">PPF Installation</h3>
-                    <p class="text-gray-600">The non-negotiable prep and installation steps for PPF.</p>
-                </a>
-                <a href="checklist_tint.html" target="_blank" class="block bg-white p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Window Tint Installation</h3>
-                    <p class="text-gray-600">The workflow for a contamination-free tint job.</p>
-                </a>
-            </div>
-        </section>
-        
-        <section class="py-8 mt-8">
-            <h2 class="text-3xl font-bold text-center mb-10">Sales Checklists</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="checklist_sales_process.html" target="_blank" class="block bg-amber-500 text-gray-900 p-6 rounded-lg shadow checklist-link">
-                    <h3 class="text-2xl font-bold mb-2">Master Sales Process</h3>
-                    <p>The complete checklist for the customer journey, from lead to delivery.</p>
-                </a>
-            </div>
-        </section>
 
+        <!-- Checklists Section -->
+        <section class="py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <a href="checklist_tech_workflow.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div>
+                        <h3 class="text-xl font-semibold text-gray-800">Technician Workflow</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The complete process from job start to final handoff, integrating Urable and our quality standards.</p>
+                </a>
+                
+                <a href="checlist_decon_wash.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                     <div class="flex items-center mb-3">
+                        <div class="mr-4 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-blue-600">Decontamination Wash</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The meticulous, multi-phase process for achieving a surgically clean exterior surface.</p>
+                </a>
+                
+                <a href="checklist_paint_correction.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-cyan-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-cyan-600">Paint Correction</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The complete checklist for safe and effective paint correction, from diagnosis to final inspection.</p>
+                </a>
+
+                <a href="checklist_ceramic_coating.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                     <div class="flex items-center mb-3">
+                        <div class="mr-4 text-sky-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-sky-600">Ceramic Coating</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The workflow for a flawless ceramic coating application, including prep, application, and QC.</p>
+                </a>
+                
+                <a href="checklist_interior.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-green-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12v-1a3 3 0 013-3h10a3 3 0 013 3v1m-6 4v-4m0 4H9m6 0h1.5a3 3 0 000-6H9.5a3 3 0 000 6H12z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-green-600">Full Interior Restoration</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The checklist for our complete interior detailing service, from "The Purge" to "The Finish."</p>
+                </a>
+                
+                <a href="checklist_tint.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-purple-600">Window Tint Installation</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The step-by-step process for a contamination-free tint installation, from prep to final QC.</p>
+                </a>
+                
+                <a href="checklist_ppf.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                     <div class="flex items-center mb-3">
+                        <div class="mr-4 text-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-indigo-600">PPF Installation</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The non-negotiable prep, installation, and finishing checklist for a perfect PPF job.</p>
+                </a>
+                
+                <a href="checklist_vinyl_wrapping.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-teal-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5v4m0 0h-4" /></svg></div>
+                        <h3 class="text-xl font-semibold text-teal-600">Vinyl Wrapping</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">The complete workflow for a paint-like vinyl wrap finish, including the critical post-heat step.</p>
+                </a>
+
+                <a href="checklist_sales_process.html" target="_blank" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center mb-3">
+                        <div class="mr-4 text-amber-600"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-amber-600">Sales Process</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">For the sales team: The master checklist for the entire customer journey, from inquiry to handoff.</p>
+                </a>
+
+            </div>
+        </section>
     </main>
 
     <main-footer></main-footer>
 
 </body>
 </html>
+

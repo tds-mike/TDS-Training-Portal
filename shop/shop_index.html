@@ -12,11 +12,10 @@
     <script src="../module-navigation.js" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .nav-link { transition: all 0.2s ease; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-        .nav-link:hover { color: #FBBF24; border-bottom-color: #FBBF24; }
-        .nav-link.active { color: #F59E0B; font-weight: 600; border-bottom-color: #F59E0B; }
         .card-link { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card-link:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .card-link .card-icon { transition: transform 0.2s ease; }
+        .card-link:hover .card-icon { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
@@ -31,85 +30,104 @@
         </section>
 
         <!-- Core Principles Section -->
-        <section class="py-12">
+        <section class="pb-12">
             <h2 class="text-3xl font-bold text-center mb-10">Our Core Principles</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1: Safety -->
-                <div class="bg-white p-6 rounded-lg shadow text-center card-link">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
                     <div class="mb-4 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-2">Safety First, Always</h3>
-                    <p class="text-gray-600">Safety is not a step; it is the foundation of everything we do. A safe technician is a professional technician.</p>
+                    <p class="text-gray-600 text-sm">A safe technician is a professional technician. Safety is the foundation of everything we do.</p>
                 </div>
                 <!-- Card 2: Prep -->
-                <div class="bg-white p-6 rounded-lg shadow text-center card-link">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
                     <div class="mb-4 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-2">Prep is Paramount</h3>
-                    <p class="text-gray-600">A flawless finish begins with a surgically clean surface. Decontamination is the non-negotiable start to quality work.</p>
+                    <p class="text-gray-600 text-sm">A flawless finish begins with a surgically clean surface. Decontamination is non-negotiable.</p>
                 </div>
                 <!-- Card 3: Right Tool -->
-                <div class="bg-white p-6 rounded-lg shadow text-center card-link">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
                      <div class="mb-4 text-green-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-2">The Right Tool & Chemical</h3>
-                    <p class="text-gray-600">Master your arsenal. Understand the science of your chemicals and tools to deliver consistent, safe results every time.</p>
+                    <p class="text-gray-600 text-sm">Master your arsenal. Understand the science to deliver consistent, safe results every time.</p>
                 </div>
                 <!-- Card 4: Master the Details -->
-                <div class="bg-white p-6 rounded-lg shadow text-center card-link">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
                     <div class="mb-4 text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 10l.01.01" /></svg></div>
                     <h3 class="text-xl font-semibold mb-2">Master the Details</h3>
-                    <p class="text-gray-600">From hidden crevices to the final quality check, excellence is found in the details that others miss.</p>
+                    <p class="text-gray-600 text-sm">Excellence is found in the details that others miss. From hidden crevices to the final QC.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Quick Links Section -->
+        <!-- Training Curriculum Section -->
         <section class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-10">Training Resources</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Training Pathway Card -->
-                <a href="shop_training-pathway.html" class="block bg-blue-500 text-white p-6 rounded-lg shadow card-link lg:col-span-3">
-                    <h3 class="text-2xl font-bold mb-2">New Technician Training Pathway</h3>
-                    <p>Start Here. This is the official, step-by-step curriculum for becoming a certified TDS professional, combining digital learning with hands-on practice.</p>
-                </a>
-                <!-- Technician SOP Card -->
-                <a href="shop_tech_workflow.html" class="block bg-blue-700 text-white p-6 rounded-lg shadow card-link lg:col-span-3">
-                    <h3 class="text-2xl font-bold mb-2">Technician SOP & Workflow</h3>
-                    <p>The master guide for the entire service process, from vehicle intake and in-progress best practices to the final, service-specific finishing touches.</p>
-                </a>
+            <h2 class="text-3xl font-bold text-center mb-10">Training Curriculum & Resources</h2>
+            
+            <!-- Start Here Card -->
+            <a href="shop_training-pathway.html" class="block bg-blue-600 text-white p-8 rounded-lg shadow card-link mb-12">
+                <div class="flex items-center">
+                    <div class="mr-6 card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Start Here: New Technician Training Pathway</h3>
+                        <p>This is the official, step-by-step curriculum for becoming a certified TDS professional, combining digital learning with hands-on practice.</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Foundational Knowledge -->
+            <h3 class="text-2xl font-semibold mb-6 border-b-2 border-gray-200 pb-2">Foundational Knowledge</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <a href="shop_safety.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-red-600">Safety Guide</h3>
-                    <p class="text-gray-600">Our complete system for personal, chemical, and workshop safety. This is the foundation.</p>
+                    <div class="flex items-center">
+                        <div class="mr-4 card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold">Safety Guide</h3></div>
+                    </div>
                 </a>
-                 <a href="shop_chemicals.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-yellow-600">Chemicals Guide</h3>
-                    <p class="text-gray-600">A deep dive into our chemical arsenal, covering purpose, use, and dilution for every product.</p>
+                <a href="shop_chemicals.html" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center">
+                        <div class="mr-4 card-icon text-yellow-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold">Chemicals Guide</h3></div>
+                    </div>
                 </a>
-                <a href="shop_exterior.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Exterior Mastery</h3>
-                    <p class="text-gray-600">From decontamination to multi-step paint correction and ceramic coatings.</p>
-                </a>
-                <a href="shop_interior.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-green-600">Interior Restoration</h3>
-                    <p class="text-gray-600">Advanced techniques for cleaning, restoring, and protecting every interior surface.</p>
-                </a>
-                <a href="shop_tint.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-purple-600">Window Tinting</h3>
-                    <p class="text-gray-600">The art and science of a flawless, contamination-free tint installation.</p>
-                </a>
-                <a href="shop_ppf.html" class="block bg-white p-6 rounded-lg shadow card-link">
-                    <h3 class="text-2xl font-semibold mb-2 text-indigo-600">PPF Installation</h3>
-                    <p class="text-gray-600">Mastering the techniques for installing invisible, self-healing paint protection film.</p>
-                </a>
-                 <!-- Printable Checklists Card -->
-                <a href="shop_checklists.html" class="block bg-gray-800 text-white p-6 rounded-lg shadow card-link lg:col-span-3">
-                    <h3 class="text-2xl font-bold mb-2">Printable Job Checklists</h3>
-                    <p>Use these checklists in the bay to ensure consistency and quality control on every service.</p>
-                </a>
-                 <!-- Quiz Card -->
-                <a href="shop_quiz.html" class="block bg-green-500 text-white p-6 rounded-lg shadow card-link lg:col-span-3">
-                    <h3 class="text-2xl font-bold mb-2">Technician Knowledge Quiz</h3>
-                    <p>Ready to test your skills? Take the final quiz to certify your knowledge of the TDS Standard of Excellence.</p>
+                <a href="shop_tech_workflow.html" class="block bg-white p-6 rounded-lg shadow card-link">
+                    <div class="flex items-center">
+                        <div class="mr-4 card-icon text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div>
+                        <div><h3 class="text-xl font-semibold">Technician SOP</h3></div>
+                    </div>
                 </a>
             </div>
+
+            <!-- Core Detailing Skills -->
+            <h3 class="text-2xl font-semibold mb-6 border-b-2 border-gray-200 pb-2">Core Detailing Skills</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <a href="shop_exterior.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-blue-600">Exterior Mastery</h3><p class="text-gray-600 text-sm mt-1">The art of the decontamination wash and applying foundational layers of protection.</p></a>
+                <a href="shop_interior.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-green-600">Interior Restoration</h3><p class="text-gray-600 text-sm mt-1">Advanced techniques for cleaning, restoring, and protecting every interior surface.</p></a>
+                <a href="shop_paint_correction.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-cyan-600">Paint Correction</h3><p class="text-gray-600 text-sm mt-1">Techniques for removing swirls and scratches to create a flawless, mirror-like finish.</p></a>
+                <a href="shop_ceramic_coating.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-sky-600">Ceramic Coatings</h3><p class="text-gray-600 text-sm mt-1">Mastering the art of applying long-lasting, semi-permanent glass coatings.</p></a>
+            </div>
+
+            <!-- Advanced Film Installation -->
+            <h3 class="text-2xl font-semibold mb-6 border-b-2 border-gray-200 pb-2">Advanced Film Installation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <a href="shop_tint.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-purple-600">Window Tinting</h3><p class="text-gray-600 text-sm mt-1">The art and science of a flawless, contamination-free tint installation.</p></a>
+                <a href="shop_ppf.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-indigo-600">PPF Installation</h3><p class="text-gray-600 text-sm mt-1">Mastering the techniques for installing invisible, self-healing paint protection film.</p></a>
+                <a href="shop_vinyl_wrapping.html" class="block bg-white p-6 rounded-lg shadow card-link"><h3 class="text-xl font-semibold text-teal-600">Vinyl Wrapping</h3><p class="text-gray-600 text-sm mt-1">The art of color change wraps, from meticulous prep to a paint-like finish.</p></a>
+            </div>
+
+            <!-- Resources & Certification -->
+            <h3 class="text-2xl font-semibold mb-6 border-b-2 border-gray-200 pb-2">Resources & Certification</h3>
+            <div class="grid grid-cols-1 gap-8">
+                 <a href="../checklists/checklist_index.html" class="block bg-gray-800 text-white p-8 rounded-lg shadow card-link">
+                    <h3 class="text-2xl font-bold">Resource Hub: Printable Job Checklists</h3>
+                </a>
+                <a href="shop_quiz.html" class="block bg-green-500 text-white p-8 rounded-lg shadow card-link">
+                    <h3 class="text-2xl font-bold">Final Step: Technician Knowledge Quiz</h3>
+                </a>
+            </div>
+
         </section>
     </main>
 
