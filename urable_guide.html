@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Urable Workflow Guide</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="module-navigation.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
+        .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .phase-box { background-color: #f9fafb; border-left: 4px solid #10B981; padding: 1.5rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="urable-content">
+            <h2 class="text-5xl font-bold mb-8 text-emerald-600 section-title border-emerald-600">Urable: Our Digital Hub</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mb-12">Urable is the central nervous system of our shop. It's how we manage the entire customer journey, from the initial inspection to the final invoice and review request. Mastering this tool is essential for both the sales and technical teams to ensure a smooth, professional, and transparent process for every client.</p>
+
+            <div class="space-y-12">
+
+                <!-- Phase 1: Sales Team - Vehicle Intake -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 1 (Sales): Vehicle Intake & Onboarding</h3>
+                    <p class="text-gray-600">The onboarding process in Urable is our first opportunity to build trust and document the vehicle's condition accurately.</p>
+                    <div class="phase-box">
+                        <h4 class="text-2xl font-bold text-gray-800">Intake Checklist</h4>
+                        <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li>
+                                <strong>Create New Invoice:</strong> While the customer is present, create a new invoice. Accurately enter all customer details and vehicle information, including the VIN, license plate, and current mileage.
+                            </li>
+                            <li>
+                                <strong>Perform the Digital Inspection:</strong> This is a non-negotiable step. Use the Urable app on a tablet to take and upload photos directly to the "Inspection" tab.
+                                <div class="education-box">
+                                    <h5 class="font-bold">Required Inspection Photos:</h5>
+                                    <ul class="list-disc list-inside ml-4 mt-2">
+                                        <li>All four corners of the vehicle.</li>
+                                        <li>Front and rear profiles.</li>
+                                        <li>A clear photo of the odometer showing mileage.</li>
+                                        <li><strong>Crucially:</strong> Close-up, well-lit photos of any pre-existing damage. This includes swirls, scratches, rock chips, curb rash on wheels, and interior stains. Over-documenting protects the shop. </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Build the Work Order:</strong> Add the specific services the customer has agreed to, including any upsells discussed during the walk-around.
+                            </li>
+                            <li>
+                                <strong>Secure Approval & Deposit:</strong> Once the work order is complete, have the customer sign for approval directly in the app. Process the 50% deposit through the Urable payment system.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Technician Workflow -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 2 (Technician): In-Service Documentation</h3>
+                     <p class="text-gray-600">For technicians, Urable is the logbook for the job, showcasing your craftsmanship and communicating progress.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Technician Protocol</h4>
+                         <ul class="list-decimal list-inside mt-4 space-y-3">
+                             <li>
+                                <strong>Review the Work Order:</strong> Before starting, open the job in Urable and thoroughly review the scope of work and any notes from the sales team. Check the inspection photos to understand the vehicle's starting condition.
+                             </li>
+                             <li>
+                                <strong>Upload Progress Photos:</strong> Throughout the service, take compelling photos and upload them to the "Technician Photos" section.
+                                <div class="pro-tip">
+                                    <h4 class="font-bold">What Makes a Great Progress Photo?</h4>
+                                    <p>The best photos are 50/50 shots (showing a clear before/after line) and dramatic transformations (e.g., a heavily soiled interior seat half-cleaned, or a paint panel half-corrected). These are powerful marketing assets and prove the value of our work to the client.  </p>
+                                </div>
+                             </li>
+                             <li>
+                                 <strong>Document Issues:</strong> If you discover a new issue (e.g., failing clear coat under a sticker), take a photo, upload it immediately, and add a note for the Shop Manager. This creates a time-stamped record.
+                             </li>
+                         </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Sales Team - Handoff -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-3xl font-semibold mb-6">Phase 3 (Sales): Handoff & Closing</h3>
+                     <p class="text-gray-600">Urable streamlines the final steps of the customer journey, ensuring a professional close-out and encouraging future business.</p>
+                    <div class="phase-box">
+                         <h4 class="text-2xl font-bold text-gray-800">Handoff Checklist</h4>
+                         <ul class="list-decimal list-inside mt-4 space-y-3">
+                            <li>
+                                <strong>Showcase the Work:</strong> Use the technician's photos in Urable on a tablet to walk the customer through the transformation, reinforcing the value of the service they received.
+                            </li>
+                             <li>
+                                <strong>Obtain Final Approval:</strong> Have the customer sign the "Work Completed" approval form within the invoice.
+                            </li>
+                             <li>
+                                <strong>Process Final Payment:</strong> Take the remaining payment through the Urable system.
+                            </li>
+                             <li>
+                                <strong>Automated Review Request:</strong> Inform the customer, "In about 24 hours, our system will automatically send you a link to leave a review. We'd be grateful if you'd share your experience and some photos of the finished result!"
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+</body>
+</html>

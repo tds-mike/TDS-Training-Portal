@@ -15,6 +15,7 @@ class MainHeader extends HTMLElement {
                 "Core Principles": [
                     { href: 'safety.html', text: 'Safety Guide' },
                     { href: 'chemicals.html', text: 'Chemicals Guide' },
+                    { href: 'urable_guide.html', text: 'Urable Workflow Guide' }
                 ],
                 "Practical Guides": [
                     { href: 'exterior.html', text: 'Exterior Mastery' },
@@ -44,6 +45,7 @@ class MainHeader extends HTMLElement {
                     { href: 'sales_scripts.html', text: 'Sales Scripts' },
                     { href: 'sales_sop.html', text: 'SOPs & Checklists' },
                     { href: 'sales_objection_handling.html', text: 'Diffusing Objections' },
+                    { href: 'urable_guide.html', text: 'Urable Workflow Guide' }
                 ],
                 "Product Knowledge": [
                     { href: 'sales_tint.html', text: 'Selling Window Tint' },
@@ -200,4 +202,3 @@ class MainHeader extends HTMLElement {
 }
 
 customElements.define('main-header', MainHeader);
-
