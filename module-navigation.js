@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { url: 'shop/shop_interior.html', title: 'Interior Restoration' },
             { url: 'shop/shop_tint.html', title: 'Window Tinting Guide' },
             { url: 'shop/shop_ppf.html', title: 'PPF Installation Guide' },
-            { url: 'shop/shop_shop_quiz.html', title: 'Technician Knowledge Quiz' }
+            { url: 'shop/shop_quiz.html', title: 'Technician Knowledge Quiz' }
         ],
         sales: [
             { url: 'sales/sales_index.html', title: 'Sales Home' },
@@ -39,15 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPortalModules = [];
 
     // Determine which portal's module list to use
-    if (portals.technician.some(module => module.url === currentPage)) {
+    if (portals.technician.some(module => module.url.endsWith(currentPage))) {
         currentPortalModules = portals.technician;
-    } else if (portals.sales.some(module => module.url === currentPage)) {
+    } else if (portals.sales.some(module => module.url.endsWith(currentPage))) {
         currentPortalModules = portals.sales;
     }
 
+
     if (currentPortalModules.length === 0) return; // Don't run on non-module pages
 
-    const currentIndex = currentPortalModules.findIndex(module => module.url === currentPage);
+    const currentIndex = currentPortalModules.findIndex(module => module.url.endsWith(currentPage));
     if (currentIndex === -1) return;
 
     const prevModule = currentIndex > 0 ? currentPortalModules[currentIndex - 1] : null;
@@ -63,13 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="flex justify-between items-center text-sm">
                 <div class="w-1/3 text-left">
-                    ${prevModule ? `<a href="${prevModule.url}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
+                    ${prevModule ? `<a href="../${prevModule.url}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
                 </div>
                 <div class="w-1/3 text-center text-gray-400">
                     Module ${currentIndex + 1} of ${currentPortalModules.length}
                 </div>
                 <div class="w-1/3 text-right">
-                    ${nextModule ? `<a href="${nextModule.url}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
+                    ${nextModule ? `<a href="../${nextModule.url}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
                 </div>
             </div>
         </div>
@@ -96,4 +97,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', setPadding);
 });
-

@@ -8,7 +8,7 @@ class MainHeader extends HTMLElement {
         const allLinks = {
             "Technician Portal": {
                 "Getting Started": [
-                    { href: 'shop_index.html', text: 'Technician Home' },
+                    { href: 'shop/shop_index.html', text: 'Technician Home' },
                     { href: 'shop/shop_training-pathway.html', text: 'New Technician Pathway' },
                     { href: 'shop/shop_tech_workflow.html', text: 'Technician Workflow' }
                 ],
@@ -28,7 +28,7 @@ class MainHeader extends HTMLElement {
                     { href: 'shop/shop_vinyl_pathway.html', text: 'Vinyl Pathway' }
                 ],
                 "Testing": [
-                    { href: 'shop_quiz.html', text: 'Shop Quiz' },
+                    { href: 'shop/shop_quiz.html', text: 'Shop Quiz' },
                 ]
             },
             "Sales Portal": {
@@ -56,7 +56,7 @@ class MainHeader extends HTMLElement {
 
         const createSlideOutNav = () => {
             let html = `<div class="mb-4">
-                <a href="index.html" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
+                <a href="../index.html" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
             </div>`;
 
             for (const portal in allLinks) {
@@ -75,7 +75,7 @@ class MainHeader extends HTMLElement {
                     html += '<div class="mt-2 space-y-1">';
                     portalData[category].forEach(link => {
                         const isActive = currentPage === link.href;
-                        html += `<a href="${link.href}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
+                        html += `<a href="../${link.href}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
                     });
                     html += `</div>`;
                 }
@@ -91,7 +91,7 @@ class MainHeader extends HTMLElement {
                 html += `<h3 class="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">${category}</h3>`;
                 portalData[category].forEach(link => {
                     const isActive = currentPage === link.href;
-                    html += `<a href="${link.href}" class="block px-4 py-2 text-sm ${isActive ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700'}">${link.text}</a>`;
+                    html += `<a href="../${link.href}" class="block px-4 py-2 text-sm ${isActive ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700'}">${link.text}</a>`;
                 });
             }
             html += `</div>`;
@@ -113,18 +113,18 @@ class MainHeader extends HTMLElement {
             </style>
             <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+                    <a href="../index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
                     <button id="mobile-menu-button" class="md:hidden focus:outline-none z-50">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                      <nav class="hidden md:flex items-center space-x-6">
-                        <a href="index.html" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
+                        <a href="../index.html" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
                         <div class="relative has-dropdown">
-                            <a href="shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
+                            <a href="../shop/shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
                             ${createDesktopDropdown("Technician Portal")}
                         </div>
                         <div class="relative has-dropdown">
-                             <a href="sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
+                             <a href="../sales/sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
                             ${createDesktopDropdown("Sales Portal")}
                         </div>
                     </nav>
@@ -196,6 +196,3 @@ class MainHeader extends HTMLElement {
 }
 
 customElements.define('main-header', MainHeader);
-
-
-
