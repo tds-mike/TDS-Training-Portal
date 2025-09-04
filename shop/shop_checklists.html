@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS - Printable Job Checklists</title>
+    <script src="auth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="navigation.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="module-navigation.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .checklist-box {
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #9ca3af;
+            border-radius: 0.25rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        .checklist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #111827;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .checklist-info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0.25rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .printable-section, .printable-section * {
+                visibility: visible;
+            }
+            .printable-section {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+
+    <main-header>    <main class="container mx-auto px-6 py-12">
+        </main></main-header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="no-print">
+            <h2 class="text-5xl font-bold mb-4 text-center">Printable Job Checklists</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">Use these checklists in the bay to ensure every step of our core services is completed to the TDS Standard. Click the button on a checklist to print only that form.</p>
+        </div>
+        
+        <div class="space-y-16">
+            
+            <!-- Decontamination Wash Checklist -->
+            <div id="decon-wash" class="bg-white p-8 rounded-lg shadow-md printable-section">
+                <div class="checklist-header">
+                    <img src="tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+                    <h3 class="text-3xl font-bold">Decontamination Wash</h3>
+                </div>
+                <div class="checklist-info mb-6">
+                    <strong>Customer:</strong><span>____________________</span>
+                    <strong>Vehicle:</strong><span>____________________</span>
+                    <strong>Date:</strong><span>____________________</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 1: Prep & Wheels</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Initial inspection & photos uploaded</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Wheels, tires, and wells cleaned</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Touchless pre-soak with Lift</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Gas tank, cowls, jambs, crevices cleaned</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 2: Decontamination</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Two-bucket contact wash (WO)</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>IronX chemical decontamination</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>TarX chemical decontamination</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Clay bar/towel mechanical decontamination</span></div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Final Steps & QC</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Crevices blown out with air</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Towel dry with drying aid</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Door jambs wiped clean & tires dressed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Exterior glass cleaned</span></div>
+                    </div>
+                </div>
+                <button onclick="printChecklist('decon-wash')" class="no-print mt-8 bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 w-full">Print This Checklist</button>
+            </div>
+
+            <!-- Full Interior Checklist -->
+            <div id="full-interior" class="bg-white p-8 rounded-lg shadow-md printable-section">
+                <div class="checklist-header">
+                    <img src="tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+                    <h3 class="text-3xl font-bold">Full Interior Restoration</h3>
+                </div>
+                <div class="checklist-info mb-6">
+                    <strong>Customer:</strong><span>____________________</span>
+                    <strong>Vehicle:</strong><span>____________________</span>
+                    <strong>Date:</strong><span>____________________</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 1: The Purge (Dry Prep)</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Personal items removed & bagged</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Floor mats removed for cleaning</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Full "back-to-front" air purge</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Pet hair removal (if applicable)</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Initial bulk vacuum complete</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 2: The Loop (Deep Cleaning)</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Headliner spot cleaned</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Spot/stain treatment performed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All panels, dash, console cleaned</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Seats deep cleaned</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Carpets extracted/shampooed</span></div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: The Finish & QC</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Dressings or coatings applied</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Interior glass cleaned streak-free</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Floor mats cleaned & reinstalled</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Final vacuum performed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>TDS Signature Finish complete</span></div>
+                    </div>
+                </div>
+                <button onclick="printChecklist('full-interior')" class="no-print mt-8 bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 w-full">Print This Checklist</button>
+            </div>
+            
+            <!-- Paint Correction Checklist -->
+            <div id="paint-correction" class="bg-white p-8 rounded-lg shadow-md printable-section">
+                <div class="checklist-header">
+                    <img src="tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+                    <h3 class="text-3xl font-bold">Paint Correction Job</h3>
+                </div>
+                <div class="checklist-info mb-6">
+                    <strong>Customer:</strong><span>____________________</span>
+                    <strong>Vehicle:</strong><span>____________________</span>
+                    <strong>Date:</strong><span>____________________</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 1: Diagnosis & Prep</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Full Decontamination Wash complete</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Light & PDG inspection performed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All trim and sensitive areas taped off</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Tool cart & pad washer prepared</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 2: Correction & Cleanup</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Test spot performed to confirm combo</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All panels corrected per work order</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Tape carefully removed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Compound/polish dust purged from crevices</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Full CARPRO Eraser wipe-down complete</span></div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Protection & Final QC</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Protection (wax/sealant/coating) applied</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Final light inspection (direct & diffused)</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>No high spots or residue remaining</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Pads cleaned and stored</span></div>
+                    </div>
+                </div>
+                <button onclick="printChecklist('paint-correction')" class="no-print mt-8 bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 w-full">Print This Checklist</button>
+            </div>
+
+            <!-- Window Tint Checklist -->
+            <div id="window-tint" class="bg-white p-8 rounded-lg shadow-md printable-section">
+                <div class="checklist-header">
+                    <img src="tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+                    <h3 class="text-3xl font-bold">Window Tint Installation</h3>
+                </div>
+                <div class="checklist-info mb-6">
+                    <strong>Customer:</strong><span>____________________</span>
+                    <strong>Vehicle:</strong><span>____________________</span>
+                    <strong>Date:</strong><span>____________________</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 1: Prep & Staging</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Pre-installation vehicle inspection complete</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Work bay is clean, doors closed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Patterns cut via plotter or by hand</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film shrunk correctly for each window</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 2: Installation</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Interior panels protected from water</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All glass surfaces surgically prepped</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film applied using correct method</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All slip solution squeegeed out</span></div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Final QC</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film inspected: no large debris, creases, or scratches</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Edges are flat with no lift lines</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Final wipe-down of glass & door panels</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>"Do not roll down" stickers applied</span></div>
+                    </div>
+                </div>
+                <button onclick="printChecklist('window-tint')" class="no-print mt-8 bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 w-full">Print This Checklist</button>
+            </div>
+
+            <!-- PPF Checklist -->
+            <div id="ppf-install" class="bg-white p-8 rounded-lg shadow-md printable-section">
+                <div class="checklist-header">
+                    <img src="tds-white-w-outline-blk-small.png" alt="TDS Logo" class="h-12">
+                    <h3 class="text-3xl font-bold">PPF Installation</h3>
+                </div>
+                <div class="checklist-info mb-6">
+                    <strong>Customer:</strong><span>____________________</span>
+                    <strong>Vehicle:</strong><span>____________________</span>
+                    <strong>Date:</strong><span>____________________</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 1: The Non-Negotiable Prep</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Surgical Decontamination Wash complete</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Defects documented in Urable</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Hardware/badges removed (if applicable)</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Minimum Level 1 Polish complete</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Final CARPRO Eraser wipe-down complete</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Phase 2: Installation</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film floated and positioned correctly</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film anchored and squeegeed</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Complex curves conformed and stretched</span></div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold mb-4 mt-6">Phase 3: Finishing & Final QC</h4>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>All edges wrapped and set with heat</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Film inspected: no contamination or lift lines</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Post-install check complete (bubbles, edges)</span></div>
+                        <div class="checklist-item"><div class="checklist-box"></div><span>Final quick detailer wipe-down</span></div>
+                    </div>
+                </div>
+                <button onclick="printChecklist('ppf-install')" class="no-print mt-8 bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 w-full">Print This Checklist</button>
+            </div>
+
+        </div>
+    </main>
+
+    <main-footer><script src="navigation.js" defer></script></main-footer>
+
+    <script>
+        function printChecklist(id) {
+            const sections = document.querySelectorAll('.printable-section');
+            const nav = document.querySelector('main-header');
+            const footer = document.querySelector('main-footer');
+            
+            nav.style.visibility = 'hidden';
+            footer.style.visibility = 'hidden';
+
+            sections.forEach(section => {
+                if (section.id !== id) {
+                    section.style.display = 'none';
+                }
+            });
+
+            window.print();
+
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+            nav.style.visibility = 'visible';
+            footer.style.visibility = 'visible';
+        }
+    </script>
+
+</body>
+</html>
+
