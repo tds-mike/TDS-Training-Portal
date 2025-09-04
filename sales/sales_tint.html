@@ -7,6 +7,7 @@
     <script src="../auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../navigation.js" defer></script>
     <script src="../footer.js" defer></script>
     <script src="../module-navigation.js" defer></script>
@@ -15,200 +16,234 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .details-arrow { transform: rotate(180deg); }
+        details > summary { cursor: pointer; }
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #F59E0B; /* A gold/yellow color that fits the theme */
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+<body class="bg-gray-100 text-gray-800">
 
     <main-header></main-header>
+    <div id="module-navigation-container"></div>
 
-    <main class="container mx-auto px-6 py-12">
-        <section id="tint-content">
-            <h2 class="text-5xl font-bold mb-8 text-purple-600 section-title border-purple-600">Selling Window Tint: A Guide to Selling Privacy & Comfort</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12">Window tint is one of our most popular services. We don't just sell a darker window; we sell a more private, comfortable, and protected driving experience. This guide provides the framework for communicating that value and guiding the customer to the best solution for their needs.</p>
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Selling Window Tint</h1>
+        <p class="text-lg text-gray-600 mb-8">This module covers the essential knowledge and sales techniques required to effectively sell window tint services, from understanding the technology to closing the sale.</p>
 
-            <div class="space-y-12">
+        <!-- Clickable Table of Contents -->
+        <section id="table-of-contents" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">Quick Navigation</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="#understanding-tint" class="text-blue-600 hover:underline">1. Understanding the 'Why' Behind Tint</a></li>
+                <li><a href="#film-hierarchy" class="text-blue-600 hover:underline">2. The Film Hierarchy: Good, Better, Best</a></li>
+                <li><a href="#heat-lamp-demo" class="text-blue-600 hover:underline">3. The Power of the Heat Lamp Demo</a></li>
+                <li><a href="#sales-process" class="text-blue-600 hover:underline">4. The Sales Process & Scripts</a></li>
+                <li><a href="#common-concerns" class="text-blue-600 hover:underline">5. Overcoming Common Concerns</a></li>
+                <li><a href="#upselling" class="text-blue-600 hover:underline">6. Packaging & Upselling Opportunities</a></li>
+                <li><a href="#installation-expectations" class="text-blue-600 hover:underline">7. Installation & Setting Expectations</a></li>
+                <li><a href="#legal-limits" class="text-blue-600 hover:underline">8. Connecticut Tint Laws: Staying Compliant</a></li>
+            </ul>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.78-4.125" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">The Core Customer Problem</h3>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Section 1: Understanding the 'Why' -->
+        <section id="understanding-tint" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">1. Understanding the 'Why' Behind Tint</h2>
+            <p class="mb-4">To sell tint effectively, you need to go beyond "it makes your windows dark." You're not selling a product; you're selling solutions to common problems. The key benefits are your primary selling tools.</p>
+            
+            <div class="space-y-6">
+                 <div class="flex items-start">
+                    <i class="fas fa-sun icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">UV Protection: The Health & Preservation Angle</h3>
+                        <p>Our films block >99% of UV rays. This is a powerful selling point. Frame it in terms of benefits the customer can relate to: "It's like sunscreen for your car and your family."</p>
                         <div class="education-box">
-                            <h4 class="font-bold text-lg">The Need for Privacy & Style</h4>
-                            <p>Customers want their vehicle to be a personal space. They want to feel secure, conceal their belongings, and enjoy a sleek, uniform aesthetic. Our films provide that sense of privacy and style.</p>
-                        </div>
-                         <div class="pro-tip">
-                            <h4 class="font-bold text-lg">The Need for Comfort</h4>
-                            <p>No one likes driving in a sweltering hot car or being blinded by glare. We solve the physical discomfort of heat and UV exposure, especially for clients with families or long commutes.</p>
+                            <p><strong>Educate the Client:</strong> "Did you know that UV rays are the primary cause of your car's interior fading and cracking? Our tint protects that investment. More importantly, it protects you and your passengers from skin damage on long drives."</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div class="flex items-start">
+                    <i class="fas fa-thermometer-half icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Heat Rejection: The Comfort Angle</h3>
+                        <p>This is the most tangible benefit, especially in the summer. It's the difference between getting into a comfortable car versus an oven. This is where upselling to ceramic becomes easy.</p>
+                         <div class="education-box">
+                            <p><strong>Educate the Client:</strong> "The number you want to pay attention to is Infrared (IR) rejection. IR is the part of the light spectrum that you actually feel as heat. A basic film might only block 10-20% of that heat, while our top-of-the-line ceramic film blocks over 90%."</p>
                         </div>
-                        <h3 class="text-3xl font-semibold">Key Benefits of Window Tint</h3>
-                    </div>
-                     <ul class="list-disc list-inside space-y-2 mt-2 pl-4">
-                        <li><strong>UV Protection:</strong> Blocks over 99% of harmful UV rays, protecting occupants' skin and preventing the vehicle's interior from fading and cracking.</li>
-                        <li><strong>Heat Rejection:</strong> Keeps the cabin significantly cooler, reducing the reliance on air conditioning and improving comfort.</li>
-                        <li><strong>Glare Reduction:</strong> Improves driving safety and comfort by reducing glare from the sun and headlights.</li>
-                        <li><strong>Privacy & Security:</strong> Enhances privacy for occupants and conceals valuables from view.</li>
-                        <li><strong>Aesthetic Enhancement:</strong> Gives any vehicle a sleek, premium appearance.</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Product Deep Dive: Our Film Hierarchy</h3>
-                    </div>
-                     
-                    <div class="overflow-x-auto mt-6">
-                        <table class="w-full text-sm border">
-                            <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="p-3 text-left font-semibold">Film Tier</th>
-                                    <th class="p-3 text-left font-semibold">Key Features & IR Rejection</th>
-                                    <th class="p-3 text-left font-semibold">Ideal Customer</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y">
-                                <tr>
-                                    <td class="p-3 font-bold">Economy</td>
-                                    <td class="p-3">Provides basic privacy and a dyed look. Minimal heat rejection.</td>
-                                    <td class="p-3">The budget-conscious client focused purely on aesthetics.</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold">Premium Carbon</td>
-                                    <td class="p-3">Deep black, non-fading color. Good heat rejection (30% IR).</td>
-                                    <td class="p-3">The client who values a long-lasting, stylish look with a noticeable step-up in comfort.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="p-3 font-bold">Supreme Ceramic</td>
-                                    <td class="p-3">High-performance heat rejection (80% IR) with excellent clarity.</td>
-                                    <td class="p-3">The client whose primary concern is comfort and heat reduction.</td>
-                                </tr>
-                                 <tr class="bg-purple-50 text-purple-900">
-                                    <td class="p-3 font-bold">CARPRO UVX</td>
-                                    <td class="p-3"><strong>Maximum performance (99% IR rejection) with a durable anti-scratch layer.</strong> Focus on selling its <strong>TSER (Total Solar Energy Rejection)</strong>, which is the highest on the market—outperforming competitors like Xpel XR+ at a more affordable price.</td>
-                                    <td class="p-3">The client who demands the absolute best performance and protection.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="education-box">
-                        <h4 class="font-bold text-lg">How Ceramic Film Works</h4>
-                        
-                        <p class="mt-4">This diagram shows how our advanced ceramic films work. While all our films block over 99% of cancer-causing UV rays (the purple waves), the nano-ceramic particles embedded in our premium films are specifically designed to reflect Infrared (IR) rays (the red waves), which are the primary source of heat. This is why ceramic film offers superior comfort without needing to be extremely dark.</p>
                     </div>
                 </div>
+               
+                <div class="flex items-start">
+                    <i class="fas fa-eye-slash icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Glare Reduction & Privacy: The Safety & Security Angle</h3>
+                        <p>Reduced glare improves driving visibility and safety. Privacy protects valuables from prying eyes.</p>
+                        <div class="education-box">
+                             <p><strong>Educate the Client:</strong> "Tint significantly cuts down on glare from the sun during the day and from headlights at night, which reduces eye strain and makes driving safer. Plus, it adds a layer of privacy, keeping your belongings out of sight from potential thieves."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="pro-tip">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-yellow-200 text-yellow-700 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.343 17.657a8 8 0 0110.607-10.607L12 12l-2.657 5.657z" /></svg>
+        <!-- Section 2: Film Hierarchy -->
+        <section id="film-hierarchy" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">2. The Film Hierarchy: Good, Better, Best</h2>
+            <p class="mb-4">We structure our offerings to make the choice clear for the customer. Your goal is to educate them on the value of stepping up to a better film.</p>
+           
+            <!-- Film Hierarchy Infographic -->
+            <div class="bg-gray-50 p-6 rounded-lg my-6">
+                <h3 class="text-xl font-semibold mb-4 text-center">TDS Film Performance Ladder</h3>
+                <div class="relative">
+                    <div class="absolute left-1/2 h-full w-px bg-gray-300 border-l-2 border-dotted" style="transform: translateX(-1px);"></div>
+                    <div class="flex flex-col items-center space-y-8">
+                        <div class="w-full flex items-center justify-end">
+                            <div class="text-right pr-8 w-5/12">
+                                <h4 class="font-bold text-lg text-red-600">CARPRO UVX</h4>
+                                <p class="text-sm">Ultimate UV & IR blocking. The best protection available.</p>
                             </div>
-                            <h3 class="text-3xl font-semibold">The Ultimate Sales Tool: The Heat Lamp Display</h3>
+                            <div class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-md z-10">TOP</div>
                         </div>
-                        <p class="text-gray-700">The heat lamp display is the most powerful tool for upselling from Carbon to Ceramic film. It moves the conversation from talking about numbers to a physical experience the customer can feel.</p>
-                        <p class="mt-4 font-semibold text-gray-800">The Script:</p>
-                        <p class="mt-2 text-gray-700 italic">"It's one thing to talk about heat rejection, but it's another to feel it. Please put your hand here under the lamp with the Carbon film... Now, feel the difference with the Ceramic film. That significant drop in heat is what you'll feel in your car every single sunny day. It's a huge upgrade in comfort, and it's why most of our customers choose the ceramic."</p>
+                        <div class="w-full flex items-center justify-start">
+                             <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-md z-10">3</div>
+                            <div class="text-left pl-8 w-5/12">
+                                <h4 class="font-bold text-lg text-blue-600">Supreme Ceramic</h4>
+                                <p class="text-sm">Superior heat rejection using ceramic particles. High performance.</p>
+                            </div>
+                        </div>
+                        <div class="w-full flex items-center justify-end">
+                            <div class="text-right pr-8 w-5/12">
+                                <h4 class="font-bold text-lg text-green-600">Premium Carbon</h4>
+                                <p class="text-sm">Great color stability and good heat rejection. No signal interference.</p>
+                            </div>
+                            <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-md z-10">2</div>
+                        </div>
+                         <div class="w-full flex items-center justify-start">
+                            <div class="bg-gray-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-md z-10">1</div>
+                            <div class="text-left pl-8 w-5/12">
+                                <h4 class="font-bold text-lg text-gray-600">Economy (Dyed)</h4>
+                                <p class="text-sm">Basic privacy and UV protection. Prone to fading over time.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Overcoming Common Concerns</h3>
-                    </div>
-                     <div class="space-y-4">
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Will my tint bubble or turn purple like my old car?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"That's a common concern from older, cheaper dyed films. The high-quality Carbon and Ceramic films we use are technologically different and are guaranteed by a 10-year warranty not to bubble, peel, or fade to purple."</p></div>
-                        </details>
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Is ceramic tint really worth the extra money?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"That's the best question you can ask, and the easiest way to answer it is to feel the difference yourself. Our heat lamp display shows that while our Carbon film is good, the Ceramic film blocks a significantly greater amount of heat. For anyone who prioritizes comfort on a hot day, it's absolutely worth the investment."</p></div>
-                        </details>
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Will the tint be perfectly flawless?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"That's a great question that helps set the right expectation. Window tint is a hand-applied product installed in a very clean, but not perfectly sterile, environment. While we aim for absolute perfection, there may be a few tiny dust particles. Our standard of quality is extremely high, and any installation with visible or distracting imperfections will be redone. The goal is a finished product that is beautiful and something you'll be proud of."</p></div>
-                        </details>
-                     </div>
-                </div>
+            </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h.01M4.841 4.841a2 2 0 012.828 0L12 9.172l4.33-4.33a2 2 0 112.828 2.828L14.828 12l4.33 4.33a2 2 0 11-2.828 2.828L12 14.828l-4.33 4.33a2 2 0 11-2.828-2.828L9.172 12 4.841 7.67a2 2 0 010-2.828z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Installation & Setting Expectations</h3>
-                    </div>
-                    <div class="pro-tip">
-                        <h4 class="font-bold text-lg">The TDS Difference: A Professional Installation</h4>
-                        <p class="mt-2">Our commitment to quality goes beyond the film itself. We use a <strong>Graphtec plotter</strong> to computer-cut our patterns, ensuring a precise fit without ever taking a blade to your vehicle's glass. Our installations are performed in a clean, controlled bay to minimize contamination, which is why we can confidently back our work with a <strong>10-year warranty</strong> against bubbling, peeling, or fading.</p>
-                    </div>
-                    <div class="education-box">
-                        <h4 class="font-bold text-lg">MANDATORY: The Curing Process Handoff Script</h4>
-                        <p class="mt-2">This must be explained to every customer at pickup to prevent unnecessary service calls.</p>
-                        <p class="mt-2 italic"><strong>Script:</strong> "Your new tint is still in a curing phase. You may notice some small water pockets or a slightly hazy look—this is a normal part of the drying process. These will disappear as the moisture evaporates through the film over the next few days. The most important thing is to **please do not roll down the windows for at least 3 to 5 days.** This gives the adhesive time to fully bond."</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Packaging & Upselling</h3>
-                    </div>
-                    <div class="pro-tip">
-                        <h4 class="font-bold text-lg">Always Be Recommending the Next Logical Step</h4>
-                         <ul class="list-disc list-inside space-y-3 mt-2">
-                            <li><strong>The Windshield Upsell:</strong> "While we're tinting the side and rear windows, I highly recommend adding the front windshield with our clear ceramic film. It's the largest piece of glass on your car, and tinting it makes the biggest difference in rejecting heat and keeping the cabin comfortable."</li>
-                            <li><strong>The Sunroof/Sunstrip Add-On:</strong> "A lot of our clients also add a sunstrip at the top of the windshield to help with sun glare, or tint the sunroof to reduce that overhead heat. Since we'll already have the car here, it's easy to add on."</li>
-                             <li><strong>The Full Package Upsell:</strong> "Now that we've enhanced the comfort and look with window tint, the next logical step to complete the transformation is one of our exterior packages, like a Paint Enhancement, to really make the paint pop and match the new, sleek look of the glass."</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full text-sm">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="p-3 text-left font-semibold">Feature</th>
+                            <th class="p-3 text-left font-semibold">Economy (Dyed)</th>
+                            <th class="p-3 text-left font-semibold">Premium Carbon</th>
+                            <th class="p-3 text-left font-semibold">Supreme Ceramic</th>
+                             <th class="p-3 text-left font-semibold">CARPRO UVX</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="bg-white">
+                            <td class="p-3 font-semibold">Technology</td>
+                            <td>Dye-impregnated polyester</td>
+                            <td>Carbon particles (color-stable)</td>
+                            <td>Ceramic nano-particles</td>
+                             <td>Advanced UV filtering</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-3 font-semibold">Heat Rejection</td>
+                            <td>Low (~10-20% TSER)</td>
+                            <td>Good (~35-45% TSER)</td>
+                            <td>Excellent (50-65%+ TSER)</td>
+                             <td>Maximum</td>
+                        </tr>
+                         <tr class="bg-white">
+                            <td class="p-3 font-semibold">IR Rejection</td>
+                             <td>~0-10%</td>
+                             <td>~30-40%</td>
+                             <td>~80-90%</td>
+                             <td>99%+</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-3 font-semibold">Color Stability</td>
+                            <td>Can fade and turn purple</td>
+                            <td>Will not fade</td>
+                            <td>Will not fade</td>
+                            <td>Will not fade</td>
+                        </tr>
+                         <tr class="bg-white">
+                            <td class="p-3 font-semibold">Clarity</td>
+                            <td>Good</td>
+                            <td>Excellent</td>
+                            <td>Superior</td>
+                             <td>Superior</td>
+                        </tr>
+                        <tr class="bg-gray-50 font-bold">
+                            <td class="p-3 font-semibold">Approx. Price (Full Vehicle)</td>
+                            <td class="text-gray-700">Starting at $279</td>
+                            <td class="text-green-700">Starting at $399</td>
+                            <td class="text-blue-700">Starting at $549</td>
+                            <td class="text-red-700">Starting at $749</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <!-- IR Rejection Chart Image -->
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4 text-center">Infrared (IR) Rejection Comparison</h3>
+                <p class="text-center mb-4 text-gray-600">IR is the primary source of heat you feel. This chart shows the dramatic performance increase with ceramic films.</p>
+                <img src="img/tint_chart.png" alt="Infrared (IR) Rejection Comparison Chart" class="mx-auto rounded-lg shadow-md">
+            </div>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                     <div class="flex items-center mb-6">
-                        <div class="bg-purple-100 text-purple-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Putting It All Together: Sample Consultation</h3>
-                    </div>
-                    <details class="bg-gray-50 border rounded-md">
-                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
-                            <span>Click to Expand/Collapse Full Tint Inquiry Script</span>
-                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <div class="p-6 border-t text-gray-700 space-y-3">
+        <!-- Section 3: Heat Lamp Demo -->
+        <section id="heat-lamp-demo" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">3. The Power of the Heat Lamp Demo</h2>
+            <div class="flex flex-wrap md:flex-nowrap gap-8 items-center">
+                <div class="w-full md:w-2/3">
+                    <p class="mb-4">This is your single most effective upselling tool. It moves the conversation from abstract numbers to a tangible feeling. Don't tell them the difference, let them <strong>feel</strong> it.</p>
+                    <h3 class="text-xl font-semibold">The 30-Second Demo That Sells:</h3>
+                    <ol class="list-decimal list-inside space-y-2 mt-2">
+                        <li><strong>Engage:</strong> "Do you have a second? I'd love to show you something cool."</li>
+                        <li><strong>Baseline:</strong> Let them feel the full heat from the lamp on their hand.</li>
+                        <li><strong>The Step-Up:</strong> Place the Carbon film sample under the lamp. "This is our carbon film. You can feel a good difference, right?"</li>
+                        <li><strong>The Close:</strong> Replace the Carbon with the Ceramic film. "Now, this is the ceramic. Feel that? It blocks almost all the heat. That's the difference you'll feel every day in your car."</li>
+                    </ol>
+                </div>
+                 <div class="w-full md:w-1/3">
+                    <img src="img/tint_lamp.jpg" alt="Heat Lamp Display Setup" class="rounded-lg shadow-md mx-auto">
+                    <p class="text-center text-sm mt-2 text-gray-500">A simple setup with the lamp and film samples is all you need.</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <p class="font-bold">Pro Tip:</p>
+                <p>Use a BTU meter in conjunction with the heat lamp to add a scientific, visual confirmation of what they are feeling. Seeing the numbers drop dramatically reinforces the value.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Sales Process & Scripts -->
+        <section id="sales-process" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">4. The Sales Process & Scripts</h2>
+            <p>Combine your product knowledge with a structured sales process. The goal is to diagnose the customer's needs and prescribe the best solution.</p>
+            
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold">Using the NEPQ Framework</h3>
+                
+                <div class="my-4">
+                    <details class="bg-gray-50 p-3 rounded">
+                        <summary class="font-semibold">Click to see a sample NEPQ Script for Tint</summary>
+                        <div class="mt-2 prose max-w-none">
                             <p><strong>Salesperson:</strong> "Thanks for calling The Detail Shop, this is [Your Name]. How can I help you?"</p>
-                            <p><strong>Client:</strong> "Hi, I was just looking to get a price for window tint on my new Honda Civic."</p>
-                            <p><strong>Salesperson:</strong> "Excellent, I can definitely help with that. So I can give you the most accurate information, who do I have the pleasure of speaking with?"</p>
-                            <p><strong>Client:</strong> "My name is Sarah."</p>
-                            <p><strong>Salesperson:</strong> "Great to meet you, Sarah. <em>[Connecting Question]</em> To give you the best recommendation, are you looking for tint more for privacy and the sleek look, or is rejecting that summer heat a bigger priority for you?"</p>
-                            <p><strong>Client:</strong> "Hmm, I guess mostly for the heat. My last car had a black interior and it was unbearable in the summer."</p>
-                            <p><strong>Salesperson:</strong> "I know exactly what you mean, it can be brutal. <em>[Problem Awareness]</em> So when you get in your car on a hot day, is the main issue the leather seats being hot, or is it more the sun beating on you while you're driving?"</p>
-                            <p><strong>Client:</strong> "It's both really. I have to blast the AC for 10 minutes before I can even think about driving."</p>
-                            <p><strong>Salesperson:</strong> "That makes perfect sense. <em>[Educate Briefly]</em> Based on what you've said, our Ceramic film is going to be the best solution for you. While our Carbon film is great for looks, the Ceramic film is designed specifically to block infrared heat. It makes a massive difference in comfort."</p>
-                            <p><strong>Client:</strong> "Okay, so what does that cost?"</p>
+                            <p><strong>Client:</strong> "Hi, I was looking to get a quote for window tint on my Honda Civic."</p>
+                            <p><strong>Salesperson:</strong> <em>[Discovery]</em> "Absolutely, we can help with that. To make sure I get you the right information, what's the main reason you're looking to get your windows tinted?"</p>
+                            <p><strong>Client:</strong> "It just gets so hot in the summer, and I don't like people being able to see in."</p>
+                            <p><strong>Salesperson:</strong> <em>[Probing/Problem Awareness]</em> "I hear that a lot. That summer heat can be brutal. On a scale of 1-10, how much of a priority for you is cutting down that heat versus just the privacy and looks?"</p>
+                            <p><strong>Client:</strong> "Oh, the heat is definitely the biggest thing. Probably an 8 or 9."</p>
+                            <p><strong>Salesperson:</strong> <em>[Transition to Education]</em> "That's great information, thank you. That tells me you'll probably be happiest with our Ceramic film. It's designed specifically for maximum heat rejection. It actually blocks about 90% of the heat you feel from the sun, whereas a standard film only blocks about 20%. Let me show you what I mean..." <em>[Initiate Heat Lamp Demo]</em></p>
+                            <p>...</p>
+                            <p><em>[After Demo]</em></p>
                             <p><strong>Salesperson:</strong> "For a full installation on your Civic with the Ceramic film, you're looking at [Price]. That comes with a 10-year warranty against any bubbling or fading."</p>
                             <p><strong>Client:</strong> "Okay, that's a bit more than I was expecting."</p>
                             <p><strong>Salesperson:</strong> <em>[Diffuse Concern]</em> "I understand. It's definitely a premium product. The main difference you're paying for is that feeling of getting into a car that's significantly cooler every single day. <em>[Consequence Question]</em> How much of a difference would it make for your daily commute if the car was comfortable from the moment you got in, without having to wait for the AC to cool it down?"</p>
@@ -221,6 +256,87 @@
 
             </div>
         </section>
+
+        <!-- Section 5: Overcoming Common Concerns -->
+        <section id="common-concerns" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">5. Overcoming Common Concerns</h2>
+            <p>Knowing how to handle common objections is key to closing sales. Here's how to address what you'll hear most often.</p>
+            <div class="space-y-4 mt-4">
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "It's too expensive."</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "I understand. It is an investment, but it's a one-time investment for a benefit you'll feel every single day you drive your car. When you break it down over the years you'll own the vehicle, it's just pennies a day for a much more comfortable ride and protection for your interior. Plus, our work is backed by a lifetime warranty, so you'll never have to worry about it again."</p>
+                    </div>
+                </details>
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "I've seen tint bubble and turn purple."</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "That's a great point, and it's a common issue with older, low-quality dyed films. The technology has changed completely. We use Carbon and Ceramic films that are guaranteed to be color-stable, so they will never turn purple. The bubbling you see is from a failure in the adhesive or a poor installation. Our expert technicians and the high-quality film we use, combined with a lifetime warranty, means that's something you'll never have to worry about with our work."</p>
+                    </div>
+                </details>
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "Will it be too dark to see out of at night?"</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "That's a very valid concern. Visibility is a top priority. While the film looks dark from the outside, it's designed for excellent optical clarity from the inside. High-quality films don't significantly impact night-time driving vision. We can show you some samples and even hold them up to a window so you can see for yourself how clear it is from the inside looking out."</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 6: Packaging & Upselling -->
+        <section id="upselling" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">6. Packaging & Upselling Opportunities</h2>
+            <p>A tint customer is often the perfect candidate for other services. Always think about the "next logical step" in protecting their vehicle.</p>
+            <div class="mt-4 space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold">The Windshield Upsell</h3>
+                    <p class="mt-1">This is the easiest and most logical upsell. The windshield is the largest source of heat in a vehicle.</p>
+                    <p class="font-semibold italic mt-2">"Since your main goal is heat rejection, I highly recommend we install our clear ceramic film on the windshield. It's virtually invisible, so it doesn't change your view, but it blocks an incredible amount of heat. It makes the biggest difference of all."</p>
+                </div>
+                 <div class="pro-tip">
+                    <p class="font-bold">Bundle & Save:</p>
+                    <p>Offer a slight discount for adding a windshield film to a full tint package. For example, "Normally the windshield is $XXX, but since we're doing the rest of the car, we can add it on for just $YYY."</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">The "Total Protection" Package</h3>
+                    <p class="mt-1">Use tint as a gateway to introduce paint protection film (PPF) and ceramic coatings.</p>
+                    <p class="font-semibold italic mt-2">"Now that we've got the interior protected from the sun, have you thought about protecting your paint from rock chips and scratches? While your car is here, it's a perfect time to apply PPF to the front end."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Installation & Setting Expectations -->
+        <section id="installation-expectations" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">7. Installation & Setting Expectations</h2>
+            <h3 class="text-xl font-semibold">The Curing Process: The Most Important Post-Sale Conversation</h3>
+            <p class="mt-2 mb-4">Properly setting expectations for the curing process is critical for customer satisfaction. This conversation prevents 99% of phone calls and concerns after the installation.</p>
+            <div class="education-box">
+                <p class="font-bold mb-2">What to Tell Every Customer:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>"Your new tint is held on by a thin layer of water, and it needs time to dry out, just like a painting. This is called the 'curing process'."</li>
+                    <li>"You may notice some small water pockets or a slightly hazy or cloudy look. This is completely normal and will disappear as the water evaporates."</li>
+                    <li>"The time it takes to fully cure can be a few days in hot, sunny weather, or up to a few weeks in cold, cloudy weather."</li>
+                    <li>"The most important thing is <strong>not to roll down your windows for at least 3 to 5 days.</strong> We'll place reminders on your window switches."</li>
+                    <li>"Please also avoid cleaning the inside of the windows for about a week to ensure the film's adhesive bonds properly."</li>
+                </ul>
+            </div>
+            <div class="pro-tip">
+                <p>Being proactive with this information builds trust and shows our expertise. It assures the customer that we are a professional shop that stands behind its work.</p>
+            </div>
+        </section>
+
+        <!-- Section 8: CT Tint Laws -->
+        <section id="legal-limits" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">8. Connecticut Tint Laws: Staying Compliant</h2>
+            <p>We must inform every customer of the state laws. This protects them and the shop. Medical exemptions are the only exception to these rules.</p>
+            <ul class="list-disc list-inside bg-red-100 border border-red-300 p-4 rounded-md text-red-800">
+                <li><strong>Windshield:</strong> Non-reflective tint is allowed on the top 4 inches (AS-1 Line).</li>
+                <li><strong>Front Side Windows:</strong> Must allow more than 35% of light in.</li>
+                <li><strong>Back Side & Rear Windows:</strong> Any darkness can be used.</li>
+                <li><strong>Reflectivity:</strong> No more than 21% reflective.</li>
+            </ul>
+        </section>
+
     </main>
 
     <main-footer></main-footer>
