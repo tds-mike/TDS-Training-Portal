@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDS - Selling PPF</title>
+    <title>TDS - Selling Paint Protection Film (PPF)</title>
     <script src="../auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../navigation.js" defer></script>
     <script src="../footer.js" defer></script>
     <script src="../module-navigation.js" defer></script>
@@ -15,230 +16,328 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .details-arrow { transform: rotate(180deg); }
+        details > summary { cursor: pointer; }
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #4F46E5; 
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+<body class="bg-gray-100 text-gray-800">
 
     <main-header></main-header>
+    <div id="module-navigation-container"></div>
 
-    <main class="container mx-auto px-6 py-12">
-        <section id="ppf-content">
-            <h2 class="text-5xl font-bold mb-8 text-indigo-600 section-title border-indigo-600">Selling PPF: A Guide to Selling Peace of Mind</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12">Paint Protection Film is the single best solution for preserving a vehicle's factory finish. We are not just selling a product; we are selling long-term peace of mind and the preservation of a client's investment. This guide provides the framework for communicating that immense value.</p>
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Selling Paint Protection Film (PPF)</h1>
+        <p class="text-lg text-gray-600 mb-8">This module provides the essential knowledge to effectively consult with clients and sell Paint Protection Film, turning their desire for a new car look into a long-term protection investment.</p>
 
-            <div class="space-y-12">
+        <!-- Clickable Table of Contents -->
+        <section id="table-of-contents" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">Quick Navigation</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="#why-ppf" class="text-blue-600 hover:underline">1. Understanding the 'Why' Behind PPF</a></li>
+                <li><a href="#tech" class="text-blue-600 hover:underline">2. Understanding the Technology & Tiers</a></li>
+                <li><a href="#packages" class="text-blue-600 hover:underline">3. Our PPF Packages (Visual Guide)</a></li>
+                <li><a href="#demo-kit" class="text-blue-600 hover:underline">4. The Power of the Demo Kit</a></li>
+                <li><a href="#customer-personas" class="text-blue-600 hover:underline">5. Identifying the Ideal Customer</a></li>
+                <li><a href="#sales-process" class="text-blue-600 hover:underline">6. The Sales Process & Scripts</a></li>
+                <li><a href="#comparison" class="text-blue-600 hover:underline">7. Strategic Comparison: PPF vs. Ceramic Coating</a></li>
+                <li><a href="#common-concerns" class="text-blue-600 hover:underline">8. Overcoming Common Concerns</a></li>
+                <li><a href="#upselling" class="text-blue-600 hover:underline">9. Packaging & Upselling Opportunities</a></li>
+                <li><a href="#installation-expectations" class="text-blue-600 hover:underline">10. Installation, Expectations & Aftercare</a></li>
+            </ul>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.78-4.125" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">The Core Customer Problem</h3>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="education-box">
-                            <h4 class="font-bold text-lg">The Anxiety of the First Rock Chip</h4>
-                            <p>For a client with a new car, every highway drive is a source of anxiety. They are actively trying to avoid that gut-wrenching feeling of finding the first chip in their perfect paint. We sell the cure for that anxiety.</p>
-                        </div>
-                         <div class="pro-tip">
-                            <h4 class="font-bold text-lg">The Pride of a Flawless Finish</h4>
-                            <p>For the enthusiast or the owner of a high-end vehicle, their car is a major source of pride. PPF is the ultimate tool to maintain that "better than new" look and protect their status as a discerning owner.</p>
-                        </div>
+        <!-- Section 1: Why Sell PPF -->
+        <section id="why-ppf" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">1. Understanding the 'Why' Behind PPF</h2>
+            <p class="mb-4">You are not selling a plastic film; you are selling peace of mind. PPF is the ultimate defense against the inevitable damage of daily driving. Frame your conversation around preserving the customer's investment and maintaining that "new car" feeling.</p>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <i class="fas fa-shield-halved icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Ultimate Impact Protection</h3>
+                        <p>This is the core function. PPF absorbs the impacts from rock chips, road debris, bug acids, and minor scuffs that would otherwise chip and scratch the paint.</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                     <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Key Benefits of PPF</h3>
-                    </div>
-                     <ul class="list-disc list-inside space-y-2 mt-2 pl-4 text-gray-700">
-                        <li><strong>Impact & Scratch Protection:</strong> Provides a robust, sacrificial barrier against rock chips, road debris, scratches, and minor dings.</li>
-                        <li><strong>Self-Healing Properties:</strong> Minor scratches and swirl marks on the film's top coat disappear when exposed to heat.</li>
-                        <li><strong>UV & Chemical Resistance:</strong> Protects the factory paint from fading caused by UV rays and etching from bird droppings, bug splatter, and road salt.</li>
-                        <li><strong>Preserve Resale Value:</strong> By keeping the original factory paint in pristine condition, PPF significantly enhances a vehicle's resale value.</li>
-                        <li><strong>Nearly Invisible Finish:</strong> High-quality, optically clear film does not alter the vehicle's appearance, allowing the factory paint to shine through.</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Product Deep Dive: Self-Healing Armor</h3>
-                    </div>
-                                        <div class="pro-tip">
-                        <h4 class="font-bold text-lg">The "Screen Protector" Analogy</h4>
-                        <p class="mt-2">This is the most powerful and relatable way to explain PPF.</p>
-                        <p class="mt-2 italic"><strong>Script:</strong> "The easiest way to think about PPF is like a high-quality screen protector for your phone. You wouldn't risk carrying around a thousand-dollar phone without protecting the screen, so it makes perfect sense to protect the multi-thousand-dollar paint job on your car in the same way."</p>
-                    </div>
-
-                    <div class="education-box">
-                        <h4 class="font-bold text-lg">How Self-Healing Film Works</h4>
-                                                <p class="mt-4">The magic of PPF is in its layered construction. The thick, durable Polyurethane layer absorbs impacts from rocks and debris. The advanced Top Coat on the surface is a "memory polymer." When it gets lightly scratched, applying heat (like from the sun or warm water) causes the polymers to return to their original, smooth state, and the scratches literally disappear.</p>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Film Technology Tiers</h4>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="bg-gray-50 p-4 rounded-lg border">
-                                <h5 class="font-bold">Standard Film (5-Year Warranty)</h5>
-                                <p class="text-sm">An 8mil thick film with a hydrophobic top coat. Features **heat-activated self-healing**, meaning minor swirls and scratches will disappear when the panel is exposed to the sun or warm water.</p>
-                            </div>
-                            <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
-                                <h5 class="font-bold">Premium Film (10-Year Warranty)</h5>
-                                <p class="text-sm">A thicker, 8.5mil film with a highly advanced top coat that provides **instant self-healing** for minor abrasions, extreme gloss, and superior solvent/UV resistance. This is the ultimate choice for durability and clarity.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-3">Coverage Packages</h4>
-                        <ul class="list-disc list-inside space-y-3 mt-2 pl-4">
-                            <li><strong>Partial Nose:</strong> Covers the first 18-24" of the hood and fenders, plus the full front bumper and mirrors.</li>
-                            <li><strong>Full Front End (Full Nose):</strong> Our most popular package, protecting the full hood, full fenders, front bumper, and mirrors.</li>
-                            <li><strong>Track Pack:</strong> For the enthusiast, this adds protection to high-wear areas like the A-pillars, side skirts, and the leading edge of the roof.</li>
-                            <li><strong>Entire Vehicle:</strong> The ultimate in protection, covering every painted panel.</li>
-                        </ul>
+                <div class="flex items-start">
+                    <i class="fas fa-wand-magic-sparkles icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Self-Healing Technology</h3>
+                        <p>Light scratches and swirl marks from washing will disappear with exposure to heat (from the sun or a heat gun), keeping the finish looking flawless.</p>
                     </div>
                 </div>
+                <div class="flex items-start">
+                    <i class="fas fa-droplet-slash icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Stain & UV Resistance</h3>
+                        <p>The film's top coat is hydrophobic, repelling water and grime. It also contains UV inhibitors to prevent yellowing and protect the paint from fading.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Identifying & Selling to the Ideal Customer</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">1. The New Car Owner</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Maximum anxiety and the desire to preserve perfection. The fear of the first rock chip is their biggest pain point.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle:</strong> "Congratulations on the new car! The first few months are when you're most excited about it, and also when that first rock chip hurts the most. By protecting the high-impact areas now, you're essentially preserving that 'new car feeling' for years to come and ensuring it stays flawless."</p>
-                        </div>
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">2. The Highway Commuter</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Practicality and asset protection. Their car is constantly bombarded with debris, making protection a logical necessity to avoid costly repairs.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle:</strong> "You mentioned you drive on the highway every day. That's like a constant sandblaster for your front end. PPF isn't just a cosmetic upgrade for you; it's a practical shield that will save you from hundreds, if not thousands, in potential repaint costs and keep your car looking professional for your commute."</p>
-                        </div>
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">3. The Enthusiast / Show Car Owner</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Perfection and pride of ownership. They demand a flawless finish and see their vehicle as a true investment whose originality must be preserved.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle:</strong> "For a car like this, originality and perfection are everything. Our premium self-healing film will not only protect that incredible paint from any chips or scratches on the way to a show, but its optical clarity and gloss will actually enhance the finish. It's the ultimate way to ensure your car is always ready for judging and protects its long-term value."</p>
-                        </div>
-                    </div>
+        <!-- Section 2: Understanding the Technology & Tiers -->
+        <section id="tech" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">2. Understanding the Technology & Tiers</h2>
+            <p class="mb-4">All our films are made from a high-performance, thermoplastic urethane (TPU). This material is optically clear, incredibly durable, and flexible. However, there are differences in the top coat technology.</p>
+            <div class="grid md:grid-cols-2 gap-6 mt-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold">Standard Premium PPF (Good)</h3>
+                    <p>This is a high-quality film with a strong, clear top coat. It provides excellent impact protection and has self-healing properties. It's the baseline for professional-grade paint protection.</p>
                 </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="text-xl font-semibold">Hydrophobic / Ceramic-Infused PPF (Better)</h3>
+                    <p>This advanced film has all the benefits of standard PPF but includes a built-in hydrophobic top layer. This makes the surface extremely water-repellent and stain-resistant, keeping the car cleaner for longer and making it easier to wash. This is our primary offering and an easy upsell.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Overcoming Common Concerns</h3>
-                    </div>
-                     <div class="space-y-4">
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Will it turn yellow or peel?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"That's a valid concern based on old technology. The modern, premium films we use are completely different. They have built-in UV inhibitors and are backed by a 10-year warranty that guarantees against yellowing, cracking, or peeling."</p></div>
-                        </details>
-                        <details class="bg-gray-50 border rounded-md">
-                             <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Is it really invisible? Will I be able to see the edges?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"Our goal is a virtually invisible installation. We use computer-cut patterns that allow us to wrap the film around panel edges, hiding them from view. While some complex areas may have a visible seam, our skilled installation makes them incredibly discreet."</p></div>
-                        </details>
-                         <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"What does the warranty actually cover?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"The 10-year manufacturer's warranty covers defects in the film itself—things like yellowing, cracking, blistering, or delaminating. It's important to know that it's not a warranty against impacts. The film is designed to sacrifice itself to protect your paint, so if a large rock damages the film, it has done its job successfully."</p></div>
-                        </details>
-                     </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h.01M4.841 4.841a2 2 0 012.828 0L12 9.172l4.33-4.33a2 2 0 112.828 2.828L14.828 12l4.33 4.33a2 2 0 11-2.828 2.828L12 14.828l-4.33 4.33a2 2 0 11-2.828-2.828L9.172 12 4.841 7.67a2 2 0 010-2.828z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Setting Expectations & Aftercare</h3>
-                    </div>
-                     <div class="education-box">
-                        <h4 class="font-bold text-lg">MANDATORY: The PPF Handoff Script</h4>
-                        <p class="mt-2">This must be explained to every customer at pickup to ensure they understand the installation realities, curing process, and proper care.</p>
-                        <p class="mt-4 italic"><strong>Script:</strong> "Congratulations on protecting your vehicle! Before you go, there are a few important things to know. First, while we strive for perfection, PPF is a hand-applied product, so you may notice a tiny dust spec or imperfection. Second, the film is still in its final drying period, which can take up to 4 weeks. You may see some small water pockets or bubbles—this is normal and they will disappear as the film fully cures. The most important things for aftercare are **do not wash the vehicle for the first 5 days,** and always avoid using a pressure washer directly on the film's edges. Lastly, we require a follow-up inspection in about two weeks to do a final check and trim any lifting edges if necessary. We've included a full aftercare guide with your paperwork."</p>
-                    </div>
-                </div>
-                
-                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Strategic Comparisons: PPF vs. Ceramic Coatings</h3>
-                    </div>
-                     <div class="education-box">
-                        <h4 class="font-bold text-lg">The "Bodyguard and the Raincoat" Analogy</h4>
-                        <p><strong>PPF is the Bodyguard:</strong> Its main job is to take a hit. It's a thick, physical shield that stops rocks and scratches from ever reaching the paint. It is your protection against physical impacts.</p>
-                        <p class="mt-2"><strong>A Ceramic Coating is the Raincoat:</strong> Its main job is to protect against the elements. It creates a slick, hydrophobic surface that repels water, dirt, and grime, making the car incredibly easy to clean and protecting it from chemical etching and UV rays. It is your environmental shield.</p>
-                    </div>
-                    <div class="overflow-x-auto border rounded-lg">
-                        <table class="w-full text-sm">
-                             <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="p-3 text-left font-semibold">Feature</th>
-                                    <th class="p-3 text-left font-semibold text-indigo-700">Paint Protection Film (PPF)</th>
-                                    <th class="p-3 text-left font-semibold text-sky-700">Ceramic Coating</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y">
-                                <tr><td class="p-3 font-bold">Primary Function</td><td class="p-3">Impact Protection</td><td class="p-3">Chemical & Environmental Protection</td></tr>
-                                <tr><td class="p-3 font-bold">Protects Against</td><td class="p-3">Rock chips, deep scratches, swirls</td><td class="p-3">Water spots, bird droppings, UV rays</td></tr>
-                                <tr><td class="p-3 font-bold">Key Property</td><td class="p-3">Self-Healing, Sacrificial Layer</td><td class="p-3">Hydrophobic (Water-Repellent) & Glossy</td></tr>
-                                <tr><td class="p-3 font-bold">Thickness</td><td class="p-3">Thick (~8.0-8.5 mil)</td><td class="p-3">Microscopic</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="pro-tip">
-                        <h4 class="font-bold text-lg">Bringing It All Together: The Ultimate Upsell</h4>
-                        <p class="mt-2">This explains why the two services are not competitors, but partners.</p>
-                        <p class="mt-2 italic"><strong>Script:</strong> "So, as you can see, they do two completely different jobs. The PPF is the armor that stops physical damage, and the ceramic coating is the force field that makes it incredibly glossy and easy to clean. That's why our most popular package for new car owners is to apply PPF to the high-impact areas on the front end, and then apply a ceramic coating over the entire vehicle, including the film. This gives you the absolute best of both worlds: impact protection where you need it most, and effortless cleaning and gloss everywhere else."</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-indigo-100 text-indigo-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Putting It All Together: Sample Consultation</h3>
-                    </div>
-                    <details class="bg-gray-50 border rounded-md">
-                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
-                            <span>Click to Expand/Collapse Full PPF Inquiry Script</span>
-                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <div class="p-6 border-t text-gray-700 space-y-3">
-                            <p><strong>Salesperson:</strong> "Thanks for calling The Detail Shop, this is [Your Name]."</p>
-                            <p><strong>Client:</strong> "Hi, I just bought a new BMW M3 and my friend said I should call you about getting it protected."</p>
-                            <p><strong>Salesperson:</strong> "Congratulations on the new M3, that's an incredible car! You've definitely called the right place. <em>[Connecting Question]</em> What was it about protecting the car that was on your mind?"</p>
-                            <p><strong>Client:</strong> "Well, I drive on the Merritt Parkway every day, and I'm terrified of getting rock chips on the front end."</p>
-                            <p><strong>Salesperson:</strong> "That's the #1 concern we hear from new car owners, especially for highway drivers. <em>[Problem Awareness]</em> So when you're driving, are you finding yourself keeping a huge distance from the car in front of you, just worried about what might kick up and hit your paint?"</p>
-                            <p><strong>Client:</strong> "Yes, exactly! It's stressful. I want to enjoy my new car, not worry about it constantly."</p>
-                            <p><strong>Salesperson:</strong> "That's completely understandable. The service you're looking for is Paint Protection Film, or PPF. The easiest way to think of it is like a screen protector for your car's paint. It's a thick, clear film that takes the impact so your paint doesn't have to."</p>
-                            <p><strong>Client:</strong> "Okay, that makes sense. Does it cover the whole car?"</p>
-                            <p><strong>Salesperson:</strong> "It can, but our most popular package is the Full Front End. We protect the entire hood, fenders, bumper, and mirrors—all the high-impact areas. <em>[Consequence Question]</em> What do you think would happen to the value and your enjoyment of the car a year from now if you didn't protect it and the front end was covered in chips?"</p>
-                            <p><strong>Client:</strong> "I'd hate it. It would drive me crazy and definitely hurt the resale value."</p>
-                            <p><strong>Salesperson:</strong> <em>[Transition/Committing Question]</em> "It sounds like getting that peace of mind and protecting your investment is a huge priority. Based on that, our Full Front End package is the perfect solution. The next step would be to get you on the schedule. How does next Thursday look for you?"</p>
-                             <p><strong>Client:</strong> "That works. Let's lock it in."</p>
+        <!-- Section 3: Our PPF Packages -->
+        <section id="packages" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">3. Our PPF Packages (Visual Guide)</h2>
+            <p class="mb-4">Using a visual guide helps the customer immediately understand the coverage they're getting at each price point. Our packages are designed to cover the most vulnerable areas of the vehicle.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                <!-- Partial Front Package -->
+                <div class="flex flex-col">
+                    <img src="img/ppf_partial_nose.jpg" alt="Diagram showing Partial Front PPF coverage" class="rounded-lg shadow-md mb-4">
+                    <details class="bg-gray-50 p-3 rounded">
+                        <summary class="font-semibold text-lg">Partial Front Package</summary>
+                        <div class="mt-2">
+                            <p><strong>Coverage:</strong> Full front bumper, headlights, side mirrors, and 18-24 inches up the hood and fenders. A great entry-level option that protects the absolute highest-impact zones.</p>
                         </div>
                     </details>
                 </div>
-
+                <!-- Full Front Package -->
+                <div class="flex flex-col">
+                    <img src="img/ppf_full_nose.jpg" alt="Diagram showing Full Front PPF coverage" class="rounded-lg shadow-md mb-4">
+                    <details class="bg-gray-50 p-3 rounded" open>
+                        <summary class="font-semibold text-lg">Full Front Package (Most Popular)</summary>
+                        <div class="mt-2">
+                            <p><strong>Coverage:</strong> Full front bumper, headlights, full hood, full fenders, and side mirrors. This provides seamless, comprehensive protection for the entire front end.</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- Track Pack -->
+                <div class="flex flex-col">
+                    <img src="https://placehold.co/600x400/e2e8f0/475569?text=Track+Pack+Coverage" alt="Diagram showing Track Pack PPF coverage" class="rounded-lg shadow-md mb-4">
+                     <details class="bg-gray-50 p-3 rounded">
+                        <summary class="font-semibold text-lg">Track Pack</summary>
+                        <div class="mt-2">
+                            <p><strong>Coverage:</strong> Includes the Full Front Package plus A-pillars and rocker panels. Designed for the enthusiast who wants to protect against debris kicked up by the tires at high speeds.</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- Full Vehicle Package -->
+                <div class="flex flex-col">
+                    <img src="img/ppf_full_vehicle.jpg" alt="Diagram showing Full Vehicle PPF coverage" class="rounded-lg shadow-md mb-4">
+                     <details class="bg-gray-50 p-3 rounded">
+                        <summary class="font-semibold text-lg">Full Vehicle</summary>
+                        <div class="mt-2">
+                            <p><strong>Coverage:</strong> Every single painted panel on the vehicle is meticulously wrapped for the ultimate peace of mind and protection against damage anywhere on the car.</p>
+                        </div>
+                    </details>
+                </div>
             </div>
         </section>
+        
+        <!-- Section 4: Demo Kit -->
+        <section id="demo-kit" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">4. The Power of the Demo Kit</h2>
+            <p class="mb-4">This is your most powerful tool for conveying the value of PPF. It transforms an abstract concept into a tangible reality. Let the customer see and feel the protection for themselves.</p>
+            <div class="flex flex-wrap md:flex-nowrap gap-8 items-center">
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-xl font-semibold">The Can't-Miss Demonstration:</h3>
+                    <ol class="list-decimal list-inside space-y-2 mt-2">
+                        <li><strong>Show the Scratch Resistance:</strong> Take a wire brush and lightly scratch the side of the demo panel that has NO film. Then, do the same on the PPF-protected side. The difference is dramatic and immediate.</li>
+                        <li><strong>Demonstrate Self-Healing:</strong> Use the brush to create fine swirl marks on the PPF. Gently warm the area with a heat gun or torch. The customer will watch the marks vanish in real-time.</li>
+                        <li><strong>Let Them Try:</strong> Engage the customer by letting them try to scratch the protected side themselves. This builds immense trust and confidence in the product.</li>
+                    </ol>
+                </div>
+                 <div class="w-full md:w-1/3">
+                    <img src="https://placehold.co/400x300/e2e8f0/475569?text=PPF+Demo+Kit" alt="PPF Demo Kit with a wire brush and heat gun" class="rounded-lg shadow-md mx-auto">
+                    <p class="text-center text-sm mt-2 text-gray-500">A demo panel, wire brush, and heat source are all you need to close the deal.</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <p class="font-bold">Pro Tip:</p>
+                <p>Always start by saying, "I have to show you how incredible this technology is." This builds anticipation and frames the demonstration as an exciting reveal rather than a sales pitch.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Ideal Customer Personas -->
+        <section id="customer-personas" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">5. Identifying the Ideal Customer</h2>
+            <p>Listen for key phrases to identify the customer's primary motivation and tailor your pitch.</p>
+             <div class="mt-4 space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">The Daily Commuter</h3>
+                    <p><strong>Identifies as:</strong> "I drive on the highway every day," "I just got this car and I want to keep it nice," "My last car's front end was destroyed by rock chips."</p>
+                    <div class="education-box">
+                        <p><strong>Sales Approach:</strong> Focus on peace of mind and resale value. The Full Front package is their best friend. Use the demo kit to show how it stops the exact damage they're worried about. Frame it as a one-time investment to avoid costly paint repairs later.</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold">The Enthusiast</h3>
+                    <p><strong>Identifies as:</strong> "This is my baby," "I take it to car shows," "I do a few track days a year." They are meticulous and knowledgeable.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Approach:</strong> Speak their language. Talk about preserving the factory paint and enhancing gloss. They will appreciate the technology, so explain the self-healing and hydrophobic properties. Start with the Track Package or Full Vehicle and assume they want the best.</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold">The Family Hauler</h3>
+                    <p><strong>Identifies as:</strong> "The kids are always scratching the doors," "I'm worried about the parking lot," "We're always loading things in and out of the back."</p>
+                    <div class="education-box">
+                        <p><strong>Sales Approach:</strong> Focus on practical, everyday protection. While a Full Front is great, highlight add-ons like door cups, door edges, and the rear bumper luggage strip. These are small additions that solve their biggest pain points.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Sales Process -->
+        <section id="sales-process" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">6. The Sales Process & Scripts</h2>
+            <p>Combine your product knowledge with a structured sales process. Our approach is built on the powerful <a href="sales_nepq_framework.html" class="text-blue-600 hover:underline">NEPQ Framework</a> to diagnose customer needs, supported by core <a href="sales_techniques.html" class="text-blue-600 hover:underline">Sales Techniques</a> to build trust and create value. The goal is to stop 'selling' and start 'solving'.</p>
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold">The NEPQ Framework in Action: A Prime Example</h3>
+                <details class="bg-gray-50 p-3 rounded mt-2">
+                    <summary class="font-semibold">Click to see a sample NEPQ Script for PPF</summary>
+                    <div class="mt-2 prose max-w-none">
+                        <p><strong>Client:</strong> "Hi, I'm interested in that clear bra for my new car."</p>
+                        <p><em><span class="text-blue-600">[Technique: Build Rapport & Use Their Language]</span></em> <strong>Salesperson:</strong> "Excellent, the 'clear bra' or paint protection film is the best thing you can do for a new car. Congratulations on the purchase! What kind of car is it?"</p>
+                        <p><strong>Client:</strong> "A brand new Audi S4."</p>
+                        <p><em><span class="text-blue-600">[NEPQ Stage: Discovery]</span></em> <strong>Salesperson:</strong> "Beautiful car. To make sure I recommend the right solution, what's your biggest concern when it comes to the paint? What made you start looking into PPF?"</p>
+                        <p><strong>Client:</strong> "I just know the highways around here are terrible, and I can't stand the thought of getting rock chips on a new car."</p>
+                        <p><em><span class="text-blue-600">[NEPQ Stage: Problem Awareness]</span></em> <strong>Salesperson:</strong> "You are absolutely right to be concerned. It's not a matter of *if* but *when* that first chip happens. How would it feel to walk out to your new S4 in a few months and see a peppering of rock chips across that beautiful hood?"</p>
+                        <p><strong>Client:</strong> "I would be devastated."</p>
+                        <p><em><span class="text-blue-600">[NEPQ Stage: Create a Solution & Educate]</span></em> <strong>Salesperson:</strong> "That's exactly what this film is designed to prevent. Our most popular option for owners like you is the Full Front package... Let me show you exactly what it does." <em>[Initiate Demo Kit]</em></p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 7: Strategic Comparison -->
+        <section id="comparison" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">7. Strategic Comparison: PPF vs. Ceramic Coating</h2>
+            <p class="mb-4">This is the most common point of confusion for customers. It is crucial that you can clearly articulate the difference. They are not competing products; they are complementary solutions.</p>
+            <table class="min-w-full text-sm mt-4">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-3 text-left font-semibold">Feature</th>
+                        <th class="p-3 text-left font-semibold">Paint Protection Film (PPF)</th>
+                        <th class="p-3 text-left font-semibold">Ceramic Coating</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white">
+                        <td class="p-3 font-semibold">Primary Function</td>
+                        <td>Impact Protection (Rock Chips, Scratches)</td>
+                        <td>Chemical Resistance & Ease of Cleaning</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="p-3 font-semibold">Analogy</td>
+                        <td>Phone Screen Protector</td>
+                        <td>High-Tech Wax / Sealant</td>
+                    </tr>
+                     <tr class="bg-white">
+                        <td class="p-3 font-semibold">Thickness</td>
+                        <td>Thick, soft, absorbent layer (~8 mils)</td>
+                        <td>Microscopically thin, hard layer</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="p-3 font-semibold">Best Solution For</td>
+                        <td>Stopping physical damage from road debris.</td>
+                        <td>Gloss, UV protection, and hydrophobicity.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pro-tip">
+                <p class="font-bold">The Perfect Pitch:</p>
+                <p>"Think of it this way: PPF is the armor that stops the arrow, while a ceramic coating is the force field that repels dirt and water. For the ultimate protection, you want both."</p>
+            </div>
+        </section>
+
+        <!-- Section 8: Overcoming Common Concerns -->
+        <section id="common-concerns" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">8. Overcoming Common Concerns</h2>
+             <div class="space-y-4 mt-4">
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "Will it look like a thick piece of plastic on my car?"</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "That's a great question. The technology has come a long way. Our modern films are virtually invisible once installed. We also wrap the edges wherever possible, so you won't see any seams. The film is actually clearer than your car's factory clear coat, so it enhances the gloss."</p>
+                    </div>
+                </details>
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "Will it turn yellow or peel?"</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "That used to be a problem with older films, but our advanced films have UV inhibitors built right in to prevent yellowing. As for peeling, that comes down to the quality of the installation. Our certified technicians meticulously prepare the surface and ensure a perfect bond. That's why we can confidently back our work with a 10-year warranty."</p>
+                    </div>
+                </details>
+                 <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "It seems expensive for a piece of film."</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "I understand the investment. It's helpful to think of it less as an accessory and more as an insurance policy for your paint. A single repaint of a bumper or hood due to rock chip damage can easily cost $800-$1,500 and it will never be the original factory paint again. PPF is a one-time cost to permanently prevent that damage and protect your vehicle's resale value."</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 9: Upselling -->
+        <section id="upselling" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">9. Packaging & Upselling Opportunities</h2>
+            <p>PPF is the perfect foundation for a total vehicle protection package. Always think about the "next step" for the customer.</p>
+            <div class="mt-4 space-y-4">
+                 <div>
+                    <h3 class="text-xl font-semibold">The "Armor & Shine" Package: PPF + Ceramic Coating</h3>
+                    <p class="mt-1">This is the ultimate combination. The PPF provides the physical protection from impacts, and the ceramic coating provides the extreme gloss, hydrophobicity, and ease of maintenance for the entire vehicle.</p>
+                    <p class="font-semibold italic mt-2">"Since we're already protecting your paint from physical damage, I highly recommend we apply a ceramic coating over the entire vehicle, including the film. This will give you that incredible, dripping-wet gloss, make the car ridiculously easy to wash, and protect it from environmental contaminants. It's the best of both worlds."</p>
+                </div>
+                 <div class="pro-tip">
+                    <p class="font-bold">Bundle & Save:</p>
+                    <p>Offer a significant discount on the ceramic coating when it's packaged with a Full Front or greater PPF package. The vehicle is already prepped and clean, saving us time and allowing us to pass those savings directly to the customer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Installation, Expectations & Aftercare -->
+        <section id="installation-expectations" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">10. Installation, Expectations & Aftercare</h2>
+            <div class="education-box">
+                <p class="font-bold mb-2">The Curing Process:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>"We use a solution to install the film, and it will take some time for all that moisture to evaporate. This is the 'curing process'."</li>
+                    <li>"For the first few days, you might see small water pockets or a slightly hazy appearance. This is completely normal and will disappear as the moisture evaporates. Do not poke or press on them."</li>
+                    <li>"Full curing can take up to 4 weeks. Heat and sun will speed up the process."</li>
+                </ul>
+            </div>
+             <div class="mt-6">
+                <h3 class="text-xl font-semibold">Aftercare Instructions: The Do's and Don'ts</h3>
+                <p class="mt-2 mb-4">Providing clear aftercare instructions ensures the longevity of the film and reinforces our role as expert advisors.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h4 class="font-bold text-lg text-green-800">Do:</h4>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Wait 5-7 days before washing the vehicle.</li>
+                            <li>Wash regularly using a pH-neutral car soap.</li>
+                            <li>Remove bug splatters and bird droppings promptly.</li>
+                            <li>Apply a ceramic booster spray periodically if the car is not coated.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-lg text-red-800">Don't:</h4>
+                         <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Use a high-pressure washer directly on the edges of the film.</li>
+                            <li>Use abrasive polishes or harsh chemical cleaners.</li>
+                            <li>Pick at the edges of the film.</li>
+                            <li>Allow stains to sit on the film for extended periods.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <main-footer></main-footer>
