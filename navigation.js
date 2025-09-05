@@ -1,9 +1,22 @@
 /**
  * TDS Training Portal Navigation Module
+ * Version 2.2 - With Simplified Active State Correction
+ * This script generates the main header and navigation menus.
+ * It now uses a more reliable method to determine the active page,
+ * ensuring correct menu expansion and link highlighting from any subdirectory.
  */
 class MainHeader extends HTMLElement {
     connectedCallback() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        // --- DYNAMIC PATH CORRECTION ---
+        const pathArray = window.location.pathname.split('/').filter(Boolean);
+        if (pathArray.length > 0 && pathArray[pathArray.length - 1].includes('.')) {
+            pathArray.pop();
+        }
+        const depth = pathArray.length;
+        const pathPrefix = '../'.repeat(depth) || './';
+        // --- END DYNAMIC PATH CORRECTION ---
+
+        const currentPath = window.location.pathname;
 
         const allLinks = {
             "Technician Portal": {
@@ -45,8 +58,12 @@ class MainHeader extends HTMLElement {
                 "Sales Methodology": [
                     { href: 'sales/sales_techniques.html', text: 'The TDS Sales Process' },
                     { href: 'sales/sales_nepq_framework.html', text: 'The NEPQ Framework' },
-                    { href: 'sales/sales_scripts.html', text: 'Sales Scripts' },
                     { href: 'sales/sales_objection_handling.html', text: 'Diffusing Objections' },
+                ],
+                "Execution Playbooks": [
+                    { href: 'sales/scripts/scripts_tint.html', text: 'Tint Sales Playbook' },
+                    { href: 'sales/scripts/scripts_ppf.html', text: 'PPF Sales Playbook' },
+                    { href: 'sales/scripts/scripts_coatings.html', text: 'Coating Sales Playbook' },
                 ],
                 "Product Knowledge": [
                     { href: 'sales/sales_tint.html', text: 'Selling Window Tint' },
@@ -61,14 +78,24 @@ class MainHeader extends HTMLElement {
             }
         };
 
+        // --- NEW SIMPLIFIED isActive FUNCTION ---
+        // Checks if the browser's current path ends with the given root-relative href.
+        // This is more reliable than the URL constructor in some environments.
+        const isActive = (rootRelativeHref) => {
+            return currentPath.endsWith(rootRelativeHref);
+        };
+        const isRootActive = currentPath.endsWith('/') || currentPath.endsWith('/index.html');
+        // --- END NEW FUNCTION ---
+
         const createSlideOutNav = () => {
             let html = `<div class="mb-4">
-                <a href="../index.html" class="block p-3 rounded-md text-lg font-semibold ${currentPage === 'index.html' ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
+                <a href="${pathPrefix}index.html" class="block p-3 rounded-md text-lg font-semibold ${isRootActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">Portal Home</a>
             </div>`;
 
             for (const portal in allLinks) {
                 const portalData = allLinks[portal];
-                const isCurrentPortal = Object.values(portalData).flat().some(link => link.href.endsWith(currentPage));
+                // *** FIX: Pass the simple href to isActive ***
+                const isCurrentPortal = Object.values(portalData).flat().some(link => isActive(link.href));
 
                 html += `<div class="mb-2">`;
                 html += `<button class="accordion-toggle w-full text-left p-3 rounded-md text-lg font-semibold flex justify-between items-center ${isCurrentPortal ? 'bg-gray-700' : ''} text-white hover:bg-gray-600">
@@ -81,8 +108,9 @@ class MainHeader extends HTMLElement {
                     html += `<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4">${category}</h3>`;
                     html += '<div class="mt-2 space-y-1">';
                     portalData[category].forEach(link => {
-                        const isActive = link.href.endsWith(currentPage);
-                        html += `<a href="../${link.href}" class="block p-2 rounded-md text-base font-medium ${isActive ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700'}">${link.text}</a>`;
+                        // *** FIX: Pass the simple href to isActive ***
+                        const activeClass = isActive(link.href) ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700';
+                        html += `<a href="${pathPrefix}${link.href}" class="block p-2 rounded-md text-base font-medium ${activeClass}">${link.text}</a>`;
                     });
                     html += `</div>`;
                 }
@@ -97,16 +125,18 @@ class MainHeader extends HTMLElement {
             for (const category in portalData) {
                 html += `<h3 class="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">${category}</h3>`;
                 portalData[category].forEach(link => {
-                    const isActive = link.href.endsWith(currentPage);
-                    html += `<a href="../${link.href}" class="block px-4 py-2 text-sm ${isActive ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700'}">${link.text}</a>`;
+                    // *** FIX: Pass the simple href to isActive ***
+                    const activeClass = isActive(link.href) ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700';
+                    html += `<a href="${pathPrefix}${link.href}" class="block px-4 py-2 text-sm ${activeClass}">${link.text}</a>`;
                 });
             }
             html += `</div>`;
             return html;
         };
-
-        const isShopPage = Object.values(allLinks["Technician Portal"]).flat().some(link => link.href.endsWith(currentPage));
-        const isSalesPage = Object.values(allLinks["Sales Portal"]).flat().some(link => link.href.endsWith(currentPage));
+        
+        // *** FIX: Pass the simple href to isActive ***
+        const isShopPage = Object.values(allLinks["Technician Portal"]).flat().some(link => isActive(link.href));
+        const isSalesPage = Object.values(allLinks["Sales Portal"]).flat().some(link => isActive(link.href));
 
         this.innerHTML = `
             <style>
@@ -120,18 +150,18 @@ class MainHeader extends HTMLElement {
             </style>
             <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="../index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
+                    <a href="${pathPrefix}index.html" class="text-3xl font-bold"><span class="text-amber-400">TDS</span> Training Portal</a>
                     <button id="mobile-menu-button" class="md:hidden focus:outline-none z-50">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                      <nav class="hidden md:flex items-center space-x-6">
-                        <a href="../index.html" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Portal Home</a>
+                        <a href="${pathPrefix}index.html" class="nav-link ${isRootActive ? 'active' : ''}">Portal Home</a>
                         <div class="relative has-dropdown">
-                            <a href="../shop/shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
+                            <a href="${pathPrefix}shop/shop_index.html" class="nav-link ${isShopPage ? 'active' : ''}">Technician Portal</a>
                             ${createDesktopDropdown("Technician Portal")}
                         </div>
                         <div class="relative has-dropdown">
-                             <a href="../sales/sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
+                             <a href="${pathPrefix}sales/sales_index.html" class="nav-link ${isSalesPage ? 'active' : ''}">Sales Portal</a>
                             ${createDesktopDropdown("Sales Portal")}
                         </div>
                     </nav>
@@ -188,13 +218,7 @@ class MainHeader extends HTMLElement {
                     content.style.maxHeight = '0px';
                     icon.classList.remove('rotate-180');
                 } else {
-                    // Temporarily set to auto to get the full scroll height, then set it
-                    content.style.maxHeight = 'auto';
-                    const fullHeight = content.scrollHeight + 'px';
-                    content.style.maxHeight = '0px';
-                    setTimeout(() => {
-                         content.style.maxHeight = fullHeight;
-                    }, 10);
+                    content.style.maxHeight = content.scrollHeight + 'px';
                     icon.classList.add('rotate-180');
                 }
             });
