@@ -11,7 +11,8 @@
 
     // If not logged in and not on the login page, redirect.
     if (!isLoggedIn && !onIndexPage) {
-        window.location.href = 'index.html';
+        // --- CHANGE THIS LINE ---
+        window.location.href = '../index.html';
     }
 
     // --- Automatic Logout Timer ---
@@ -26,7 +27,8 @@
         const logout = () => {
             sessionStorage.removeItem('isLoggedIn');
             alert("You have been automatically logged out due to inactivity.");
-            window.location.href = 'index.html';
+            // --- AND CHANGE THIS LINE ---
+            window.location.href = '../index.html';
         };
 
         // Function to reset the timer
