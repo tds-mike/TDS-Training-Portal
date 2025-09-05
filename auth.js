@@ -1,18 +1,17 @@
 /**
  * TDS Training Portal Authentication
- *
+ * Version 2.0 - Root-Relative Pathing
  * This script checks if the user is logged in before showing page content.
- * If not logged in, it redirects to the main index page.
- * It also includes an automatic logout timer for inactivity.
+ * If not logged in, it redirects to the main index page using a reliable root-relative path.
  */
 (function() {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    const onIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+    const rootPath = '/TDS-Training-Portal/';
+    const onIndexPage = window.location.pathname === rootPath || window.location.pathname.endsWith('/index.html');
 
     // If not logged in and not on the login page, redirect.
     if (!isLoggedIn && !onIndexPage) {
-        // --- CHANGE THIS LINE ---
-        window.location.href = '../index.html';
+        window.location.href = `${rootPath}index.html`;
     }
 
     // --- Automatic Logout Timer ---
@@ -27,8 +26,8 @@
         const logout = () => {
             sessionStorage.removeItem('isLoggedIn');
             alert("You have been automatically logged out due to inactivity.");
-            // --- AND CHANGE THIS LINE ---
-            window.location.href = '../index.html';
+            // Use the hardcoded root path for the logout redirect.
+            window.location.href = `${rootPath}index.html`;
         };
 
         // Function to reset the timer
@@ -46,3 +45,4 @@
         window.addEventListener('touchstart', resetTimer);
     }
 })();
+

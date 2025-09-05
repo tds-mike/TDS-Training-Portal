@@ -1,20 +1,16 @@
 /**
  * TDS Training Portal Navigation Module
- * Version 2.2 - With Simplified Active State Correction
+ * Version 3.0 - Root-Relative Pathing
  * This script generates the main header and navigation menus.
- * It now uses a more reliable method to determine the active page,
- * ensuring correct menu expansion and link highlighting from any subdirectory.
+ * It now uses a hardcoded root-relative path for maximum reliability on GitHub Pages.
  */
 class MainHeader extends HTMLElement {
     connectedCallback() {
-        // --- DYNAMIC PATH CORRECTION ---
-        const pathArray = window.location.pathname.split('/').filter(Boolean);
-        if (pathArray.length > 0 && pathArray[pathArray.length - 1].includes('.')) {
-            pathArray.pop();
-        }
-        const depth = pathArray.length;
-        const pathPrefix = '../'.repeat(depth) || './';
-        // --- END DYNAMIC PATH CORRECTION ---
+        // --- ROBUST PATH CORRECTION ---
+        // Using a hardcoded root path is the most reliable method for GitHub Pages.
+        // This ensures all links are built from the project's root directory.
+        const pathPrefix = '/TDS-Training-Portal/';
+        // --- END ROBUST PATH CORRECTION ---
 
         const currentPath = window.location.pathname;
 
@@ -78,14 +74,12 @@ class MainHeader extends HTMLElement {
             }
         };
 
-        // --- NEW SIMPLIFIED isActive FUNCTION ---
         // Checks if the browser's current path ends with the given root-relative href.
-        // This is more reliable than the URL constructor in some environments.
         const isActive = (rootRelativeHref) => {
-            return currentPath.endsWith(rootRelativeHref);
+            // We now check if the current path contains the href, which is more reliable with root-relative paths.
+            return currentPath.includes(rootRelativeHref);
         };
-        const isRootActive = currentPath.endsWith('/') || currentPath.endsWith('/index.html');
-        // --- END NEW FUNCTION ---
+        const isRootActive = currentPath.endsWith(pathPrefix) || currentPath.endsWith('index.html');
 
         const createSlideOutNav = () => {
             let html = `<div class="mb-4">
@@ -94,7 +88,6 @@ class MainHeader extends HTMLElement {
 
             for (const portal in allLinks) {
                 const portalData = allLinks[portal];
-                // *** FIX: Pass the simple href to isActive ***
                 const isCurrentPortal = Object.values(portalData).flat().some(link => isActive(link.href));
 
                 html += `<div class="mb-2">`;
@@ -108,7 +101,6 @@ class MainHeader extends HTMLElement {
                     html += `<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4">${category}</h3>`;
                     html += '<div class="mt-2 space-y-1">';
                     portalData[category].forEach(link => {
-                        // *** FIX: Pass the simple href to isActive ***
                         const activeClass = isActive(link.href) ? 'bg-amber-500 text-gray-900' : 'text-white hover:bg-gray-700';
                         html += `<a href="${pathPrefix}${link.href}" class="block p-2 rounded-md text-base font-medium ${activeClass}">${link.text}</a>`;
                     });
@@ -125,7 +117,6 @@ class MainHeader extends HTMLElement {
             for (const category in portalData) {
                 html += `<h3 class="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">${category}</h3>`;
                 portalData[category].forEach(link => {
-                    // *** FIX: Pass the simple href to isActive ***
                     const activeClass = isActive(link.href) ? 'bg-amber-500 text-gray-900' : 'hover:bg-gray-700';
                     html += `<a href="${pathPrefix}${link.href}" class="block px-4 py-2 text-sm ${activeClass}">${link.text}</a>`;
                 });
@@ -134,7 +125,6 @@ class MainHeader extends HTMLElement {
             return html;
         };
         
-        // *** FIX: Pass the simple href to isActive ***
         const isShopPage = Object.values(allLinks["Technician Portal"]).flat().some(link => isActive(link.href));
         const isSalesPage = Object.values(allLinks["Sales Portal"]).flat().some(link => isActive(link.href));
 

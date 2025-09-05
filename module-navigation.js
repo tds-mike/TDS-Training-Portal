@@ -1,8 +1,9 @@
 /**
  * TDS Training Portal Module Navigation
- *
+ * Version 2.0 - Root-Relative Pathing
  * This script adds a sticky bottom navigation bar with a progress bar,
  * next/previous module buttons, and estimated completion time.
+ * It now uses a hardcoded root-relative path for reliability.
  */
 document.addEventListener('DOMContentLoaded', () => {
     // Define the module structure for both portals
@@ -38,20 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    const currentPage = window.location.pathname.split('/').pop();
+    // Use a hardcoded root path for reliability
+    const rootPath = '/TDS-Training-Portal/';
+    const currentPath = window.location.pathname;
     let currentPortalModules = [];
 
     // Determine which portal's module list to use
-    if (portals.technician.some(module => module.url.endsWith(currentPage))) {
+    if (currentPath.includes('/shop/')) {
         currentPortalModules = portals.technician;
-    } else if (portals.sales.some(module => module.url.endsWith(currentPage))) {
+    } else if (currentPath.includes('/sales/')) {
         currentPortalModules = portals.sales;
     }
 
-
     if (currentPortalModules.length === 0) return; // Don't run on non-module pages
 
-    const currentIndex = currentPortalModules.findIndex(module => module.url.endsWith(currentPage));
+    const currentIndex = currentPortalModules.findIndex(module => currentPath.endsWith(module.url));
     if (currentIndex === -1) return;
 
     const prevModule = currentIndex > 0 ? currentPortalModules[currentIndex - 1] : null;
@@ -67,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="flex justify-between items-center text-sm">
                 <div class="w-1/3 text-left">
-                    ${prevModule ? `<a href="../${prevModule.url}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
+                    ${prevModule ? `<a href="${rootPath}${prevModule.url}" class="hover:text-amber-400 transition-colors">&larr; Previous: ${prevModule.title}</a>` : ''}
                 </div>
                 <div class="w-1/3 text-center text-gray-400">
                     Module ${currentIndex + 1} of ${currentPortalModules.length}
                 </div>
                 <div class="w-1/3 text-right">
-                    ${nextModule ? `<a href="../${nextModule.url}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
+                    ${nextModule ? `<a href="${rootPath}${nextModule.url}" class="hover:text-amber-400 transition-colors">Next: ${nextModule.title} &rarr;</a>` : ''}
                 </div>
             </div>
         </div>
@@ -90,14 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const paddingInterval = setInterval(() => {
-        const slideOutMenu = document.getElementById('slide-out-menu');
-        if (slideOutMenu) {
-            setPadding();
-            clearInterval(paddingInterval);
-        }
-    }, 100);
-
+    // Set padding after the main header has had time to render
+    setTimeout(setPadding, 100);
     window.addEventListener('resize', setPadding);
 });
-
