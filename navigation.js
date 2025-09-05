@@ -54,6 +54,7 @@ class MainHeader extends HTMLElement {
                 "Sales Methodology": [
                     { href: 'sales/sales_techniques.html', text: 'The TDS Sales Process' },
                     { href: 'sales/sales_nepq_framework.html', text: 'The NEPQ Framework' },
+                    { href: 'sales/sales_scripts.html', text: 'Sales Scripts Overview' },
                     { href: 'sales/sales_objection_handling.html', text: 'Diffusing Objections' },
                 ],
                 "Execution Playbooks": [
