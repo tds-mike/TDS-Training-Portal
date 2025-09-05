@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDS - Selling Detailing</title>
+    <title>TDS - Selling Detailing Services</title>
     <script src="../auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../navigation.js" defer></script>
     <script src="../footer.js" defer></script>
     <script src="../module-navigation.js" defer></script>
@@ -15,210 +16,263 @@
         .section-title { border-bottom-width: 2px; padding-bottom: 0.5rem; }
         .pro-tip { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem; }
         .education-box { background-color: #E0E7FF; border-left: 4px solid #4F46E5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .details-arrow { transform: rotate(180deg); }
+        details > summary { cursor: pointer; }
+        .icon { font-size: 1.5rem; margin-right: 1rem; color: #4F46E5; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800" oncontextmenu="return false;">
+<body class="bg-gray-100 text-gray-800">
 
     <main-header></main-header>
+    <div id="module-navigation-container"></div>
 
-    <main class="container mx-auto px-6 py-12">
-        <section id="detailing-content">
-            <h2 class="text-5xl font-bold mb-8 text-green-600 section-title border-green-600">Selling Detailing: A Guide to Selling Transformation</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mb-12">Our detailing services are not "car washes." We sell a transformation. For the interior, we restore that "new car feeling." For the exterior, we rejuvenate the paint to a condition that is often better than new. This guide provides the framework for communicating that value.</p>
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Selling Detailing Services</h1>
+        <p class="text-lg text-gray-600 mb-8">This module covers how to sell the value of a professional detail, moving the conversation from a simple "car wash" to a comprehensive reconditioning service.</p>
 
-            <div class="space-y-12">
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.78-4.125" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">The Core Customer Problem</h3>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="education-box">
-                            <h4 class="font-bold text-lg">The Interior Problem: The Loss of the "New Car Feeling"</h4>
-                            <p class="mt-2">Clients don't just want a clean car; they want to recapture the pride, comfort, and satisfaction they felt when their car was new. We solve the frustration of a cluttered, lived-in space and provide a sanitized, fresh environment.</p>
-                        </div>
-                         <div class="pro-tip">
-                            <h4 class="font-bold text-lg">The Exterior Problem: The Pain of Neglected Paint</h4>
-                            <p class="mt-2">Clients see a car that looks dull and feels rough. We identify the root cause: bonded contaminants that are actively harming the paint. We sell the solution: a professional rejuvenation that restores gloss and protects their investment.</p>
-                        </div>
+        <!-- Clickable Table of Contents -->
+        <section id="table-of-contents" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">Quick Navigation</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="#why-detailing" class="text-blue-600 hover:underline">1. Understanding the 'Why' Behind Detailing</a></li>
+                <li><a href="#services" class="text-blue-600 hover:underline">2. Understanding the Services & Tiers</a></li>
+                <li><a href="#demo" class="text-blue-600 hover:underline">3. The Power of the "50/50" Showcase</a></li>
+                <li><a href="#customer-personas" class="text-blue-600 hover:underline">4. Identifying the Ideal Customer</a></li>
+                <li><a href="#sales-process" class="text-blue-600 hover:underline">5. The Sales Process & Scripts</a></li>
+                <li><a href="#comparison" class="text-blue-600 hover:underline">6. Strategic Comparison: Detailing vs. Car Wash</a></li>
+                <li><a href="#common-concerns" class="text-blue-600 hover:underline">7. Overcoming Common Concerns</a></li>
+                <li><a href="#upselling" class="text-blue-600 hover:underline">8. Packaging & Upselling Opportunities</a></li>
+                <li><a href="#expectations" class="text-blue-600 hover:underline">9. Setting Expectations</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 1: Why Sell Detailing -->
+        <section id="why-detailing" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">1. Understanding the 'Why' Behind Detailing</h2>
+            <p class="mb-4">You are not selling a cleaning; you are selling a restoration and a feeling. A professional detail restores a vehicle's condition, enhances its value, and gives the owner that "new car" feeling again.</p>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <i class="fas fa-car-side icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Exterior Rejuvenation</h3>
+                        <p>We remove contamination that washing leaves behind, restoring the paint's smoothness and shine. It's about deep cleaning and preparing the surface for protection.</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Our Detailing Service Levels</h3>
-                    </div>
-                    
-                    <div class="mt-6">
-                        <h4 class="text-2xl font-semibold mb-2">Exterior Detailing Packages</h4>
-                        <div class="space-y-4">
-                            <div class="p-4 border rounded-lg"><strong>Maintenance Wash:</strong> The ideal service for existing clients with well-maintained, protected vehicles. This is a safe, gentle hand wash designed to preserve the existing protection (coating or PPF).</div>
-                            <div class="p-4 border rounded-lg"><strong>Decontamination Wash:</strong> The essential entry point for new clients. This service removes embedded contaminants to create a truly clean surface. <strong>This is recommended every 6 months to maintain coating and PPF warranties.</strong></div>
-                            <div class="p-4 border rounded-lg"><strong>Paint Enhancement (AIO):</strong> Our "rejuvenation" package. This includes a full decontamination wash, followed by a one-step polish and protectant that restores significant gloss and clarity.</div>
-                            <div class="p-4 border rounded-lg bg-green-50 border-green-200"><strong>Advanced Paint Enhancement:</strong> The ultimate exterior transformation. This combines a Paint Enhancement with a long-term <a href="sales_coatings.html" class="text-blue-600 hover:underline">Ceramic Coating</a> (1-10 years), locking in the gloss and providing superior protection.</div>
-                        </div>
-                    </div>
-
-                     <div class="mt-8 pt-8 border-t">
-                        <h4 class="text-2xl font-semibold mb-2">Interior Detailing Packages</h4>
-                        <div class="space-y-4">
-                            <div class="p-4 border rounded-lg"><strong>Basic Interior Detail:</strong> A maintenance service designed to refresh a vehicle that is already in good condition. It includes a thorough vacuum, air purge, and a wipe-down of all hard surfaces. It is not designed for heavy soil, stains, or excessive pet hair.</div>
-                            <div class="p-4 border rounded-lg bg-green-50 border-green-200"><strong>Full Interior Restoration:</strong> The complete "new car feeling" package. This is a deep cleaning service that includes everything in the Basic, plus shampooing/hot water extraction for carpets and upholstery, intensive stain treatment, and deep cleaning of all crevices, vents, and surfaces.</div>
-                        </div>
+                <div class="flex items-start">
+                    <i class="fas fa-couch icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Interior Sanitization & Restoration</h3>
+                        <p>We go beyond vacuuming to deep clean, sanitize, and protect all interior surfaces, removing stains, odors, and grime from every crevice.</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Identifying & Selling to the Ideal Customer</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">1. The Busy Parent or Daily Commuter</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Restore sanity and pride. Their car has become a source of stress or embarrassment due to clutter, spills, and constant use.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle (for Interior Restoration):</strong> "I completely understand how life gets in the way of keeping the car clean. Our Full Interior Restoration is designed to give you a complete reset. We'll sanitize every surface and remove those set-in stains, giving you back that clean, fresh 'new car feeling' that makes your commute so much more enjoyable."</p>
-                        </div>
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">2. The Discerning Owner</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Proper maintenance and protection. They notice their paint feels rough even after a wash and want to preserve their vehicle's condition correctly.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle (for Decon Wash):</strong> "It's great that you're so attentive to your car's finish. That rough feeling you've noticed is actually embedded contamination that a normal wash can't remove. Our Decontamination Wash is the first step in true paint care. We'll safely dissolve that contamination, which not only restores a perfectly smooth and glossy feel but is also essential for the long-term health of your paint."</p>
-                        </div>
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">3. The Person Preparing to Sell Their Car</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Return on Investment (ROI). They want to maximize the resale value and attract buyers quickly.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle (for a Full Detail Package):</strong> "A professional detail is one of the single best investments you can make before selling. It dramatically increases the curb appeal. When a potential buyer sees a car with a spotless interior and a glossy, smooth exterior, it immediately tells them the car has been well-maintained, which can add hundreds, if not thousands, to the final sale price."</p>
-                        </div>
-                         <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">4. The Maintenance Client</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> Preservation and consistency. They have already invested in a high-end service (like a coating or PPF) and want to ensure it is maintained correctly.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle (for Maintenance Plan):</strong> "Since you've already invested in protecting your car with a ceramic coating, the best way to ensure it performs perfectly for its entire lifespan is with proper professional maintenance. Our maintenance plan uses the correct pH-neutral soaps and safe-touch methods that will preserve the coating's properties, guaranteeing you get the most out of your investment."</p>
-                        </div>
-                        <div class="p-4 border rounded-lg">
-                            <h4 class="font-bold text-lg">5. The Enthusiast</h4>
-                            <p class="text-sm text-gray-600 mt-1"><strong>Motivation:</strong> The pursuit of aesthetic perfection. They see their car as a hobby and a passion, and they want it to look its absolute best at all times.</p>
-                            <p class="text-sm mt-2"><strong>Sales Angle (for Paint Enhancement):</strong> "For an enthusiast like yourself, it's all about the details. While a wash makes it clean, our Paint Enhancement is what creates that deep, wet-looking gloss that truly makes the paint pop. It's the step that elevates a car from just 'clean' to 'show-ready'."</p>
-                        </div>
+                <div class="flex items-start">
+                    <i class="fas fa-hand-holding-usd icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold">Preserving Value</h3>
+                        <p>A well-maintained vehicle is worth significantly more at resale or trade-in. Detailing is an investment in the vehicle's long-term value.</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Overcoming Common Concerns</h3>
-                    </div>
-                     <div class="space-y-4">
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Why is your detail so much more expensive than the car wash down the street?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"That's a fair question. The main difference is in the process and products. A quick car wash is designed for speed, but their harsh chemicals and brushes can actually damage your paint over time. Our process, like the Decontamination Wash, uses professional-grade, pH-balanced chemicals to safely remove bonded contaminants that they leave behind, which is the first step to truly restoring your paint's health and shine."</p></div>
-                        </details>
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Can't I just wash it myself at home?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"You absolutely can, and regular washing is great for maintenance. However, our professional service addresses the contamination that builds up over time and can't be removed with a normal wash. If you feel the paint on your car, you'll likely notice it feels a bit rough. That's iron and tar embedded in your clear coat, which we have the specific tools and chemicals to safely dissolve and remove."</p></div>
-                        </details>
-                        <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Can you get this [specific] stain out?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"We have a very high success rate with stain removal. However, it's important to be upfront that some stains, especially if they've been there for a long time or are from certain dyes, can permanently set in the fibers. We will use professional-grade extractors and spot-treaters to do everything possible to remove it or significantly reduce its appearance. We'll know the final result once we begin the treatment."</p></div>
-                        </details>
-                         <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"My car has a lot of pet hair. Is that included?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"Excessive pet hair requires specialized tools and a significant amount of extra time to remove from the carpet and fabric fibers. Because of that, we do have an additional charge for heavy pet hair removal. Once we see the vehicle, we can give you a firm price for that before we begin."</p></div>
-                        </details>
-                         <details class="bg-gray-50 border rounded-md">
-                            <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">"Can you get rid of the smoke smell?"<svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-                            <div class="p-6 border-t text-gray-700"><p>"Yes, we can. For severe odors like smoke, a standard interior detail isn't enough. We have a dedicated process that includes a deep-cleaning of all surfaces, including the headliner, followed by a professional ozone treatment. This is the only way to permanently neutralize the odor molecules trapped in the vehicle. This is an add-on service, and we can provide a quote for that as well."</p></div>
-                        </details>
-                     </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                     <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Packaging & Upselling</h3>
-                    </div>
-                    <div class="pro-tip">
-                        <h4 class="font-bold text-lg">Guiding the Customer to the Best Solution</h4>
-                         <p class="mt-2">Our detailing packages are gateways to our core protection services. The goal is to use our diagnostic skills to identify the customer's true needs and guide them to the service that provides the most value. A "detail" is often just the first step.</p>
-                         <div class="mt-4 p-4 border-t border-yellow-300">
-                             <h5 class="font-semibold">The Primary Upsell Path: Decon Wash → Paint Enhancement</h5>
-                             <p class="text-sm mt-2"><strong>The Goal:</strong> Convert a simple wash inquiry into our most popular rejuvenation package.</p>
-                             <p class="text-sm mt-2 italic"><strong>Script:</strong> "I'm glad you're starting with our Decon Wash; it's the right foundation. As we discussed, this will remove all the bonded contamination and make the paint perfectly smooth. However, it won't remove the swirl marks we saw under the light. While the car is here and perfectly prepped, it's the ideal time to perform our Paint Enhancement. This one-step polish will remove those light swirls and restore a level of gloss that a wash alone can't achieve. It's really the step that creates that 'wow' factor. Does that sound like the result you're truly looking for?"</p>
-                         </div>
-                         <div class="mt-4 p-4 border-t border-yellow-300">
-                             <h5 class="font-semibold">Secondary Upsell Paths</h5>
-                             <ul class="list-disc list-inside space-y-2 mt-2 text-sm">
-                                <li><strong>Exterior Detail → Interior Detail:</strong> "We're going to have the outside of your car looking better than new. To complete the transformation, our Full Interior Restoration will bring back that new car feeling on the inside, so it looks, feels, and smells incredible."</li>
-                                <li><strong>Full Interior → Interior Coatings:</strong> "To protect this freshly cleaned interior from future spills and stains, I highly recommend our CQUARTZ Fabric coating. It creates a hydrophobic barrier on the carpets and seats that makes clean-up incredibly easy and prevents stains from setting in."</li>
-                            </ul>
-                         </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 text-green-600 h-16 w-16 rounded-full flex items-center justify-center mr-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z" /></svg>
-                        </div>
-                        <h3 class="text-3xl font-semibold">Putting It All Together: Sample Consultations</h3>
-                    </div>
-                    <details class="bg-gray-50 border rounded-md">
-                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
-                            <span>Click to Expand/Collapse Full Interior Detail Script</span>
-                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <div class="p-6 border-t text-gray-700 space-y-3">
-                            <p><strong>Salesperson:</strong> "Thanks for calling The Detail Shop, this is [Your Name]."</p>
-                            <p><strong>Client:</strong> "Hi, I need to get the inside of my minivan cleaned. It's a disaster."</p>
-                            <p><strong>Salesperson:</strong> "We specialize in disaster relief for minivans, you've called the right place! <em>[Connecting Question]</em> What was it that made you decide today was the day to get it handled?"</p>
-                            <p><strong>Client:</strong> "Honestly, I'm embarrassed to drive anyone around in it. There are old coffee stains, crumbs everywhere... the kids have destroyed it."</p>
-                            <p><strong>Salesperson:</strong> "I completely understand. Life gets busy and it's tough to keep up. <em>[Problem Awareness]</em> What's the one thing that bothers you the most when you get in the driver's seat?"</p>
-                            <p><strong>Client:</strong> "The sticky cup holders and the dark stains on the back seats. It just feels gross."</p>
-                            <p><strong>Salesperson:</strong> "Okay, so it sounds like you're looking for more than just a vacuum. You want to sanitize the interior and get rid of those set-in stains to get that 'new car feeling' back. Is that right?"</p>
-                            <p><strong>Client:</strong> "Yes, exactly! I want it to feel fresh and clean again."</p>
-                            <p><strong>Salesperson:</strong> "Perfect. Our Full Interior Restoration service is designed for exactly this. We don't just wipe surfaces; we use a hot water extractor to shampoo the seats and carpets to pull out those deep stains. We use steam to sanitize all the plastics and get into every single crevice. <em>[Transition]</em> It's a true reset for your interior."</p>
-                            <p><strong>Client:</strong> "That sounds like what I need. What's the cost for that?"</p>
-                            <p><strong>Salesperson:</strong> "For a minivan, that service starts at [Price]. It's an intensive process that takes a few hours, but the results are transformative. <em>[Committing Question]</em> Does that sound like the solution you're looking for?"</p>
-                             <p><strong>Client:</strong> "Yes, it does. When can I bring it in?"</p>
-                        </div>
-                    </details>
-                    <details class="bg-gray-50 border rounded-md mt-4">
-                        <summary class="cursor-pointer font-semibold p-4 list-none flex justify-between items-center">
-                            <span>Click to Expand/Collapse Full Exterior Detail Script</span>
-                            <svg class="w-5 h-5 transition-transform transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <div class="p-6 border-t text-gray-700 space-y-3">
-                            <p><strong>Salesperson:</strong> "Thanks for coming in! What were you looking to have done for your car today?"</p>
-                            <p><strong>Client:</strong> "I just need a really good hand wash. It feels kind of rough and doesn't look as shiny as it used to."</p>
-                            <p><strong>Salesperson:</strong> "You've come to the right place. That rough feeling is exactly why our Decontamination Wash is so important. <em>(Walks client to the car, performs baggie test)</em> See how gritty that feels? That's contamination bonded to your paint. Our Decon Wash will safely remove all of that and restore a perfectly smooth feel."</p>
-                            <p><strong>Client:</strong> "Okay, that sounds good. Let's do that."</p>
-                            <p><strong>Salesperson:</strong> "Perfect. Now, while that will make the car perfectly clean and smooth, it won't remove the fine swirl marks we can see here under the light. <em>(Shines inspection light on paint)</em> While the car is here and perfectly prepped, it's the ideal time to perform our Paint Enhancement. This will polish away those light swirls and restore a deep, rich gloss that the wash alone can't achieve. It's the step that will really bring back that 'wow' factor. Does that sound like the result you're truly looking for?"</p>
-                            <p><strong>Client:</strong> "Yes, that's what I want! That shine is what's been missing."</p>
-                            <p><strong>Salesperson:</strong> "Excellent. So we'll do the Decon Wash followed by the Paint Enhancement. That's our most popular package for rejuvenating a car's finish. Let's get you set up."</p>
-                        </div>
-                    </details>
-                </div>
-
             </div>
         </section>
+
+        <!-- Section 2: Services & Tiers -->
+        <section id="services" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">2. Understanding the Services & Tiers</h2>
+            <p class="mb-4">Our detailing services are broken down into logical packages to meet different customer needs, from basic maintenance to full restoration.</p>
+            
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Exterior Detailing Packages</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Maintenance Wash</h4>
+                        <p class="text-sm">The ideal service for existing clients with well-maintained, protected vehicles. This is a safe, gentle hand wash designed to preserve the existing protection (coating or PPF).</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Decontamination Wash</h4>
+                        <p class="text-sm">The essential entry point for new clients. This service removes embedded contaminants to create a truly clean surface. Recommended every 6 months to maintain coating and PPF warranties.</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Paint Enhancement (AIO)</h4>
+                        <p class="text-sm">Our "rejuvenation" package. This includes a full decontamination wash, followed by a one-step polish and protectant that restores significant gloss and clarity.</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Advanced Paint Enhancement</h4>
+                        <p class="text-sm">The ultimate exterior transformation. This combines a Paint Enhancement with a long-term Ceramic Coating (1-10 years), locking in the gloss and providing superior protection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Interior Detailing Packages</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Basic Interior Detail</h4>
+                        <p class="text-sm">A maintenance service designed to refresh a vehicle that is already in good condition. It includes a thorough vacuum, air purge, and a wipe-down of all hard surfaces. It is not designed for heavy soil, stains, or excessive pet hair.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-bold">Full Interior Restoration</h4>
+                        <p class="text-sm">The complete "new car feeling" package. This is a deep cleaning service that includes everything in the Basic, plus shampooing/hot water extraction for carpets and upholstery, intensive stain treatment, and deep cleaning of all crevices, vents, and surfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Power of the "50/50" Showcase -->
+        <section id="demo" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">3. The Power of the "50/50" Showcase</h2>
+            <p class="mb-4">The most powerful sales tool for detailing is a dramatic before-and-after photo. The "50/50" shot, showing a cleaned area next to a dirty one, is instantly understandable and highly effective.</p>
+            <img src="https://placehold.co/800x400/cccccc/ffffff?text=50/50+Interior+Seat+Cleaning" alt="50/50 Showcase" class="rounded-lg my-4">
+            <div class="pro-tip">
+                <p class="font-bold">Build Your Portfolio:</p>
+                <p>Keep a readily accessible folder of your best before-and-after shots on a tablet or phone. Showing a potential customer a photo of a car that looks just like theirs is incredibly persuasive.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Ideal Customer Personas -->
+        <section id="customer-personas" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">4. Identifying the Ideal Customer</h2>
+             <div class="mt-4 space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">1. The Busy Parent or Daily Commuter</h3>
+                    <p><strong>Motivation:</strong> Restore sanity and pride. Their car has become a source of stress or embarrassment due to clutter, spills, and constant use.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Angle (for Interior Restoration):</strong> "I completely understand how life gets in the way of keeping the car clean. Our Full Interior Restoration is designed to give you a complete reset. We'll sanitize every surface and remove those set-in stains, giving you back that clean, fresh 'new car feeling' that makes your commute so much more enjoyable."</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold">2. The Discerning Owner</h3>
+                    <p><strong>Motivation:</strong> Proper maintenance and protection. They notice their paint feels rough even after a wash and want to preserve their vehicle's condition correctly.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Angle (for Decon Wash):</strong> "It's great that you're so attentive to your car's finish. That rough feeling you've noticed is actually embedded contamination that a normal wash can't remove. Our Decontamination Wash is the first step in true paint care. We'll safely dissolve that contamination, which not only restores a perfectly smooth and glossy feel but is also essential for the long-term health of your paint."</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold">3. The Person Preparing to Sell Their Car</h3>
+                    <p><strong>Motivation:</strong> Return on Investment (ROI). They want to maximize the resale value and attract buyers quickly.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Angle (for a Full Detail Package):</strong> "A professional detail is one of the single best investments you can make before selling. It dramatically increases the curb appeal. When a potential buyer sees a car with a spotless interior and a glossy, smooth exterior, it immediately tells them the car has been well-maintained, which can add hundreds, if not thousands, to the final sale price."</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">4. The Maintenance Client</h3>
+                    <p><strong>Motivation:</strong> Preservation and consistency. They have already invested in a high-end service (like a coating or PPF) and want to ensure it is maintained correctly.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Angle (for Maintenance Plan):</strong> "Since you've already invested in protecting your car with a ceramic coating, the best way to ensure it performs perfectly for its entire lifespan is with proper professional maintenance. Our maintenance plan uses the correct pH-neutral soaps and safe-touch methods that will preserve the coating's properties, guaranteeing you get the most out of your investment."</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">5. The Enthusiast</h3>
+                    <p><strong>Motivation:</strong> The pursuit of aesthetic perfection. They see their car as a hobby and a passion, and they want it to look its absolute best at all times.</p>
+                    <div class="education-box">
+                        <p><strong>Sales Angle (for Paint Enhancement):</strong> "For an enthusiast like yourself, it's all about the details. While a wash makes it clean, our Paint Enhancement is what creates that deep, wet-looking gloss that truly makes the paint pop. It's the step that elevates a car from just 'clean' to 'show-ready'."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Sales Process -->
+        <section id="sales-process" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">5. The Sales Process & Scripts</h2>
+            <p>Use the <a href="sales_nepq_framework.html" class="text-blue-600 hover:underline">NEPQ Framework</a> to uncover the customer's primary frustration with their car's condition and present your service as the solution.</p>
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold">The NEPQ Framework in Action: A Prime Example</h3>
+                <details class="bg-gray-50 p-3 rounded mt-2">
+                    <summary class="font-semibold">Click to see a sample NEPQ Script for Detailing</summary>
+                    <div class="mt-2 prose max-w-none">
+                        <p><strong>Salesperson:</strong> "Thanks for calling about our detailing services. What kind of vehicle are you looking to have cleaned?"</p>
+                        <p><em><span class="text-blue-600">[NEPQ Stage: Discovery]</span></em> <strong>Client:</strong> "I have a Honda Odyssey. The kids have really done a number on the back seats."</p>
+                        <p><strong>Salesperson:</strong> "The Odyssey is a classic family vehicle, we see a lot of them! When you say 'done a number on it,' what's the biggest thing that bothers you when you get in the car?"</p>
+                        <p><strong>Client:</strong> "It's the stains on the seats and the sticky stuff in the cup holders. It just feels... messy. And there's a faint smell of stale fries I can't get rid of."</p>
+                         <p><em><span class="text-blue-600">[NEPQ Stage: Problem Awareness]</span></em> <strong>Salesperson:</strong> "It's amazing how quickly that happens. It's frustrating when you feel like your car isn't clean no matter what you do, isn't it? How does it affect your driving experience when you feel like you're surrounded by that mess?"</p>
+                        <p><strong>Client:</strong> "It's just not pleasant. I feel embarrassed if I have to give a coworker a ride."</p>
+                        <p><em><span class="text-blue-600">[NEPQ Stage: Solution Awareness]</span></em> <strong>Salesperson:</strong> "That's exactly what our interior detail is designed to solve. We have special hot water extractors that pull those deep stains out of the seats, and we use professional steamers to sanitize and remove all that sticky residue from the console. We make it feel like a new car again."</p>
+                        <p><em><span class="text-blue-600">[Transition to Showcase]</span></em> <strong>Salesperson:</strong> "I have a picture of an Odyssey we just did that had the same issues. Can I text it to you so you can see the difference?"</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 6: Strategic Comparison -->
+        <section id="comparison" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">6. Strategic Comparison: Professional Detail vs. Car Wash</h2>
+            <p class="mb-4">Educate the customer on the difference between a superficial clean and a deep reconditioning.</p>
+            <table class="min-w-full text-sm mt-4">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-3 text-left font-semibold">Service</th>
+                        <th class="p-3 text-left font-semibold">$20 Automatic Car Wash</th>
+                        <th class="p-3 text-left font-semibold">Professional Detail</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white">
+                        <td class="p-3 font-semibold">Goal</td>
+                        <td>Quickly remove surface dirt</td>
+                        <td>Restore, protect, and sanitize</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="p-3 font-semibold">Methods</td>
+                        <td>Harsh chemicals, abrasive brushes</td>
+                        <td>Gentle methods, specialized tools, skilled technicians</td>
+                    </tr>
+                     <tr class="bg-white">
+                        <td class="p-3 font-semibold">Result</td>
+                        <td>Superficially clean, potential for swirl marks</td>
+                        <td>Deep clean, enhanced gloss, long-lasting protection</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 7: Overcoming Common Concerns -->
+        <section id="common-concerns" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">7. Overcoming Common Concerns</h2>
+             <div class="space-y-4 mt-4">
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Concern: "Why does it cost so much? I can get my car 'detailed' down the street for $50."</p>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "That's a fair question. The difference is in the time and the process. A quick wash and vacuum takes about 30 minutes. Our full interior detail can take 4 to 6 hours because we're not just wiping surfaces; we're deep cleaning every single component with specialized tools to restore the vehicle to like-new condition."</p>
+                    </div>
+                </details>
+                <details class="bg-gray-50 p-3 rounded">
+                    <summary class="font-semibold">Question: "Can you get *every* stain out?"</summary>
+                    <div class="mt-2">
+                        <p><strong>Response:</strong> "We have a very high success rate and can usually achieve a dramatic improvement. However, some stains, especially older ones or those from dyes, can permanently set in the fabric. We always do our best, and we'll be able to give you a more specific expectation when we see the vehicle in person."</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 8: Upselling -->
+        <section id="upselling" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">8. Packaging & Upselling Opportunities</h2>
+            <div class="mt-4 space-y-4">
+                 <div>
+                    <h3 class="text-xl font-semibold">The Perfect Follow-Up: Protection</h3>
+                    <p class="mt-1">After a full detail is the best time to sell a protective coating.</p>
+                     <p class="font-semibold italic mt-2">"Now that we've restored the interior, I'd highly recommend our fabric or leather coating. It will create a protective barrier to prevent future stains and make cleanups much easier."</p>
+                     <p class="font-semibold italic mt-2">"Since we've decontaminated the paint and brought back the shine, this is the perfect time to apply a ceramic coating to lock in this finish for years."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Setting Expectations -->
+        <section id="expectations" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 section-title">9. Setting Expectations</h2>
+            <div class="education-box">
+                <p class="font-bold mb-2">Manage Expectations Upfront</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Time:</strong> A proper detail takes time. Ensure the customer knows this is not a quick in-and-out service.</li>
+                    <li><strong>Perfection vs. Improvement:</strong> We aim for the best possible result, but some wear and tear may be permanent. We sell "significant improvement."</li>
+                    <li><strong>Drying Time:</strong> For interior details involving shampooing, let the customer know the carpets and seats may be slightly damp at pickup and will need time to air dry completely.</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <main-footer></main-footer>
 
 </body>
 </html>
+
 
